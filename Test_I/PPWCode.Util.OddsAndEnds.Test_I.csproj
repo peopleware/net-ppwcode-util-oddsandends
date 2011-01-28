@@ -151,10 +151,9 @@
     <Compile Include="MathExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensionsTest.cs" />
-    <Compile Include="TypeExtensionTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PPWCode\PPWCode.Util.OddsAndEnds.I.csproj">
+    <ProjectReference Include="..\I\PPWCode.Util.OddsAndEnds.I.csproj">
       <Project>{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}</Project>
       <Name>PPWCode.Util.OddsAndEnds.I</Name>
     </ProjectReference>
