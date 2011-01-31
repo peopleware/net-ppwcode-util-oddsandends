@@ -124,6 +124,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Solution Items\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="AssemblyHelpers\AssemblyHelper.cs" />
     <Compile Include="EnumHelpers\EnumHelpers.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
