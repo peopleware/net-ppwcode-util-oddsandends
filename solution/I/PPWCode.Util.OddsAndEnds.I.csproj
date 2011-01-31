@@ -89,7 +89,7 @@
     <CodeContractsBaseLineFile>
     </CodeContractsBaseLineFile>
     <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
-    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
     <NoWarn>1591,1592,1573,1571,1570,1572</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DocumentationFile>bin\Release\PPWCode.Util.OddsAndEnds.I.xml</DocumentationFile>
@@ -124,6 +124,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Solution Items\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="AssemblyHelpers\AssemblyHelper.cs" />
     <Compile Include="EnumHelpers\EnumHelpers.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
