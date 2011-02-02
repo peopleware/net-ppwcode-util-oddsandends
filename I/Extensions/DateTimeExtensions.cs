@@ -304,7 +304,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         public static int AgeInYears(this DateTime birth, DateTime dt)
         {
             Contract.Ensures(Contract.Result<int>() ==
-                             dt.Year - birth.Year - (dt.DayOfYear < birth.DayOfYear ? 1 : 0));
+                             dt.Year - birth.Year - (dt.Month < birth.Month || (dt.Month == birth.Month && dt.Day < birth.Day) ? 1 : 0));
 
             int result = dt.Year - birth.Year;
             if (dt.Month < birth.Month
