@@ -364,7 +364,7 @@
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AgeInYears(System.DateTime,System.DateTime)">
       <pure />
       <ensures>Contract.Result&lt;int&gt;() ==
-dt.Year - birth.Year - (dt.DayOfYear &lt; birth.DayOfYear ? 1 : 0)</ensures>
+dt.Year - birth.Year - (dt.Month &lt; birth.Month || (dt.Month == birth.Month &amp;&amp; dt.Day &lt; birth.Day) ? 1 : 0)</ensures>
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextQuarter(System.DateTime)">
       <pure />
@@ -401,13 +401,16 @@ dt.Year - birth.Year - (dt.DayOfYear &lt; birth.DayOfYear ? 1 : 0)</ensures>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.ObjectExtentions.ToLogString(System.Object)">
       <pure />
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.AsIList``1(System.Collections.Generic.IEnumerable{``0})">
-      <pure />
-    </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.NullableSum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
       <pure />
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.NullableSum(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.AsIList``1(System.Collections.Generic.IEnumerable{``0})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
       <pure />
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.SetEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
@@ -416,13 +419,10 @@ dt.Year - birth.Year - (dt.DayOfYear &lt; birth.DayOfYear ? 1 : 0)</ensures>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.AsList``1(System.Collections.Generic.IEnumerable{``0})">
       <pure />
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.NullableSum(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
-      <pure />
-    </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.SetEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
       <pure />
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.AssemblyHelpers.AssemblyHelper.LoadAssembly(System.String)">
