@@ -305,6 +305,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         {
             Contract.Ensures(Contract.Result<int>() ==
                              dt.Year - birth.Year - (dt.Month < birth.Month || (dt.Month == birth.Month && dt.Day < birth.Day) ? 1 : 0));
+            // in a previous version, we used DayOfYear to see whether
+            // the person already had his birthday in the year of dt or not;
+            // that doesn't work however in leap years;
+            // we need to test months and days of months separately
 
             int result = dt.Year - birth.Year;
             if (dt.Month < birth.Month
