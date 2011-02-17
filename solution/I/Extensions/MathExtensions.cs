@@ -26,12 +26,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
     public static class MathExtensions
     {
         [Pure]
-        public static decimal PensioBRound(this decimal d)
-        {
-            return Math.Truncate(d * 10000m) / 10000m;
-        }
-
-        [Pure]
         public static bool IsConsecutiveSequence<T>(
             this IEnumerable<T> lst,
             Func<T, decimal?> extractDateBegin,
