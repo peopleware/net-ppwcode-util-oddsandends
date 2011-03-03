@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADSearchTest.cs" />
     <Compile Include="CollectionExtensionsTest.cs" />
     <Compile Include="DateTimeExtensionsTest.cs" />
     <Compile Include="DateTimeHelperTest.cs" />
