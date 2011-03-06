@@ -108,9 +108,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADSearchTest.cs" />
     <Compile Include="CollectionExtensionsTest.cs" />
     <Compile Include="DateTimeExtensionsTest.cs" />
     <Compile Include="DateTimeHelperTest.cs" />
+    <Compile Include="LinqBehaviourTests.cs" />
     <Compile Include="MathExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensionsTest.cs" />

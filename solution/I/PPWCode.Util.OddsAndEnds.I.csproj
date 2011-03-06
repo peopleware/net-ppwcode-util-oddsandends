@@ -107,6 +107,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -127,6 +128,7 @@
     <Compile Include="..\Solution Items\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="ActiveDirectory\ADSearch.cs" />
     <Compile Include="AssemblyHelpers\AssemblyHelper.cs" />
     <Compile Include="EnumHelpers\EnumHelpers.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
