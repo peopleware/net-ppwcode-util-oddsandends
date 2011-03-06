@@ -4,6 +4,182 @@
         <name>PPWCode.Util.OddsAndEnds.I</name>
     </assembly>
     <members>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.NamespaceDoc">
+            <summary>
+            <para>This assembly contains a collection of utility code
+            (helper methods, extension methods, ...) for different
+            domains.</para>
+            <para>This is to be considered a proving ground for such
+            code. The collection is not well-organized, and dynamic.
+            The intention is that, after a while, code here is
+            separated out and put into a separate Util or Vernacular
+            project for a particular domain. New code will be
+            added over time and follow the same path.</para>
+            <para>The code here is production quality nevertheless.</para>
+            <para>This project should <strong>never depend on any other
+            PPWCode library, except PPWCode.Vernacular.Exceptions.</strong>
+            In general, it should depend on as little libraries outside
+            the standard libraries as possible.</para>
+            </summary>
+            <remarks>
+            <para>Even the allowed dependency on <c>PPWCode.Vernacular.Exceptions</c>
+            is a bad one. If needed, the vernacular should be split in 2,
+            part util, part vernacular (see Java).</para>
+            </remarks>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfQuarter(System.DateTime)">
+            <summary>
+            ImmediateFirstOfQuarter returns given date if the given date is first of quarter or else first of next quarter
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfMonth(System.DateTime)">
+            <summary>
+            ImmediateFirstOfMonth returns given date if the given date is first of month or else first of next month
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.DaysBetween(System.DateTime,System.DateTime)">
+            <summary>
+            Indien start- en endate in dezelfde dag liggen, wordt er 0 teruggegeven
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.MonthsBetween(System.DateTime,System.DateTime)">
+            <summary>
+            Indien start- en enddate in dezelfde maand liggen wordt er 0 teruggegeven.
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfYear(System.DateTime)">
+            <summary>
+            ImmediateFirstOfYear returns given date if the given date is first of year or else first of next year
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.NumberOfDaysInYear(System.DateTime)">
+            <summary>
+            Aantal dagen in een jaar, rekening houdend met schrikkeljaren.
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.GetDomainFromUserAccount(System.String)">
+            <summary>
+            This function parses the domain out of an user-account.
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns>The domain of an user-account</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.GetAccountNameFromUserAccount(System.String)">
+            <summary>
+            This function parses the UserName out of an user-account.
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.AvailableProperties(System.String)">
+            <summary>
+            List all available properties of an SAM Account.
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.GetProperty(System.String,System.String)">
+            <summary>
+            Get the value for a specified property name of a SAM account
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <param name="propertyName">A valid property name, the list of valid properties
+            can be found using <see cref="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.AvailableProperties(System.String)"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.UserExists(System.String)">
+            <summary>
+            Checks if a certain user exists
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.FindName(System.String)">
+            <summary>
+            Get the displayname property of a SAM-account
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.FindEmail(System.String)">
+            <summary>
+            Get the email of a SAM-account
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions">
+            <summary>
+            PPW helper string functions
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.StartWithACapital(System.String)">
+            <summary>
+            Checks if the first character of a string is a capital
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToLong(System.String)">
+            <summary>
+            Convert the string to an Int64
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToInt(System.String)">
+            <summary>
+            Convert the string to an Int32
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDecimal(System.String)">
+            <summary>
+            Convert the string to a Decimal
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDateTime(System.String)">
+            <summary>
+            Convert the string to a DateTime
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetQualifiedName(System.Type)">
+            <summary>
+            Checks if the first character of a string is a capital
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.IsNullableType(System.Type)">
+            <summary>
+            Check if a type is of Nullable type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetSubclassesOf(System.Type,System.Boolean)">
+            <summary>
+            Get a sequence of types where all the items are a sub-class of <paramref name="type"/>.
+            The parameter <paramref name="excludeSystemTypes"/> determines if system types should be excluded.
+            </summary>
+            <param name="type"></param>
+            <param name="excludeSystemTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.NamespaceDoc">
+            <summary>
+            Contains all the helper classes for the Peopleware system
+            </summary>
+        </member>
         <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime,System.DateTime)">
             <summary>
             The earliest of 2 date-times.
@@ -51,131 +227,6 @@
             <returns><c>null</c> values are skipped.
             With zero inputs, or all <c>null</c> inputs,<c>null</c>
             is returned.</returns>
-        </member>
-        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.NamespaceDoc">
-            <summary>
-            Contains all the helper classes for the Peopleware system
-            </summary>
-        </member>
-        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions">
-            <summary>
-            PPW helper string functions
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.StartWithACapital(System.String)">
-            <summary>
-            Checks if the first character of a string is a capital
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToLong(System.String)">
-            <summary>
-            Convert the string to an Int64
-            The function returns NULL if the conversion fails
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToInt(System.String)">
-            <summary>
-            Convert the string to an Int32
-            The function returns NULL if the conversion fails
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDecimal(System.String)">
-            <summary>
-            Convert the string to a Decimal
-            The function returns NULL if the conversion fails
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDateTime(System.String)">
-            <summary>
-            Convert the string to a DateTime
-            The function returns NULL if the conversion fails
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfQuarter(System.DateTime)">
-            <summary>
-            ImmediateFirstOfQuarter returns given date if the given date is first of quarter or else first of next quarter
-            </summary>
-            <param name="dt"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfMonth(System.DateTime)">
-            <summary>
-            ImmediateFirstOfMonth returns given date if the given date is first of month or else first of next month
-            </summary>
-            <param name="dt"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.DaysBetween(System.DateTime,System.DateTime)">
-            <summary>
-            Indien start- en endate in dezelfde dag liggen, wordt er 0 teruggegeven
-            </summary>
-            <param name="startDate"></param>
-            <param name="endDate"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.MonthsBetween(System.DateTime,System.DateTime)">
-            <summary>
-            Indien start- en enddate in dezelfde maand liggen wordt er 0 teruggegeven.
-            </summary>
-            <param name="startDate"></param>
-            <param name="endDate"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfYear(System.DateTime)">
-            <summary>
-            ImmediateFirstOfYear returns given date if the given date is first of year or else first of next year
-            </summary>
-            <param name="dt"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.NumberOfDaysInYear(System.DateTime)">
-            <summary>
-            Aantal dagen in een jaar, rekening houdend met schrikkeljaren.
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetQualifiedName(System.Type)">
-            <summary>
-            Checks if the first character of a string is a capital
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.IsNullableType(System.Type)">
-            <summary>
-            Check if a type is of Nullable type
-            </summary>
-            <param name="type"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetSubclassesOf(System.Type,System.Boolean)">
-            <summary>
-            Get a sequence of types where all the items are a sub-class of <paramref name="type"/>.
-            The parameter <paramref name="excludeSystemTypes"/> determines if system types should be excluded.
-            </summary>
-            <param name="type"></param>
-            <param name="excludeSystemTypes"></param>
-            <returns></returns>
-        </member>
-        <member name="T:PPWCode.Util.OddsAndEnds.I.NamespaceDoc">
-            <summary>
-            <para>This assembly contains a collection of utility code
-            (helper methods, extension methods, ...) for different
-            domains.</para>
-            <para>This is to be considered a proving ground for such
-            code. The collection is not well-organized, and dynamic.
-            The intention is that, after a while, code here is
-            separated out and put into a separate Util or Vernacular
-            project for a particular domain. New code will be
-            added over time and follow the same path.</para>
-            <para>The code here is production quality nevertheless.</para>
-            <para>This project should <strong>never depend on any other
-            PPWCode library, except PPWCode.Vernacular.Exceptions.</strong>
-            In general, it should depend on as little libraries outside
-            the standard libraries as possible.</para>
-            </summary>
-            <remarks>
-            <para>Even the allowed dependency on <c>PPWCode.Vernacular.Exceptions</c>
-            is a bad one. If needed, the vernacular should be split in 2,
-            part util, part vernacular (see Java).</para>
-            </remarks>
         </member>
     </members>
 </doc>
