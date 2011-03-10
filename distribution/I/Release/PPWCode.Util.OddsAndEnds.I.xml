@@ -228,5 +228,90 @@
             With zero inputs, or all <c>null</c> inputs,<c>null</c>
             is returned.</returns>
         </member>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter">
+            <summary>
+            Converts enums depending on the current language
+            </summary>
+        </member>
+        <member name="F:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.m_IsFlagEnum">
+            <summary>
+            Indicates wether the values of the enum are flags
+            </summary>
+        </member>
+        <member name="F:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.m_FlagValues">
+            <summary>
+            Contains the values of the enum in case that it is a flag enum
+            </summary>
+        </member>
+        <member name="F:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.m_LookupTable">
+            <summary>
+            Lookup table which allows converting the localized text back to the enum values
+            </summary>
+        </member>
+        <member name="F:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.m_ResourceManager">
+            <summary>
+            Resource manager depending on the converted enum type
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.#ctor(System.Type)">
+            <summary>
+            Create a new instance of the converter using translations from the given resource manager
+            </summary>
+            <param name="enumType"></param>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.GetFlagValueFromLocalizedString(System.String)">
+            <summary>
+            Return the Enum value for a flagged enum
+            </summary>
+            <param name="text">The text to convert (can also be a comma separated list of multiple flags)</param>
+            <returns>The enum value</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.IsSingleBitValue(System.UInt64)">
+            <summary>
+            Return true if the given value is can be represented using a single bit
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.GetFlagValueText(System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Return the text to display for a flag value in the given culture
+            </summary>
+            <param name="value">The flag enum value to get the text for</param>
+            <returns>The localized text</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.GetValueFromLocalizedString(System.String)">
+            <summary>
+            Return the Enum value for a simple (non-flagged enum)
+            </summary>
+            <param name="text">The text to convert</param>
+            <returns>The enum value</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.GetLocalizedValueText(System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Return the text to display for a simple value in the given culture
+            </summary>
+            <param name="value">The enum value to get the text for</param>
+            <returns>The localized text</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Convert string values to enum values
+            </summary>
+            <param name="context"></param>
+            <param name="culture"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Convert the enum value to a string
+            </summary>
+            <param name="context"></param>
+            <param name="culture"></param>
+            <param name="value"></param>
+            <param name="destinationType"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
