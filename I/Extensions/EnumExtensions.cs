@@ -12,8 +12,13 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
+#region Using
+
 using System;
 using System.ComponentModel;
+using System.Globalization;
+
+#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.Extensions
 {
@@ -21,15 +26,26 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
     {
         public static string GetLocalizedDescription(this Enum enumValue)
         {
-            if (enumValue != null && enumValue is Enum)
+            if (enumValue != null)
             {
-                TypeConverter tc = TypeDescriptor.GetConverter(enumValue.GetType());
-                return tc != null ? tc.ConvertToString(enumValue) : enumValue.ToString();
+                System.ComponentModel.TypeConverter tc = TypeDescriptor.GetConverter(enumValue.GetType());
+                return tc != null
+                           ? tc.ConvertToString(enumValue)
+                           : enumValue.ToString();
             }
-            else
+            return string.Empty;
+        }
+
+        public static string GetLocalizedDescription(this Enum enumValue, CultureInfo ci)
+        {
+            if (enumValue != null)
             {
-                return enumValue.ToString();
+                System.ComponentModel.TypeConverter tc = TypeDescriptor.GetConverter(enumValue.GetType());
+                return tc != null
+                           ? tc.ConvertToString(null, ci, enumValue)
+                           : enumValue.ToString();
             }
+            return string.Empty;
         }
     }
 }

@@ -147,6 +147,8 @@
     <Compile Include="Serialization\GenericSerializationInfo.cs" />
     <Compile Include="Extensions\SQLServerExtensions.cs" />
     <Compile Include="Serialization\SerializationHelper.cs" />
+    <Compile Include="TypeConverter\LocalizedEnumConverter.cs" />
+    <Compile Include="TypeConverter\TypeConverterHelper.cs" />
     <Compile Include="UnitTestHelpers\SequenceGenerator.cs" />
     <Compile Include="UnitTestHelpers\ValueTypeSequences.cs" />
   </ItemGroup>

@@ -16,8 +16,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
+
+using PPWCode.Util.OddsAndEnds.I.Extensions;
 
 #endregion
 
@@ -25,7 +26,13 @@ namespace PPWCode.Util.OddsAndEnds.I.EnumHelpers
 {
     public static class EnumHelpers
     {
+        [Obsolete(@"Use EnumHelpers.AsEnumerable")]
         public static IEnumerable<T> EnumEnumerable<T>()
+        {
+            return AsEnumerable<T>();
+        }
+
+        public static IEnumerable<T> AsEnumerable<T>()
         {
             if (!typeof(Enum).IsAssignableFrom(typeof(T)))
             {
@@ -34,16 +41,10 @@ namespace PPWCode.Util.OddsAndEnds.I.EnumHelpers
             return Enum.GetValues(typeof(T)).Cast<T>();
         }
 
+        [Obsolete(@"Use EnumExtension.GetLocalizedDescription()")]
         public static string GetLocalizedDescription(this Enum enumValue)
         {
-            if (enumValue != null)
-            {
-                TypeConverter tc = TypeDescriptor.GetConverter(enumValue.GetType());
-                return tc != null
-                           ? tc.ConvertToString(enumValue)
-                           : enumValue.ToString();
-            }
-            return string.Empty;
+            return EnumExtension.GetLocalizedDescription(enumValue);
         }
     }
 }
