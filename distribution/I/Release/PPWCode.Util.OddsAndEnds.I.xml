@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PPWCode.Util.OddsAndEnds.I</name>
+    </assembly>
+    <members>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.NamespaceDoc">
+            <summary>
+            <para>This assembly contains a collection of utility code
+            (helper methods, extension methods, ...) for different
+            domains.</para>
+            <para>This is to be considered a proving ground for such
+            code. The collection is not well-organized, and dynamic.
+            The intention is that, after a while, code here is
+            separated out and put into a separate Util or Vernacular
+            project for a particular domain. New code will be
+            added over time and follow the same path.</para>
+            <para>The code here is production quality nevertheless.</para>
+            <para>This project should <strong>never depend on any other
+            PPWCode library, except PPWCode.Vernacular.Exceptions.</strong>
+            In general, it should depend on as little libraries outside
+            the standard libraries as possible.</para>
+            </summary>
+            <remarks>
+            <para>Even the allowed dependency on <c>PPWCode.Vernacular.Exceptions</c>
+            is a bad one. If needed, the vernacular should be split in 2,
+            part util, part vernacular (see Java).</para>
+            </remarks>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfQuarter(System.DateTime)">
+            <summary>
+            ImmediateFirstOfQuarter returns given date if the given date is first of quarter or else first of next quarter
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfMonth(System.DateTime)">
+            <summary>
+            ImmediateFirstOfMonth returns given date if the given date is first of month or else first of next month
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.DaysBetween(System.DateTime,System.DateTime)">
+            <summary>
+            Indien start- en endate in dezelfde dag liggen, wordt er 0 teruggegeven
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.MonthsBetween(System.DateTime,System.DateTime)">
+            <summary>
+            Indien start- en enddate in dezelfde maand liggen wordt er 0 teruggegeven.
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfYear(System.DateTime)">
+            <summary>
+            ImmediateFirstOfYear returns given date if the given date is first of year or else first of next year
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.NumberOfDaysInYear(System.DateTime)">
+            <summary>
+            Aantal dagen in een jaar, rekening houdend met schrikkeljaren.
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.GetDomainFromUserAccount(System.String)">
+            <summary>
+            This function parses the domain out of an user-account.
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns>The domain of an user-account</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.GetAccountNameFromUserAccount(System.String)">
+            <summary>
+            This function parses the UserName out of an user-account.
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.AvailableProperties(System.String)">
+            <summary>
+            List all available properties of an SAM Account.
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.GetProperty(System.String,System.String)">
+            <summary>
+            Get the value for a specified property name of a SAM account
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <param name="propertyName">A valid property name, the list of valid properties
+            can be found using <see cref="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.AvailableProperties(System.String)"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.UserExists(System.String)">
+            <summary>
+            Checks if a certain user exists
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.FindName(System.String)">
+            <summary>
+            Get the displayname property of a SAM-account
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.FindEmail(System.String)">
+            <summary>
+            Get the email of a SAM-account
+            </summary>
+            <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
+            <returns></returns>
+        </member>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions">
+            <summary>
+            PPW helper string functions
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.StartWithACapital(System.String)">
+            <summary>
+            Checks if the first character of a string is a capital
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToLong(System.String)">
+            <summary>
+            Convert the string to an Int64
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToInt(System.String)">
+            <summary>
+            Convert the string to an Int32
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDecimal(System.String)">
+            <summary>
+            Convert the string to a Decimal
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDateTime(System.String)">
+            <summary>
+            Convert the string to a DateTime
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetQualifiedName(System.Type)">
+            <summary>
+            Checks if the first character of a string is a capital
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.IsNullableType(System.Type)">
+            <summary>
+            Check if a type is of Nullable type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetSubclassesOf(System.Type,System.Boolean)">
+            <summary>
+            Get a sequence of types where all the items are a sub-class of <paramref name="type"/>.
+            The parameter <paramref name="excludeSystemTypes"/> determines if system types should be excluded.
+            </summary>
+            <param name="type"></param>
+            <param name="excludeSystemTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.NamespaceDoc">
+            <summary>
+            Contains all the helper classes for the Peopleware system
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime,System.DateTime)">
+            <summary>
+            The earliest of 2 date-times.
+            </summary>
+            <returns>The earliest of <paramref name="dt1"/> and
+            <paramref name="dt2"/>.</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            The earliest of 2 date-times. When <paramref name="dt2"/>
+            is <c>null</c>, we return <paramref name="dt2"/>.
+            </summary>
+            <returns>The earliest of <paramref name="dt1"/> and
+            <paramref name="dt2"/>. <paramref name="dt2"/> when
+            <paramref name="dt1"/> is <c>null</c>.</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            The earliest of 2 date-times. When <paramref name="dt2"/>
+            is <c>null</c>, we return <paramref name="dt1"/>.
+            </summary>
+            <returns>The earliest of <paramref name="dt1"/> and
+            <paramref name="dt2"/>. <paramref name="dt1"/> when
+            <paramref name="dt2"/> is <c>null</c>.</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime[])">
+            <summary>
+            The earliest of a number of date-times.
+            </summary>
+            <returns>With zero inputs, <see cref="F:System.DateTime.MinValue"/>
+            is returned.</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.Nullable{System.DateTime}[])">
+            <summary>
+            The earliest of a number of date-times.
+            </summary>
+            <returns><c>null</c> values are skipped.
+            With zero inputs, or all <c>null</c> inputs,<c>null</c>
+            is returned.</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Max(System.Nullable{System.DateTime}[])">
+            <summary>
+            The latest of a number of date-times.
+            </summary>
+            <returns><c>null</c> values are skipped.
+            With zero inputs, or all <c>null</c> inputs,<c>null</c>
+            is returned.</returns>
+        </member>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter">
+            <summary>
+            Converts enums depending on the current language
+            </summary>
+        </member>
+        <member name="F:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.m_IsFlagEnum">
+            <summary>
+            Indicates wether the values of the enum are flags
+            </summary>
+        </member>
+        <member name="F:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.m_FlagValues">
+            <summary>
+            Contains the values of the enum in case that it is a flag enum
+            </summary>
+        </member>
+        <member name="F:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.m_LookupTable">
+            <summary>
+            Lookup table which allows converting the localized text back to the enum values
+            </summary>
+        </member>
+        <member name="F:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.m_ResourceManager">
+            <summary>
+            Resource manager depending on the converted enum type
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.#ctor(System.Type)">
+            <summary>
+            Create a new instance of the converter using translations from the given resource manager
+            </summary>
+            <param name="enumType"></param>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.GetFlagValueFromLocalizedString(System.String)">
+            <summary>
+            Return the Enum value for a flagged enum
+            </summary>
+            <param name="text">The text to convert (can also be a comma separated list of multiple flags)</param>
+            <returns>The enum value</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.IsSingleBitValue(System.UInt64)">
+            <summary>
+            Return true if the given value is can be represented using a single bit
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.GetFlagValueText(System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Return the text to display for a flag value in the given culture
+            </summary>
+            <param name="value">The flag enum value to get the text for</param>
+            <returns>The localized text</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.GetValueFromLocalizedString(System.String)">
+            <summary>
+            Return the Enum value for a simple (non-flagged enum)
+            </summary>
+            <param name="text">The text to convert</param>
+            <returns>The enum value</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.GetLocalizedValueText(System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Return the text to display for a simple value in the given culture
+            </summary>
+            <param name="value">The enum value to get the text for</param>
+            <returns>The localized text</returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Convert string values to enum values
+            </summary>
+            <param name="context"></param>
+            <param name="culture"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Convert the enum value to a string
+            </summary>
+            <param name="context"></param>
+            <param name="culture"></param>
+            <param name="value"></param>
+            <param name="destinationType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
