@@ -178,9 +178,13 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
         /// <returns>The localized text</returns>
         private string GetLocalizedValueText(object value, CultureInfo ci)
         {
-            Type type = value.GetType();
-            string resourceName = string.Format(CultureInfo.InvariantCulture, "{0}_{1}", type.Name, value);
-            return m_ResourceManager.GetString(resourceName, ci) ?? value.ToString();
+            if (value != null)
+            {
+                Type type = value.GetType();
+                string resourceName = string.Format(CultureInfo.InvariantCulture, "{0}_{1}", type.Name, value);
+                return m_ResourceManager.GetString(resourceName, ci) ?? value.ToString();
+            }
+            return string.Empty;
         }
 
         /// <summary>
