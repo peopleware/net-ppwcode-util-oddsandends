@@ -12,8 +12,12 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
+#region Using
+
 using System;
 using System.Collections.Generic;
+
+#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.UnitTestHelpers
 {
@@ -23,7 +27,7 @@ namespace PPWCode.Util.OddsAndEnds.I.UnitTestHelpers
         {
             get
             {
-                return new List<decimal?>()
+                return new List<decimal?>
                 {
                     null,
                     0m,
@@ -39,7 +43,7 @@ namespace PPWCode.Util.OddsAndEnds.I.UnitTestHelpers
         {
             get
             {
-                return new List<DateTime?>()
+                return new List<DateTime?>
                 {
                     null,
                     DateTime.Now,
@@ -55,7 +59,7 @@ namespace PPWCode.Util.OddsAndEnds.I.UnitTestHelpers
         {
             get
             {
-                return new List<string>()
+                return new List<string>
                 {
                     null,
                     string.Empty,
