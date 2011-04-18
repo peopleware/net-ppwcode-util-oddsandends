@@ -19,6 +19,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
+using System.Reflection;
 using System.Resources;
 
 #endregion
@@ -58,8 +60,11 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
         public LocalizedEnumConverter(Type enumType)
             : base(enumType)
         {
-            string resourceBaseName = string.Format(CultureInfo.InvariantCulture, "{0}.Properties.Resources", enumType.Assembly.GetName().Name);
-            m_ResourceManager = new ResourceManager(resourceBaseName, enumType.Assembly);
+            Assembly assembly = enumType.Assembly;
+            string resourceBaseName = string.Format(CultureInfo.InvariantCulture, "{0}.Properties.Resources", assembly.GetName().Name);
+            m_ResourceManager = assembly.GetManifestResourceNames().Any(o => o.StartsWith(resourceBaseName))
+                                    ? new ResourceManager(resourceBaseName, enumType.Assembly)
+                                    : null;
 
             m_LookupTable = new Dictionary<string, object>();
             ICollection standardValues = GetStandardValues();
@@ -180,9 +185,13 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
         {
             if (value != null)
             {
-                Type type = value.GetType();
-                string resourceName = string.Format(CultureInfo.InvariantCulture, "{0}_{1}", type.Name, value);
-                return m_ResourceManager.GetString(resourceName, ci) ?? value.ToString();
+                if (m_ResourceManager != null)
+                {
+                    Type type = value.GetType();
+                    string resourceName = string.Format(CultureInfo.InvariantCulture, "{0}_{1}", type.Name, value);
+                    return m_ResourceManager.GetString(resourceName, ci) ?? value.ToString();
+                }
+                return value.ToString();
             }
             return string.Empty;
         }
