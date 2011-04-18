@@ -32,7 +32,14 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         [TestMethod, Description("CollectionExtensions Difference behaviour Aggregate and Sum")]
         public void TestSumAggregate()
         {
-            List<int?> l = new List<int?> { 0, 3, null, 4, 5 };
+            List<int?> l = new List<int?>
+            {
+                0,
+                3,
+                null,
+                4,
+                5
+            };
             int? sum = l.Sum();
             int? agg = l.Aggregate((int?)0, (s, x) => s + x);
             Assert.IsFalse(sum == (int?)null);
@@ -42,29 +49,61 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         [TestMethod, Description("CollectionExtensions NullableSum 1")]
         public void TestNullableSum1()
         {
-            List<int?> l = new List<int?> { 0, 3, null, 4, 5 };
+            List<int?> l = new List<int?>
+            {
+                0,
+                3,
+                null,
+                4,
+                5
+            };
             Assert.AreEqual(null, l.NullableSum());
         }
 
         [TestMethod, Description("CollectionExtensions NullableSum 2")]
         public void TestNullableSum2()
         {
-            List<int?> l = new List<int?> { 0, 3, 3, 4, 5 };
+            List<int?> l = new List<int?>
+            {
+                0,
+                3,
+                3,
+                4,
+                5
+            };
             Assert.AreEqual(15, l.NullableSum());
         }
 
         [TestMethod, Description("CollectionExtensions SetEqual")]
         public void TestSetEqual()
         {
-            List<int> l1 = new List<int> { 1, 2, 3, 4 };
-            List<int> l2 = new List<int> { 4, 3, 2, 1 };
+            List<int> l1 = new List<int>
+            {
+                1,
+                2,
+                3,
+                4
+            };
+            List<int> l2 = new List<int>
+            {
+                4,
+                3,
+                2,
+                1
+            };
             Assert.IsTrue(l1.SetEqual(l2));
         }
 
         [TestMethod, Description("CollectionExtensions IsNullOrEmpty #1")]
         public void TestIsNullOrEmpty1()
         {
-            List<int> l1 = new List<int> { 1, 2, 3, 4 };
+            List<int> l1 = new List<int>
+            {
+                1,
+                2,
+                3,
+                4
+            };
             Assert.IsFalse(l1.IsNullOrEmpty());
         }
 
@@ -85,7 +124,13 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         [TestMethod, Description("CollectionExtensions IsEmpty #1")]
         public void TestIsEmpty1()
         {
-            List<int> l1 = new List<int> { 1, 2, 3, 4 };
+            List<int> l1 = new List<int>
+            {
+                1,
+                2,
+                3,
+                4
+            };
             Assert.IsFalse(l1.IsEmpty());
         }
 
@@ -102,6 +147,63 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         {
             List<int> l1 = null;
             l1.IsEmpty();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void NullSourceTest()
+        {
+            int[] values = null;
+            values.Segment(1);
+        }
+
+        [TestMethod]
+        public void EmptySourceTest()
+        {
+            // expecting 4 empty groups
+            int[] values = Enumerable.Empty<int>().ToArray();
+            IEnumerable<IGrouping<int, int>> result = values.Segment(4);
+            Assert.AreEqual(4, result.Count());
+        }
+
+        [TestMethod]
+        public void EvenSegmentTest()
+        {
+            int[] values = Enumerable.Range(1, 100).ToArray();
+            IEnumerable<IGrouping<int, int>> result = values.Segment(4);
+            Assert.AreEqual(4, result.Count());
+            foreach (IGrouping<int, int> g in result)
+            {
+                Assert.AreEqual(25, g.Count());
+            }
+        }
+
+        [TestMethod]
+        public void MoreSegmentsThanElementsTest()
+        {
+            int[] values = Enumerable.Range(1, 3).ToArray();
+            IEnumerable<IGrouping<int, int>> result = values.Segment(10);
+            Assert.AreEqual(10, result.Count());
+            int i = 1;
+            foreach (IGrouping<int, int> g in result)
+            {
+                Assert.AreEqual(i < 4 ? 1 : 0, g.Count());
+                i++;
+            }
+        }
+
+        [TestMethod]
+        public void OddSegmentTest()
+        {
+            int[] values = Enumerable.Range(1, 101).ToArray();
+            IEnumerable<IGrouping<int, int>> result = values.Segment(4);
+            Assert.AreEqual(4, result.Count());
+            int i = 1;
+            foreach (IGrouping<int, int> g in result)
+            {
+                Assert.AreEqual(i < 4 ? 26 : 23, g.Count());
+                i++;
+            }
         }
     }
 }

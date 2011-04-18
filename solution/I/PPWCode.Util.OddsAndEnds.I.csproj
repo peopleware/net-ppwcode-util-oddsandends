@@ -135,6 +135,7 @@
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DateTimeHelper.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\Grouping.cs" />
     <Compile Include="Extensions\MathExtensions.cs" />
     <Compile Include="Extensions\NamespaceDoc.cs" />
     <Compile Include="Extensions\ObjectExtentions.cs" />
