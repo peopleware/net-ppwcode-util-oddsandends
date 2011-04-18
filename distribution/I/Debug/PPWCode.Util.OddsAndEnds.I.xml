@@ -4,6 +4,87 @@
     <name>PPWCode.Util.OddsAndEnds.I</name>
   </assembly>
   <members>
+    <member name="T:PPWCode.Util.OddsAndEnds.I.NamespaceDoc">
+      <summary>
+        <para>This assembly contains a collection of utility code
+            (helper methods, extension methods, ...) for different
+            domains.</para>
+        <para>This is to be considered a proving ground for such
+            code. The collection is not well-organized, and dynamic.
+            The intention is that, after a while, code here is
+            separated out and put into a separate Util or Vernacular
+            project for a particular domain. New code will be
+            added over time and follow the same path.</para>
+        <para>The code here is production quality nevertheless.</para>
+        <para>This project should <strong>never depend on any other
+            PPWCode library, except PPWCode.Vernacular.Exceptions.</strong>
+            In general, it should depend on as little libraries outside
+            the standard libraries as possible.</para>
+      </summary>
+      <remarks>
+        <para>Even the allowed dependency on <c>PPWCode.Vernacular.Exceptions</c>
+            is a bad one. If needed, the vernacular should be split in 2,
+            part util, part vernacular (see Java).</para>
+      </remarks>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfQuarter(System.DateTime)">
+      <summary>
+            ImmediateFirstOfQuarter returns given date if the given date is first of quarter or else first of next quarter
+            </summary>
+      <param name="dt" />
+      <returns />
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfMonth(System.DateTime)">
+      <summary>
+            ImmediateFirstOfMonth returns given date if the given date is first of month or else first of next month
+            </summary>
+      <param name="dt" />
+      <returns />
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.DaysBetween(System.DateTime,System.DateTime)">
+      <summary>
+            Indien start- en endate in dezelfde dag liggen, wordt er 0 teruggegeven
+            </summary>
+      <param name="startDate" />
+      <param name="endDate" />
+      <returns />
+      <pure />
+      <ensures>startDate.StripHours() &lt; endDate.StripHours()
+    ? Contract.Result&lt;int&gt;() &gt; 0
+    : true</ensures>
+      <ensures>startDate.StripHours() == endDate.StripHours()
+    ? Contract.Result&lt;int&gt;() == 0
+    : true</ensures>
+      <ensures>startDate.StripHours() &gt; endDate.StripHours()
+    ? Contract.Result&lt;int&gt;() &lt; 0
+    : true</ensures>
+      <ensures>(endDate - startDate).Days == Contract.Result&lt;int&gt;()</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.MonthsBetween(System.DateTime,System.DateTime)">
+      <summary>
+            Indien start- en enddate in dezelfde maand liggen wordt er 0 teruggegeven.
+            </summary>
+      <param name="startDate" />
+      <param name="endDate" />
+      <returns />
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfYear(System.DateTime)">
+      <summary>
+            ImmediateFirstOfYear returns given date if the given date is first of year or else first of next year
+            </summary>
+      <param name="dt" />
+      <returns />
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.NumberOfDaysInYear(System.DateTime)">
+      <summary>
+            Aantal dagen in een jaar, rekening houdend met schrikkeljaren.
+            </summary>
+      <pure />
+    </member>
     <member name="T:PPWCode.Util.OddsAndEnds.I.TypeConverter.LocalizedEnumConverter">
       <summary>
             Converts enums depending on the current language
@@ -88,67 +169,6 @@
       <param name="value" />
       <param name="destinationType" />
       <returns />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime,System.DateTime)">
-      <summary>
-            The earliest of 2 date-times.
-            </summary>
-      <returns>The earliest of <paramref name="dt1" /> and
-            <paramref name="dt2" />.</returns>
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.Nullable{System.DateTime},System.DateTime)">
-      <summary>
-            The earliest of 2 date-times. When <paramref name="dt2" />
-            is <c>null</c>, we return <paramref name="dt2" />.
-            </summary>
-      <returns>The earliest of <paramref name="dt1" /> and
-            <paramref name="dt2" />. <paramref name="dt2" /> when
-            <paramref name="dt1" /> is <c>null</c>.</returns>
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime,System.Nullable{System.DateTime})">
-      <summary>
-            The earliest of 2 date-times. When <paramref name="dt2" />
-            is <c>null</c>, we return <paramref name="dt1" />.
-            </summary>
-      <returns>The earliest of <paramref name="dt1" /> and
-            <paramref name="dt2" />. <paramref name="dt1" /> when
-            <paramref name="dt2" /> is <c>null</c>.</returns>
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime[])">
-      <summary>
-            The earliest of a number of date-times.
-            </summary>
-      <returns>With zero inputs, <see cref="F:System.DateTime.MinValue" />
-            is returned.</returns>
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.Nullable{System.DateTime}[])">
-      <summary>
-            The earliest of a number of date-times.
-            </summary>
-      <returns>
-        <c>null</c> values are skipped.
-            With zero inputs, or all <c>null</c> inputs,<c>null</c>
-            is returned.</returns>
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Max(System.Nullable{System.DateTime}[])">
-      <summary>
-            The latest of a number of date-times.
-            </summary>
-      <returns>
-        <c>null</c> values are skipped.
-            With zero inputs, or all <c>null</c> inputs,<c>null</c>
-            is returned.</returns>
-      <pure />
-    </member>
-    <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.NamespaceDoc">
-      <summary>
-            Contains all the helper classes for the Peopleware system
-            </summary>
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.GetDomainFromUserAccount(System.String)">
       <summary>
@@ -269,64 +289,6 @@
             </summary>
       <pure />
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfQuarter(System.DateTime)">
-      <summary>
-            ImmediateFirstOfQuarter returns given date if the given date is first of quarter or else first of next quarter
-            </summary>
-      <param name="dt" />
-      <returns />
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfMonth(System.DateTime)">
-      <summary>
-            ImmediateFirstOfMonth returns given date if the given date is first of month or else first of next month
-            </summary>
-      <param name="dt" />
-      <returns />
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.DaysBetween(System.DateTime,System.DateTime)">
-      <summary>
-            Indien start- en endate in dezelfde dag liggen, wordt er 0 teruggegeven
-            </summary>
-      <param name="startDate" />
-      <param name="endDate" />
-      <returns />
-      <pure />
-      <ensures>startDate.StripHours() &lt; endDate.StripHours()
-    ? Contract.Result&lt;int&gt;() &gt; 0
-    : true</ensures>
-      <ensures>startDate.StripHours() == endDate.StripHours()
-    ? Contract.Result&lt;int&gt;() == 0
-    : true</ensures>
-      <ensures>startDate.StripHours() &gt; endDate.StripHours()
-    ? Contract.Result&lt;int&gt;() &lt; 0
-    : true</ensures>
-      <ensures>(endDate - startDate).Days == Contract.Result&lt;int&gt;()</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.MonthsBetween(System.DateTime,System.DateTime)">
-      <summary>
-            Indien start- en enddate in dezelfde maand liggen wordt er 0 teruggegeven.
-            </summary>
-      <param name="startDate" />
-      <param name="endDate" />
-      <returns />
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfYear(System.DateTime)">
-      <summary>
-            ImmediateFirstOfYear returns given date if the given date is first of year or else first of next year
-            </summary>
-      <param name="dt" />
-      <returns />
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.NumberOfDaysInYear(System.DateTime)">
-      <summary>
-            Aantal dagen in een jaar, rekening houdend met schrikkeljaren.
-            </summary>
-      <pure />
-    </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetQualifiedName(System.Type)">
       <summary>
             Checks if the first character of a string is a capital
@@ -351,28 +313,66 @@
       <param name="excludeSystemTypes" />
       <returns />
     </member>
-    <member name="T:PPWCode.Util.OddsAndEnds.I.NamespaceDoc">
+    <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.NamespaceDoc">
       <summary>
-        <para>This assembly contains a collection of utility code
-            (helper methods, extension methods, ...) for different
-            domains.</para>
-        <para>This is to be considered a proving ground for such
-            code. The collection is not well-organized, and dynamic.
-            The intention is that, after a while, code here is
-            separated out and put into a separate Util or Vernacular
-            project for a particular domain. New code will be
-            added over time and follow the same path.</para>
-        <para>The code here is production quality nevertheless.</para>
-        <para>This project should <strong>never depend on any other
-            PPWCode library, except PPWCode.Vernacular.Exceptions.</strong>
-            In general, it should depend on as little libraries outside
-            the standard libraries as possible.</para>
-      </summary>
-      <remarks>
-        <para>Even the allowed dependency on <c>PPWCode.Vernacular.Exceptions</c>
-            is a bad one. If needed, the vernacular should be split in 2,
-            part util, part vernacular (see Java).</para>
-      </remarks>
+            Contains all the helper classes for the Peopleware system
+            </summary>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime,System.DateTime)">
+      <summary>
+            The earliest of 2 date-times.
+            </summary>
+      <returns>The earliest of <paramref name="dt1" /> and
+            <paramref name="dt2" />.</returns>
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.Nullable{System.DateTime},System.DateTime)">
+      <summary>
+            The earliest of 2 date-times. When <paramref name="dt2" />
+            is <c>null</c>, we return <paramref name="dt2" />.
+            </summary>
+      <returns>The earliest of <paramref name="dt1" /> and
+            <paramref name="dt2" />. <paramref name="dt2" /> when
+            <paramref name="dt1" /> is <c>null</c>.</returns>
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime,System.Nullable{System.DateTime})">
+      <summary>
+            The earliest of 2 date-times. When <paramref name="dt2" />
+            is <c>null</c>, we return <paramref name="dt1" />.
+            </summary>
+      <returns>The earliest of <paramref name="dt1" /> and
+            <paramref name="dt2" />. <paramref name="dt1" /> when
+            <paramref name="dt2" /> is <c>null</c>.</returns>
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime[])">
+      <summary>
+            The earliest of a number of date-times.
+            </summary>
+      <returns>With zero inputs, <see cref="F:System.DateTime.MinValue" />
+            is returned.</returns>
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.Nullable{System.DateTime}[])">
+      <summary>
+            The earliest of a number of date-times.
+            </summary>
+      <returns>
+        <c>null</c> values are skipped.
+            With zero inputs, or all <c>null</c> inputs,<c>null</c>
+            is returned.</returns>
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Max(System.Nullable{System.DateTime}[])">
+      <summary>
+            The latest of a number of date-times.
+            </summary>
+      <returns>
+        <c>null</c> values are skipped.
+            With zero inputs, or all <c>null</c> inputs,<c>null</c>
+            is returned.</returns>
+      <pure />
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.ActiveDirectory.AdSearch.#ctor(System.String)">
       <requires>!string.IsNullOrEmpty(domainName)</requires>
@@ -387,131 +387,30 @@
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.SQLServerExtensions.GetConstraint(System.Data.SqlClient.SqlException)">
       <pure />
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsLegalSqlDate(System.Nullable{System.DateTime})">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.DayInterestFraction(System.Double,System.DateTime,System.Int32)">
       <pure />
-      <ensures>Contract.Result&lt;bool&gt;() == (dt.HasValue ? dt.Value.IsLegalSqlDate() : true)</ensures>
+      <requires>yearlyInterestRateAsPercentage &gt;= 0d</requires>
+      <requires>nrDays &gt;= 1 &amp;&amp; nrDays &lt;= when.NumberOfDaysInYear()</requires>
+      <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.LastDayOfNextQuarter(System.DateTime)">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.QuarterInterestFraction(System.Double,System.Int32)">
       <pure />
+      <requires>yearlyInterestRateAsPercentage &gt;= 0d</requires>
+      <requires>nrQuarters &gt;= 1 &amp;&amp; nrQuarters &lt;= 4</requires>
+      <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfQuarter(System.Int32)">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.YearInterestFraction(System.Double)">
       <pure />
+      <requires>yearlyInterestRateAsPercentage &gt;= 0d</requires>
+      <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfPreviousQuarter(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsLegalSqlDate(System.DateTime)">
-      <pure />
-      <ensures>Contract.Result&lt;bool&gt;() == (SqlDateTime.MinValue.Value &lt;= dt &amp;&amp; dt &lt;= SqlDateTime.MaxValue.Value)</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripSeconds(System.DateTime)">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime&gt;() == new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0)</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripMilliseconds(System.DateTime)">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime&gt;() == new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second)</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsFirstDayOfMonth(System.Nullable{System.DateTime})">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.Root(System.Decimal,System.Int32)">
       <pure />
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsConsecutiveSequence``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.DateTime}},System.Func{``0,System.Nullable{System.DateTime}})">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.YearInterestFraction(System.Double,System.Int32)">
       <pure />
-      <requires>extractDateBegin != null</requires>
-      <requires>extractDateEnd != null</requires>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.LastDayOfCurrentQuarter(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripSeconds(System.Nullable{System.DateTime})">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime?&gt;() == (!dt.HasValue ? dt : dt.StripSeconds())</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfQuarter(System.String)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfQuarter(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripMilliseconds(System.Nullable{System.DateTime})">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime?&gt;() == (!dt.HasValue ? dt : dt.StripMilliseconds())</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextMonth(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripHours(System.DateTime)">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime&gt;() == new DateTime(dt.Year, dt.Month, dt.Day)</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextNextQuarter(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextYear(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsFirstDayOfQuarter(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AddQuarters(System.Nullable{System.DateTime},System.Int32)">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime?&gt;() == dt.AddMonths(3 * quarters)</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextQuarter(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AddMonths(System.Nullable{System.DateTime},System.Int32)">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime?&gt;() == (!dt.HasValue ? dt : dt.Value.AddMonths(months))</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AddQuarters(System.DateTime,System.Int32)">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime&gt;() == dt.AddMonths(3 * quarters)</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.QuartersBetween(System.DateTime,System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsFirstDayOfMonth(System.DateTime)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AgeInYears(System.DateTime,System.DateTime)">
-      <pure />
-      <ensures>Contract.Result&lt;int&gt;() ==
-dt.Year - birth.Year - (dt.Month &lt; birth.Month || (dt.Month == birth.Month &amp;&amp; dt.Day &lt; birth.Day) ? 1 : 0)</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripHours(System.Nullable{System.DateTime})">
-      <pure />
-      <ensures>Contract.Result&lt;DateTime?&gt;() == (!dt.HasValue ? dt : dt.StripHours())</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.IsSuperTypeOf(System.Type,System.Type)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.ObjectExtentions.ToLogString(System.Object)">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.NullableSum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.AsList``1(System.Collections.Generic.IEnumerable{``0})">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.SetEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.SetEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.NullableSum(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.AsIList``1(System.Collections.Generic.IEnumerable{``0})">
-      <pure />
+      <requires>yearlyInterestRateAsPercentage &gt;= 0d</requires>
+      <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.MonthInterestFraction(System.Double,System.Int32)">
       <pure />
@@ -519,15 +418,15 @@ dt.Year - birth.Year - (dt.Month &lt; birth.Month || (dt.Month == birth.Month &a
       <requires>nrMonths &gt;= 1 &amp;&amp; nrMonths &lt;= 12</requires>
       <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.YearInterestFraction(System.Decimal,System.Int32)">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.YearInterestFraction(System.Decimal)">
       <pure />
       <requires>yearlyInterestRateAsPercentage &gt;= 0m</requires>
       <ensures>Contract.Result&lt;decimal&gt;() &gt;= 0m</ensures>
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.DayInterestFraction(System.Decimal,System.DateTime,System.Int32)">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.MonthInterestFraction(System.Decimal,System.Int32)">
       <pure />
       <requires>yearlyInterestRateAsPercentage &gt;= 0m</requires>
-      <requires>nrDays &gt;= 1 &amp;&amp; nrDays &lt;= when.NumberOfDaysInYear()</requires>
+      <requires>nrMonths &gt;= 1 &amp;&amp; nrMonths &lt;= 12</requires>
       <ensures>Contract.Result&lt;decimal&gt;() &gt;= 0m</ensures>
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.QuarterInterestFraction(System.Decimal,System.Int32)">
@@ -541,41 +440,209 @@ dt.Year - birth.Year - (dt.Month &lt; birth.Month || (dt.Month == birth.Month &a
       <requires>extractDateBegin != null</requires>
       <requires>extractDateEnd != null</requires>
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.MonthInterestFraction(System.Decimal,System.Int32)">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.YearInterestFraction(System.Decimal,System.Int32)">
       <pure />
       <requires>yearlyInterestRateAsPercentage &gt;= 0m</requires>
-      <requires>nrMonths &gt;= 1 &amp;&amp; nrMonths &lt;= 12</requires>
       <ensures>Contract.Result&lt;decimal&gt;() &gt;= 0m</ensures>
     </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.Root(System.Decimal,System.Int32)">
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.DayInterestFraction(System.Decimal,System.DateTime,System.Int32)">
       <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.YearInterestFraction(System.Double)">
-      <pure />
-      <requires>yearlyInterestRateAsPercentage &gt;= 0d</requires>
-      <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.YearInterestFraction(System.Double,System.Int32)">
-      <pure />
-      <requires>yearlyInterestRateAsPercentage &gt;= 0d</requires>
-      <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.QuarterInterestFraction(System.Double,System.Int32)">
-      <pure />
-      <requires>yearlyInterestRateAsPercentage &gt;= 0d</requires>
-      <requires>nrQuarters &gt;= 1 &amp;&amp; nrQuarters &lt;= 4</requires>
-      <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.DayInterestFraction(System.Double,System.DateTime,System.Int32)">
-      <pure />
-      <requires>yearlyInterestRateAsPercentage &gt;= 0d</requires>
+      <requires>yearlyInterestRateAsPercentage &gt;= 0m</requires>
       <requires>nrDays &gt;= 1 &amp;&amp; nrDays &lt;= when.NumberOfDaysInYear()</requires>
-      <ensures>Contract.Result&lt;double&gt;() &gt;= 0d</ensures>
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.MathExtensions.YearInterestFraction(System.Decimal)">
-      <pure />
-      <requires>yearlyInterestRateAsPercentage &gt;= 0m</requires>
       <ensures>Contract.Result&lt;decimal&gt;() &gt;= 0m</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripMilliseconds(System.DateTime)">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime&gt;() == new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripHours(System.DateTime)">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime&gt;() == new DateTime(dt.Year, dt.Month, dt.Day)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.QuartersBetween(System.DateTime,System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsFirstDayOfMonth(System.Nullable{System.DateTime})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsConsecutiveSequence``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.DateTime}},System.Func{``0,System.Nullable{System.DateTime}})">
+      <pure />
+      <requires>extractDateBegin != null</requires>
+      <requires>extractDateEnd != null</requires>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextQuarter(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripMilliseconds(System.Nullable{System.DateTime})">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime?&gt;() == (!dt.HasValue ? dt : dt.StripMilliseconds())</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsFirstDayOfQuarter(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AddMonths(System.Nullable{System.DateTime},System.Int32)">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime?&gt;() == (!dt.HasValue ? dt : dt.Value.AddMonths(months))</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripSeconds(System.Nullable{System.DateTime})">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime?&gt;() == (!dt.HasValue ? dt : dt.StripSeconds())</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextMonth(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.LastDayOfCurrentQuarter(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfPreviousQuarter(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfQuarter(System.String)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AddQuarters(System.DateTime,System.Int32)">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime&gt;() == dt.AddMonths(3 * quarters)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripHours(System.Nullable{System.DateTime})">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime?&gt;() == (!dt.HasValue ? dt : dt.StripHours())</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsLegalSqlDate(System.DateTime)">
+      <pure />
+      <ensures>Contract.Result&lt;bool&gt;() == (SqlDateTime.MinValue.Value &lt;= dt &amp;&amp; dt &lt;= SqlDateTime.MaxValue.Value)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.StripSeconds(System.DateTime)">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime&gt;() == new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfQuarter(System.Int32)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsLegalSqlDate(System.Nullable{System.DateTime})">
+      <pure />
+      <ensures>Contract.Result&lt;bool&gt;() == (dt.HasValue ? dt.Value.IsLegalSqlDate() : true)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextYear(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.IsFirstDayOfMonth(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfNextNextQuarter(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AddQuarters(System.Nullable{System.DateTime},System.Int32)">
+      <pure />
+      <ensures>Contract.Result&lt;DateTime?&gt;() == dt.AddMonths(3 * quarters)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.LastDayOfNextQuarter(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.AgeInYears(System.DateTime,System.DateTime)">
+      <pure />
+      <ensures>Contract.Result&lt;int&gt;() ==
+dt.Year - birth.Year - (dt.Month &lt; birth.Month || (dt.Month == birth.Month &amp;&amp; dt.Day &lt; birth.Day) ? 1 : 0)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.FirstDayOfQuarter(System.DateTime)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.IsSuperTypeOf(System.Type,System.Type)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.NullableSum(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.NullableSum(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.AsIList``1(System.Collections.Generic.IEnumerable{``0})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.Segment``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.AsList``1(System.Collections.Generic.IEnumerable{``0})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.SetEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.CollectionExtensions.SetEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#ICollection{TElement}#get_Count">
+      <ensures inheritedFrom="M:System.Collections.Generic.ICollection`1.get_Count" inheritedFromTypeName="ICollection">Contract.Result&lt;int&gt;() &gt;= 0</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#IList{TElement}#set_Item(System.Int32,`1)">
+      <requires inheritedFrom="M:System.Collections.Generic.IList`1.set_Item(System.Int32,`0)" inheritedFromTypeName="IList">index &gt;= 0</requires>
+      <requires inheritedFrom="M:System.Collections.Generic.IList`1.set_Item(System.Int32,`0)" inheritedFromTypeName="IList">index &lt; @this.Count</requires>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#ICollection{TElement}#Clear">
+      <ensures inheritedFrom="M:System.Collections.Generic.ICollection`1.Clear" inheritedFromTypeName="ICollection">this.Count == 0</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#IEnumerable#GetEnumerator">
+      <ensures inheritedFrom="M:System.Collections.IEnumerable.GetEnumerator" inheritedFromTypeName="IEnumerable">Contract.Result&lt;IEnumerator&gt;() != null</ensures>
+      <ensures inheritedFrom="M:System.Collections.IEnumerable.GetEnumerator" inheritedFromTypeName="IEnumerable">Contract.Result&lt;IEnumerator&gt;().Model == this.Model</ensures>
+      <ensures inheritedFrom="M:System.Collections.IEnumerable.GetEnumerator" inheritedFromTypeName="IEnumerable">Contract.Result&lt;IEnumerator&gt;().CurrentIndex == -1</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#IList{TElement}#IndexOf(`1)">
+      <ensures inheritedFrom="M:System.Collections.Generic.IList`1.IndexOf(`0)" inheritedFromTypeName="IList">Contract.Result&lt;int&gt;() &gt;= -1</ensures>
+      <ensures inheritedFrom="M:System.Collections.Generic.IList`1.IndexOf(`0)" inheritedFromTypeName="IList">Contract.Result&lt;int&gt;() &lt; @this.Count</ensures>
+    </member>
+    <member name="P:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#ICollection{TElement}#Count">
+      <getter>
+        <ensures inheritedFrom="M:System.Collections.Generic.ICollection`1.get_Count" inheritedFromTypeName="ICollection">Contract.Result&lt;int&gt;() &gt;= 0</ensures>
+      </getter>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#ICollection{TElement}#Add(`1)">
+      <ensures inheritedFrom="M:System.Collections.Generic.ICollection`1.Add(`0)" inheritedFromTypeName="ICollection">this.Count &gt;= Contract.OldValue(this.Count)</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#IList{TElement}#RemoveAt(System.Int32)">
+      <requires inheritedFrom="M:System.Collections.Generic.IList`1.RemoveAt(System.Int32)" inheritedFromTypeName="IList">index &gt;= 0</requires>
+      <requires inheritedFrom="M:System.Collections.Generic.IList`1.RemoveAt(System.Int32)" inheritedFromTypeName="IList">index &lt; @this.Count</requires>
+      <ensures inheritedFrom="M:System.Collections.Generic.IList`1.RemoveAt(System.Int32)" inheritedFromTypeName="IList">@this.Count == Contract.OldValue(@this.Count) - 1</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.GetEnumerator">
+      <ensures inheritedFrom="M:System.Collections.Generic.IEnumerable`1.GetEnumerator" inheritedFromTypeName="IEnumerable">Contract.Result&lt;IEnumerator&lt;T&gt;&gt;() != null</ensures>
+      <ensures inheritedFrom="M:System.Collections.Generic.IEnumerable`1.GetEnumerator" inheritedFromTypeName="IEnumerable">Contract.Result&lt;IEnumerator&lt;T&gt;&gt;().Model == ((IEnumerable)this).Model</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#IList{TElement}#Insert(System.Int32,`1)">
+      <requires inheritedFrom="M:System.Collections.Generic.IList`1.Insert(System.Int32,`0)" inheritedFromTypeName="IList">index &gt;= 0</requires>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#IList{TElement}#get_Item(System.Int32)">
+      <requires inheritedFrom="M:System.Collections.Generic.IList`1.get_Item(System.Int32)" inheritedFromTypeName="IList">index &gt;= 0</requires>
+      <requires inheritedFrom="M:System.Collections.Generic.IList`1.get_Item(System.Int32)" inheritedFromTypeName="IList">index &lt; @this.Count</requires>
+    </member>
+    <member name="P:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#IList{TElement}#Item(System.Int32)">
+      <getter>
+        <requires inheritedFrom="M:System.Collections.Generic.IList`1.get_Item(System.Int32)" inheritedFromTypeName="IList">index &gt;= 0</requires>
+        <requires inheritedFrom="M:System.Collections.Generic.IList`1.get_Item(System.Int32)" inheritedFromTypeName="IList">index &lt; @this.Count</requires>
+      </getter>
+      <setter>
+        <requires inheritedFrom="M:System.Collections.Generic.IList`1.set_Item(System.Int32,`0)" inheritedFromTypeName="IList">index &gt;= 0</requires>
+        <requires inheritedFrom="M:System.Collections.Generic.IList`1.set_Item(System.Int32,`0)" inheritedFromTypeName="IList">index &lt; @this.Count</requires>
+      </setter>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#ICollection{TElement}#Contains(`1)">
+      <ensures inheritedFrom="M:System.Collections.Generic.ICollection`1.Contains(`0)" inheritedFromTypeName="ICollection">!Contract.Result&lt;bool&gt;() || this.Count &gt; 0</ensures>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.Grouping`2.System#Collections#Generic#ICollection{TElement}#CopyTo(`1[],System.Int32)">
+      <requires inheritedFrom="M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)" inheritedFromTypeName="ICollection">array != null</requires>
+      <requires inheritedFrom="M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)" inheritedFromTypeName="ICollection">arrayIndex &gt;= 0</requires>
+      <requires inheritedFrom="M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)" inheritedFromTypeName="ICollection">arrayIndex + this.Count  &lt;= array.Length</requires>
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.ObjectExtentions.ToLogString(System.Object)">
+      <pure />
+    </member>
+    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Max(System.DateTime,System.DateTime)">
+      <pure />
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Max(System.Nullable{System.DateTime},System.DateTime)">
       <pure />
@@ -584,9 +651,6 @@ dt.Year - birth.Year - (dt.Month &lt; birth.Month || (dt.Month == birth.Month &a
       <pure />
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Max(System.DateTime[])">
-      <pure />
-    </member>
-    <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Max(System.DateTime,System.DateTime)">
       <pure />
     </member>
     <member name="M:PPWCode.Util.OddsAndEnds.I.AssemblyHelpers.AssemblyHelper.CreateInstanceOf(System.Reflection.Assembly,System.String)">
