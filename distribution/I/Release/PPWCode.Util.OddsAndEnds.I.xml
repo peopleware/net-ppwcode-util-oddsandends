@@ -27,6 +27,61 @@
             part util, part vernacular (see Java).</para>
             </remarks>
         </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetQualifiedName(System.Type)">
+            <summary>
+            Checks if the first character of a string is a capital
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.IsNullableType(System.Type)">
+            <summary>
+            Check if a type is of Nullable type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetSubclassesOf(System.Type,System.Boolean)">
+            <summary>
+            Get a sequence of types where all the items are a sub-class of <paramref name="type"/>.
+            The parameter <paramref name="excludeSystemTypes"/> determines if system types should be excluded.
+            </summary>
+            <param name="type"></param>
+            <param name="excludeSystemTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions">
+            <summary>
+            PPW helper string functions
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.StartWithACapital(System.String)">
+            <summary>
+            Checks if the first character of a string is a capital
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToLong(System.String)">
+            <summary>
+            Convert the string to an Int64
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToInt(System.String)">
+            <summary>
+            Convert the string to an Int32
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDecimal(System.String)">
+            <summary>
+            Convert the string to a Decimal
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
+        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDateTime(System.String)">
+            <summary>
+            Convert the string to a DateTime
+            The function returns NULL if the conversion fails
+            </summary>
+        </member>
         <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeExtensions.ImmediateFirstOfQuarter(System.DateTime)">
             <summary>
             ImmediateFirstOfQuarter returns given date if the given date is first of quarter or else first of next quarter
@@ -205,66 +260,6 @@
             <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
             <returns></returns>
         </member>
-        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions">
-            <summary>
-            PPW helper string functions
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.StartWithACapital(System.String)">
-            <summary>
-            Checks if the first character of a string is a capital
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToLong(System.String)">
-            <summary>
-            Convert the string to an Int64
-            The function returns NULL if the conversion fails
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToInt(System.String)">
-            <summary>
-            Convert the string to an Int32
-            The function returns NULL if the conversion fails
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDecimal(System.String)">
-            <summary>
-            Convert the string to a Decimal
-            The function returns NULL if the conversion fails
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.StringExtensions.ToDateTime(System.String)">
-            <summary>
-            Convert the string to a DateTime
-            The function returns NULL if the conversion fails
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetQualifiedName(System.Type)">
-            <summary>
-            Checks if the first character of a string is a capital
-            </summary>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.IsNullableType(System.Type)">
-            <summary>
-            Check if a type is of Nullable type
-            </summary>
-            <param name="type"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.TypeExtensions.GetSubclassesOf(System.Type,System.Boolean)">
-            <summary>
-            Get a sequence of types where all the items are a sub-class of <paramref name="type"/>.
-            The parameter <paramref name="excludeSystemTypes"/> determines if system types should be excluded.
-            </summary>
-            <param name="type"></param>
-            <param name="excludeSystemTypes"></param>
-            <returns></returns>
-        </member>
-        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.NamespaceDoc">
-            <summary>
-            Contains all the helper classes for the Peopleware system
-            </summary>
-        </member>
         <member name="M:PPWCode.Util.OddsAndEnds.I.Extensions.DateTimeHelper.Min(System.DateTime,System.DateTime)">
             <summary>
             The earliest of 2 date-times.
@@ -312,6 +307,11 @@
             <returns><c>null</c> values are skipped.
             With zero inputs, or all <c>null</c> inputs,<c>null</c>
             is returned.</returns>
+        </member>
+        <member name="T:PPWCode.Util.OddsAndEnds.I.Extensions.NamespaceDoc">
+            <summary>
+            Contains all the helper classes for the Peopleware system
+            </summary>
         </member>
     </members>
 </doc>
