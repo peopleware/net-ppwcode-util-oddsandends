@@ -132,31 +132,35 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
         /// <returns>The localized text</returns>
         private string GetFlagValueText(object value, CultureInfo ci)
         {
-            // if there is a standard value then use it
-            //
-            if (Enum.IsDefined(value.GetType(), value))
+            if (value != null)
             {
-                return GetLocalizedValueText(value, ci);
-            }
-
-            // otherwise find the combination of flag bit values
-            // that makes up the value
-            //
-            ulong numericValue = Convert.ToUInt32(value, CultureInfo.InvariantCulture);
-            string result = null;
-            foreach (object flagValue in m_FlagValues)
-            {
-                ulong numericFlagValue = Convert.ToUInt32(flagValue, CultureInfo.InvariantCulture);
-
-                if (IsSingleBitValue(numericFlagValue) && ((numericFlagValue & numericValue) == numericFlagValue))
+                // if there is a standard value then use it
+                //
+                if (Enum.IsDefined(value.GetType(), value))
                 {
-                    string valueText = GetLocalizedValueText(flagValue, ci);
-                    result = result == null
-                                 ? valueText
-                                 : string.Format(CultureInfo.InvariantCulture, "{0}, {1}", result, valueText);
+                    return GetLocalizedValueText(value, ci);
                 }
+
+                // otherwise find the combination of flag bit values
+                // that makes up the value
+                //
+                ulong numericValue = Convert.ToUInt32(value, CultureInfo.InvariantCulture);
+                string result = null;
+                foreach (object flagValue in m_FlagValues)
+                {
+                    ulong numericFlagValue = Convert.ToUInt32(flagValue, CultureInfo.InvariantCulture);
+
+                    if (IsSingleBitValue(numericFlagValue) && ((numericFlagValue & numericValue) == numericFlagValue))
+                    {
+                        string valueText = GetLocalizedValueText(flagValue, ci);
+                        result = result == null
+                                     ? valueText
+                                     : string.Format(CultureInfo.InvariantCulture, "{0}, {1}", result, valueText);
+                    }
+                }
+                return result;
             }
-            return result;
+            return string.Empty;
         }
 
         /// <summary>
