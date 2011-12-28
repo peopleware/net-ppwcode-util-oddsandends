@@ -1,0 +1,18 @@
+Welcome to this ppwcode project.
+
+This project uses OpenWrap <http://www.openwrap.org/>.
+
+Please verify that you have installed OpenWrap 2.x (beta), or else install it first.
+See <https://projects.peopleware.be/confluence/x/DIISAQ> for more information.
+
+To get up and running,
+
+1) add the necessary remote repositories to OpenWrap.
+   See <https://projects.peopleware.be/confluence/x/AIEiAQ> for details.
+   This project needs
+   * the PPWCode remote repository
+2) execute "o update-wrap" from this directory
+3) open the solution in "src/" in Visual Studio.
+
+If 2) fails, delete the existing wraps directory from this project, and try again.
+

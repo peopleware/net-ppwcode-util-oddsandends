@@ -1,0 +1,12 @@
+﻿name: PPWCode.Util.OddsAndEnds
+build: msbuild;
+  project=src\I\PPWCode.Util.OddsAndEnds.I.csproj;
+  profile=net35;
+build: files; 
+  file=. -> LICENSE; 
+  file=. -> NOTICE; 
+use-symlinks: false
+depends: openwrap = 2.0 anchored content
+depends: Microsoft.StyleCop-PPWStyle >= 1.0 < 2.0
+depends: Microsoft.Contracts >= 1.0 < 2.0
+depends: Spring.Core = 1.3.1
