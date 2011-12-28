@@ -5,7 +5,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.Util.OddsAndEnds.I"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{788185DD-7404-47DF-AFF3-698298A6F934}"
 	ProjectSection(SolutionItems) = preProject
+		..\PPWCode.Util.OddsAndEnds.wrapdesc = ..\PPWCode.Util.OddsAndEnds.wrapdesc
 		Solution Items\SolutionInfo.cs = Solution Items\SolutionInfo.cs
+		..\version = ..\version
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.Util.OddsAndEnds.Test_I", "Test_I\PPWCode.Util.OddsAndEnds.Test_I.csproj", "{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}"
@@ -31,5 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+		OpenWrap.VisualStudioIntegration2008 = 1;Ensures OpenWrap initialization when a solution is opened.;OpenWrap Visual Studio Solution Add-in
 	EndGlobalSection
 EndGlobal

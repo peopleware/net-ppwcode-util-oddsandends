@@ -88,14 +88,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         {
             string xml = string.Empty;
 
-            new XmlWriterSettings
-            {
-                ConformanceLevel = ConformanceLevel.Document,
-                Indent = true,
-                IndentChars = "\t",
-                Encoding = Encoding.UTF8,
-            };
-
             using (MemoryStream ms = new MemoryStream())
             {
                 if (obj != null)
@@ -112,12 +104,28 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
             return xml;
         }
 
+        public static T DeserializeFromXmlString<T>(string obj)
+            where T : class, new()
+        {
+            if (!string.IsNullOrEmpty(obj))
+            {
+                using (StringReader stringReader = new StringReader(obj))
+                {
+                    using (XmlReader reader = XmlReader.Create(stringReader))
+                    {
+                        return (T)new NetDataContractSerializer().ReadObject(reader);
+                    }
+                }
+            }
+            return default(T);
+        }
+
         public static T Deserialize<T>(byte[] data)
             where T : class, new()
         {
             if (data == null || data.Length == 0)
             {
-                return null;
+                return default(T);
             }
 
             using (MemoryStream memoryStream = new MemoryStream())
