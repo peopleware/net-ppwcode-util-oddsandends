@@ -230,14 +230,12 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// Indien start- en endate in dezelfde dag liggen, wordt er 0 teruggegeven
+        /// Returns 0 when start and end date is on the same day.
         /// </summary>
-        /// <param name="startDate"></param>
-        /// <param name="endDate"></param>
-        /// <returns></returns>
         [Pure]
         public static int DaysBetween(this DateTime startDate, DateTime endDate)
         {
+            // ReSharper disable SimplifyConditionalTernaryExpression
             Contract.Ensures(startDate.StripHours() < endDate.StripHours()
                                  ? Contract.Result<int>() > 0
                                  : true);
@@ -247,6 +245,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
             Contract.Ensures(startDate.StripHours() > endDate.StripHours()
                                  ? Contract.Result<int>() < 0
                                  : true);
+            // ReSharper restore SimplifyConditionalTernaryExpression
             Contract.Ensures((endDate - startDate).Days == Contract.Result<int>());
 
             TimeSpan ts = endDate - startDate;
@@ -254,11 +253,8 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// Indien start- en enddate in dezelfde maand liggen wordt er 0 teruggegeven.
+        /// Returns 0 when start and end date is in the same month.
         /// </summary>
-        /// <param name="startDate"></param>
-        /// <param name="endDate"></param>
-        /// <returns></returns>
         [Pure]
         public static int MonthsBetween(this DateTime startDate, DateTime endDate)
         {
@@ -266,7 +262,9 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
             return Math.Abs(monthsApart);
         }
 
-        // Indien start- en enddate in hetzelfde kwartaal liggen wordt er 0 teruggegeven.
+        /// <summary>
+        /// Returns 0 when start and end date is in the same quarter.
+        /// </summary>
         [Pure]
         public static int QuartersBetween(this DateTime startDate, DateTime endDate)
         {
@@ -276,8 +274,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         /// <summary>
         /// ImmediateFirstOfYear returns given date if the given date is first of year or else first of next year
         /// </summary>
-        /// <param name="dt"></param>
-        /// <returns></returns>
         [Pure]
         public static DateTime ImmediateFirstOfYear(this DateTime dt)
         {
@@ -288,6 +284,20 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         public static DateTime FirstDayOfNextYear(this DateTime dt)
         {
             return new DateTime(dt.Year + 1, 1, 1);
+        }
+
+        [Pure]
+        public static DateTime FirstDayOfMonth(this DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, 1);
+        }
+
+        [Pure]
+        public static DateTime LastDayOfMonth(this DateTime dt)
+        {
+            DateTime result = dt.AddMonths(1);
+            result = new DateTime(result.Year, result.Month, 1);
+            return result.AddDays(-1);
         }
 
         /// <summary>
