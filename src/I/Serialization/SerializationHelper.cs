@@ -105,7 +105,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         }
 
         public static T DeserializeFromXmlString<T>(string obj)
-            where T : class, new()
+            where T : class
         {
             if (!string.IsNullOrEmpty(obj))
             {
@@ -121,7 +121,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         }
 
         public static T Deserialize<T>(byte[] data)
-            where T : class, new()
+            where T : class
         {
             if (data == null || data.Length == 0)
             {
@@ -139,7 +139,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         }
 
         public static T Deserialize<T>(byte[] data, bool requiredUnCompress)
-            where T : class, new()
+            where T : class
         {
             return requiredUnCompress
                        ? Deserialize<T>(DeCompress(data))
@@ -147,7 +147,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         }
 
         public static T DeserializeFromFile<T>(string fileName)
-            where T : class, new()
+            where T : class
         {
             using (FileStream fileStream = new FileStream(fileName, FileMode.Open))
             {
@@ -159,7 +159,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         }
 
         public static T DeserializeFromFile<T>(string fileName, bool requiredUnCompress)
-            where T : class, new()
+            where T : class
         {
             if (!requiredUnCompress)
             {
@@ -204,7 +204,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         }
 
         public static T GetObjectFromManifestStream<T>(Assembly assembly, string nameSpacename, string resourceName, bool requiredUnCompress)
-            where T : class, new()
+            where T : class
         {
             Stream resourceStream = assembly.GetManifestResourceStream(string.Concat(nameSpacename, resourceName));
             if (resourceStream != null)
