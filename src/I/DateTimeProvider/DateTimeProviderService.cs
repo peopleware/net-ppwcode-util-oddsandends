@@ -7,7 +7,7 @@ namespace PPWCode.Util.OddsAndEnds.I.DateTimeProvider
 {
     public static class DateTimeProviderService
     {
-        private static IDateTimeProvider CreateInstance()
+        public static IDateTimeProvider CreateInstance()
         {
             return ContextRegistry
                 .GetContext()
