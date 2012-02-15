@@ -15,11 +15,11 @@
 #region Using
 
 using System.IO;
-using System.IO.Compression;
 using System.Reflection;
 using System.Runtime.Serialization;
-using System.Text;
 using System.Xml;
+
+using PPWCode.Util.OddsAndEnds.I.Streaming;
 
 #endregion
 
@@ -27,62 +27,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
 {
     public class SerializationHelper
     {
-        public static byte[] Serialize(object obj)
-        {
-            if (obj == null)
-            {
-                return null;
-            }
-
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                NetDataContractSerializer serializer = new NetDataContractSerializer();
-                serializer.Serialize(memoryStream, obj);
-                memoryStream.Seek(0, 0);
-                return memoryStream.ToArray();
-            }
-        }
-
-        public static byte[] Serialize(object obj, bool requiredCompress)
-        {
-            return requiredCompress
-                       ? Compress(Serialize(obj))
-                       : Serialize(obj);
-        }
-
-        public static void SerializeToFile(string fileName, object obj)
-        {
-            XmlWriterSettings xws = new XmlWriterSettings
-            {
-                ConformanceLevel = ConformanceLevel.Document,
-                Indent = true,
-                IndentChars = "\t",
-                Encoding = Encoding.UTF8
-            };
-            using (XmlWriter xWriter = XmlWriter.Create(fileName, xws))
-            {
-                if (obj != null)
-                {
-                    new NetDataContractSerializer().WriteObject(xWriter, obj);
-                }
-            }
-        }
-
-        public static void SerializeToFile(string fileName, object obj, bool requiredCompress)
-        {
-            if (!requiredCompress)
-            {
-                SerializeToFile(fileName, obj);
-            }
-            else
-            {
-                byte[] data = Serialize(obj, true);
-                using (FileStream fileStream = new FileStream(fileName, FileMode.Create))
-                {
-                    fileStream.Write(data, 0, data.Length);
-                }
-            }
-        }
+        #region Serialize and deserialize to xml string
 
         public static string SerializeToXmlString(object obj)
         {
@@ -109,6 +54,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         {
             if (!string.IsNullOrEmpty(obj))
             {
+                using (new MemoryStream())
+                {
+                }
+
                 using (StringReader stringReader = new StringReader(obj))
                 {
                     using (XmlReader reader = XmlReader.Create(stringReader))
@@ -120,7 +69,56 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
             return default(T);
         }
 
-        public static T Deserialize<T>(byte[] data)
+        #endregion
+
+        #region Serialize and deserialize to and from stream
+
+        public static T Deserialize<T>(Stream stream)
+            where T : class
+        {
+            NetDataContractSerializer serializer = new NetDataContractSerializer();
+            return (T)serializer.Deserialize(stream);
+        }
+
+        public static T Deserialize<T>(Stream stream, bool decompress)
+            where T : class
+        {
+            if (!decompress)
+            {
+                return Deserialize<T>(stream);
+            }
+            using (Stream wrappingstream = Compression.DecompressingStream(stream))
+            {
+                return Deserialize<T>(wrappingstream);
+            }
+        }
+
+        public static void Serialize(Stream stream, object obj)
+        {
+            NetDataContractSerializer serializer = new NetDataContractSerializer();
+            serializer.Serialize(stream, obj);
+        }
+
+        public static void Serialize(Stream stream, object obj, bool compress)
+        {
+            if (!compress)
+            {
+                Serialize(stream, obj);
+            }
+            else
+            {
+                using (Stream str = Compression.CompressingStream(stream))
+                {
+                    Serialize(str, obj);
+                }
+            }
+        }
+
+        #endregion
+
+        #region Serialize and deserialize to and from byte array
+
+        public static T DeserializeFromBytes<T>(byte[] data)
             where T : class
         {
             if (data == null || data.Length == 0)
@@ -128,92 +126,97 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
                 return default(T);
             }
 
-            using (MemoryStream memoryStream = new MemoryStream())
+            using (MemoryStream memoryStream = new MemoryStream(data))
             {
-                NetDataContractSerializer serializer = new NetDataContractSerializer();
-                memoryStream.Write(data, 0, data.Length);
-                memoryStream.Flush();
-                memoryStream.Seek(0, 0);
-                return (T)serializer.Deserialize(memoryStream);
+                return Deserialize<T>(memoryStream);
             }
         }
 
-        public static T Deserialize<T>(byte[] data, bool requiredUnCompress)
+        public static T DeserializeFromBytes<T>(byte[] data, bool requiredUnCompress)
             where T : class
         {
             return requiredUnCompress
-                       ? Deserialize<T>(DeCompress(data))
-                       : Deserialize<T>(data);
+                       ? DeserializeFromBytes<T>(Compression.DeCompress(data))
+                       : DeserializeFromBytes<T>(data);
         }
+
+        public static byte[] SerializeToBytes(object obj)
+        {
+            if (obj == null)
+            {
+                return null;
+            }
+
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                NetDataContractSerializer serializer = new NetDataContractSerializer();
+                serializer.Serialize(memoryStream, obj);
+                memoryStream.Seek(0, 0);
+                return memoryStream.ToArray();
+            }
+        }
+
+        public static byte[] SerializeToBytes(object obj, bool requiredCompress)
+        {
+            return requiredCompress
+                       ? Compression.Compress(SerializeToBytes(obj))
+                       : SerializeToBytes(obj);
+        }
+
+        #endregion
+
+        #region Serialize and deserialize to and from file
 
         public static T DeserializeFromFile<T>(string fileName)
             where T : class
         {
-            using (FileStream fileStream = new FileStream(fileName, FileMode.Open))
-            {
-                using (XmlDictionaryReader reader = XmlDictionaryReader.CreateTextReader(fileStream, new XmlDictionaryReaderQuotas()))
-                {
-                    return (T)new NetDataContractSerializer().ReadObject(reader, true);
-                }
-            }
+            return DeserializeFromFile<T>(fileName, false);
         }
 
         public static T DeserializeFromFile<T>(string fileName, bool requiredUnCompress)
             where T : class
         {
-            if (!requiredUnCompress)
-            {
-                return DeserializeFromFile<T>(fileName);
-            }
             using (FileStream fileStream = new FileStream(fileName, FileMode.Open))
             {
-                byte[] data = new byte[fileStream.Length];
-                fileStream.Read(data, 0, data.Length);
-                return Deserialize<T>(data, true);
+                return Deserialize<T>(fileStream, requiredUnCompress);
             }
         }
 
-        public static byte[] Compress(byte[] bytData)
+        public static void SerializeToFile(string fileName, object obj)
         {
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                using (Stream zipStream = new GZipStream(memoryStream, CompressionMode.Compress))
-                {
-                    zipStream.Write(bytData, 0, bytData.Length);
-                }
-                return memoryStream.ToArray();
-            }
+            SerializeToFile(fileName, obj, false);
         }
 
-        public static byte[] DeCompress(byte[] data)
+        public static void SerializeToFile(string fileName, object obj, bool requiredCompress)
         {
-            byte[] writeData = new byte[8192];
-            using (MemoryStream memoryStream = new MemoryStream())
+            using (Stream str = new FileStream(fileName, FileMode.Create))
             {
-                using (Stream zipStream = new GZipStream(new MemoryStream(data), CompressionMode.Decompress))
-                {
-                    int size;
-                    while ((size = zipStream.Read(writeData, 0, writeData.Length)) > 0)
-                    {
-                        memoryStream.Write(writeData, 0, size);
-                    }
-                    memoryStream.Flush();
-                    return memoryStream.ToArray();
-                }
+                Serialize(str, obj, requiredCompress);
             }
         }
 
-        public static T GetObjectFromManifestStream<T>(Assembly assembly, string nameSpacename, string resourceName, bool requiredUnCompress)
+        #endregion
+
+        #region Deserialize from manifest resource stream
+
+        public static T DeserializeForManifestResourceStream<T>(
+            Assembly assembly,
+            string nameSpacename,
+            string resourceName,
+            bool requiredUnCompress)
             where T : class
         {
             Stream resourceStream = assembly.GetManifestResourceStream(string.Concat(nameSpacename, resourceName));
-            if (resourceStream != null)
+            if (resourceStream == null)
             {
-                byte[] data = new byte[resourceStream.Length];
-                resourceStream.Read(data, 0, data.Length);
-                return Deserialize<T>(data, requiredUnCompress);
+                return default(T);
             }
-            return default(T);
+            using (resourceStream)
+            {
+                return Deserialize<T>(resourceStream, requiredUnCompress);
+            }
         }
+
+        #endregion
     }
 }
