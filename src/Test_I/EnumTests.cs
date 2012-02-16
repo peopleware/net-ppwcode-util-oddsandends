@@ -47,7 +47,9 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         public void TestMethod2()
         {
             TestEnum? e = null;
+            // ReSharper disable ExpressionIsAlwaysNull
             Assert.AreEqual(string.Empty, e.GetLocalizedDescription());
+            // ReSharper restore ExpressionIsAlwaysNull
             e = TestEnum.ONE;
             Assert.AreEqual(@"ONE", e.ToString());
         }

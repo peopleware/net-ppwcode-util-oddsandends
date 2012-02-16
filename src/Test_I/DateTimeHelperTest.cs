@@ -212,7 +212,9 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         public void SomeTest22()
         {
             DateTime? dt = null;
+            // ReSharper disable ExpressionIsAlwaysNull
             DateTime result = DoTheTest2(dt);
+            // ReSharper restore ExpressionIsAlwaysNull
             Assert.AreEqual(DateTime.Now, result);
         }
     }

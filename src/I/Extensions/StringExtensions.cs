@@ -86,7 +86,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
                 return val;
             }
 
-            return (int?)null;
+            return null;
         }
 
         /// <summary>

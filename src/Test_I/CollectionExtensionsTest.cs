@@ -42,8 +42,8 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             };
             int? sum = l.Sum();
             int? agg = l.Aggregate((int?)0, (s, x) => s + x);
-            Assert.IsFalse(sum == (int?)null);
-            Assert.IsTrue(agg == (int?)null);
+            Assert.IsFalse(sum == null);
+            Assert.IsTrue(agg == null);
         }
 
         [TestMethod, Description("CollectionExtensions NullableSum 1")]
@@ -146,7 +146,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         public void TestIsEmpty3()
         {
             List<int> l1 = null;
+            // ReSharper disable ReturnValueOfPureMethodIsNotUsed
+            // ReSharper disable ExpressionIsAlwaysNull
             l1.IsEmpty();
+            // ReSharper restore ExpressionIsAlwaysNull
+            // ReSharper restore ReturnValueOfPureMethodIsNotUsed
         }
 
         [TestMethod]
@@ -154,7 +158,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         public void NullSourceTest()
         {
             int[] values = null;
+            // ReSharper disable ReturnValueOfPureMethodIsNotUsed
+            // ReSharper disable ExpressionIsAlwaysNull
             values.Segment(1);
+            // ReSharper restore ExpressionIsAlwaysNull
+            // ReSharper restore ReturnValueOfPureMethodIsNotUsed
         }
 
         [TestMethod]

@@ -51,14 +51,6 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(YearlyInterestRateAsPercentage.DayInterestFraction(new DateTime(2010, 11, 8), 23), Result, 1e-15d);
         }
 
-        //[TestMethod]
-        //public void DailyInterestRate2()
-        //{
-        //    const decimal YearlyInterestRateAsPercentage = 3.25m;
-        //    const decimal Result = 0.002017402235799m;
-        //    Assert.AreEqual(YearlyInterestRateAsPercentage.DayInterestFraction(new DateTime(2010, 11, 8), 23), Result);
-        //}
-
         [TestMethod]
         public void MonthlyInterestRate1()
         {
@@ -67,14 +59,6 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(YearlyInterestRateAsPercentage.MonthInterestFraction(4), Result, 1e-15d);
         }
 
-        //[TestMethod]
-        //public void MonthlyInterestRate2()
-        //{
-        //    const decimal YearlyInterestRateAsPercentage = 3.25m;
-        //    const decimal Result = 0.0107180463974696m;
-        //    Assert.AreEqual(YearlyInterestRateAsPercentage.MonthInterestFraction(4), Math.Round(Result, 15));
-        //}
-
         [TestMethod]
         public void QuartlyInterestRate1()
         {
@@ -82,13 +66,5 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             const double Result = 0.02427729349700212108269485941176d;
             Assert.AreEqual(YearlyInterestRateAsPercentage.QuarterInterestFraction(3), Result, 1e-15d);
         }
-
-        //[TestMethod]
-        //public void QuartlyInterestRate2()
-        //{
-        //    const decimal YearlyInterestRateAsPercentage = 3.25m;
-        //    const decimal Result = 0.0242772934970021m;
-        //    Assert.AreEqual(YearlyInterestRateAsPercentage.QuarterInterestFraction(3), Math.Round(Result, 15));
-        //}
     }
 }
