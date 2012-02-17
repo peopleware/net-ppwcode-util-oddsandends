@@ -17,6 +17,7 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using PPWCode.Util.OddsAndEnds.I.Serialization;
+using PPWCode.Util.OddsAndEnds.I.Streaming;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
@@ -249,14 +250,25 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
             PersonA personA = new PersonA(@"Bob", @"Bones", addressA);
-            using (Stream stream = new MemoryStream())
+
+            byte[] memory;
+
+            using (MemoryStream stream = new MemoryStream())
+            using (Stream compressed = Compression.CompressingStream(stream))
             {
-                SerializationHelper.Serialize(stream, personA, true);
+                SerializationHelper.Serialize(compressed, personA);
                 Assert.IsTrue(stream.Length > 0);
-                stream.Position = 0;
-                PersonA deserializedPersonA = SerializationHelper.Deserialize<PersonA>(stream, true);
-                Assert.AreEqual(personA, deserializedPersonA);
+                memory = stream.GetBuffer();
             }
+
+            PersonA deserializedPersonA;
+            using (Stream stream = new MemoryStream(memory))
+            using (Stream decompressed = Compression.DecompressingStream(stream))
+            {
+                deserializedPersonA = SerializationHelper.Deserialize<PersonA>(decompressed);
+            }
+
+            Assert.AreEqual(personA, deserializedPersonA);
         }
 
         //[TestMethod, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a stream as intermediare value")]

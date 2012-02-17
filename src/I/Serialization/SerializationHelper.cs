@@ -80,38 +80,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
             return (T)serializer.Deserialize(stream);
         }
 
-        public static T Deserialize<T>(Stream stream, bool decompress)
-            where T : class
-        {
-            if (!decompress)
-            {
-                return Deserialize<T>(stream);
-            }
-            using (Stream wrappingstream = Compression.DecompressingStream(stream))
-            {
-                return Deserialize<T>(wrappingstream);
-            }
-        }
-
         public static void Serialize(Stream stream, object obj)
         {
             NetDataContractSerializer serializer = new NetDataContractSerializer();
             serializer.Serialize(stream, obj);
-        }
-
-        public static void Serialize(Stream stream, object obj, bool compress)
-        {
-            if (!compress)
-            {
-                Serialize(stream, obj);
-            }
-            else
-            {
-                using (Stream str = Compression.CompressingStream(stream))
-                {
-                    Serialize(str, obj);
-                }
-            }
         }
 
         #endregion
@@ -176,9 +148,19 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
         public static T DeserializeFromFile<T>(string fileName, bool requiredUnCompress)
             where T : class
         {
-            using (FileStream fileStream = new FileStream(fileName, FileMode.Open))
+            if (requiredUnCompress)
             {
-                return Deserialize<T>(fileStream, requiredUnCompress);
+                using (Stream stream = Compression.DecompressingStream(new FileStream(fileName, FileMode.Open)))
+                {
+                    return Deserialize<T>(stream);
+                }
+            }
+            else
+            {
+                using (Stream stream = new FileStream(fileName, FileMode.Open))
+                {
+                    return Deserialize<T>(stream);
+                }
             }
         }
 
@@ -189,9 +171,19 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
 
         public static void SerializeToFile(string fileName, object obj, bool requiredCompress)
         {
-            using (Stream str = new FileStream(fileName, FileMode.Create))
+            if (requiredCompress)
             {
-                Serialize(str, obj, requiredCompress);
+                using (Stream str = Compression.CompressingStream(new FileStream(fileName, FileMode.Create)))
+                {
+                    Serialize(str, obj);
+                }
+            }
+            else
+            {
+                using (Stream str = new FileStream(fileName, FileMode.Create))
+                {
+                    Serialize(str, obj);
+                }
             }
         }
 
@@ -199,7 +191,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
 
         #region Deserialize from manifest resource stream
 
-        public static T DeserializeForManifestResourceStream<T>(
+        public static T DeserializeFromManifestResourceStream<T>(
             Assembly assembly,
             string nameSpacename,
             string resourceName,
@@ -211,10 +203,22 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
             {
                 return default(T);
             }
-            using (resourceStream)
+
+            if (requiredUnCompress)
             {
-                return Deserialize<T>(resourceStream, requiredUnCompress);
+                using (Stream stream = Compression.DecompressingStream(resourceStream))
+                {
+                    return Deserialize<T>(stream);
+                }
             }
+            else
+            {
+                using (resourceStream)
+                {
+                    return Deserialize<T>(resourceStream);
+                }
+            }
+
         }
 
         #endregion
