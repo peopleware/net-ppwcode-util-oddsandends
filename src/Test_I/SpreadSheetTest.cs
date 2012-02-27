@@ -25,7 +25,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             public long PaymentDossierID { get; set; }
             public long AffiliateSynergyId { get; set; }
         }
-        private ExcelRow SpreadsheetRowResolver(DbDataReader dr)
+        private static ExcelRow SpreadsheetRowResolver(DbDataReader dr)
         {
             if ((dr.IsDBNull(0) == false) && (dr.IsDBNull(1) == false))
             {
@@ -37,18 +37,18 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             }
             return null;
         }
-        private List<string> m_ColumnNames = new List<string>
+        private readonly List<string> m_ColumnNames = new List<string>
         {
             "PaymentDossierId", 
             "AffiliateSynergyId"
         };
-        string fileName = @"C:\Development\Sempera\PPWCode.Util.OddsAndEnds\src\Test_I\FixGenerateStandardProposals.xlsx";
+        const string FileName = @"C:\Development\Sempera\PPWCode.Util.OddsAndEnds\src\Test_I\FixGenerateStandardProposals.xlsx";
         
         
         [TestMethod]
         public void TestMethod1()
         {
-            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(fileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
+            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(FileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
             Assert.IsNotNull(list);
 
 
