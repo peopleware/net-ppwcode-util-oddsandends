@@ -132,6 +132,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SerializationTests.cs" />
+    <Compile Include="SpreadSheetTest.cs" />
     <Compile Include="StringExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +147,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.nl.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FixGenerateStandardProposals.xlsx" />
   </ItemGroup>
   <Import Project="..\..\wraps\openwrap\build\OpenWrap.CSharp.targets" />
   <Import Project="..\..\wraps\Microsoft.Stylecop-PPWStyle\build\Microsoft.StyleCop.targets" />
