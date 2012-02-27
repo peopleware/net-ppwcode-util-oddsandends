@@ -49,6 +49,13 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         public void TestMethod1()
         {
             IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(FileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
+            const string PaymentDossierId = "PaymentDossierId: ";
+            const string AffiliateSynergyID = "AffiliateSynergyID: ";
+            foreach (ExcelRow excelRow in list)
+            {
+                Console.WriteLine(PaymentDossierId + excelRow.PaymentDossierID);
+                Console.WriteLine(AffiliateSynergyID + excelRow.AffiliateSynergyId);
+            }
             Assert.IsNotNull(list);
 
 
