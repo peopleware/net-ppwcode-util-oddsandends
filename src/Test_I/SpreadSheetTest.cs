@@ -43,7 +43,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             "AffiliateSynergyId"
         };
         const string FileName = @"C:\Development\Sempera\PPWCode.Util.OddsAndEnds\src\Test_I\FixGenerateStandardProposals.xlsx";
-        
+        //string FileName = string.Empty;
         
         [TestMethod]
         public void TestMethod1()

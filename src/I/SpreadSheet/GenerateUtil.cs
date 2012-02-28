@@ -14,20 +14,19 @@ namespace PPWCode.Util.OddsAndEnds.I.SpreadSheet
              where T :class 
         {
             ExcelUtil excelUtil = new ExcelUtil(xlsFile);
-            String selectStatement = string.Empty;
-            selectStatement += @"select";
-            string selectColumns = string.Empty;
+            StringBuilder selectStatement = new StringBuilder();
+            selectStatement.Append(@"select");           
             foreach (string item in columns)
             {
-                selectColumns +=  "[" + item + "],";
+                selectStatement.Append("[" + item + "],");
             }
-            string selectColumnsCorrect = selectColumns.Remove(selectColumns.Length - 1, 1);
-            selectStatement += selectColumnsCorrect + string.Format(@"from [{0}$]", sheet);
+            selectStatement.Remove(selectStatement.Length - 1, 1);
+            selectStatement.Append(string.Format(@"from [{0}$]", sheet));
            
                    
             try
             {
-                return excelUtil.ReadSheet<T>(selectStatement, spreadSheetRowResolver);
+                return excelUtil.ReadSheet<T>(selectStatement.ToString(), spreadSheetRowResolver);
             }
             catch (Exception e)
             {
