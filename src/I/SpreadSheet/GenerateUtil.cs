@@ -30,7 +30,7 @@ namespace PPWCode.Util.OddsAndEnds.I.SpreadSheet
             }
             catch (Exception e)
             {
-                throw new SemanticException(string.Format("Structure error in sheet: {0} with message : {1}", sheet, e.Message));
+                throw new Exception(string.Format("Structure error in sheet: {0} with message : {1}", sheet, e.Message));
             }
         }
      
