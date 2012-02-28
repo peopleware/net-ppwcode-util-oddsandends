@@ -20,13 +20,13 @@ namespace PPWCode.Util.OddsAndEnds.I.Streaming
 {
     public static class ResourceStreamHelper
     {
-        public  static string WriteEmbeddedResourceToTempFile(
+        public static string WriteEmbeddedResourceToTempFile(
             Assembly assembly,
             string nameSpacename,
             string resourceName)
         {
             string temporaryFolder = Path.GetTempPath();
-            String temporaryFileName = Path.Combine(
+            string temporaryFileName = Path.Combine(
                 temporaryFolder, 
                 string.Format("{0}-{1}", DateTime.Now.Ticks, resourceName));
             while (File.Exists(temporaryFileName))
