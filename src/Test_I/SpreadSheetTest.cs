@@ -10,21 +10,19 @@ using PPWCode.Util.OddsAndEnds.I.SpreadSheet;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
-    /// <summary>
-    /// Summary description for SpreadSheet
-    /// </summary>
     [TestClass]
     public class SpreadSheetTest
     {
         public SpreadSheetTest()
         {
-           
         }
+
         public class ExcelRow
         {
             public long PaymentDossierID { get; set; }
             public long AffiliateSynergyId { get; set; }
         }
+        
         private static ExcelRow SpreadsheetRowResolver(DbDataReader dr)
         {
             if ((dr.IsDBNull(0) == false) && (dr.IsDBNull(1) == false))
@@ -37,13 +35,15 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             }
             return null;
         }
+
         private readonly List<string> m_ColumnNames = new List<string>
         {
             "PaymentDossierId", 
             "AffiliateSynergyId"
         };
+
         //const string FileName = @"C:\Development\Sempera\PPWCode.Util.OddsAndEnds\src\Test_I\FixGenerateStandardProposals.xlsx";
-        readonly string m_FileName = string.Empty;
+        private readonly string m_FileName = string.Empty;
         
         [TestMethod]
         public void TestMethod1()
@@ -57,9 +57,6 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
                 Console.WriteLine(AffiliateSynergyID + excelRow.AffiliateSynergyId);
             }
             Assert.IsNotNull(list);
-
-
         }
-  
     }
 }

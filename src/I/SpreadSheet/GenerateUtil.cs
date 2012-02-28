@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
 using System.Text;
-
-using Spring.Expressions.Parser.antlr;
 
 namespace PPWCode.Util.OddsAndEnds.I.SpreadSheet
 {
     public class GenerateUtil
     {
         public static IList<T> ReadSheet<T>(string xlsFile, string sheet, List<string> columns, Func<DbDataReader, T>spreadSheetRowResolver)
-             where T :class 
+             where T : class 
         {
             ExcelUtil excelUtil = new ExcelUtil(xlsFile);
             StringBuilder selectStatement = new StringBuilder();
@@ -32,6 +29,5 @@ namespace PPWCode.Util.OddsAndEnds.I.SpreadSheet
                 throw new Exception(string.Format("Structure error in sheet: {0} with message : {1}", sheet, e.Message));
             }
         }
-     
     }
 }
