@@ -66,7 +66,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         {
             unchecked
             {
-                int result = (FirstName != null ? FirstName.GetHashCode() : 0);
+                int result = (FirstName != null) ? FirstName.GetHashCode() : 0;
                 result = (result * 397) ^ (LastName != null ? LastName.GetHashCode() : 0);
                 result = (result * 397) ^ (Address != null ? Address.GetHashCode() : 0);
                 return result;

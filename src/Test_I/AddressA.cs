@@ -66,7 +66,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         {
             unchecked
             {
-                int result = (StreetAndNr != null ? StreetAndNr.GetHashCode() : 0);
+                int result = (StreetAndNr != null) ? StreetAndNr.GetHashCode() : 0;
                 result = (result * 397) ^ (PostalCode != null ? PostalCode.GetHashCode() : 0);
                 result = (result * 397) ^ (City != null ? City.GetHashCode() : 0);
                 return result;

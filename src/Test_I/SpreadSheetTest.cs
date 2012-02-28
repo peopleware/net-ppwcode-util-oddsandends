@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections;
 using System.Data.Common;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using PPWCode.Util.OddsAndEnds.I.SpreadSheet;
+using PPWCode.Util.OddsAndEnds.I.Streaming;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
-    /// <summary>
-    /// Summary description for SpreadSheet
-    /// </summary>
     [TestClass]
     public class SpreadSheetTest
     {
         public SpreadSheetTest()
         {
-           
         }
+
         public class ExcelRow
         {
             public long PaymentDossierID { get; set; }
             public long AffiliateSynergyId { get; set; }
         }
+        
         private static ExcelRow SpreadsheetRowResolver(DbDataReader dr)
         {
             if ((dr.IsDBNull(0) == false) && (dr.IsDBNull(1) == false))
@@ -37,18 +38,23 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             }
             return null;
         }
+
         private readonly List<string> m_ColumnNames = new List<string>
         {
             "PaymentDossierId", 
             "AffiliateSynergyId"
         };
-        //const string FileName = @"C:\Development\Sempera\PPWCode.Util.OddsAndEnds\src\Test_I\FixGenerateStandardProposals.xlsx";
-        readonly string m_FileName = string.Empty;
+
+        private readonly Assembly m_Assembly = typeof(SpreadSheetTest).Assembly;
+        private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.Test_I.";
+        private const string ResourceName = "FixGenerateStandardProposals.xlsx";
+
         
         [TestMethod]
         public void TestMethod1()
         {
-            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(m_FileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
+            string fileName = ResourceStreamHelper.WriteEmbeddedResourceToTempFile(m_Assembly, MNameSpaceName, ResourceName);
+            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(fileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
             const string PaymentDossierId = "PaymentDossierId: ";
             const string AffiliateSynergyID = "AffiliateSynergyID: ";
             foreach (ExcelRow excelRow in list)
@@ -57,9 +63,6 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
                 Console.WriteLine(AffiliateSynergyID + excelRow.AffiliateSynergyId);
             }
             Assert.IsNotNull(list);
-
-
         }
-  
     }
 }

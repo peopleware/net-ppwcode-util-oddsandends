@@ -218,7 +218,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
                     return Deserialize<T>(resourceStream);
                 }
             }
-
         }
 
         #endregion
