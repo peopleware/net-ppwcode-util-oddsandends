@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Data.Common;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using PPWCode.Util.OddsAndEnds.I.SpreadSheet;
+using PPWCode.Util.OddsAndEnds.I.Streaming;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
@@ -42,13 +45,16 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             "AffiliateSynergyId"
         };
 
-        //const string FileName = @"C:\Development\Sempera\PPWCode.Util.OddsAndEnds\src\Test_I\FixGenerateStandardProposals.xlsx";
-        private readonly string m_FileName = string.Empty;
+        private readonly Assembly m_Assembly = typeof(SpreadSheetTest).Assembly;
+        private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.Test_I.";
+        private const string ResourceName = "FixGenerateStandardProposals.xlsx";
+
         
         [TestMethod]
         public void TestMethod1()
         {
-            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(m_FileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
+            string fileName = ResourceStreamHelper.WriteEmbeddedResourceToTempFile(m_Assembly, MNameSpaceName, ResourceName);
+            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(fileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
             const string PaymentDossierId = "PaymentDossierId: ";
             const string AffiliateSynergyID = "AffiliateSynergyID: ";
             foreach (ExcelRow excelRow in list)
