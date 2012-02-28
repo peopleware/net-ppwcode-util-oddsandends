@@ -42,13 +42,13 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             "PaymentDossierId", 
             "AffiliateSynergyId"
         };
-        const string FileName = @"C:\Development\Sempera\PPWCode.Util.OddsAndEnds\src\Test_I\FixGenerateStandardProposals.xlsx";
-        //string FileName = string.Empty;
+        //const string FileName = @"C:\Development\Sempera\PPWCode.Util.OddsAndEnds\src\Test_I\FixGenerateStandardProposals.xlsx";
+        readonly string m_FileName = string.Empty;
         
         [TestMethod]
         public void TestMethod1()
         {
-            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(FileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
+            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(m_FileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
             const string PaymentDossierId = "PaymentDossierId: ";
             const string AffiliateSynergyID = "AffiliateSynergyID: ";
             foreach (ExcelRow excelRow in list)

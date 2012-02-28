@@ -22,8 +22,7 @@ namespace PPWCode.Util.OddsAndEnds.I.SpreadSheet
             }
             selectStatement.Remove(selectStatement.Length - 1, 1);
             selectStatement.Append(string.Format(@"from [{0}$]", sheet));
-           
-                   
+
             try
             {
                 return excelUtil.ReadSheet<T>(selectStatement.ToString(), spreadSheetRowResolver);
