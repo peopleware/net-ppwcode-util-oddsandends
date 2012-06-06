@@ -53,7 +53,7 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
             Contract.Requires(userAccount.Length > 2);
-            Contract.Requires(userAccount.ToCharArray().Where(c => c == '\\').Count() == 1);
+            Contract.Requires(userAccount.ToCharArray().Count(c => c == '\\') == 1);
             Contract.Ensures(!string.IsNullOrEmpty(Contract.Result<string>()));
 
             StringBuilder sb = new StringBuilder(userAccount.Length);
@@ -74,7 +74,7 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
             Contract.Requires(userAccount.Length > 2);
-            Contract.Requires(userAccount.ToCharArray().Where(c => c == '\\').Count() == 1);
+            Contract.Requires(userAccount.ToCharArray().Count(c => c == '\\') == 1);
             Contract.Ensures(!string.IsNullOrEmpty(Contract.Result<string>()));
 
             return userAccount.Replace(GetDomainFromUserAccount(userAccount) + @"\", string.Empty);
@@ -99,7 +99,7 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
             Contract.Requires(userAccount.Length > 2);
-            Contract.Requires(userAccount.ToCharArray().Where(c => c == '\\').Count() == 1);
+            Contract.Requires(userAccount.ToCharArray().Count(c => c == '\\') == 1);
             Contract.Ensures(Contract.Result<IEnumerable<string>>() != null);
 
             using (DirectoryEntry directoryEntry = GetDirectoryEntry())
@@ -128,7 +128,7 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
             Contract.Requires(userAccount.Length > 2);
-            Contract.Requires(userAccount.ToCharArray().Where(c => c == '\\').Count() == 1);
+            Contract.Requires(userAccount.ToCharArray().Count(c => c == '\\') == 1);
             Contract.Requires(!string.IsNullOrEmpty(propertyName));
 
             using (DirectoryEntry directoryEntry = GetDirectoryEntry())
@@ -155,7 +155,7 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
             Contract.Requires(userAccount.Length > 2);
-            Contract.Requires(userAccount.ToCharArray().Where(c => c == '\\').Count() == 1);
+            Contract.Requires(userAccount.ToCharArray().Count(c => c == '\\') == 1);
 
             using (DirectoryEntry directoryEntry = GetDirectoryEntry())
             {
@@ -179,11 +179,11 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
             Contract.Requires(userAccount.Length > 2);
-            Contract.Requires(userAccount.ToCharArray().Where(c => c == '\\').Count() == 1);
+            Contract.Requires(userAccount.ToCharArray().Count(c => c == '\\') == 1);
             Contract.Ensures(Contract.Result<string>() != null);
 
             ResultPropertyValueCollection result = GetProperty(userAccount, @"displayName");
-            return result != null
+            return result != null && result.Count > 0
                        ? result[0].ToString()
                        : string.Empty;
         }
@@ -197,11 +197,11 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
             Contract.Requires(userAccount.Length > 2);
-            Contract.Requires(userAccount.ToCharArray().Where(c => c == '\\').Count() == 1);
+            Contract.Requires(userAccount.ToCharArray().Count(c => c == '\\') == 1);
             Contract.Ensures(Contract.Result<string>() != null);
 
             ResultPropertyValueCollection result = GetProperty(userAccount, @"mail");
-            return result != null
+            return result != null && result.Count > 0
                        ? result[0].ToString()
                        : string.Empty;
         }
