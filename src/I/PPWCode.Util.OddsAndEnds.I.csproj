@@ -126,9 +126,12 @@
     <Compile Include="ActiveDirectory\ADSearch.cs" />
     <Compile Include="AssemblyHelpers\AssemblyHelper.cs" />
     <Compile Include="DateTimeProvider\ConfigurableDateTimeProvider.cs" />
+    <Compile Include="DateTimeProvider\DateTimeProvider.cs" />
     <Compile Include="DateTimeProvider\DateTimeProviderService.cs" />
+    <Compile Include="DateTimeProvider\DefaultDateTimeProvider.cs" />
     <Compile Include="DateTimeProvider\GenuineDateTimeProvider.cs" />
     <Compile Include="DateTimeProvider\IDateTimeProvider.cs" />
+    <Compile Include="DateTimeProvider\LambdaDateTimeProvider.cs" />
     <Compile Include="EnumHelpers\EnumHelpers.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
