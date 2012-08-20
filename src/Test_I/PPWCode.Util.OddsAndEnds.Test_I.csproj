@@ -118,6 +118,7 @@
     <Compile Include="CollectionExtensionsTest.cs" />
     <Compile Include="DateTimeExtensionsTest.cs" />
     <Compile Include="DateTimeHelperTest.cs" />
+    <Compile Include="DateTimeProviderTest.cs" />
     <Compile Include="EnumTests.cs" />
     <Compile Include="IAddress.cs" />
     <Compile Include="IPerson.cs" />
