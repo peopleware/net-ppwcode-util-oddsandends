@@ -17,7 +17,7 @@
 using System.Globalization;
 using System.Threading;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
 using PPWCode.Util.OddsAndEnds.I.TypeConverter;
@@ -33,17 +33,17 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         TWO
     }
 
-    [TestClass]
+    [TestFixture]
     public class EnumTests
     {
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
             const TestEnum E = TestEnum.ONE;
             Assert.AreEqual(@"ONE", E.ToString());
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod2()
         {
             TestEnum? e = null;
@@ -54,7 +54,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(@"ONE", e.ToString());
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod3()
         {
             const TestEnum E = TestEnum.ONE;
@@ -67,7 +67,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod4()
         {
             const TestEnum E = TestEnum.ONE;

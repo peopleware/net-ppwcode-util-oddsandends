@@ -18,7 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
 
@@ -26,10 +26,10 @@ using PPWCode.Util.OddsAndEnds.I.Extensions;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
-    [TestClass]
+    [TestFixture]
     public class CollectionExtensionsTest
     {
-        [TestMethod, Description("CollectionExtensions Difference behaviour Aggregate and Sum")]
+        [Test, Description("CollectionExtensions Difference behaviour Aggregate and Sum")]
         public void TestSumAggregate()
         {
             List<int?> l = new List<int?>
@@ -46,7 +46,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(agg == null);
         }
 
-        [TestMethod, Description("CollectionExtensions NullableSum 1")]
+        [Test, Description("CollectionExtensions NullableSum 1")]
         public void TestNullableSum1()
         {
             List<int?> l = new List<int?>
@@ -60,7 +60,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(null, l.NullableSum());
         }
 
-        [TestMethod, Description("CollectionExtensions NullableSum 2")]
+        [Test, Description("CollectionExtensions NullableSum 2")]
         public void TestNullableSum2()
         {
             List<int?> l = new List<int?>
@@ -74,7 +74,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(15, l.NullableSum());
         }
 
-        [TestMethod, Description("CollectionExtensions SetEqual")]
+        [Test, Description("CollectionExtensions SetEqual")]
         public void TestSetEqual()
         {
             List<int> l1 = new List<int>
@@ -94,7 +94,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(l1.SetEqual(l2));
         }
 
-        [TestMethod, Description("CollectionExtensions IsNullOrEmpty #1")]
+        [Test, Description("CollectionExtensions IsNullOrEmpty #1")]
         public void TestIsNullOrEmpty1()
         {
             List<int> l1 = new List<int>
@@ -107,21 +107,21 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsFalse(l1.IsNullOrEmpty());
         }
 
-        [TestMethod, Description("CollectionExtensions IsNullOrEmpty #2")]
+        [Test, Description("CollectionExtensions IsNullOrEmpty #2")]
         public void TestIsNullOrEmpty2()
         {
             List<int> l1 = new List<int>();
             Assert.IsTrue(l1.IsNullOrEmpty());
         }
 
-        [TestMethod, Description("CollectionExtensions IsNullOrEmpty #3")]
+        [Test, Description("CollectionExtensions IsNullOrEmpty #3")]
         public void TestIsNullOrEmpty3()
         {
             List<int> l1 = null;
             Assert.IsTrue(l1.IsNullOrEmpty());
         }
 
-        [TestMethod, Description("CollectionExtensions IsEmpty #1")]
+        [Test, Description("CollectionExtensions IsEmpty #1")]
         public void TestIsEmpty1()
         {
             List<int> l1 = new List<int>
@@ -134,14 +134,14 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsFalse(l1.IsEmpty());
         }
 
-        [TestMethod, Description("CollectionExtensions IsEmpty #2")]
+        [Test, Description("CollectionExtensions IsEmpty #2")]
         public void TestIsEmpty2()
         {
             List<int> l1 = new List<int>();
             Assert.IsTrue(l1.IsEmpty());
         }
 
-        [TestMethod, Description("CollectionExtensions IsEmpty #3")]
+        [Test, Description("CollectionExtensions IsEmpty #3")]
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestIsEmpty3()
         {
@@ -153,7 +153,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             // ReSharper restore ReturnValueOfPureMethodIsNotUsed
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void NullSourceTest()
         {
@@ -165,7 +165,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             // ReSharper restore ReturnValueOfPureMethodIsNotUsed
         }
 
-        [TestMethod]
+        [Test]
         public void EmptySourceTest()
         {
             // expecting 4 empty groups
@@ -174,11 +174,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(4, result.Count());
         }
 
-        [TestMethod]
+        [Test]
         public void EvenSegmentTest()
         {
             int[] values = Enumerable.Range(1, 100).ToArray();
-            IEnumerable<IGrouping<int, int>> result = values.Segment(4);
+            IEnumerable<IGrouping<int, int>> result = values.Segment(4).ToArray();
             Assert.AreEqual(4, result.Count());
             foreach (IGrouping<int, int> g in result)
             {
@@ -186,11 +186,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             }
         }
 
-        [TestMethod]
+        [Test]
         public void MoreSegmentsThanElementsTest()
         {
             int[] values = Enumerable.Range(1, 3).ToArray();
-            IEnumerable<IGrouping<int, int>> result = values.Segment(10);
+            IEnumerable<IGrouping<int, int>> result = values.Segment(10).ToArray();
             Assert.AreEqual(10, result.Count());
             int i = 1;
             foreach (IGrouping<int, int> g in result)
@@ -200,11 +200,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             }
         }
 
-        [TestMethod]
+        [Test]
         public void OddSegmentTest()
         {
             int[] values = Enumerable.Range(1, 101).ToArray();
-            IEnumerable<IGrouping<int, int>> result = values.Segment(4);
+            IEnumerable<IGrouping<int, int>> result = values.Segment(4).ToArray();
             Assert.AreEqual(4, result.Count());
             int i = 1;
             foreach (IGrouping<int, int> g in result)

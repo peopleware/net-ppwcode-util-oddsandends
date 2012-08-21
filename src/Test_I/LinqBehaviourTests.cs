@@ -17,16 +17,16 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 #endregion
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
-    [TestClass]
+    [TestFixture]
     public class LinqBehaviourTests
     {
-        [TestMethod]
+        [Test]
         public void SumTests1()
         {
             IEnumerable<int?> items = new int?[]
@@ -38,7 +38,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(6, result);
         }
 
-        [TestMethod]
+        [Test]
         public void SumTests2()
         {
             IEnumerable<int?> items = new int?[]
@@ -50,7 +50,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(4, result);
         }
 
-        [TestMethod]
+        [Test]
         public void SumTests3()
         {
             IEnumerable<int?> items = new int?[]
@@ -62,7 +62,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(0, result);
         }
 
-        [TestMethod]
+        [Test]
         public void SumTests4()
         {
             IEnumerable<int?> items = Enumerable.Empty<int?>();
@@ -71,7 +71,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(0, result);
         }
 
-        [TestMethod]
+        [Test]
         public void SumTests5()
         {
             IEnumerable<int> items = Enumerable.Empty<int>();
@@ -79,7 +79,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(0, result);
         }
 
-        [TestMethod]
+        [Test]
         public void AllTests1()
         {
             IEnumerable<int> items = Enumerable.Empty<int>();

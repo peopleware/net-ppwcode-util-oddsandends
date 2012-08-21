@@ -14,22 +14,22 @@
 
 using System;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.DateTimeProvider;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
-    [TestClass]
+    [TestFixture]
     public class DateTimeProviderTest
     {
-        [TestCleanup]
+        [TearDown]
         public void TearDown()
         {
             DateTimeProvider.Reset();
         }
 
-        [TestMethod, Description("Test normal time")]
+        [Test, Description("Test normal time")]
         public void DateTimeProviderTest1()
         {
             DateTime now = DateTimeProvider.Current.Now;
@@ -39,7 +39,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(new DateTime(2010, 1, 1) < today);
         }
 
-        [TestMethod, Description("Test fixed time")]
+        [Test, Description("Test fixed time")]
         public void DateTimeProviderTest2()
         {
             DateTimeProvider fixedTime = 
@@ -50,7 +50,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(new DateTime(2000, 1, 1), DateTimeProvider.Current.Today);
         }
 
-        [TestMethod, Description("Test incremental time")]
+        [Test, Description("Test incremental time")]
         public void DateTimeProviderTest3()
         {
             int t = 0;

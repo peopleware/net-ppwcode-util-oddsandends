@@ -16,7 +16,7 @@
 
 using System.Security.Principal;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.ActiveDirectory;
 
@@ -27,10 +27,10 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
     /// <summary>
     /// These tests are only available when running with a domain controller.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class AdSearchTest
     {
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
             WindowsIdentity wi = WindowsIdentity.GetCurrent();
@@ -39,7 +39,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(adSearch.UserExists(wi.Name));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod2()
         {
             WindowsIdentity wi = WindowsIdentity.GetCurrent();
@@ -48,7 +48,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsNotNull(adSearch.FindName(wi.Name));
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod3()
         {
             WindowsIdentity wi = WindowsIdentity.GetCurrent();

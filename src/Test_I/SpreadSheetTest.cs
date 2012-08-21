@@ -1,31 +1,24 @@
 ﻿using System;
-using System.Collections;
-using System.Data.Common;
-using System.IO;
-using System.Reflection;
-using System.Text;
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Data.Common;
+using System.Reflection;
+
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.SpreadSheet;
 using PPWCode.Util.OddsAndEnds.I.Streaming;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
-    [TestClass]
+    [TestFixture]
     public class SpreadSheetTest
     {
-        public SpreadSheetTest()
-        {
-        }
-
         public class ExcelRow
         {
             public long PaymentDossierID { get; set; }
             public long AffiliateSynergyId { get; set; }
         }
-        
+
         private static ExcelRow SpreadsheetRowResolver(DbDataReader dr)
         {
             if ((dr.IsDBNull(0) == false) && (dr.IsDBNull(1) == false))
@@ -41,7 +34,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
 
         private readonly List<string> m_ColumnNames = new List<string>
         {
-            "PaymentDossierId", 
+            "PaymentDossierId",
             "AffiliateSynergyId"
         };
 
@@ -49,20 +42,34 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.Test_I.";
         private const string ResourceName = "FixGenerateStandardProposals.xlsx";
 
-        
-        [TestMethod]
+        [Test]
+        // TODO: improve test, code depends on installed libraries and 64-bit/32-bit dlls
         public void TestMethod1()
         {
-            string fileName = ResourceStreamHelper.WriteEmbeddedResourceToTempFile(m_Assembly, MNameSpaceName, ResourceName);
-            IList<ExcelRow> list = GenerateUtil.ReadSheet<ExcelRow>(fileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
-            const string PaymentDossierId = "PaymentDossierId: ";
-            const string AffiliateSynergyID = "AffiliateSynergyID: ";
-            foreach (ExcelRow excelRow in list)
+            try
             {
-                Console.WriteLine(PaymentDossierId + excelRow.PaymentDossierID);
-                Console.WriteLine(AffiliateSynergyID + excelRow.AffiliateSynergyId);
+                string fileName = ResourceStreamHelper.WriteEmbeddedResourceToTempFile(m_Assembly, MNameSpaceName, ResourceName);
+                IList<ExcelRow> list = GenerateUtil.ReadSheet(fileName, "GSP", m_ColumnNames, SpreadsheetRowResolver);
+                const string PaymentDossierId = "PaymentDossierId: ";
+                const string AffiliateSynergyID = "AffiliateSynergyID: ";
+                foreach (ExcelRow excelRow in list)
+                {
+                    Console.WriteLine(PaymentDossierId + excelRow.PaymentDossierID);
+                    Console.WriteLine(AffiliateSynergyID + excelRow.AffiliateSynergyId);
+                }
+                Assert.IsNotNull(list);
             }
-            Assert.IsNotNull(list);
+            catch (Exception exc)
+            {
+                if (exc.Message.Contains(@"The 'Microsoft.ACE.OLEDB.12.0' provider is not registered on the local machine."))
+                {
+                    Console.WriteLine(@"SpreadSheetTest not correctly run because there is no Microsoft.ACE.OLEDB.12.0 provider registered!");
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
     }
 }

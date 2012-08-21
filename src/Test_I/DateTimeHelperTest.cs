@@ -18,7 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
 
@@ -26,7 +26,7 @@ using PPWCode.Util.OddsAndEnds.I.Extensions;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
-    [TestClass]
+    [TestFixture]
     public class DateTimeHelperTest
     {
         private class DateInterval
@@ -35,7 +35,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             public DateTime? EndDate { get; set; }
         }
 
-        [TestMethod, Description("DateTimeHelper IsSequenceConsecutive")]
+        [Test, Description("DateTimeHelper IsSequenceConsecutive")]
         public void TestIsSequenceConsecutive()
         {
             Func<object, DateTime?> extractStartDate = o => ((DateInterval)o).StartDate;
@@ -187,7 +187,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             return dt;
         }
 
-        [TestMethod]
+        [Test]
         public void SomeTest1()
         {
             DateTime dt = DateTime.Now;
@@ -200,7 +200,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             return dt.HasValue ? dt.Value : DateTime.Now;
         }
 
-        [TestMethod]
+        [Test]
         public void SomeTest21()
         {
             DateTime dt = DateTime.Now;
@@ -208,7 +208,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(dt, result);
         }
 
-        [TestMethod]
+        [Test]
         public void SomeTest22()
         {
             DateTime? dt = null;

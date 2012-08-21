@@ -16,7 +16,7 @@
 
 using System;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
 
@@ -24,10 +24,10 @@ using PPWCode.Util.OddsAndEnds.I.Extensions;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
-    [TestClass]
+    [TestFixture]
     public class MathExtensionTests
     {
-        [TestMethod]
+        [Test]
         public void YearlyInterestRate1()
         {
             const double YearlyInterestRateAsPercentage = 3.25d;
@@ -35,7 +35,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(YearlyInterestRateAsPercentage.YearInterestFraction(), Result);
         }
 
-        [TestMethod]
+        [Test]
         public void YearlyInterestRate2()
         {
             const decimal YearlyInterestRateAsPercentage = 3.25m;
@@ -43,7 +43,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(YearlyInterestRateAsPercentage.YearInterestFraction(), Result);
         }
 
-        [TestMethod]
+        [Test]
         public void DailyInterestRate1()
         {
             const double YearlyInterestRateAsPercentage = 3.25d;
@@ -51,7 +51,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(YearlyInterestRateAsPercentage.DayInterestFraction(new DateTime(2010, 11, 8), 23), Result, 1e-15d);
         }
 
-        [TestMethod]
+        [Test]
         public void MonthlyInterestRate1()
         {
             const double YearlyInterestRateAsPercentage = 3.25d;
@@ -59,7 +59,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(YearlyInterestRateAsPercentage.MonthInterestFraction(4), Result, 1e-15d);
         }
 
-        [TestMethod]
+        [Test]
         public void QuartlyInterestRate1()
         {
             const double YearlyInterestRateAsPercentage = 3.25d;

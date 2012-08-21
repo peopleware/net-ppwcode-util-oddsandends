@@ -14,7 +14,7 @@
 
 using System.IO;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Serialization;
 using PPWCode.Util.OddsAndEnds.I.Streaming;
@@ -22,10 +22,10 @@ using PPWCode.Util.OddsAndEnds.I.Streaming;
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
     // ReSharper disable InconsistentNaming
-    [TestClass]
+    [TestFixture]
     public class SerializationTests
     {
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, with a string as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, with a string as intermediare value")]
         public void XmlSerialization_SerializePersonA()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -37,7 +37,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(personA, deserializedPersonA);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a string as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a string as intermediare value")]
         public void XmlSerialization_SerializePersonAUsingAnInterface()
         {
             IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -47,10 +47,10 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(xmlData.Length > 0);
             IPerson deserializedPerson = SerializationHelper.DeserializeFromXmlString<IPerson>(xmlData);
             Assert.AreEqual(person, deserializedPerson);
-            Assert.IsInstanceOfType(person, typeof(PersonA));
+            Assert.IsInstanceOf<PersonA>(person);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonB, with a string as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonB, with a string as intermediare value")]
         public void XmlSerialization_SerializePersonB()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -63,7 +63,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(personB, deserializedPersonB);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a string as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a string as intermediare value")]
         public void XmlSerialization_SerializePersonBUsingAnInterface()
         {
             IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -74,10 +74,10 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(xmlData.Length > 0);
             IPerson deserializedPerson = SerializationHelper.DeserializeFromXmlString<IPerson>(xmlData);
             Assert.AreEqual(person, deserializedPerson);
-            Assert.IsInstanceOfType(person, typeof(PersonB));
+            Assert.IsInstanceOf<PersonB>(person);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, with a ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, with a ByteArray as intermediare value")]
         public void ByteArray_SerializePersonA()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -89,7 +89,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(personA, deserializedPersonA);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a ByteArray as intermediare value")]
         public void ByteArray_SerializePersonAUsingAnInterface()
         {
             IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -99,10 +99,10 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(data.Length > 0);
             IPerson deserializedPerson = SerializationHelper.DeserializeFromBytes<IPerson>(data);
             Assert.AreEqual(person, deserializedPerson);
-            Assert.IsInstanceOfType(person, typeof(PersonA));
+            Assert.IsInstanceOf<PersonA>(person);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonB, with a ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonB, with a ByteArray as intermediare value")]
         public void ByteArray_SerializePersonB()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -115,7 +115,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(personB, deserializedPersonB);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a ByteArray as intermediare value")]
         public void ByteArray_SerializePersonBUsingAnInterface()
         {
             IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -126,10 +126,10 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(data.Length > 0);
             IPerson deserializedPerson = SerializationHelper.DeserializeFromBytes<IPerson>(data);
             Assert.AreEqual(person, deserializedPerson);
-            Assert.IsInstanceOfType(person, typeof(PersonA));
+            Assert.IsInstanceOf<PersonA>(person);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, with a compressed ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, with a compressed ByteArray as intermediare value")]
         public void CompressedByteArray_SerializePersonA()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -141,7 +141,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(personA, deserializedPersonA);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a compressed ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a compressed ByteArray as intermediare value")]
         public void CompressedByteArray_SerializePersonAUsingAnInterface()
         {
             IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -151,10 +151,10 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(data.Length > 0);
             IPerson deserializedPerson = SerializationHelper.DeserializeFromBytes<IPerson>(data, true);
             Assert.AreEqual(person, deserializedPerson);
-            Assert.IsInstanceOfType(person, typeof(PersonA));
+            Assert.IsInstanceOf<PersonA>(person);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonB, with a compressed ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonB, with a compressed ByteArray as intermediare value")]
         public void CompressedByteArray_SerializePersonB()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -167,7 +167,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(personB, deserializedPersonB);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a compressed ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a compressed ByteArray as intermediare value")]
         public void CompressedByteArray_SerializePersonBUsingAnInterface()
         {
             IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -178,10 +178,10 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(data.Length > 0);
             IPerson deserializedPerson = SerializationHelper.DeserializeFromBytes<IPerson>(data, true);
             Assert.AreEqual(person, deserializedPerson);
-            Assert.IsInstanceOfType(person, typeof(PersonB));
+            Assert.IsInstanceOf<PersonB>(person);
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, with a stream as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, with a stream as intermediare value")]
         public void Stream_SerializePersonA()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -196,7 +196,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             }
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a stream as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a stream as intermediare value")]
         public void Stream_SerializePersonAUsingAnInterface()
         {
             IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -208,11 +208,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
                 stream.Position = 0;
                 PersonA deserializedPerson = SerializationHelper.Deserialize<PersonA>(stream);
                 Assert.AreEqual(person, deserializedPerson);
-                Assert.IsInstanceOfType(person, typeof(PersonA));
+                Assert.IsInstanceOf<PersonA>(person);
             }
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonB, with a ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonB, with a ByteArray as intermediare value")]
         public void Stream_SerializePersonB()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -228,7 +228,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             }
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a ByteArray as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a ByteArray as intermediare value")]
         public void Stream_SerializePersonBUsingAnInterface()
         {
             IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -241,11 +241,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
                 stream.Position = 0;
                 IPerson deserializedPerson = SerializationHelper.Deserialize<IPerson>(stream);
                 Assert.AreEqual(person, deserializedPerson);
-                Assert.IsInstanceOfType(person, typeof(PersonA));
+                Assert.IsInstanceOf<PersonA>(person);
             }
         }
 
-        [TestMethod, Description("Serialize/Deserialize an instance of class PersonA, with a compressed stream as intermediare value")]
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, with a compressed stream as intermediare value")]
         public void CompressedStream_SerializePersonA()
         {
             AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -271,7 +271,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(personA, deserializedPersonA);
         }
 
-        //[TestMethod, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a stream as intermediare value")]
+        //[Test, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a stream as intermediare value")]
         //public void Stream_SerializePersonAUsingAnInterface()
         //{
         //    IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -287,7 +287,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         //    }
         //}
 
-        //[TestMethod, Description("Serialize/Deserialize an instance of class PersonB, with a ByteArray as intermediare value")]
+        //[Test, Description("Serialize/Deserialize an instance of class PersonB, with a ByteArray as intermediare value")]
         //public void Stream_SerializePersonB()
         //{
         //    AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
@@ -303,7 +303,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         //    }
         //}
 
-        //[TestMethod, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a ByteArray as intermediare value")]
+        //[Test, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a ByteArray as intermediare value")]
         //public void Stream_SerializePersonBUsingAnInterface()
         //{
         //    IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");

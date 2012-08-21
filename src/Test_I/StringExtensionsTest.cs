@@ -14,7 +14,7 @@
 
 #region Using
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
 
@@ -26,36 +26,36 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
     /// This is a test class for StringExtensionsTest and is intended
     /// to contain all StringExtensionsTest Unit Tests
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class StringExtensionsTest
     {
         #region IsCaptialized
 
-        [TestMethod, Description("IsCapitalized OneLowercase")]
+        [Test, Description("IsCapitalized OneLowercase")]
         public void IsCapitalizedTestOneLowercaseChar()
         {
             Assert.IsFalse("a".StartWithACapital());
         }
 
-        [TestMethod, Description("IsCapitalized OneUppercase")]
+        [Test, Description("IsCapitalized OneUppercase")]
         public void IsCapitalizedTestOneUppercaseChar()
         {
             Assert.IsTrue("A".StartWithACapital());
         }
 
-        [TestMethod, Description("IsCapitalized MultipleLowercase")]
+        [Test, Description("IsCapitalized MultipleLowercase")]
         public void IsCapitalizedTestMultipleLowercaseCharacters()
         {
             Assert.IsFalse("andras pandy".StartWithACapital());
         }
 
-        [TestMethod, Description("IsCapitalized MultipleUppercase")]
+        [Test, Description("IsCapitalized MultipleUppercase")]
         public void IsCapitalizedTestMultipleUppercaseCharacters()
         {
             Assert.IsTrue("AGNES PANDY".StartWithACapital());
         }
 
-        [TestMethod, Description("IsCapitalized Sentence")]
+        [Test, Description("IsCapitalized Sentence")]
         public void IsCapitalizedTestSentce()
         {
             Assert.IsTrue("The dissolved pandies recorded their latest album in 2001".StartWithACapital());
