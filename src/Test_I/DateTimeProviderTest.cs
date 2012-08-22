@@ -12,11 +12,15 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
+#region Using
+
 using System;
 
 using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.DateTimeProvider;
+
+#endregion
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
@@ -42,11 +46,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         [Test, Description("Test fixed time")]
         public void DateTimeProviderTest2()
         {
-            DateTimeProvider fixedTime = 
-                new LambdaDateTimeProvider(() => new DateTime(2000,1,1,10,15,0));
+            DateTimeProvider fixedTime =
+                new LambdaDateTimeProvider(() => new DateTime(2000, 1, 1, 10, 15, 0));
             DateTimeProvider.Current = fixedTime;
 
-            Assert.AreEqual(new DateTime(2000,1,1,10,15,0), DateTimeProvider.Current.Now);
+            Assert.AreEqual(new DateTime(2000, 1, 1, 10, 15, 0), DateTimeProvider.Current.Now);
             Assert.AreEqual(new DateTime(2000, 1, 1), DateTimeProvider.Current.Today);
         }
 
