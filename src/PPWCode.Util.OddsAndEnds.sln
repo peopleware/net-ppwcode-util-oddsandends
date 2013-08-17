@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{788185DD-7404-47DF-AFF3-698298A6F934}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92BE80A7-9616-422A-A704-DD2C09F9E058}"
 	ProjectSection(SolutionItems) = preProject
 		..\PPWCode.Util.OddsAndEnds.wrapdesc = ..\PPWCode.Util.OddsAndEnds.wrapdesc
 		Solution Items\SolutionInfo.cs = Solution Items\SolutionInfo.cs
@@ -19,22 +19,24 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		DebugNoInvariants|Any CPU = DebugNoInvariants|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}.DebugNoInvariants|Any CPU.ActiveCfg = DebugNoInvariants|Any CPU
+		{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}.DebugNoInvariants|Any CPU.Build.0 = DebugNoInvariants|Any CPU
 		{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}.DebugNoInvariants|Any CPU.ActiveCfg = DebugNoInvariants|Any CPU
+		{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}.DebugNoInvariants|Any CPU.Build.0 = DebugNoInvariants|Any CPU
 		{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
-		OpenWrap.VisualStudioIntegration2010 = 1;Ensures OpenWrap initialization when a solution is opened.;OpenWrap Visual Studio Solution Add-in
 	EndGlobalSection
 EndGlobal
