@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <projectUrl>http://www.ppwcode.org/</projectUrl>
+    <iconUrl>http://www.ppwcode.org/img/logo.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>NuGet packaging.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>PPWCode</tags>
+    
+    <dependencies>
+      <dependency id="Microsoft.Contracts" version="[1,2)" />
+      <dependency id="Microsoft.StyleCop.PPWStyle" version="[1,2)" />
+      <dependency id="Spring.Core" version="[1.3,1.4)" />
+    </dependencies>
+    
+    <references>
+      <reference file="$MSBuildProjectName$.dll" />
+    </references>
+
+  </metadata>
+
+  <!-- explicit file inclusion -->
+  <files>
+    <file src="$OutputPath$$MSBuildProjectName$.dll" target="lib\net35" />
+    <file src="$OutputPath$$MSBuildProjectName$.pdb" target="lib\net35" />
+    <file src="$OutputPath$$MSBuildProjectName$.xml" target="lib\net35" />
+    <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.dll" target="lib\net35\CodeContracts" />
+    <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.pdb" target="lib\net35\CodeContracts" />
+    <file src="..\..\LICENSE" target="doc\LICENSE" />
+    <file src="..\..\NOTICE" target="doc\NOTICE" />
+  </files>
+  
+</package>
