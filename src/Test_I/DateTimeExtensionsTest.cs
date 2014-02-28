@@ -71,5 +71,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.AreEqual(new DateTime(2001, 4, 1), 20012.FirstDayOfQuarter());
             Assert.AreEqual(new DateTime(2000, 10, 1), 20004.FirstDayOfQuarter());
         }
+
+        [Test, Description("DateTimeExtensions FirstDayOfPreviousQuarter")]
+        public void TestFirstDayOfPreviousQuarter()
+        {
+            Assert.AreEqual(new DateTime(2013, 10, 1), new DateTime(2014, 2, 28).FirstDayOfPreviousQuarter());
+        }
     }
 }

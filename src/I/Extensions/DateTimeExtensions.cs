@@ -162,41 +162,31 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         [Pure]
         public static DateTime FirstDayOfNextQuarter(this DateTime dt)
         {
-            int months = ((((dt.Month - 1) / 3) + 1) * 3) + 1;
-            DateTime result = new DateTime(dt.Year + (months / 12), (months % 12), 1);
-            return result;
+            return dt.FirstDayOfQuarter().AddQuarters(1);
         }
 
         [Pure]
         public static DateTime FirstDayOfPreviousQuarter(this DateTime dt)
         {
-            int months = ((((dt.Month - 1) / 3) - 1) * 3) + 1;
-            DateTime result = new DateTime(dt.Year + (months / 12), (months % 12), 1);
-            return result;
+            return dt.FirstDayOfQuarter().AddQuarters(-1);
         }
 
         [Pure]
         public static DateTime FirstDayOfNextNextQuarter(this DateTime dt)
         {
-            int months = ((((dt.Month - 1) / 3) + 2) * 3) + 1;
-            DateTime result = new DateTime(dt.Year + (months / 12), (months % 12), 1);
-            return result;
+            return dt.FirstDayOfQuarter().AddQuarters(2);
         }
 
         [Pure]
         public static DateTime LastDayOfCurrentQuarter(this DateTime dt)
         {
-            int months = ((((dt.Month - 1) / 3) + 1) * 3) + 1;
-            DateTime result = new DateTime(dt.Year + (months / 12), (months % 12), 1);
-            return result.AddDays(-1);
+            return dt.FirstDayOfQuarter().AddQuarters(1).AddDays(-1);
         }
 
         [Pure]
         public static DateTime LastDayOfNextQuarter(this DateTime dt)
         {
-            int months = ((((dt.Month - 1) / 3) + 2) * 3) + 1;
-            DateTime result = new DateTime(dt.Year + (months / 12), (months % 12), 1);
-            return result.AddDays(-1);
+            return dt.FirstDayOfQuarter().AddQuarters(2).AddDays(-1);
         }
 
         [Pure]
