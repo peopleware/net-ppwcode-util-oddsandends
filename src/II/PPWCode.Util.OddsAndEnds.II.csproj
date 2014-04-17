@@ -58,7 +58,6 @@
     <CodeContractsExtraRewriteOptions>
     </CodeContractsExtraRewriteOptions>
     <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
-    <DocumentationFile>..\..\scratch\bin\PPWCode.Util.OddsAndEnds.I-Debug-AnyCPU\PPWCode.Util.OddsAndEnds.I.XML</DocumentationFile>
     <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
     <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
     <CodeContractsInferRequires>False</CodeContractsInferRequires>
@@ -110,7 +109,6 @@
     <CodeContractsExtraRewriteOptions>
     </CodeContractsExtraRewriteOptions>
     <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
-    <DocumentationFile>..\..\scratch\bin\PPWCode.Util.OddsAndEnds.I-Release-AnyCPU\PPWCode.Util.OddsAndEnds.I.XML</DocumentationFile>
     <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
     <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
     <CodeContractsInferRequires>False</CodeContractsInferRequires>
@@ -127,7 +125,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNoInvariants|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <DefineConstants>TRACE;DEBUG;CONTRACTS_FULL;__OW_PLATFORM_AnyCPU__;__OW_PROFILE_net35__;</DefineConstants>
-    <DocumentationFile>..\..\scratch\bin\PPWCode.Util.OddsAndEnds.I-DebugNoInvariants-AnyCPU\PPWCode.Util.OddsAndEnds.I.XML</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>1591,1592,1573,1571,1570,1572</NoWarn>
     <DebugType>full</DebugType>
@@ -173,6 +170,7 @@
   <PropertyGroup>
     <OutputPath Condition="'$(OutputPath)' == ''">..\..\scratch\bin\$(MSBuildProjectName)-$(Configuration)-$(Platform)\</OutputPath>
     <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">..\..\scratch\obj\$(MSBuildProjectName)-$(Configuration)-$(Platform)\</IntermediateOutputPath>
+    <DocumentationFile Condition="'$(DocumentationFile)' == ''">..\..\scratch\bin\$(MSBuildProjectName)-$(Configuration)-$(Platform)\$(MSBuildProjectName).XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Logging">
