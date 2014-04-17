@@ -16,9 +16,6 @@
     <tags>PPWCode</tags>
     
     <dependencies>
-      <dependency id="Microsoft.Contracts" version="[1,2)" />
-      <dependency id="Microsoft.StyleCop.PPWStyle" version="[1,2)" />
-      <dependency id="Spring.Core" version="[1.3,1.4)" />
     </dependencies>
     
     <references>

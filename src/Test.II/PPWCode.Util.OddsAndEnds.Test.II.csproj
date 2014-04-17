@@ -166,12 +166,6 @@
     <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=736440c9b414ea16, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Contracts.1.0.3\lib\net35\Microsoft.Contracts.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -214,7 +208,7 @@
     <Compile Include="StringExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\I\PPWCode.Util.OddsAndEnds.I.csproj">
+    <ProjectReference Include="..\II\PPWCode.Util.OddsAndEnds.II.csproj">
       <Project>{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}</Project>
       <Name>PPWCode.Util.OddsAndEnds.I</Name>
     </ProjectReference>

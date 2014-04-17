@@ -6,9 +6,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Solution Items\SolutionInfo.cs = Solution Items\SolutionInfo.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.Util.OddsAndEnds.I", "I\PPWCode.Util.OddsAndEnds.I.csproj", "{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.Util.OddsAndEnds.II", "II\PPWCode.Util.OddsAndEnds.II.csproj", "{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.Util.OddsAndEnds.Test_I", "Test_I\PPWCode.Util.OddsAndEnds.Test_I.csproj", "{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.Util.OddsAndEnds.Test.II", "Test.II\PPWCode.Util.OddsAndEnds.Test.II.csproj", "{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution

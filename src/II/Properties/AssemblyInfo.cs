@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 #endregion
 
-[assembly: AssemblyTitle("PPWCode.Util.OddsAndEnds.I")]
+[assembly: AssemblyTitle("PPWCode.Util.OddsAndEnds.II")]
 [assembly: AssemblyDescription("Main code of the PPWCode OddsAndEnds Util library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: ComVisible(false)]
