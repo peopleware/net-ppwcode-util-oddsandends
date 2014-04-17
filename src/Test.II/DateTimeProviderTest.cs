@@ -18,7 +18,7 @@ using System;
 
 using NUnit.Framework;
 
-using PPWCode.Util.OddsAndEnds.I.DateTimeProvider;
+using PPWCode.Util.OddsAndEnds.II.DateTimeProvider;
 
 #endregion
 

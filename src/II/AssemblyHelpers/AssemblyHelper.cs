@@ -22,7 +22,7 @@ using System.Reflection;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.AssemblyHelpers
+namespace PPWCode.Util.OddsAndEnds.II.AssemblyHelpers
 {
     public static class AssemblyHelper
     {

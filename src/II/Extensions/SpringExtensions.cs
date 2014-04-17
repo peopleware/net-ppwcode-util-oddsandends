@@ -18,7 +18,9 @@ using Spring.Context;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.Extensions
+
+
+namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     public static class SpringExtensions
     {

@@ -18,11 +18,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using PPWCode.Util.OddsAndEnds.I.Extensions;
+using PPWCode.Util.OddsAndEnds.II.Extensions;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.EnumHelpers
+namespace PPWCode.Util.OddsAndEnds.II.EnumHelpers
 {
     public static class EnumHelpers
     {

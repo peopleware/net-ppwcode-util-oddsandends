@@ -18,7 +18,7 @@ using System.Runtime.Serialization;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.Serialization
+namespace PPWCode.Util.OddsAndEnds.II.Serialization
 {
     public class GenericSerializationInfo
     {

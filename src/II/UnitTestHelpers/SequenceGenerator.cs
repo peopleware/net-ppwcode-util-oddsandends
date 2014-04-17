@@ -21,7 +21,7 @@ using System.Linq;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.UnitTestHelpers
+namespace PPWCode.Util.OddsAndEnds.II.UnitTestHelpers
 {
     public class SequenceGenerator
     {

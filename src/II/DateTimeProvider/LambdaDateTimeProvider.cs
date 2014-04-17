@@ -16,11 +16,11 @@
 
 using System;
 
-using PPWCode.Util.OddsAndEnds.I.Extensions;
+using PPWCode.Util.OddsAndEnds.II.Extensions;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.DateTimeProvider
+namespace PPWCode.Util.OddsAndEnds.II.DateTimeProvider
 {
     /// <summary>
     /// LambdaDateTimeProvider is a DateTimeProvider that

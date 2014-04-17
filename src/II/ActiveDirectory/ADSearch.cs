@@ -22,7 +22,7 @@ using System.Text;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
+namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
 {
     public class AdSearch
     {

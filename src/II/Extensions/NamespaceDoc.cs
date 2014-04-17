@@ -18,7 +18,7 @@ using System.Runtime.CompilerServices;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.Extensions
+namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     /// <summary>
     /// Contains all the helper classes for the Peopleware system

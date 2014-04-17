@@ -16,8 +16,8 @@ using System.IO;
 
 using NUnit.Framework;
 
-using PPWCode.Util.OddsAndEnds.I.Serialization;
-using PPWCode.Util.OddsAndEnds.I.Streaming;
+using PPWCode.Util.OddsAndEnds.II.Serialization;
+using PPWCode.Util.OddsAndEnds.II.Streaming;
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {

@@ -18,7 +18,7 @@ using System.Security.Principal;
 
 using NUnit.Framework;
 
-using PPWCode.Util.OddsAndEnds.I.ActiveDirectory;
+using PPWCode.Util.OddsAndEnds.II.ActiveDirectory;
 
 #endregion
 

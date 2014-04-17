@@ -19,8 +19,8 @@ using System.Threading;
 
 using NUnit.Framework;
 
-using PPWCode.Util.OddsAndEnds.I.Extensions;
-using PPWCode.Util.OddsAndEnds.I.TypeConverter;
+using PPWCode.Util.OddsAndEnds.II.Extensions;
+using PPWCode.Util.OddsAndEnds.II.TypeConverter;
 
 #endregion
 

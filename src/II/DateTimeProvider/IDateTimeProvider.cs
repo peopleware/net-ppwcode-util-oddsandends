@@ -14,7 +14,7 @@
 
 using System;
 
-namespace PPWCode.Util.OddsAndEnds.I.DateTimeProvider
+namespace PPWCode.Util.OddsAndEnds.II.DateTimeProvider
 {
     [Obsolete]
     public interface IDateTimeProvider

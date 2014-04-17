@@ -22,7 +22,7 @@ using System.Linq;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.Extensions
+namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     public class Grouping<TKey, TElement> :
         IGrouping<TKey, TElement>,

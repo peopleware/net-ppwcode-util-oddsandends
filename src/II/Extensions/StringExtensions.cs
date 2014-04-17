@@ -19,7 +19,7 @@ using System.Diagnostics.Contracts;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.Extensions
+namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     /// <summary>
     /// PPW helper string functions

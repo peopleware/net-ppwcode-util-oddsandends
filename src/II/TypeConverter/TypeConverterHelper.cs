@@ -18,7 +18,7 @@ using System.ComponentModel;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
+namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
 {
     public static class TypeConverterHelper
     {

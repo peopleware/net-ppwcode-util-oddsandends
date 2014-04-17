@@ -19,11 +19,11 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Xml;
 
-using PPWCode.Util.OddsAndEnds.I.Streaming;
+using PPWCode.Util.OddsAndEnds.II.Streaming;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.Serialization
+namespace PPWCode.Util.OddsAndEnds.II.Serialization
 {
     public class SerializationHelper
     {

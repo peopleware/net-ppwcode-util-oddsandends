@@ -20,7 +20,7 @@ using System.Threading;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.Security
+namespace PPWCode.Util.OddsAndEnds.II.Security
 {
     public static class IdentityNameHelper
     {

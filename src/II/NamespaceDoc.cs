@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I
+namespace PPWCode.Util.OddsAndEnds.II
 {
     /// <summary>
     /// <para>This assembly contains a collection of utility code

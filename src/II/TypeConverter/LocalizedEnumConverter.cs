@@ -25,7 +25,7 @@ using System.Resources;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
+namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
 {
     /// <summary>
     /// Converts enums depending on the current language

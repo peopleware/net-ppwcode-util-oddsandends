@@ -19,7 +19,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.UnitTestHelpers
+namespace PPWCode.Util.OddsAndEnds.II.UnitTestHelpers
 {
     public class ValueTypeSequences
     {

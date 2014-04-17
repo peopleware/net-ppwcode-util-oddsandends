@@ -18,7 +18,7 @@ using System;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.DateTimeProvider
+namespace PPWCode.Util.OddsAndEnds.II.DateTimeProvider
 {
     [Obsolete]
     public class GenuineDateTimeProvider : IDateTimeProvider

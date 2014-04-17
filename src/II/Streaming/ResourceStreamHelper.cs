@@ -16,7 +16,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace PPWCode.Util.OddsAndEnds.I.Streaming
+namespace PPWCode.Util.OddsAndEnds.II.Streaming
 {
     public static class ResourceStreamHelper
     {

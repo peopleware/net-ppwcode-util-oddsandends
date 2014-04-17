@@ -12,12 +12,12 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using PPWCode.Util.OddsAndEnds.I.Extensions;
-
-using Spring.Context.Support;
 using System;
 
-namespace PPWCode.Util.OddsAndEnds.I.DateTimeProvider
+using Spring.Context.Support;
+using PPWCode.Util.OddsAndEnds.II.Extensions;
+
+namespace PPWCode.Util.OddsAndEnds.II.DateTimeProvider
 {
     [Obsolete]
     public static class DateTimeProviderService

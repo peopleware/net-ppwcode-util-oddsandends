@@ -15,7 +15,7 @@
 using System.IO;
 using System.IO.Compression;
 
-namespace PPWCode.Util.OddsAndEnds.I.Streaming
+namespace PPWCode.Util.OddsAndEnds.II.Streaming
 {
     public class Compression
     {

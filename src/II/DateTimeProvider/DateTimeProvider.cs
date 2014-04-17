@@ -18,7 +18,7 @@ using System;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.I.DateTimeProvider
+namespace PPWCode.Util.OddsAndEnds.II.DateTimeProvider
 {
     /// <summary>
     /// DateTimeProvider is an abstract class that provides a DateTime for Now and Today.
