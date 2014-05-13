@@ -196,7 +196,6 @@
     <Compile Include="CollectionExtensionsTest.cs" />
     <Compile Include="DateTimeExtensionsTest.cs" />
     <Compile Include="DateTimeHelperTest.cs" />
-    <Compile Include="DateTimeProviderTest.cs" />
     <Compile Include="EnumTests.cs" />
     <Compile Include="IAddress.cs" />
     <Compile Include="IPerson.cs" />
@@ -213,12 +212,6 @@
     <Compile Include="SerializationTests.cs" />
     <Compile Include="SpreadSheetTest.cs" />
     <Compile Include="StringExtensionsTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\II\PPWCode.Util.OddsAndEnds.II.csproj">
-      <Project>{66A99D74-8A8F-4509-BD57-60CC6C1F5E29}</Project>
-      <Name>PPWCode.Util.OddsAndEnds.I</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -254,6 +247,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\II\PPWCode.Util.OddsAndEnds.II.csproj">
+      <Project>{66a99d74-8a8f-4509-bd57-60cc6c1f5e29}</Project>
+      <Name>PPWCode.Util.OddsAndEnds.II</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.StyleCop.PPWStyle.1.0.3\build\Microsoft.StyleCop.PPWStyle.Targets" Condition="Exists('..\packages\Microsoft.StyleCop.PPWStyle.1.0.3\build\Microsoft.StyleCop.PPWStyle.Targets')" />
