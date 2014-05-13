@@ -9,6 +9,7 @@ setlocal
 	if [%1]==[Release] set package_project=1
 	if defined package_project (
 		echo Packiging %project% ...
+		nuget restore
 		nuget pack .\II\%project%.csproj -Build -Properties "Configuration=%1"
 	)
 	
