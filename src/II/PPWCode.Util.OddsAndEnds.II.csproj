@@ -213,6 +213,7 @@
     <Compile Include="Extensions\ObjectExtentions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Identification\Validation.cs" />
     <Compile Include="NamespaceDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\IdentityNameHelper.cs" />
