@@ -196,7 +196,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             if (digitStream.Length == LengthVat)
             {
                 long rest = 97 - (long.Parse(digitStream.Substring(0, 7)) % 97);
-                result = (rest == long.Parse(digitStream.Substring(7, 2)));
+                result = rest == long.Parse(digitStream.Substring(7, 2));
             }
             return result;
         }
