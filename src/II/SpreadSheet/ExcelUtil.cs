@@ -8,7 +8,6 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
 {
     public class ExcelUtil
     {
-        private string SpreadSheetFileName { get; set; }
         public ExcelUtil(string fileName)
         {
             if (!File.Exists(fileName))
@@ -17,6 +16,8 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
             }
             SpreadSheetFileName = fileName;
         }
+
+        private string SpreadSheetFileName { get; set; }
 
         private OleDbConnection GetConnection()
         {
@@ -44,8 +45,9 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
             }
             return connectionString != string.Empty ? new OleDbConnection(connectionString) : null;
         }
+
         public List<T> ReadSheet<T>(string selectStatement, Func<DbDataReader, T> rowResolver)
-                  where T : class
+            where T : class
         {
             List<T> result = new List<T>();
             OleDbConnection con = GetConnection();

@@ -227,14 +227,14 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         {
             // ReSharper disable SimplifyConditionalTernaryExpression
             Contract.Ensures(startDate.StripHours() < endDate.StripHours()
-                                 ? Contract.Result<int>() > 0
-                                 : true);
+                ? Contract.Result<int>() > 0
+                : true);
             Contract.Ensures(startDate.StripHours() == endDate.StripHours()
-                                 ? Contract.Result<int>() == 0
-                                 : true);
+                ? Contract.Result<int>() == 0
+                : true);
             Contract.Ensures(startDate.StripHours() > endDate.StripHours()
-                                 ? Contract.Result<int>() < 0
-                                 : true);
+                ? Contract.Result<int>() < 0
+                : true);
             // ReSharper restore SimplifyConditionalTernaryExpression
             Contract.Ensures((endDate - startDate).Days == Contract.Result<int>());
 

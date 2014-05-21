@@ -28,20 +28,17 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
     {
         private readonly string m_DomainName;
 
-        public string DomainName
-        {
-            get
-            {
-                return m_DomainName;
-            }
-        }
-
         public AdSearch(string domainName)
         {
             Contract.Requires(!string.IsNullOrEmpty(domainName));
             Contract.Ensures(DomainName == domainName);
 
             m_DomainName = domainName;
+        }
+
+        public string DomainName
+        {
+            get { return m_DomainName; }
         }
 
         /// <summary>
@@ -111,8 +108,8 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
                     directorySearcher.Filter = string.Format("(SAMAccountName={0})", account);
                     SearchResult result = directorySearcher.FindOne();
                     return result != null && result.Properties != null && result.Properties.PropertyNames != null
-                               ? result.Properties.PropertyNames.OfType<string>()
-                               : Enumerable.Empty<string>();
+                        ? result.Properties.PropertyNames.OfType<string>()
+                        : Enumerable.Empty<string>();
                 }
             }
         }
@@ -140,8 +137,8 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
                     directorySearcher.PropertiesToLoad.Add(propertyName);
                     SearchResult result = directorySearcher.FindOne();
                     return result != null
-                               ? result.Properties[propertyName]
-                               : null;
+                        ? result.Properties[propertyName]
+                        : null;
                 }
             }
         }
@@ -184,8 +181,8 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
 
             ResultPropertyValueCollection result = GetProperty(userAccount, @"displayName");
             return result != null && result.Count > 0
-                       ? result[0].ToString()
-                       : string.Empty;
+                ? result[0].ToString()
+                : string.Empty;
         }
 
         /// <summary>
@@ -202,8 +199,8 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
 
             ResultPropertyValueCollection result = GetProperty(userAccount, @"mail");
             return result != null && result.Count > 0
-                       ? result[0].ToString()
-                       : string.Empty;
+                ? result[0].ToString()
+                : string.Empty;
         }
     }
 }

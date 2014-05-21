@@ -7,12 +7,12 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
 {
     public class GenerateUtil
     {
-        public static IList<T> ReadSheet<T>(string xlsFile, string sheet, List<string> columns, Func<DbDataReader, T>spreadSheetRowResolver)
-             where T : class 
+        public static IList<T> ReadSheet<T>(string xlsFile, string sheet, List<string> columns, Func<DbDataReader, T> spreadSheetRowResolver)
+            where T : class
         {
             ExcelUtil excelUtil = new ExcelUtil(xlsFile);
             StringBuilder selectStatement = new StringBuilder();
-            selectStatement.Append(@"select");           
+            selectStatement.Append(@"select");
             foreach (string item in columns)
             {
                 selectStatement.Append("[" + item + "],");

@@ -108,8 +108,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
             where T : class
         {
             return requiredUnCompress
-                       ? DeserializeFromBytes<T>(Compression.DeCompress(data))
-                       : DeserializeFromBytes<T>(data);
+                ? DeserializeFromBytes<T>(Compression.DeCompress(data))
+                : DeserializeFromBytes<T>(data);
         }
 
         public static byte[] SerializeToBytes(object obj)
@@ -131,8 +131,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         public static byte[] SerializeToBytes(object obj, bool requiredCompress)
         {
             return requiredCompress
-                       ? Compression.Compress(SerializeToBytes(obj))
-                       : SerializeToBytes(obj);
+                ? Compression.Compress(SerializeToBytes(obj))
+                : SerializeToBytes(obj);
         }
 
         #endregion

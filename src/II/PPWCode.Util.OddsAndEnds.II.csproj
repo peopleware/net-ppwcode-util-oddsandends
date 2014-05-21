@@ -224,6 +224,7 @@
     <Compile Include="SpreadSheet\GenerateUtil.cs" />
     <Compile Include="Streaming\Compression.cs" />
     <Compile Include="Streaming\ResourceStreamHelper.cs" />
+    <Compile Include="Threading\ProducerConsumerQueue.cs" />
     <Compile Include="TypeConverter\LocalizedEnumConverter.cs" />
     <Compile Include="TypeConverter\TypeConverterHelper.cs" />
     <Compile Include="UnitTestHelpers\SequenceGenerator.cs" />

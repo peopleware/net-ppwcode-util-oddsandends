@@ -29,6 +29,9 @@ namespace PPWCode.Util.OddsAndEnds.II.AssemblyHelpers
         private static readonly object s_LoadedAssembliesLock = new object();
         private static readonly Dictionary<string, Assembly> s_LoadedAssemblies = new Dictionary<string, Assembly>();
 
+        private static readonly object s_ClassNamesLock = new object();
+        private static readonly Dictionary<Assembly, Dictionary<string, Type>> s_ClassNames = new Dictionary<Assembly, Dictionary<string, Type>>();
+
         public static Assembly LoadAssembly(string assemblyName)
         {
             Contract.Requires(!string.IsNullOrEmpty(assemblyName));
@@ -48,9 +51,6 @@ namespace PPWCode.Util.OddsAndEnds.II.AssemblyHelpers
                 return result;
             }
         }
-
-        private static readonly object s_ClassNamesLock = new object();
-        private static readonly Dictionary<Assembly, Dictionary<string, Type>> s_ClassNames = new Dictionary<Assembly, Dictionary<string, Type>>();
 
         public static object CreateInstanceOf(Assembly assembly, string className)
         {

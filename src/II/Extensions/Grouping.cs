@@ -28,28 +28,19 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         IGrouping<TKey, TElement>,
         IList<TElement>
     {
-        private TKey m_Key;
-        private TElement[] m_Elements;
         private int m_Count;
-
-        internal TKey Key
-        {
-            get { return m_Key; }
-            set { m_Key = value; }
-        }
+        private TElement[] m_Elements;
+        private TKey m_Key;
 
         public Grouping(int count)
         {
             m_Elements = new TElement[count];
         }
 
-        internal void Add(TElement element)
+        internal TKey Key
         {
-            if (m_Elements.Length == m_Count)
-            {
-                Array.Resize(ref m_Elements, m_Count * 2);
-            }
-            m_Elements[m_Count++] = element;
+            get { return m_Key; }
+            set { m_Key = value; }
         }
 
         public IEnumerator<TElement> GetEnumerator()
@@ -131,6 +122,15 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
                 return m_Elements[index];
             }
             set { throw new ReadOnlyException(); }
+        }
+
+        internal void Add(TElement element)
+        {
+            if (m_Elements.Length == m_Count)
+            {
+                Array.Resize(ref m_Elements, m_Count * 2);
+            }
+            m_Elements[m_Count++] = element;
         }
     }
 }

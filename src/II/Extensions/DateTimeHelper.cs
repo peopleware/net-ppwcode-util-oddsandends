@@ -56,8 +56,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
 #endif
 
             return dt1.HasValue
-                       ? dt1.Value < dt2 ? dt1.Value : dt2
-                       : dt2;
+                ? dt1.Value < dt2 ? dt1.Value : dt2
+                : dt2;
         }
 
         /// <summary>
@@ -92,8 +92,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
 #endif
 
             return dt.Length == 0
-                       ? null
-                       : (DateTime?)dt.Min();
+                ? null
+                : (DateTime?)dt.Min();
         }
 
         /// <summary>
@@ -114,8 +114,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             IEnumerable<DateTime> dts = dt.Where(o => o.HasValue).Select(o => o.Value);
             // ReSharper restore PossibleInvalidOperationException
             return !dts.IsEmpty()
-                       ? dts.Min()
-                       : default(DateTime?);
+                ? dts.Min()
+                : default(DateTime?);
         }
 
         [Pure]
@@ -128,8 +128,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         public static DateTime Max(DateTime? dt1, DateTime dt2)
         {
             return dt1.HasValue
-                       ? dt1.Value > dt2 ? dt1.Value : dt2
-                       : dt2;
+                ? dt1.Value > dt2 ? dt1.Value : dt2
+                : dt2;
         }
 
         [Pure]
@@ -142,8 +142,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         public static DateTime? Max(params DateTime[] dt)
         {
             return dt.Length == 0
-                       ? null
-                       : (DateTime?)dt.Max();
+                ? null
+                : (DateTime?)dt.Max();
         }
 
         /// <summary>
@@ -163,8 +163,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             IEnumerable<DateTime> dts = dt.Where(o => o.HasValue).Select(o => o.Value);
             // ReSharper restore PossibleInvalidOperationException
             return !dts.IsEmpty()
-                       ? dts.Max()
-                       : default(DateTime?);
+                ? dts.Max()
+                : default(DateTime?);
         }
     }
 }

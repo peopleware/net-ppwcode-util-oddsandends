@@ -27,20 +27,22 @@ namespace PPWCode.Util.OddsAndEnds.II.Streaming
         {
             string temporaryFolder = Path.GetTempPath();
             string temporaryFileName = Path.Combine(
-                temporaryFolder, 
+                temporaryFolder,
                 string.Format("{0}-{1}", DateTime.Now.Ticks, resourceName));
             while (File.Exists(temporaryFileName))
             {
                 temporaryFileName = Path.Combine(
-                    temporaryFolder, 
+                    temporaryFolder,
                     string.Format("{0}-{1}", DateTime.Now.Ticks, resourceName));
             }
 
-            using (Stream resourceStream = 
+            using (Stream resourceStream =
                 assembly.GetManifestResourceStream(string.Concat(nameSpacename, resourceName)))
-            using (Stream file = File.Open(temporaryFileName, FileMode.CreateNew))
             {
-                CopyStream(resourceStream, file);
+                using (Stream file = File.Open(temporaryFileName, FileMode.CreateNew))
+                {
+                    CopyStream(resourceStream, file);
+                }
             }
 
             return temporaryFileName;

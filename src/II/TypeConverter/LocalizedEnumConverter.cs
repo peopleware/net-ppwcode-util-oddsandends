@@ -34,14 +34,14 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
         EnumConverter
     {
         /// <summary>
-        /// Indicates wether the values of the enum are flags
-        /// </summary>
-        private readonly bool m_IsFlagEnum;
-
-        /// <summary>
         /// Contains the values of the enum in case that it is a flag enum
         /// </summary>
         private readonly Array m_FlagValues;
+
+        /// <summary>
+        /// Indicates wether the values of the enum are flags
+        /// </summary>
+        private readonly bool m_IsFlagEnum;
 
         /// <summary>
         /// Lookup table which allows converting the localized text back to the enum values
@@ -63,8 +63,8 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
             Assembly assembly = enumType.Assembly;
             string resourceBaseName = string.Format(CultureInfo.InvariantCulture, "{0}.Properties.Resources", assembly.GetName().Name);
             m_ResourceManager = assembly.GetManifestResourceNames().Any(o => o.StartsWith(resourceBaseName))
-                                    ? new ResourceManager(resourceBaseName, enumType.Assembly)
-                                    : null;
+                ? new ResourceManager(resourceBaseName, enumType.Assembly)
+                : null;
 
             m_LookupTable = new Dictionary<string, object>();
             ICollection standardValues = GetStandardValues();
@@ -154,8 +154,8 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
                     {
                         string valueText = GetLocalizedValueText(flagValue, ci);
                         result = result == null
-                                     ? valueText
-                                     : string.Format(CultureInfo.InvariantCulture, "{0}, {1}", result, valueText);
+                            ? valueText
+                            : string.Format(CultureInfo.InvariantCulture, "{0}, {1}", result, valueText);
                     }
                 }
                 return result;
@@ -214,8 +214,8 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
             if (valueAsString != null)
             {
                 result = m_IsFlagEnum
-                             ? GetFlagValueFromLocalizedString(valueAsString)
-                             : GetValueFromLocalizedString(valueAsString);
+                    ? GetFlagValueFromLocalizedString(valueAsString)
+                    : GetValueFromLocalizedString(valueAsString);
             }
             return result ?? base.ConvertFrom(context, culture, value);
         }
@@ -233,8 +233,8 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
             if (destinationType.Equals(typeof(string)))
             {
                 return m_IsFlagEnum
-                           ? GetFlagValueText(value, ci)
-                           : GetLocalizedValueText(value, ci);
+                    ? GetFlagValueText(value, ci)
+                    : GetLocalizedValueText(value, ci);
             }
             return base.ConvertTo(context, ci, value, destinationType);
         }

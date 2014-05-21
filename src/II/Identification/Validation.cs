@@ -9,6 +9,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
     public static class Validation
     {
         public const int LengthKbo = 10;
+        public const int LengthVat = 9;
         public const int LengthRrn = 11;
         public const int LengthRsz = 10;
 
@@ -181,6 +182,23 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         public static string PadKbo(string kbo)
         {
             return string.IsNullOrEmpty(kbo) ? kbo : kbo.PadLeft(LengthKbo, '0');
+        }
+
+        [Pure]
+        public static bool ValidVat(string vat)
+        {
+            bool result = false;
+            string digitStream = GetDigitStream(vat);
+            if (digitStream.Length < LengthVat)
+            {
+                digitStream = digitStream.PadLeft(LengthVat, '0');
+            }
+            if (digitStream.Length == LengthVat)
+            {
+                long rest = 97 - (long.Parse(digitStream.Substring(0, 7)) % 97);
+                result = (rest == long.Parse(digitStream.Substring(7, 2)));
+            }
+            return result;
         }
     }
 }

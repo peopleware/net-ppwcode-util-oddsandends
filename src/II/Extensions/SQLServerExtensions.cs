@@ -25,14 +25,14 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
     public static class SQLServerExtensions
     {
         private static readonly string[] s_ConstraintCriterias =
-            {
-                "'(?<pattern>(PK_.+?))'",
-                "\"(?<pattern>(PK_.+?))\"",
-                "'(?<pattern>(UQ_.+?))'",
-                "\"(?<pattern>(UQ_.+?))\"",
-                "'(?<pattern>(CK_.+?))'",
-                "\"(?<pattern>(CK_.+?))\"",
-            };
+        {
+            "'(?<pattern>(PK_.+?))'",
+            "\"(?<pattern>(PK_.+?))\"",
+            "'(?<pattern>(UQ_.+?))'",
+            "\"(?<pattern>(UQ_.+?))\"",
+            "'(?<pattern>(CK_.+?))'",
+            "\"(?<pattern>(CK_.+?))\"",
+        };
 
         [Pure]
         public static string GetConstraint(this SqlException sqlException)

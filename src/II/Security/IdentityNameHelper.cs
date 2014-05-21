@@ -30,16 +30,16 @@ namespace PPWCode.Util.OddsAndEnds.II.Security
         {
             return ServiceSecurityContext.Current != null
                    && !string.IsNullOrEmpty(ServiceSecurityContext.Current.WindowsIdentity.Name)
-                       ? ServiceSecurityContext.Current.WindowsIdentity.Name
-                       : null;
+                ? ServiceSecurityContext.Current.WindowsIdentity.Name
+                : null;
         }
 
         public static string GetThreadCurrentPrincipalIdentityName()
         {
             return Thread.CurrentPrincipal != null
                    && !string.IsNullOrEmpty(Thread.CurrentPrincipal.Identity.Name)
-                       ? Thread.CurrentPrincipal.Identity.Name
-                       : null;
+                ? Thread.CurrentPrincipal.Identity.Name
+                : null;
         }
 
         public static string GetWindowsIdentityIdentityName()
