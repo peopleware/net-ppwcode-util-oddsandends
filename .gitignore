@@ -30,3 +30,4 @@ _ReSharper*/
 !/src/packages/repositories.config 
 /src/packages/*
 /src/*.nupkg
+/scratch/doc/**
