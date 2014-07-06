@@ -1,34 +1,54 @@
-<?xml version="1.0"?>
-<package >
-  <metadata>
+<?xml version="1.0" ?>
+<package>
+  <metadata minClientVersion="2.8">
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+
+    <!-- Authors and owners fixed on PeopleWare n.v. -->
+    <authors>PeopleWare n.v.</authors>
+    <owners>PeopleWare n.v.</owners>
+
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
-    <projectUrl>http://www.ppwcode.org/</projectUrl>
+    <projectUrl>https://github.com/peopleware/net-ppwcode-util-oddsandends</projectUrl>
     <iconUrl>http://www.ppwcode.org/img/logo.jpg</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
     <description>$description$</description>
-    <releaseNotes>NuGet packaging.</releaseNotes>
-    <copyright>Copyright 2013</copyright>
-    <tags>PPWCode</tags>
-    
-    <dependencies/>
-    
+
+    <releaseNotes>
+      1.0.0 Initial release PPWCode.Util.OddsAndEnds.II, built against .NET 4.5.
+    </releaseNotes>
+
+    <copyright>Copyright 2014 by PeopleWare n.v.</copyright>
+
+    <tags>PPWCode PPWCode.Util PPWCode.Util.OddsAndEnds</tags>
+
+    <!-- expliciet dependencies -->
+    <dependencies>
+      <!-- no dependencies -->
+    </dependencies>
+
+    <!-- explicit references -->
     <references>
-      <reference file="$MSBuildProjectName$.dll" />
+      <reference file="$AssemblyName$.dll" />
     </references>
 
   </metadata>
 
   <!-- explicit file inclusion -->
   <files>
-    <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.dll" target="lib\net45\CodeContracts" />
-    <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.pdb" target="lib\net45\CodeContracts" />
-    <file src="..\..\LICENSE" target="doc\LICENSE" />
-    <file src="..\..\NOTICE" target="doc\NOTICE" />
+    <!-- assemblies -->
+    <file src="$OutputPath$$AssemblyName$.dll" target="lib\net45" />
+    <file src="$OutputPath$$AssemblyName$.pdb" target="lib\net45" />
+    <file src="$OutputPath$$AssemblyName$.xml" target="lib\net45" />
+    <file src="$OutputPath$**\$AssemblyName$.resources.dll" target="lib\net45" />
+    <file src="$OutputPath$**\$AssemblyName$.Contracts.dll" target="lib\net45" />
+    <file src="$OutputPath$**\$AssemblyName$.Contracts.pdb" target="lib\net45" />
+
+    <!-- license information -->
+    <file src="..\..\LICENSE" target="LICENSE" />
+    <file src="..\..\NOTICE" target="NOTICE" />
+    <file src="..\..\README.md" target="README.md" />
   </files>
-  
+
 </package>

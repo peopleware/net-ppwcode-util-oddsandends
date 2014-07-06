@@ -1,18 +1,16 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
-#region Using
+﻿// Copyright 2014 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 using System;
 using System.Collections.Generic;
@@ -22,9 +20,7 @@ using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.II.Extensions;
 
-#endregion
-
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.Test.II
 {
     [TestFixture]
     public class DateTimeHelperTest
@@ -32,6 +28,7 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         private class DateInterval
         {
             public DateTime? StartDate { get; set; }
+
             public DateTime? EndDate { get; set; }
         }
 
@@ -47,138 +44,138 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             Assert.IsTrue(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = null,
-                    EndDate = null
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = null,
+                          EndDate = null
+                      },
+                  };
             Assert.IsTrue(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = DateTime.Today,
-                    EndDate = null
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today,
+                          EndDate = null
+                      },
+                  };
             Assert.IsTrue(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = null,
-                    EndDate = DateTime.Today
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = null,
+                          EndDate = DateTime.Today
+                      },
+                  };
             Assert.IsTrue(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(1),
-                    EndDate = DateTime.Today
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(1),
+                          EndDate = DateTime.Today
+                      },
+                  };
             Assert.IsFalse(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(-1),
-                    EndDate = DateTime.Today
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(-1),
+                          EndDate = DateTime.Today
+                      },
+                  };
             Assert.IsTrue(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(-1),
-                    EndDate = DateTime.Today
-                },
-                new DateInterval
-                {
-                    StartDate = DateTime.Today,
-                    EndDate = DateTime.Today
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(-1),
+                          EndDate = DateTime.Today
+                      },
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today,
+                          EndDate = DateTime.Today
+                      },
+                  };
             Assert.IsTrue(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(-1),
-                    EndDate = DateTime.Today
-                },
-                new DateInterval
-                {
-                    StartDate = DateTime.Today,
-                    EndDate = DateTime.Today.AddDays(1)
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(-1),
+                          EndDate = DateTime.Today
+                      },
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today,
+                          EndDate = DateTime.Today.AddDays(1)
+                      },
+                  };
             Assert.IsTrue(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(-1),
-                    EndDate = DateTime.Today
-                },
-                new DateInterval
-                {
-                    StartDate = DateTime.Today,
-                    EndDate = DateTime.Today.AddDays(-1)
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(-1),
+                          EndDate = DateTime.Today
+                      },
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today,
+                          EndDate = DateTime.Today.AddDays(-1)
+                      },
+                  };
             Assert.IsFalse(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(-1),
-                    EndDate = DateTime.Today
-                },
-                new DateInterval
-                {
-                    StartDate = DateTime.Today,
-                    EndDate = DateTime.Today.AddDays(1)
-                },
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(1),
-                    EndDate = DateTime.Today.AddDays(2)
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(-1),
+                          EndDate = DateTime.Today
+                      },
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today,
+                          EndDate = DateTime.Today.AddDays(1)
+                      },
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(1),
+                          EndDate = DateTime.Today.AddDays(2)
+                      },
+                  };
             Assert.IsTrue(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
 
             lst = new List<object>
-            {
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(-1),
-                    EndDate = DateTime.Today
-                },
-                new DateInterval
-                {
-                    StartDate = DateTime.Today,
-                    EndDate = DateTime.Today.AddDays(1)
-                },
-                new DateInterval
-                {
-                    StartDate = DateTime.Today.AddDays(1),
-                    EndDate = DateTime.Today
-                },
-            };
+                  {
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(-1),
+                          EndDate = DateTime.Today
+                      },
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today,
+                          EndDate = DateTime.Today.AddDays(1)
+                      },
+                      new DateInterval
+                      {
+                          StartDate = DateTime.Today.AddDays(1),
+                          EndDate = DateTime.Today
+                      },
+                  };
             Assert.IsFalse(lst.IsConsecutiveSequence(extractStartDate, extractEndDate));
         }
 

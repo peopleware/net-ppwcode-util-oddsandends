@@ -1,4 +1,18 @@
-﻿using System;
+﻿// Copyright 2014 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+using System;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
@@ -30,6 +44,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             {
                 result = null;
             }
+
             return result;
         }
 
@@ -45,6 +60,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
                 int rest = 97 - int.Parse(digitStream.Substring(9, 2));
                 return numberBefore2000 % 97 == rest || numberAfter2000 % 97 == rest;
             }
+
             return false;
         }
 
@@ -74,6 +90,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
                     int rest = 97 - int.Parse(digitStream.Substring(9, 2));
                     yyOffset = numberBefore2000 % 97 == rest ? 1900 : 2000;
                 }
+
                 yy = yy + yyOffset;
 
                 if (mm < 20)
@@ -97,6 +114,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
                 {
                     sexe = (vvv == 0 || vvv == 999) ? 0 : ((vvv % 2) == 1) ? 1 : 2;
                 }
+
                 if (calcBirthDate)
                 {
                     try
@@ -131,11 +149,13 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             {
                 return string.Empty;
             }
+
             StringBuilder sb = new StringBuilder(stream.Length);
             foreach (char ch in stream.Where(char.IsDigit))
             {
                 sb.Append(ch);
             }
+
             return sb.ToString();
         }
 
@@ -175,6 +195,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
                 long rest = 97 - (long.Parse(digitStream.Substring(0, 8)) % 97);
                 result = rest == long.Parse(digitStream.Substring(8, 2));
             }
+
             return result;
         }
 
@@ -193,11 +214,13 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             {
                 digitStream = digitStream.PadLeft(LengthVat, '0');
             }
+
             if (digitStream.Length == LengthVat)
             {
                 long rest = 97 - (long.Parse(digitStream.Substring(0, 7)) % 97);
                 result = rest == long.Parse(digitStream.Substring(7, 2));
             }
+
             return result;
         }
     }

@@ -1,16 +1,16 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
+﻿// Copyright 2014 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 using System.IO;
 
@@ -19,7 +19,7 @@ using NUnit.Framework;
 using PPWCode.Util.OddsAndEnds.II.Serialization;
 using PPWCode.Util.OddsAndEnds.II.Streaming;
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.Test.II
 {
     // ReSharper disable InconsistentNaming
     [TestFixture]
@@ -245,31 +245,30 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             }
         }
 
-        // Todo Danny Needs to be fixed??
-        //[Test, Description("Serialize/Deserialize an instance of class PersonA, with a compressed stream as intermediare value")]
-        //public void CompressedStream_SerializePersonA()
-        //{
-        //    AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
-        //    PersonA personA = new PersonA(@"Bob", @"Bones", addressA);
+        [Test, Description("Serialize/Deserialize an instance of class PersonA, with a compressed stream as intermediate value")]
+        public void CompressedStream_SerializePersonA()
+        {
+            AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
+            PersonA personA = new PersonA(@"Bob", @"Bones", addressA);
 
-        //    byte[] memory;
-            
-        //    using (MemoryStream stream = new MemoryStream())
-        //    using (Stream compressed = Compression.CompressingStream(stream))
-        //    {
-        //        SerializationHelper.Serialize(compressed, personA);
-        //        Assert.IsTrue(stream.Length > 0);
-        //        memory = stream.ToArray();
-        //    }
+            byte[] memory;
 
-        //    PersonA deserializedPersonA;
-        //    using (Stream stream = new MemoryStream(memory))
-        //    using (Stream decompressed = Compression.DecompressingStream(stream))
-        //    {
-        //        deserializedPersonA = SerializationHelper.Deserialize<PersonA>(decompressed);
-        //    }
+            using (MemoryStream stream = new MemoryStream())
+            using (Stream compressed = Compression.CompressingStream(stream))
+            {
+                SerializationHelper.Serialize(compressed, personA);
+                Assert.IsTrue(stream.Length > 0);
+                memory = stream.ToArray();
+            }
 
-        //    Assert.AreEqual(personA, deserializedPersonA);
-        //}
+            PersonA deserializedPersonA;
+            using (Stream stream = new MemoryStream(memory))
+            using (Stream decompressed = Compression.DecompressingStream(stream))
+            {
+                deserializedPersonA = SerializationHelper.Deserialize<PersonA>(decompressed);
+            }
+
+            Assert.AreEqual(personA, deserializedPersonA);
+        }
     }
 }
