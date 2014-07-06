@@ -1,18 +1,16 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
-#region Using
+﻿// Copyright 2014 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 using System.Globalization;
 using System.Threading;
@@ -21,8 +19,6 @@ using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.II.Extensions;
 using PPWCode.Util.OddsAndEnds.II.TypeConverter;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.Test_I
 {
@@ -61,11 +57,11 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             TypeConverterHelper.RegisterTypeConverter<TestEnum, LocalizedEnumConverter>();
             Thread.CurrentThread.CurrentCulture = new CultureInfo(@"en-US");
             Assert.AreEqual(@"ONE", E.GetLocalizedDescription());
-            //MUDO testen fixen op Jenkins
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(@"nl-BE");
-            //Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(@"nl-NL");
-            //Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
+
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(@"nl-BE");
+            Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(@"nl-NL");
+            Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
         }
 
         [Test]
@@ -74,9 +70,9 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
             const TestEnum E = TestEnum.ONE;
             TypeConverterHelper.RegisterTypeConverter<TestEnum, LocalizedEnumConverter>();
             Assert.AreEqual(@"ONE", E.GetLocalizedDescription(new CultureInfo(@"en-US")));
-            //MUDO testen fixen op Jenkins
-            //Assert.AreEqual(@"Eén", E.GetLocalizedDescription(new CultureInfo(@"nl-BE")));
-            //Assert.AreEqual(@"Eén", E.GetLocalizedDescription(new CultureInfo(@"nl-NL")));
+
+            Assert.AreEqual(@"Eén", E.GetLocalizedDescription(new CultureInfo(@"nl-BE")));
+            Assert.AreEqual(@"Eén", E.GetLocalizedDescription(new CultureInfo(@"nl-NL")));
         }
     }
 }

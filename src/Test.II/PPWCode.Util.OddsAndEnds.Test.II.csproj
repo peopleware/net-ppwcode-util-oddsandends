@@ -190,6 +190,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Solution Items\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="AddressA.cs" />
     <Compile Include="AdressB.cs" />
     <Compile Include="ADSearchTest.cs" />

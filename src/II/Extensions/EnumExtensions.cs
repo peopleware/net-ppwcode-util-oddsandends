@@ -1,26 +1,22 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
-#region Using
+﻿// Copyright 2014 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
@@ -32,9 +28,10 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             {
                 System.ComponentModel.TypeConverter tc = TypeDescriptor.GetConverter(enumValue.GetType());
                 return tc != null
-                    ? tc.ConvertToString(enumValue)
-                    : enumValue.ToString();
+                           ? tc.ConvertToString(enumValue)
+                           : enumValue.ToString();
             }
+
             return string.Empty;
         }
 
@@ -44,9 +41,10 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             {
                 System.ComponentModel.TypeConverter tc = TypeDescriptor.GetConverter(enumValue.GetType());
                 return tc != null
-                    ? tc.ConvertToString(null, ci, enumValue)
-                    : enumValue.ToString();
+                           ? tc.ConvertToString(null, ci, enumValue)
+                           : enumValue.ToString();
             }
+
             return string.Empty;
         }
 
@@ -71,24 +69,29 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
                 {
                     break;
                 }
+
                 if ((bits & mask) == mask)
                 {
                     results.Add(values[i]);
                     bits -= mask;
                 }
             }
+
             if (bits != 0L)
             {
                 return Enumerable.Empty<Enum>();
             }
+
             if (Convert.ToUInt64(value) != 0L)
             {
                 return results.Reverse<Enum>();
             }
+
             if (bits == Convert.ToUInt64(value) && values.Length > 0 && Convert.ToUInt64(values[0]) == 0L)
             {
                 return values.Take(1);
             }
+
             return Enumerable.Empty<Enum>();
         }
 
@@ -100,13 +103,15 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
                 ulong bits = Convert.ToUInt64(value);
                 if (bits == 0L)
                 {
-                    //yield return value;
-                    continue; // skip the zero value
+                    // skip the zero value
+                    continue;
                 }
+
                 while (flag < bits)
                 {
                     flag <<= 1;
                 }
+
                 if (flag == bits)
                 {
                     yield return value;
