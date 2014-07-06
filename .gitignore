@@ -29,5 +29,5 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 !/src/packages/repositories.config 
 /src/packages/*
-/src/*.nupkg
-/scratch/doc/**
+/**/*.nupkg
+/scratch
