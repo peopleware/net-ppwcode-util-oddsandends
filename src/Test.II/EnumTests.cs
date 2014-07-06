@@ -20,7 +20,7 @@ using NUnit.Framework;
 using PPWCode.Util.OddsAndEnds.II.Extensions;
 using PPWCode.Util.OddsAndEnds.II.TypeConverter;
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.Test.II
 {
     internal enum TestEnum
     {

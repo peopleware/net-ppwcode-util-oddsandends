@@ -22,7 +22,7 @@ using NUnit.Framework;
 using PPWCode.Util.OddsAndEnds.II.SpreadSheet;
 using PPWCode.Util.OddsAndEnds.II.Streaming;
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.Test.II
 {
     [TestFixture]
     public class SpreadSheetTest
