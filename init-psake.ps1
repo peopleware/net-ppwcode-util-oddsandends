@@ -16,11 +16,30 @@ param([string]$target = "")
 
 try 
 {
+    # execution policy for scripts
     Set-ExecutionPolicy RemoteSigned
-    $moduleItem = Get-Item  .\src\packages\psake.*\tools\psake.psm1 | 
-                    Sort-Object -Property FullName -Descending | 
-                    Select-Object -First 1
-    Import-Module $moduleItem.FullName -Force
+
+    # find module
+    $modules = Get-Item  .\src\packages\psake.*\tools\psake.psm1
+    if ($modules -eq $null)
+    {
+        Push-Location
+        Set-Location 'src'
+        & nuget restore
+        Pop-Location
+
+        $modules = Get-Item  .\src\packages\psake.*\tools\psake.psm1
+        if ($modules -eq $null)
+        {
+            throw "Cannot find psake module."
+        }
+    }
+
+    # take most recent module, if multiple found
+    $module = $modules | Sort-Object -Property FullName -Descending | Select-Object -First 1
+
+    # import module, force a reload if already loaded
+    Import-Module $module.FullName -Force
     if ($target -ne "")
     {
         Invoke-psake $target
@@ -28,6 +47,8 @@ try
 }
 catch 
 {
-    Write-Error $_
     Write-Host "Error executing psake.ps1"
+    Write-Host "Error:"
+    Write-Host $_
+    Write-Host
 }
