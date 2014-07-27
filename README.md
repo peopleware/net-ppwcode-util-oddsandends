@@ -29,6 +29,39 @@ package `PPWCode.Util.OddsAndEnds.I`.  From then on, one will be able to install
 it using the Nuget package manager from inside Visual Studio.
 
 
+## Build your own
+
+A couple of reasons come to mind as to why you would want to build your own package of
+this library. One reason would be that you need a version of the library built
+with the debug configuration. Another reason might be that you need features
+that are available on master, but that are not yet released.
+
+Building your own package of this library is very easy.  A [psake] build script is
+added for this purpose.
+
+Before executing regular [psake] tasks, the environment must first be initialized.
+To do this, open a PowerShell prompt, and execute the following in the root folder
+of the source.
+
+    .\init-psake.ps1
+
+This will initialize your environment. Note that the script assumes that the
+[NuGet] commandline client is available on the path.
+
+After the initialization, several [psake] tasks can be executed using the
+PowerShell command `Invoke-psake` that is available now. Here are a couple
+of examples:
+
+    Invoke-psake
+    Invoke-psake ?
+    Invoke-psake PackageRestore
+    Invoke-psake Package -properties @{ 'configuration'='Debug'; 'repos'=@('nuget'); 'publishrepo' = 'local' }
+
+The last line builds a [NuGet] package using the 'Debug' configuration, and publishes
+it to the [NuGet] repository with the name 'local'. The [NuGet] repository 'nuget'
+is used to locate the dependent [NuGet] packages.
+
+
 ## Contributors
 
 See the [GitHub Contributors list].
@@ -96,3 +129,5 @@ limitations under the License.
 [Microsoft Code Contracts]: http://research.microsoft.com/en-us/projects/contracts/
 
 [GitHub Contributors list]: https://github.com/peopleware/net-ppwcode-util-oddsandends/graphs/contributors
+
+[psake]: https://github.com/psake/psake
