@@ -49,9 +49,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
                         .GetTypes()
                         .Where(t => t.IsClass
                                     && t.IsPublic
-                                    && t.GetCustomAttributes(false)
-                                           .OfType<DataContractAttribute>()
-                                           .Any());
+                                    && (t.GetCustomAttributes(false).OfType<DataContractAttribute>().Any()
+                                       || t.GetCustomAttributes(false).OfType<CollectionDataContractAttribute>().Any()));
 
                 IEnumerable<Type> genericBoundedTypes =
                     foundTypes
