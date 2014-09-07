@@ -16,7 +16,8 @@
     <description>$description$</description>
 
     <releaseNotes>
-      1.0.0 Initial release PPWCode.Util.OddsAndEnds.II, built against .NET 4.5.
+1.0.0 Initial release PPWCode.Util.OddsAndEnds.II, built against .NET 4.5.
+1.0.1 Fix: TypeExtensions.GetKnownTypes, also takes into account CollectionDataContract.
     </releaseNotes>
 
     <copyright>Copyright 2014 by PeopleWare n.v.</copyright>
