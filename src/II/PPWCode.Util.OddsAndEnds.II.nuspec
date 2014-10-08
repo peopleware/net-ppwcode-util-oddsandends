@@ -18,6 +18,7 @@
     <releaseNotes>
 1.0.0 Initial release PPWCode.Util.OddsAndEnds.II, built against .NET 4.5.
 1.0.1 Fix: TypeExtensions.GetKnownTypes, also takes into account CollectionDataContract.
+1.1.0 Extra: Validation, added strict validation methods.
     </releaseNotes>
 
     <copyright>Copyright 2014 by PeopleWare n.v.</copyright>
