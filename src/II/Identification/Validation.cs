@@ -187,6 +187,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
 
                 result = rest == long.Parse(rsz.Substring(8, 2));
             }
+
             return result;
         }
 
@@ -230,6 +231,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             {
                 digitStream = digitStream.PadLeft(LengthVat, '0');
             }
+
             return StrictValidVat(digitStream);
         }
 
