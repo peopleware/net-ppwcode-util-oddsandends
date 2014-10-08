@@ -37,12 +37,18 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         public static bool ValidRrn(string rrn)
         {
             string digitStream = PadRrn(GetDigitStream(rrn));
-            if (digitStream.Length == LengthRrn)
+            return StrictValidRrn(digitStream);
+        }
+
+        [Pure]
+        public static bool StrictValidRrn(string rrn)
+        {
+            if (rrn.Length == LengthRrn)
             {
-                string number = digitStream.Substring(0, 9);
+                string number = rrn.Substring(0, 9);
                 long numberBefore2000 = long.Parse(number);
                 long numberAfter2000 = long.Parse(string.Concat('2', number));
-                int rest = 97 - int.Parse(digitStream.Substring(9, 2));
+                int rest = 97 - int.Parse(rrn.Substring(9, 2));
                 return numberBefore2000 % 97 == rest || numberAfter2000 % 97 == rest;
             }
             return false;
@@ -142,20 +148,25 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         [Pure]
         public static bool ValidRsz(string rsz)
         {
-            bool result = false;
             string digitStream = PadRsz(GetDigitStream(rsz));
-            if (digitStream.Length == LengthRsz)
+            return StrictValidRsz(digitStream);
+        }
+
+        [Pure]
+        public static bool StrictValidRsz(string rsz)
+        {
+            bool result = false;
+            if (rsz.Length == LengthRsz)
             {
-                long rest = 96 - ((long.Parse(digitStream.Substring(0, 8)) * 100) % 97);
+                long rest = 96 - ((long.Parse(rsz.Substring(0, 8)) * 100) % 97);
 
                 if (rest == 0)
                 {
                     rest = 97;
                 }
 
-                result = rest == long.Parse(digitStream.Substring(8, 2));
+                result = rest == long.Parse(rsz.Substring(8, 2));
             }
-
             return result;
         }
 
@@ -168,12 +179,18 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         [Pure]
         public static bool ValidKbo(string kbo)
         {
-            bool result = false;
             string digitStream = PadKbo(GetDigitStream(kbo));
-            if (digitStream.Length == LengthKbo)
+            return StrictValidKbo(digitStream);
+        }
+
+        [Pure]
+        public static bool StrictValidKbo(string kbo)
+        {
+            bool result = false;
+            if (kbo.Length == LengthKbo)
             {
-                long rest = 97 - (long.Parse(digitStream.Substring(0, 8)) % 97);
-                result = rest == long.Parse(digitStream.Substring(8, 2));
+                long rest = 97 - (long.Parse(kbo.Substring(0, 8)) % 97);
+                result = rest == long.Parse(kbo.Substring(8, 2));
             }
             return result;
         }
@@ -187,16 +204,22 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         [Pure]
         public static bool ValidVat(string vat)
         {
-            bool result = false;
             string digitStream = GetDigitStream(vat);
             if (digitStream.Length < LengthVat)
             {
                 digitStream = digitStream.PadLeft(LengthVat, '0');
             }
-            if (digitStream.Length == LengthVat)
+            return StrictValidVat(digitStream);
+        }
+
+        [Pure]
+        public static bool StrictValidVat(string vat)
+        {
+            bool result = false;
+            if (vat.Length == LengthVat)
             {
-                long rest = 97 - (long.Parse(digitStream.Substring(0, 7)) % 97);
-                result = rest == long.Parse(digitStream.Substring(7, 2));
+                long rest = 97 - (long.Parse(vat.Substring(0, 7)) % 97);
+                result = rest == long.Parse(vat.Substring(7, 2));
             }
             return result;
         }
