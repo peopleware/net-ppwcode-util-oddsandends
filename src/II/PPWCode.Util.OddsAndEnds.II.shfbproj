@@ -18,20 +18,33 @@
     <OutputPath>..\..\scratch\doc\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
     <Language>en-US</Language>
-    <PresentationStyle>vs2005</PresentationStyle>
-    <FrameworkVersion>.NET Framework 3.5</FrameworkVersion>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
     <HelpFileFormat>Website</HelpFileFormat>
     <CopyrightHref>http://www.peopleware.be</CopyrightHref>
     <CopyrightText>PeopleWare n.v.</CopyrightText>
     <FeedbackEMailAddress>info%2540peopleware.be</FeedbackEMailAddress>
     <HeaderText>PPWCode.Util.OddsAndEnds</HeaderText>
     <HelpTitle>PPWCode.Util.OddsAndEnds developer documentation</HelpTitle>
-    <SyntaxFilters>CSharp</SyntaxFilters>
+    <SyntaxFilters>C#</SyntaxFilters>
     <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors, Namespace, TypeParameter, IncludeTargets, AutoDocumentDispose</MissingTags>
     <VisibleItems>Attributes, InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected, SealedProtected</VisibleItems>
     <DocumentationSources>
       <DocumentationSource sourceFile="PPWCode.Util.OddsAndEnds.II.csproj" configuration="Debug" platform="AnyCPU" />
     </DocumentationSources>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <CleanIntermediates>True</CleanIntermediates>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <Preliminary>False</Preliminary>
+    <NamingMethod>Guid</NamingMethod>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in
        order for Visual Studio to perform the build.  The others are optional
