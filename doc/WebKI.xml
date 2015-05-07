@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AddMonths method" Url="html/e778bab7-f043-7c24-8164-1530c0e7108c.htm" />
+  <HelpKINode Title="AddQuarters method" Url="html/5559a8e6-915d-ac38-e14d-f8f1f29a5ae0.htm" />
+  <HelpKINode Title="AddValue(Of T) method" Url="html/c9c44339-4c4e-b019-5222-caac3d1dcb29.htm" />
+  <HelpKINode Title="AddValue&lt;T&gt; method" Url="html/c9c44339-4c4e-b019-5222-caac3d1dcb29.htm" />
+  <HelpKINode Title="AdSearch class">
+    <HelpKINode Title="AdSearch Class" Url="html/05b14bf9-402b-a0cc-9fa6-4421d9ef86d5.htm" />
+    <HelpKINode Title="about AdSearch class" Url="html/05b14bf9-402b-a0cc-9fa6-4421d9ef86d5.htm" />
+    <HelpKINode Title="constructor" Url="html/fed4ca9c-b3ea-a6bc-04e6-ef26ff736e17.htm" />
+    <HelpKINode Title="methods" Url="html/9dd38cc3-6610-27ca-1f82-4a39e61ae1c4.htm" />
+    <HelpKINode Title="properties" Url="html/3b9a225a-f57e-aee2-5859-cd94f7522614.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AdSearch.AdSearch constructor" Url="html/fed4ca9c-b3ea-a6bc-04e6-ef26ff736e17.htm" />
+  <HelpKINode Title="AdSearch.AvailableProperties method" Url="html/a2d3d34f-97f3-45f5-2120-3edfa3097b7f.htm" />
+  <HelpKINode Title="AdSearch.DomainName property" Url="html/1829029a-d67f-199b-2b76-350aaaf02ad0.htm" />
+  <HelpKINode Title="AdSearch.FindEmail method" Url="html/05516bdc-039a-ae50-8bad-ee8e1318272c.htm" />
+  <HelpKINode Title="AdSearch.FindName method" Url="html/7f43fa92-38f4-c13d-c885-d1c47d855a8e.htm" />
+  <HelpKINode Title="AdSearch.GetAccountNameFromUserAccount method" Url="html/040c3591-81ce-1cf6-4b35-d99fb0a43e35.htm" />
+  <HelpKINode Title="AdSearch.GetDomainFromUserAccount method" Url="html/18f48826-e047-bb1d-2f99-1c3057345da2.htm" />
+  <HelpKINode Title="AdSearch.GetProperty method" Url="html/d2a3b3ce-e726-aa79-fc79-08e83c578432.htm" />
+  <HelpKINode Title="AdSearch.UserExists method" Url="html/f2cd72c2-93e0-9588-31ca-00c5ccecc004.htm" />
+  <HelpKINode Title="AgeInYears method" Url="html/44938192-5da7-d828-b403-24512d564ce5.htm" />
+  <HelpKINode Title="AsEnumerable(Of T) method" Url="html/ba43242c-4de8-f8d2-404a-57cb100bb2cb.htm" />
+  <HelpKINode Title="AsEnumerable&lt;T&gt; method" Url="html/ba43242c-4de8-f8d2-404a-57cb100bb2cb.htm" />
+  <HelpKINode Title="AsIList(Of T) method" Url="html/b552be32-cabc-6f6f-409f-6fe40d29fcb5.htm" />
+  <HelpKINode Title="AsIList&lt;T&gt; method" Url="html/b552be32-cabc-6f6f-409f-6fe40d29fcb5.htm" />
+  <HelpKINode Title="AsList(Of T) method" Url="html/f20dc460-deba-feef-4441-bed1f0ab1693.htm" />
+  <HelpKINode Title="AsList&lt;T&gt; method" Url="html/f20dc460-deba-feef-4441-bed1f0ab1693.htm" />
+  <HelpKINode Title="AssemblyHelper class">
+    <HelpKINode Title="AssemblyHelper Class" Url="html/2012777d-8323-1a85-830f-4082802ac42b.htm" />
+    <HelpKINode Title="about AssemblyHelper class" Url="html/2012777d-8323-1a85-830f-4082802ac42b.htm" />
+    <HelpKINode Title="methods" Url="html/284f302c-d1ad-92c1-41fc-a09fb070cf4a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AssemblyHelper.CreateInstanceOf method" Url="html/737ce08e-1809-cef8-2c5f-3ddec9106f16.htm" />
+  <HelpKINode Title="AssemblyHelper.LoadAssembly method" Url="html/5bbaa1aa-e3a6-dd4b-0ee7-ffe0b5a79a9e.htm" />
+  <HelpKINode Title="AvailableProperties method" Url="html/a2d3d34f-97f3-45f5-2120-3edfa3097b7f.htm" />
+  <HelpKINode Title="CollectionExtensions class">
+    <HelpKINode Title="CollectionExtensions Class" Url="html/edf56d52-3e5d-9e1f-9227-5adb09040c4b.htm" />
+    <HelpKINode Title="about CollectionExtensions class" Url="html/edf56d52-3e5d-9e1f-9227-5adb09040c4b.htm" />
+    <HelpKINode Title="methods" Url="html/f9ab5645-41f6-f81e-6df2-5933fb164357.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CollectionExtensions.AsIList(Of T) method" Url="html/b552be32-cabc-6f6f-409f-6fe40d29fcb5.htm" />
+  <HelpKINode Title="CollectionExtensions.AsIList&lt;T&gt; method" Url="html/b552be32-cabc-6f6f-409f-6fe40d29fcb5.htm" />
+  <HelpKINode Title="CollectionExtensions.AsList(Of T) method" Url="html/f20dc460-deba-feef-4441-bed1f0ab1693.htm" />
+  <HelpKINode Title="CollectionExtensions.AsList&lt;T&gt; method" Url="html/f20dc460-deba-feef-4441-bed1f0ab1693.htm" />
+  <HelpKINode Title="CollectionExtensions.IsEmpty(Of T) method" Url="html/7c6f3c7c-598b-c76a-b7e7-0e14aef2187a.htm" />
+  <HelpKINode Title="CollectionExtensions.IsEmpty&lt;T&gt; method" Url="html/7c6f3c7c-598b-c76a-b7e7-0e14aef2187a.htm" />
+  <HelpKINode Title="CollectionExtensions.IsNullOrEmpty(Of T) method" Url="html/47ebd49f-405f-7f87-30d8-1441a63cc8ab.htm" />
+  <HelpKINode Title="CollectionExtensions.IsNullOrEmpty&lt;T&gt; method" Url="html/47ebd49f-405f-7f87-30d8-1441a63cc8ab.htm" />
+  <HelpKINode Title="CollectionExtensions.NullableSum method" Url="html/e4cb0c3f-c302-db32-a07f-a94b56304b81.htm" />
+  <HelpKINode Title="CollectionExtensions.Segment(Of T) method" Url="html/b97a9f12-cae5-78e6-45e9-53041c54ec39.htm" />
+  <HelpKINode Title="CollectionExtensions.Segment&lt;T&gt; method" Url="html/b97a9f12-cae5-78e6-45e9-53041c54ec39.htm" />
+  <HelpKINode Title="CollectionExtensions.SetEqual method" Url="html/6f4de9ee-42de-42a5-0fc9-d598d300dc64.htm" />
+  <HelpKINode Title="Compress method" Url="html/b848c782-95a9-6d10-5437-d25166473a41.htm" />
+  <HelpKINode Title="CompressingStream method" Url="html/6e26dccf-0ddb-faf5-344a-33022b1dc856.htm" />
+  <HelpKINode Title="Compression class">
+    <HelpKINode Title="Compression Class" Url="html/dcd8e88c-ec1d-77ee-76b9-097adc0a763f.htm" />
+    <HelpKINode Title="about Compression class" Url="html/dcd8e88c-ec1d-77ee-76b9-097adc0a763f.htm" />
+    <HelpKINode Title="constructor" Url="html/86aeda42-b099-4f10-37ba-bd5fdeda9f18.htm" />
+    <HelpKINode Title="methods" Url="html/5a436edb-bf1c-1ac7-5408-cf3d4d5b6598.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Compression.Compress method" Url="html/b848c782-95a9-6d10-5437-d25166473a41.htm" />
+  <HelpKINode Title="Compression.CompressingStream method" Url="html/6e26dccf-0ddb-faf5-344a-33022b1dc856.htm" />
+  <HelpKINode Title="Compression.Compression constructor" Url="html/86aeda42-b099-4f10-37ba-bd5fdeda9f18.htm" />
+  <HelpKINode Title="Compression.DeCompress method" Url="html/5ceba1cd-8a5f-ea3f-0be5-0a3c87edcb9b.htm" />
+  <HelpKINode Title="Compression.DecompressingStream method" Url="html/8b791f06-d104-f8cd-c71f-2b9d2f937f72.htm" />
+  <HelpKINode Title="ConfigHelper class">
+    <HelpKINode Title="ConfigHelper Class" Url="html/762ccaf6-1127-03b9-1ed5-9fff075422a2.htm" />
+    <HelpKINode Title="about ConfigHelper class" Url="html/762ccaf6-1127-03b9-1ed5-9fff075422a2.htm" />
+    <HelpKINode Title="methods" Url="html/03ada19f-9ff0-5c34-ebc4-b82997a8aa47.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConfigHelper.GetAppSetting method" Url="html/cbcd8b1d-041c-85bf-e7c8-6e150184c437.htm" />
+  <HelpKINode Title="ConfigHelper.GetConnectionString method" Url="html/295ab131-51a3-13fa-f8e9-31f6934c55f7.htm" />
+  <HelpKINode Title="ConvertFrom method" Url="html/da1ca7cb-f89e-ab86-d5af-62ffb7e48775.htm" />
+  <HelpKINode Title="ConvertTo method" Url="html/1ec40637-9253-bcf7-ed32-1573190385e1.htm" />
+  <HelpKINode Title="CopyStream method" Url="html/0f14661a-edc9-6af7-cefb-05c069a58952.htm" />
+  <HelpKINode Title="CreateInstanceOf method" Url="html/737ce08e-1809-cef8-2c5f-3ddec9106f16.htm" />
+  <HelpKINode Title="CreateRandomDecimalSequence method" Url="html/b77a696b-a354-8fa1-e8a8-7fd11ccf2bbe.htm" />
+  <HelpKINode Title="Dates property" Url="html/ce9d04fd-c034-b055-0bee-52bd95e39b53.htm" />
+  <HelpKINode Title="DateTimeExtensions class">
+    <HelpKINode Title="DateTimeExtensions Class" Url="html/48c945b5-a104-0b08-68ef-24f81da60b4a.htm" />
+    <HelpKINode Title="about DateTimeExtensions class" Url="html/48c945b5-a104-0b08-68ef-24f81da60b4a.htm" />
+    <HelpKINode Title="methods" Url="html/0a348600-7175-248a-6af3-be6a735a4ce0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DateTimeExtensions.AddMonths method" Url="html/e778bab7-f043-7c24-8164-1530c0e7108c.htm" />
+  <HelpKINode Title="DateTimeExtensions.AddQuarters method" Url="html/5559a8e6-915d-ac38-e14d-f8f1f29a5ae0.htm" />
+  <HelpKINode Title="DateTimeExtensions.AgeInYears method" Url="html/44938192-5da7-d828-b403-24512d564ce5.htm" />
+  <HelpKINode Title="DateTimeExtensions.DaysBetween method" Url="html/181b6e19-26c8-c28c-c0a0-e7ba0fba5ee4.htm" />
+  <HelpKINode Title="DateTimeExtensions.FirstDayOfMonth method" Url="html/90e22cbb-b560-8794-339e-a72831172df6.htm" />
+  <HelpKINode Title="DateTimeExtensions.FirstDayOfNextMonth method" Url="html/fbed9630-dfab-bdbe-61b1-cb02bfea2d77.htm" />
+  <HelpKINode Title="DateTimeExtensions.FirstDayOfNextNextQuarter method" Url="html/149be384-fb78-2001-2fe3-f919e05fc75a.htm" />
+  <HelpKINode Title="DateTimeExtensions.FirstDayOfNextQuarter method" Url="html/aaff5fad-412c-65a1-5e98-fbb94bea10dd.htm" />
+  <HelpKINode Title="DateTimeExtensions.FirstDayOfNextYear method" Url="html/50bdf13e-80e8-c16b-a9b8-6f4887b62327.htm" />
+  <HelpKINode Title="DateTimeExtensions.FirstDayOfPreviousQuarter method" Url="html/e8f627b5-67dc-9eba-3f39-15fa98e782b1.htm" />
+  <HelpKINode Title="DateTimeExtensions.FirstDayOfQuarter method" Url="html/e5842ec1-88cd-8537-2d17-b087a96fd6d3.htm" />
+  <HelpKINode Title="DateTimeExtensions.ImmediateFirstOfMonth method" Url="html/0414dec1-7579-a235-845f-44721c56d2e9.htm" />
+  <HelpKINode Title="DateTimeExtensions.ImmediateFirstOfQuarter method" Url="html/5829da5c-78ca-e563-fb42-63d43324500a.htm" />
+  <HelpKINode Title="DateTimeExtensions.ImmediateFirstOfYear method" Url="html/d0184771-0d88-c9e4-5eac-f55eeeb255b0.htm" />
+  <HelpKINode Title="DateTimeExtensions.IsConsecutiveSequence(Of T) method" Url="html/10dfad72-76f5-3a57-5d67-76320851b20f.htm" />
+  <HelpKINode Title="DateTimeExtensions.IsConsecutiveSequence&lt;T&gt; method" Url="html/10dfad72-76f5-3a57-5d67-76320851b20f.htm" />
+  <HelpKINode Title="DateTimeExtensions.IsFirstDayOfMonth method" Url="html/ce21ac31-eb85-dba1-fa1c-12cb2fc0b515.htm" />
+  <HelpKINode Title="DateTimeExtensions.IsFirstDayOfQuarter method" Url="html/c26f6a2c-3d5e-1ef8-e646-e27b85e6dad7.htm" />
+  <HelpKINode Title="DateTimeExtensions.IsLegalSqlDate method" Url="html/c9ca771f-44e4-8918-39d8-4fbd86464479.htm" />
+  <HelpKINode Title="DateTimeExtensions.LastDayOfCurrentQuarter method" Url="html/0b978b7c-a0e0-d234-8203-fd1c9e7ddbdb.htm" />
+  <HelpKINode Title="DateTimeExtensions.LastDayOfMonth method" Url="html/55d3b68f-9fbc-d30f-0917-60047e242c7e.htm" />
+  <HelpKINode Title="DateTimeExtensions.LastDayOfNextQuarter method" Url="html/c38512ad-2e2d-a4ef-57a3-5642653cd9d3.htm" />
+  <HelpKINode Title="DateTimeExtensions.MonthsBetween method" Url="html/d9118058-d0fb-c9e0-5c2a-af041c736be2.htm" />
+  <HelpKINode Title="DateTimeExtensions.NumberOfDaysInYear method" Url="html/3872716a-0258-95fc-ddc4-2fdcf4515b7c.htm" />
+  <HelpKINode Title="DateTimeExtensions.QuartersBetween method" Url="html/0257709d-1fa4-70b9-bc29-c115dff35050.htm" />
+  <HelpKINode Title="DateTimeExtensions.StripHours method" Url="html/c312aa16-d744-b0fe-8670-e73eea9736be.htm" />
+  <HelpKINode Title="DateTimeExtensions.StripMilliseconds method" Url="html/92fb8b37-8dfe-0886-a73e-ddab4812507a.htm" />
+  <HelpKINode Title="DateTimeExtensions.StripSeconds method" Url="html/93f25ccf-d023-2ce0-a71e-d67b6babe12a.htm" />
+  <HelpKINode Title="DateTimeHelper class">
+    <HelpKINode Title="DateTimeHelper Class" Url="html/1585a8a9-4666-3153-634b-fd3f97fa5690.htm" />
+    <HelpKINode Title="about DateTimeHelper class" Url="html/1585a8a9-4666-3153-634b-fd3f97fa5690.htm" />
+    <HelpKINode Title="methods" Url="html/05f810e3-ef2f-e691-7ff4-393603162ea4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DateTimeHelper.Max method" Url="html/b352fc0d-494f-093d-228e-428123d7b0ab.htm" />
+  <HelpKINode Title="DateTimeHelper.Min method" Url="html/2dd72e6e-049d-90dd-73c5-be8692c33a50.htm" />
+  <HelpKINode Title="DayInterestFraction method" Url="html/f207ae33-8d4e-ccbf-1a07-25bf465b9495.htm" />
+  <HelpKINode Title="DaysBetween method" Url="html/181b6e19-26c8-c28c-c0a0-e7ba0fba5ee4.htm" />
+  <HelpKINode Title="Decimals property" Url="html/e050d0ae-b213-0a0d-ffcc-179994d109dc.htm" />
+  <HelpKINode Title="DeCompress method" Url="html/5ceba1cd-8a5f-ea3f-0be5-0a3c87edcb9b.htm" />
+  <HelpKINode Title="DecompressingStream method" Url="html/8b791f06-d104-f8cd-c71f-2b9d2f937f72.htm" />
+  <HelpKINode Title="Deserialize(Of T) method" Url="html/9ae6bae7-cb88-bfae-f56f-275a5a28bf32.htm" />
+  <HelpKINode Title="Deserialize&lt;T&gt; method" Url="html/9ae6bae7-cb88-bfae-f56f-275a5a28bf32.htm" />
+  <HelpKINode Title="DeserializeFromBytes method" Url="html/726c1b17-ad62-1894-a449-2b0e3c71fc46.htm" />
+  <HelpKINode Title="DeserializeFromFile method" Url="html/3c1364cf-f12d-8561-83bb-ad12eb60f17f.htm" />
+  <HelpKINode Title="DeserializeFromManifestResourceStream(Of T) method" Url="html/8de27584-1598-5a11-0cfc-76c0421ce3e7.htm" />
+  <HelpKINode Title="DeserializeFromManifestResourceStream&lt;T&gt; method" Url="html/8de27584-1598-5a11-0cfc-76c0421ce3e7.htm" />
+  <HelpKINode Title="DeserializeFromXmlString(Of T) method" Url="html/f1212b91-1e90-06fe-51f8-a89a7c9af600.htm" />
+  <HelpKINode Title="DeserializeFromXmlString&lt;T&gt; method" Url="html/f1212b91-1e90-06fe-51f8-a89a7c9af600.htm" />
+  <HelpKINode Title="Dispose method" Url="html/1824414f-d87a-e37c-390b-4a1d0ff91ea0.htm" />
+  <HelpKINode Title="DomainName property" Url="html/1829029a-d67f-199b-2b76-350aaaf02ad0.htm" />
+  <HelpKINode Title="Enqueue method" Url="html/efaae3ea-27ca-0dc4-0526-151d7813ac39.htm" />
+  <HelpKINode Title="EnumEnumerable(Of T) method" Url="html/fddacb97-5acd-6ca3-c9ef-b59d83b56150.htm" />
+  <HelpKINode Title="EnumEnumerable&lt;T&gt; method" Url="html/fddacb97-5acd-6ca3-c9ef-b59d83b56150.htm" />
+  <HelpKINode Title="EnumExtension class">
+    <HelpKINode Title="EnumExtension Class" Url="html/c886769b-b825-e19c-5491-86889280e86f.htm" />
+    <HelpKINode Title="about EnumExtension class" Url="html/c886769b-b825-e19c-5491-86889280e86f.htm" />
+    <HelpKINode Title="methods" Url="html/5a9224d4-1acc-43e6-c055-dfa32cd98323.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnumExtension.GetFlags method" Url="html/5fc218fd-bdf5-d800-b70a-3f1dd1e90949.htm" />
+  <HelpKINode Title="EnumExtension.GetIndividualFlags method" Url="html/cd58655a-da37-3dbb-cd14-e38abfa4c593.htm" />
+  <HelpKINode Title="EnumExtension.GetLocalizedDescription method" Url="html/ac3115e7-3a0f-351b-e368-05c9cf3966e9.htm" />
+  <HelpKINode Title="EnumHelpers class">
+    <HelpKINode Title="EnumHelpers Class" Url="html/830a0ca5-f748-1afb-3eb9-9dfc54478637.htm" />
+    <HelpKINode Title="about EnumHelpers class" Url="html/830a0ca5-f748-1afb-3eb9-9dfc54478637.htm" />
+    <HelpKINode Title="methods" Url="html/0f1e4bff-0a60-1e6d-e0d9-93d8c07613fb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EnumHelpers.AsEnumerable(Of T) method" Url="html/ba43242c-4de8-f8d2-404a-57cb100bb2cb.htm" />
+  <HelpKINode Title="EnumHelpers.AsEnumerable&lt;T&gt; method" Url="html/ba43242c-4de8-f8d2-404a-57cb100bb2cb.htm" />
+  <HelpKINode Title="EnumHelpers.EnumEnumerable(Of T) method" Url="html/fddacb97-5acd-6ca3-c9ef-b59d83b56150.htm" />
+  <HelpKINode Title="EnumHelpers.EnumEnumerable&lt;T&gt; method" Url="html/fddacb97-5acd-6ca3-c9ef-b59d83b56150.htm" />
+  <HelpKINode Title="EnumHelpers.GetLocalizedDescription method" Url="html/17521156-5bc3-a7b3-51e8-4a122470c5cf.htm" />
+  <HelpKINode Title="ExcelUtil class">
+    <HelpKINode Title="ExcelUtil Class" Url="html/fbf011b5-5e95-94f6-84be-cf7e77df95d2.htm" />
+    <HelpKINode Title="about ExcelUtil class" Url="html/fbf011b5-5e95-94f6-84be-cf7e77df95d2.htm" />
+    <HelpKINode Title="constructor" Url="html/564cb1a4-93a7-b906-2629-895eab9df502.htm" />
+    <HelpKINode Title="methods" Url="html/627a2b8e-bb32-6004-f0eb-cf4a0dd582fe.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExcelUtil.ExcelUtil constructor" Url="html/564cb1a4-93a7-b906-2629-895eab9df502.htm" />
+  <HelpKINode Title="ExcelUtil.ReadSheet(Of T) method" Url="html/2072e251-d755-6d70-ad90-6f9147995a67.htm" />
+  <HelpKINode Title="ExcelUtil.ReadSheet&lt;T&gt; method" Url="html/2072e251-d755-6d70-ad90-6f9147995a67.htm" />
+  <HelpKINode Title="FindEmail method" Url="html/05516bdc-039a-ae50-8bad-ee8e1318272c.htm" />
+  <HelpKINode Title="FindName method" Url="html/7f43fa92-38f4-c13d-c885-d1c47d855a8e.htm" />
+  <HelpKINode Title="FirstDayOfMonth method" Url="html/90e22cbb-b560-8794-339e-a72831172df6.htm" />
+  <HelpKINode Title="FirstDayOfNextMonth method" Url="html/fbed9630-dfab-bdbe-61b1-cb02bfea2d77.htm" />
+  <HelpKINode Title="FirstDayOfNextNextQuarter method" Url="html/149be384-fb78-2001-2fe3-f919e05fc75a.htm" />
+  <HelpKINode Title="FirstDayOfNextQuarter method" Url="html/aaff5fad-412c-65a1-5e98-fbb94bea10dd.htm" />
+  <HelpKINode Title="FirstDayOfNextYear method" Url="html/50bdf13e-80e8-c16b-a9b8-6f4887b62327.htm" />
+  <HelpKINode Title="FirstDayOfPreviousQuarter method" Url="html/e8f627b5-67dc-9eba-3f39-15fa98e782b1.htm" />
+  <HelpKINode Title="FirstDayOfQuarter method" Url="html/e5842ec1-88cd-8537-2d17-b087a96fd6d3.htm" />
+  <HelpKINode Title="GenerateUtil class">
+    <HelpKINode Title="GenerateUtil Class" Url="html/bd61f7e9-e6be-5dd4-4510-6b1494975b83.htm" />
+    <HelpKINode Title="about GenerateUtil class" Url="html/bd61f7e9-e6be-5dd4-4510-6b1494975b83.htm" />
+    <HelpKINode Title="constructor" Url="html/b183156c-084b-e219-9744-438260ebabf1.htm" />
+    <HelpKINode Title="methods" Url="html/4c848912-7d34-a03c-4876-584a877a57a6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GenerateUtil.GenerateUtil constructor" Url="html/b183156c-084b-e219-9744-438260ebabf1.htm" />
+  <HelpKINode Title="GenerateUtil.ReadSheet(Of T) method" Url="html/1c5ba68d-8406-6ca5-daac-6105402c1e07.htm" />
+  <HelpKINode Title="GenerateUtil.ReadSheet&lt;T&gt; method" Url="html/1c5ba68d-8406-6ca5-daac-6105402c1e07.htm" />
+  <HelpKINode Title="GenericSerializationInfo class">
+    <HelpKINode Title="GenericSerializationInfo Class" Url="html/768e51bb-b849-479a-6116-d44e93dfa655.htm" />
+    <HelpKINode Title="about GenericSerializationInfo class" Url="html/768e51bb-b849-479a-6116-d44e93dfa655.htm" />
+    <HelpKINode Title="constructor" Url="html/20c4ad73-8bbb-6d85-65cd-f8e99eb9b52e.htm" />
+    <HelpKINode Title="methods" Url="html/6d9cda8a-9c21-499a-36ec-f23a02a05113.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GenericSerializationInfo.AddValue(Of T) method" Url="html/c9c44339-4c4e-b019-5222-caac3d1dcb29.htm" />
+  <HelpKINode Title="GenericSerializationInfo.AddValue&lt;T&gt; method" Url="html/c9c44339-4c4e-b019-5222-caac3d1dcb29.htm" />
+  <HelpKINode Title="GenericSerializationInfo.GenericSerializationInfo constructor" Url="html/20c4ad73-8bbb-6d85-65cd-f8e99eb9b52e.htm" />
+  <HelpKINode Title="GenericSerializationInfo.GetValue(Of T) method" Url="html/7d151b28-f338-57a9-5cf1-d0bb23a53b86.htm" />
+  <HelpKINode Title="GenericSerializationInfo.GetValue&lt;T&gt; method" Url="html/7d151b28-f338-57a9-5cf1-d0bb23a53b86.htm" />
+  <HelpKINode Title="GetAccountNameFromUserAccount method" Url="html/040c3591-81ce-1cf6-4b35-d99fb0a43e35.htm" />
+  <HelpKINode Title="GetAppSetting method" Url="html/cbcd8b1d-041c-85bf-e7c8-6e150184c437.htm" />
+  <HelpKINode Title="GetBirthDateFromRrn method" Url="html/bbc47702-8fca-9856-5fdb-ade71995a87c.htm" />
+  <HelpKINode Title="GetConnectionString method" Url="html/295ab131-51a3-13fa-f8e9-31f6934c55f7.htm" />
+  <HelpKINode Title="GetConstraint method" Url="html/d2ab5bb6-3653-5ec0-ba5a-c6ce6764c102.htm" />
+  <HelpKINode Title="GetDigitStream method" Url="html/1760ab6c-0712-5ea5-2433-99fb263d128d.htm" />
+  <HelpKINode Title="GetDomainFromUserAccount method" Url="html/18f48826-e047-bb1d-2f99-1c3057345da2.htm" />
+  <HelpKINode Title="GetEnumerator method" Url="html/ed0f8b2e-eef8-fbfa-89ab-45a8d480fa5d.htm" />
+  <HelpKINode Title="GetFlags method" Url="html/5fc218fd-bdf5-d800-b70a-3f1dd1e90949.htm" />
+  <HelpKINode Title="GetIdentityName method" Url="html/418c0928-b228-ffb4-7366-8d454b6b7ead.htm" />
+  <HelpKINode Title="GetIndividualFlags method" Url="html/cd58655a-da37-3dbb-cd14-e38abfa4c593.htm" />
+  <HelpKINode Title="GetKnownTypes method" Url="html/2754d560-70ca-fcc6-4eb2-200e64170e37.htm" />
+  <HelpKINode Title="GetLocalizedDescription method">
+    <HelpKINode Title="EnumExtension.GetLocalizedDescription Method " Url="html/ac3115e7-3a0f-351b-e368-05c9cf3966e9.htm" />
+    <HelpKINode Title="EnumHelpers.GetLocalizedDescription Method " Url="html/17521156-5bc3-a7b3-51e8-4a122470c5cf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetProperty method" Url="html/d2a3b3ce-e726-aa79-fc79-08e83c578432.htm" />
+  <HelpKINode Title="GetQualifiedName method" Url="html/122f5a06-bd5c-e4b6-7a8b-e3292ddbded2.htm" />
+  <HelpKINode Title="GetServiceSecurityContextIdentityName method" Url="html/bcae4e57-8c21-442f-fa29-dbc2b02322e7.htm" />
+  <HelpKINode Title="GetSubclassesOf method" Url="html/685c527b-a17d-5cdb-079e-d183b401e08a.htm" />
+  <HelpKINode Title="GetThreadCurrentPrincipalIdentityName method" Url="html/0d704717-5b66-6d61-5e0d-808c25552684.htm" />
+  <HelpKINode Title="GetValue(Of T) method" Url="html/7d151b28-f338-57a9-5cf1-d0bb23a53b86.htm" />
+  <HelpKINode Title="GetValue&lt;T&gt; method" Url="html/7d151b28-f338-57a9-5cf1-d0bb23a53b86.htm" />
+  <HelpKINode Title="GetWindowsIdentityIdentityName method" Url="html/d2adcbdc-59c8-7f2e-6064-1ecd724a0cb5.htm" />
+  <HelpKINode Title="Grouping(Of TKey, TElement) class">
+    <HelpKINode Title="Grouping(TKey, TElement) Class" Url="html/9aeed335-cbbc-b387-9be3-059fb1da5655.htm" />
+    <HelpKINode Title="about Grouping(Of TKey, TElement) class" Url="html/9aeed335-cbbc-b387-9be3-059fb1da5655.htm" />
+    <HelpKINode Title="constructor" Url="html/6933c3fc-0480-60cf-c17f-f5f2a9eef9af.htm" />
+    <HelpKINode Title="methods" Url="html/a294db58-6c87-104a-7737-23c1b61aa5ae.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Grouping(Of TKey, TElement).GetEnumerator method" Url="html/ed0f8b2e-eef8-fbfa-89ab-45a8d480fa5d.htm" />
+  <HelpKINode Title="Grouping(Of TKey, TElement).Grouping constructor" Url="html/6933c3fc-0480-60cf-c17f-f5f2a9eef9af.htm" />
+  <HelpKINode Title="Grouping&lt;TKey, TElement&gt; class">
+    <HelpKINode Title="Grouping(TKey, TElement) Class" Url="html/9aeed335-cbbc-b387-9be3-059fb1da5655.htm" />
+    <HelpKINode Title="about Grouping&lt;TKey, TElement&gt; class" Url="html/9aeed335-cbbc-b387-9be3-059fb1da5655.htm" />
+    <HelpKINode Title="constructor" Url="html/6933c3fc-0480-60cf-c17f-f5f2a9eef9af.htm" />
+    <HelpKINode Title="methods" Url="html/a294db58-6c87-104a-7737-23c1b61aa5ae.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Grouping&lt;TKey, TElement&gt;.GetEnumerator method" Url="html/ed0f8b2e-eef8-fbfa-89ab-45a8d480fa5d.htm" />
+  <HelpKINode Title="Grouping&lt;TKey, TElement&gt;.Grouping constructor" Url="html/6933c3fc-0480-60cf-c17f-f5f2a9eef9af.htm" />
+  <HelpKINode Title="IdentityNameHelper class">
+    <HelpKINode Title="IdentityNameHelper Class" Url="html/e4492aa5-7824-fa24-5edf-2ff20c924444.htm" />
+    <HelpKINode Title="about IdentityNameHelper class" Url="html/e4492aa5-7824-fa24-5edf-2ff20c924444.htm" />
+    <HelpKINode Title="methods" Url="html/8aefcd7d-7ed2-d24a-911e-6154c27ff925.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IdentityNameHelper.GetIdentityName method" Url="html/418c0928-b228-ffb4-7366-8d454b6b7ead.htm" />
+  <HelpKINode Title="IdentityNameHelper.GetServiceSecurityContextIdentityName method" Url="html/bcae4e57-8c21-442f-fa29-dbc2b02322e7.htm" />
+  <HelpKINode Title="IdentityNameHelper.GetThreadCurrentPrincipalIdentityName method" Url="html/0d704717-5b66-6d61-5e0d-808c25552684.htm" />
+  <HelpKINode Title="IdentityNameHelper.GetWindowsIdentityIdentityName method" Url="html/d2adcbdc-59c8-7f2e-6064-1ecd724a0cb5.htm" />
+  <HelpKINode Title="ImmediateFirstOfMonth method" Url="html/0414dec1-7579-a235-845f-44721c56d2e9.htm" />
+  <HelpKINode Title="ImmediateFirstOfQuarter method" Url="html/5829da5c-78ca-e563-fb42-63d43324500a.htm" />
+  <HelpKINode Title="ImmediateFirstOfYear method" Url="html/d0184771-0d88-c9e4-5eac-f55eeeb255b0.htm" />
+  <HelpKINode Title="IsConsecutiveSequence(Of T) method">
+    <HelpKINode Title="DateTimeExtensions.IsConsecutiveSequence(T) Method " Url="html/10dfad72-76f5-3a57-5d67-76320851b20f.htm" />
+    <HelpKINode Title="MathExtensions.IsConsecutiveSequence(T) Method " Url="html/67b9ede6-b497-8c59-a7dc-ff183339ed26.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsConsecutiveSequence&lt;T&gt; method">
+    <HelpKINode Title="DateTimeExtensions.IsConsecutiveSequence(T) Method " Url="html/10dfad72-76f5-3a57-5d67-76320851b20f.htm" />
+    <HelpKINode Title="MathExtensions.IsConsecutiveSequence(T) Method " Url="html/67b9ede6-b497-8c59-a7dc-ff183339ed26.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsEmpty(Of T) method" Url="html/7c6f3c7c-598b-c76a-b7e7-0e14aef2187a.htm" />
+  <HelpKINode Title="IsEmpty&lt;T&gt; method" Url="html/7c6f3c7c-598b-c76a-b7e7-0e14aef2187a.htm" />
+  <HelpKINode Title="IsFirstDayOfMonth method" Url="html/ce21ac31-eb85-dba1-fa1c-12cb2fc0b515.htm" />
+  <HelpKINode Title="IsFirstDayOfQuarter method" Url="html/c26f6a2c-3d5e-1ef8-e646-e27b85e6dad7.htm" />
+  <HelpKINode Title="IsLegalSqlDate method" Url="html/c9ca771f-44e4-8918-39d8-4fbd86464479.htm" />
+  <HelpKINode Title="IsNullableType method" Url="html/2fa9c6ac-79c6-48ea-14da-9328be229510.htm" />
+  <HelpKINode Title="IsNullOrEmpty(Of T) method" Url="html/47ebd49f-405f-7f87-30d8-1441a63cc8ab.htm" />
+  <HelpKINode Title="IsNullOrEmpty&lt;T&gt; method" Url="html/47ebd49f-405f-7f87-30d8-1441a63cc8ab.htm" />
+  <HelpKINode Title="IsSuperTypeOf method" Url="html/1079c80e-b614-0746-362a-b69e9b503ce6.htm" />
+  <HelpKINode Title="LastDayOfCurrentQuarter method" Url="html/0b978b7c-a0e0-d234-8203-fd1c9e7ddbdb.htm" />
+  <HelpKINode Title="LastDayOfMonth method" Url="html/55d3b68f-9fbc-d30f-0917-60047e242c7e.htm" />
+  <HelpKINode Title="LastDayOfNextQuarter method" Url="html/c38512ad-2e2d-a4ef-57a3-5642653cd9d3.htm" />
+  <HelpKINode Title="LengthKbo field" Url="html/4da14450-a588-569a-314b-e24aad41f263.htm" />
+  <HelpKINode Title="LengthRrn field" Url="html/fdbd11b2-8a1c-b093-b4e5-f6f5c7541ba0.htm" />
+  <HelpKINode Title="LengthRsz field" Url="html/599d9b3e-ca4b-fd61-08b5-f2519fac95a1.htm" />
+  <HelpKINode Title="LengthVat field" Url="html/b2877e56-c99b-8e49-8297-57147c6169ed.htm" />
+  <HelpKINode Title="LoadAssembly method" Url="html/5bbaa1aa-e3a6-dd4b-0ee7-ffe0b5a79a9e.htm" />
+  <HelpKINode Title="LocalizedEnumConverter class">
+    <HelpKINode Title="LocalizedEnumConverter Class" Url="html/a99bccfa-1fca-38a0-70cc-777f599d5334.htm" />
+    <HelpKINode Title="about LocalizedEnumConverter class" Url="html/a99bccfa-1fca-38a0-70cc-777f599d5334.htm" />
+    <HelpKINode Title="constructor" Url="html/37e1ed65-063c-01ee-04b8-061455c03de9.htm" />
+    <HelpKINode Title="methods" Url="html/dc95514a-0ff7-91d7-454a-493517597055.htm" />
+    <HelpKINode Title="properties" Url="html/381a6f9f-5e13-09e6-98a1-76f094aee01d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LocalizedEnumConverter.ConvertFrom method" Url="html/da1ca7cb-f89e-ab86-d5af-62ffb7e48775.htm" />
+  <HelpKINode Title="LocalizedEnumConverter.ConvertTo method" Url="html/1ec40637-9253-bcf7-ed32-1573190385e1.htm" />
+  <HelpKINode Title="LocalizedEnumConverter.LocalizedEnumConverter constructor" Url="html/37e1ed65-063c-01ee-04b8-061455c03de9.htm" />
+  <HelpKINode Title="MathExtensions class">
+    <HelpKINode Title="MathExtensions Class" Url="html/698abd67-51d7-d720-d2f8-296c23aa61e7.htm" />
+    <HelpKINode Title="about MathExtensions class" Url="html/698abd67-51d7-d720-d2f8-296c23aa61e7.htm" />
+    <HelpKINode Title="methods" Url="html/82eb432f-010d-e73f-8104-5bf438cbfbd8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MathExtensions.DayInterestFraction method" Url="html/f207ae33-8d4e-ccbf-1a07-25bf465b9495.htm" />
+  <HelpKINode Title="MathExtensions.IsConsecutiveSequence(Of T) method" Url="html/67b9ede6-b497-8c59-a7dc-ff183339ed26.htm" />
+  <HelpKINode Title="MathExtensions.IsConsecutiveSequence&lt;T&gt; method" Url="html/67b9ede6-b497-8c59-a7dc-ff183339ed26.htm" />
+  <HelpKINode Title="MathExtensions.MonthInterestFraction method" Url="html/1121c37d-390b-87ef-532e-70a4ad9827db.htm" />
+  <HelpKINode Title="MathExtensions.QuarterInterestFraction method" Url="html/6ed497d0-88ea-6a62-43ae-c595111c29bb.htm" />
+  <HelpKINode Title="MathExtensions.Root method" Url="html/c39d0611-e313-db2c-f6ab-313b40fd01f2.htm" />
+  <HelpKINode Title="MathExtensions.YearInterestFraction method" Url="html/c842ff11-207c-b2c4-1c85-7968cf23a4d4.htm" />
+  <HelpKINode Title="Max method" Url="html/b352fc0d-494f-093d-228e-428123d7b0ab.htm" />
+  <HelpKINode Title="Min method" Url="html/2dd72e6e-049d-90dd-73c5-be8692c33a50.htm" />
+  <HelpKINode Title="MonthInterestFraction method" Url="html/1121c37d-390b-87ef-532e-70a4ad9827db.htm" />
+  <HelpKINode Title="MonthsBetween method" Url="html/d9118058-d0fb-c9e0-5c2a-af041c736be2.htm" />
+  <HelpKINode Title="NullableSum method" Url="html/e4cb0c3f-c302-db32-a07f-a94b56304b81.htm" />
+  <HelpKINode Title="NumberOfDaysInYear method" Url="html/3872716a-0258-95fc-ddc4-2fdcf4515b7c.htm" />
+  <HelpKINode Title="ObjectExtentions class">
+    <HelpKINode Title="ObjectExtentions Class" Url="html/accc088c-297c-30a2-6661-9a0fc83b670b.htm" />
+    <HelpKINode Title="about ObjectExtentions class" Url="html/accc088c-297c-30a2-6661-9a0fc83b670b.htm" />
+    <HelpKINode Title="methods" Url="html/b11cf398-efc3-071f-caeb-a3b1fa2d456a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ObjectExtentions.ToLogString method" Url="html/14de8a1c-3875-53b2-c588-4cb83277b559.htm" />
+  <HelpKINode Title="PadKbo method" Url="html/3ffa1aca-c8f7-d91a-44d5-a94cfc711988.htm" />
+  <HelpKINode Title="PadRrn method" Url="html/7f755722-fd0c-67c9-8997-ecc508fa84b1.htm" />
+  <HelpKINode Title="PadRsz method" Url="html/b430b9aa-d477-65f4-80f2-d180adecf447.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.ActiveDirectory namespace" Url="html/fd4dad0d-9f47-dcb9-d338-77f55f26f55e.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.ActiveDirectory.AdSearch class" Url="html/05b14bf9-402b-a0cc-9fa6-4421d9ef86d5.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.AssemblyHelpers namespace" Url="html/94945aec-7578-82c4-861c-c287b7091fa0.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.AssemblyHelpers.AssemblyHelper class" Url="html/2012777d-8323-1a85-830f-4082802ac42b.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.ConfigHelper namespace" Url="html/ddb17ebf-13ef-77f9-4483-98feb5ff4a82.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.ConfigHelper.ConfigHelper class" Url="html/762ccaf6-1127-03b9-1ed5-9fff075422a2.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.EnumHelpers namespace" Url="html/9749f444-2ca6-7990-af21-f01e7a68ef16.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.EnumHelpers.EnumHelpers class" Url="html/830a0ca5-f748-1afb-3eb9-9dfc54478637.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions namespace" Url="html/a30f3c61-516f-9f74-2892-787926aa7c0f.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.CollectionExtensions class" Url="html/edf56d52-3e5d-9e1f-9227-5adb09040c4b.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.DateTimeExtensions class" Url="html/48c945b5-a104-0b08-68ef-24f81da60b4a.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.DateTimeHelper class" Url="html/1585a8a9-4666-3153-634b-fd3f97fa5690.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.EnumExtension class" Url="html/c886769b-b825-e19c-5491-86889280e86f.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.Grouping(Of TKey, TElement) class" Url="html/9aeed335-cbbc-b387-9be3-059fb1da5655.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.Grouping&lt;TKey, TElement&gt; class" Url="html/9aeed335-cbbc-b387-9be3-059fb1da5655.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.MathExtensions class" Url="html/698abd67-51d7-d720-d2f8-296c23aa61e7.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.ObjectExtentions class" Url="html/accc088c-297c-30a2-6661-9a0fc83b670b.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.SQLServerExtensions class" Url="html/48122427-3aae-5247-de46-8a05254deb10.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.StringExtensions class" Url="html/7292609c-c5a7-7d4e-2470-b5c381d7ba79.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Extensions.TypeExtensions class" Url="html/54671278-3b7f-cfc3-da1e-60a022bd598a.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Identification namespace" Url="html/e3ad8f05-04aa-26cd-a0af-886c6b1208a1.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Identification.Validation class" Url="html/6a0d77de-49f6-f413-a9b7-53001f4a5731.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Security namespace" Url="html/e34fa53c-c595-30b2-6403-a383392452fe.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Security.IdentityNameHelper class" Url="html/e4492aa5-7824-fa24-5edf-2ff20c924444.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Serialization namespace" Url="html/5ed9edcd-e20a-3652-62a3-719810b2a856.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Serialization.GenericSerializationInfo class" Url="html/768e51bb-b849-479a-6116-d44e93dfa655.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Serialization.SerializationHelper class" Url="html/2a0bd107-8e7d-92f3-8bd3-4a7eff55f331.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.SpreadSheet namespace" Url="html/a711e2d9-2952-4f23-5ad4-5f65dc810bf6.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.SpreadSheet.ExcelUtil class" Url="html/fbf011b5-5e95-94f6-84be-cf7e77df95d2.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.SpreadSheet.GenerateUtil class" Url="html/bd61f7e9-e6be-5dd4-4510-6b1494975b83.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Streaming namespace" Url="html/8ba06896-cea6-f72b-e060-317b6426dfde.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Streaming.Compression class" Url="html/dcd8e88c-ec1d-77ee-76b9-097adc0a763f.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Streaming.ResourceStreamHelper class" Url="html/b749db27-9b79-0a99-f46f-f49a179fa96b.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Threading namespace" Url="html/18026bbb-b84c-8742-27a3-0cfccdb39bb0.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.Threading.ProducerConsumerQueue class" Url="html/aa70562e-9840-882f-1762-c9fa18ed961f.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.TypeConverter namespace" Url="html/8b1413fb-dadf-d71d-a321-b420e1276d03.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.TypeConverter.LocalizedEnumConverter class" Url="html/a99bccfa-1fca-38a0-70cc-777f599d5334.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.TypeConverter.TypeConverterHelper class" Url="html/22c62849-df3a-8525-254a-f2d17c1f57e7.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.UnitTestHelpers namespace" Url="html/ed9d6ce1-eb49-c27f-bd25-4c1ec1aa1ca9.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.UnitTestHelpers.SequenceGenerator class" Url="html/55ce8339-99f9-9db6-78c2-09738adb149f.htm" />
+  <HelpKINode Title="PPWCode.Util.OddsAndEnds.II.UnitTestHelpers.ValueTypeSequences class" Url="html/cb19acad-b1fd-4948-c1c6-020db268675f.htm" />
+  <HelpKINode Title="ProducerConsumerQueue class">
+    <HelpKINode Title="ProducerConsumerQueue Class" Url="html/aa70562e-9840-882f-1762-c9fa18ed961f.htm" />
+    <HelpKINode Title="about ProducerConsumerQueue class" Url="html/aa70562e-9840-882f-1762-c9fa18ed961f.htm" />
+    <HelpKINode Title="constructor" Url="html/65bffe44-3f3b-5bfd-411b-fcb43ceba483.htm" />
+    <HelpKINode Title="methods" Url="html/3edf7f6e-cbcf-2549-3a83-00cb63726ee3.htm" />
+    <HelpKINode Title="properties" Url="html/78b6b15c-c7ab-658c-396c-447568ab1605.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ProducerConsumerQueue.Dispose method" Url="html/1824414f-d87a-e37c-390b-4a1d0ff91ea0.htm" />
+  <HelpKINode Title="ProducerConsumerQueue.Enqueue method" Url="html/efaae3ea-27ca-0dc4-0526-151d7813ac39.htm" />
+  <HelpKINode Title="ProducerConsumerQueue.ProducerConsumerQueue constructor" Url="html/65bffe44-3f3b-5bfd-411b-fcb43ceba483.htm" />
+  <HelpKINode Title="ProducerConsumerQueue.QueueCancellationTokenSource property" Url="html/b8ce36ce-2f73-88be-62f5-806d7b43ec1d.htm" />
+  <HelpKINode Title="QuarterInterestFraction method" Url="html/6ed497d0-88ea-6a62-43ae-c595111c29bb.htm" />
+  <HelpKINode Title="QuartersBetween method" Url="html/0257709d-1fa4-70b9-bc29-c115dff35050.htm" />
+  <HelpKINode Title="QueueCancellationTokenSource property" Url="html/b8ce36ce-2f73-88be-62f5-806d7b43ec1d.htm" />
+  <HelpKINode Title="ReadSheet(Of T) method">
+    <HelpKINode Title="ExcelUtil.ReadSheet(T) Method " Url="html/2072e251-d755-6d70-ad90-6f9147995a67.htm" />
+    <HelpKINode Title="GenerateUtil.ReadSheet(T) Method " Url="html/1c5ba68d-8406-6ca5-daac-6105402c1e07.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReadSheet&lt;T&gt; method">
+    <HelpKINode Title="ExcelUtil.ReadSheet(T) Method " Url="html/2072e251-d755-6d70-ad90-6f9147995a67.htm" />
+    <HelpKINode Title="GenerateUtil.ReadSheet(T) Method " Url="html/1c5ba68d-8406-6ca5-daac-6105402c1e07.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegisterTypeConverter(Of T, U) method" Url="html/8dd195c0-7711-0f00-945a-a921ca2bad70.htm" />
+  <HelpKINode Title="RegisterTypeConverter&lt;T, U&gt; method" Url="html/8dd195c0-7711-0f00-945a-a921ca2bad70.htm" />
+  <HelpKINode Title="ResourceStreamHelper class">
+    <HelpKINode Title="ResourceStreamHelper Class" Url="html/b749db27-9b79-0a99-f46f-f49a179fa96b.htm" />
+    <HelpKINode Title="about ResourceStreamHelper class" Url="html/b749db27-9b79-0a99-f46f-f49a179fa96b.htm" />
+    <HelpKINode Title="methods" Url="html/acf76779-76bf-6c52-74c8-53947b862412.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ResourceStreamHelper.CopyStream method" Url="html/0f14661a-edc9-6af7-cefb-05c069a58952.htm" />
+  <HelpKINode Title="ResourceStreamHelper.WriteEmbeddedResourceToTempFile method" Url="html/866262e3-e9b7-3f42-f568-d90bec70e7b0.htm" />
+  <HelpKINode Title="Root method" Url="html/c39d0611-e313-db2c-f6ab-313b40fd01f2.htm" />
+  <HelpKINode Title="Segment(Of T) method" Url="html/b97a9f12-cae5-78e6-45e9-53041c54ec39.htm" />
+  <HelpKINode Title="Segment&lt;T&gt; method" Url="html/b97a9f12-cae5-78e6-45e9-53041c54ec39.htm" />
+  <HelpKINode Title="SequenceGenerator class">
+    <HelpKINode Title="SequenceGenerator Class" Url="html/55ce8339-99f9-9db6-78c2-09738adb149f.htm" />
+    <HelpKINode Title="about SequenceGenerator class" Url="html/55ce8339-99f9-9db6-78c2-09738adb149f.htm" />
+    <HelpKINode Title="constructor" Url="html/123c8881-6741-7dc3-ba24-3e548d2e2dd6.htm" />
+    <HelpKINode Title="methods" Url="html/95e33a0c-1cb5-99da-2063-29c80d317395.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SequenceGenerator.CreateRandomDecimalSequence method" Url="html/b77a696b-a354-8fa1-e8a8-7fd11ccf2bbe.htm" />
+  <HelpKINode Title="SequenceGenerator.SequenceGenerator constructor" Url="html/123c8881-6741-7dc3-ba24-3e548d2e2dd6.htm" />
+  <HelpKINode Title="SerializationHelper class">
+    <HelpKINode Title="SerializationHelper Class" Url="html/2a0bd107-8e7d-92f3-8bd3-4a7eff55f331.htm" />
+    <HelpKINode Title="about SerializationHelper class" Url="html/2a0bd107-8e7d-92f3-8bd3-4a7eff55f331.htm" />
+    <HelpKINode Title="constructor" Url="html/1136fe5b-b075-3c86-42a0-9b3caf57d92c.htm" />
+    <HelpKINode Title="methods" Url="html/cdf2f413-d250-841a-d173-d32249ba8f40.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SerializationHelper.Deserialize(Of T) method" Url="html/9ae6bae7-cb88-bfae-f56f-275a5a28bf32.htm" />
+  <HelpKINode Title="SerializationHelper.Deserialize&lt;T&gt; method" Url="html/9ae6bae7-cb88-bfae-f56f-275a5a28bf32.htm" />
+  <HelpKINode Title="SerializationHelper.DeserializeFromBytes method" Url="html/726c1b17-ad62-1894-a449-2b0e3c71fc46.htm" />
+  <HelpKINode Title="SerializationHelper.DeserializeFromFile method" Url="html/3c1364cf-f12d-8561-83bb-ad12eb60f17f.htm" />
+  <HelpKINode Title="SerializationHelper.DeserializeFromManifestResourceStream(Of T) method" Url="html/8de27584-1598-5a11-0cfc-76c0421ce3e7.htm" />
+  <HelpKINode Title="SerializationHelper.DeserializeFromManifestResourceStream&lt;T&gt; method" Url="html/8de27584-1598-5a11-0cfc-76c0421ce3e7.htm" />
+  <HelpKINode Title="SerializationHelper.DeserializeFromXmlString(Of T) method" Url="html/f1212b91-1e90-06fe-51f8-a89a7c9af600.htm" />
+  <HelpKINode Title="SerializationHelper.DeserializeFromXmlString&lt;T&gt; method" Url="html/f1212b91-1e90-06fe-51f8-a89a7c9af600.htm" />
+  <HelpKINode Title="SerializationHelper.SerializationHelper constructor" Url="html/1136fe5b-b075-3c86-42a0-9b3caf57d92c.htm" />
+  <HelpKINode Title="SerializationHelper.Serialize method" Url="html/3ce25555-8a0f-bc32-7cc5-66b886459671.htm" />
+  <HelpKINode Title="SerializationHelper.SerializeToBytes method" Url="html/e4adfee5-04c4-9a61-1005-dc1e0c62da9f.htm" />
+  <HelpKINode Title="SerializationHelper.SerializeToFile method" Url="html/3418627b-5b9a-cb95-2712-fc12ce18ca87.htm" />
+  <HelpKINode Title="SerializationHelper.SerializeToXmlString method" Url="html/4e2ce0e2-0196-6b09-e87b-2933e433550b.htm" />
+  <HelpKINode Title="Serialize method" Url="html/3ce25555-8a0f-bc32-7cc5-66b886459671.htm" />
+  <HelpKINode Title="SerializeToBytes method" Url="html/e4adfee5-04c4-9a61-1005-dc1e0c62da9f.htm" />
+  <HelpKINode Title="SerializeToFile method" Url="html/3418627b-5b9a-cb95-2712-fc12ce18ca87.htm" />
+  <HelpKINode Title="SerializeToXmlString method" Url="html/4e2ce0e2-0196-6b09-e87b-2933e433550b.htm" />
+  <HelpKINode Title="SetEqual method" Url="html/6f4de9ee-42de-42a5-0fc9-d598d300dc64.htm" />
+  <HelpKINode Title="SQLServerExtensions class">
+    <HelpKINode Title="SQLServerExtensions Class" Url="html/48122427-3aae-5247-de46-8a05254deb10.htm" />
+    <HelpKINode Title="about SQLServerExtensions class" Url="html/48122427-3aae-5247-de46-8a05254deb10.htm" />
+    <HelpKINode Title="methods" Url="html/a5862c84-6e84-44c9-970b-6d7b93f11aba.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SQLServerExtensions.GetConstraint method" Url="html/d2ab5bb6-3653-5ec0-ba5a-c6ce6764c102.htm" />
+  <HelpKINode Title="StartWithACapital method" Url="html/2351798f-08cb-31ef-86c2-b866e8fc7159.htm" />
+  <HelpKINode Title="StrictValidKbo method" Url="html/07c71669-f6ba-0c58-12ae-04ef1e9d0828.htm" />
+  <HelpKINode Title="StrictValidRrn method" Url="html/ceae99af-919a-f4a1-1630-46f88f84e352.htm" />
+  <HelpKINode Title="StrictValidRsz method" Url="html/d97020d1-da0f-fcf9-6a1c-28924f5314cd.htm" />
+  <HelpKINode Title="StrictValidVat method" Url="html/6df4344a-c0ad-056d-8eaf-75095c4995e4.htm" />
+  <HelpKINode Title="StringExtensions class">
+    <HelpKINode Title="StringExtensions Class" Url="html/7292609c-c5a7-7d4e-2470-b5c381d7ba79.htm" />
+    <HelpKINode Title="about StringExtensions class" Url="html/7292609c-c5a7-7d4e-2470-b5c381d7ba79.htm" />
+    <HelpKINode Title="methods" Url="html/814cf15c-17d1-4df8-384b-5fbac143a189.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StringExtensions.StartWithACapital method" Url="html/2351798f-08cb-31ef-86c2-b866e8fc7159.htm" />
+  <HelpKINode Title="StringExtensions.ToDateTime method" Url="html/17647ea0-717c-def1-6f6f-b9b21116b6be.htm" />
+  <HelpKINode Title="StringExtensions.ToDecimal method" Url="html/b73bb316-2c08-71db-a384-3e7f9627ca98.htm" />
+  <HelpKINode Title="StringExtensions.ToInt method" Url="html/61f67289-f2d9-3920-3130-a3ac596f4236.htm" />
+  <HelpKINode Title="StringExtensions.ToLong method" Url="html/1d3a702c-5143-7a97-bb05-0187887bf7eb.htm" />
+  <HelpKINode Title="Strings property" Url="html/967c4e18-c2e1-7662-bbb1-37996d2fa972.htm" />
+  <HelpKINode Title="StripHours method" Url="html/c312aa16-d744-b0fe-8670-e73eea9736be.htm" />
+  <HelpKINode Title="StripMilliseconds method" Url="html/92fb8b37-8dfe-0886-a73e-ddab4812507a.htm" />
+  <HelpKINode Title="StripSeconds method" Url="html/93f25ccf-d023-2ce0-a71e-d67b6babe12a.htm" />
+  <HelpKINode Title="ToDateTime method" Url="html/17647ea0-717c-def1-6f6f-b9b21116b6be.htm" />
+  <HelpKINode Title="ToDecimal method" Url="html/b73bb316-2c08-71db-a384-3e7f9627ca98.htm" />
+  <HelpKINode Title="ToInt method" Url="html/61f67289-f2d9-3920-3130-a3ac596f4236.htm" />
+  <HelpKINode Title="ToLogString method" Url="html/14de8a1c-3875-53b2-c588-4cb83277b559.htm" />
+  <HelpKINode Title="ToLong method" Url="html/1d3a702c-5143-7a97-bb05-0187887bf7eb.htm" />
+  <HelpKINode Title="TypeConverterHelper class">
+    <HelpKINode Title="TypeConverterHelper Class" Url="html/22c62849-df3a-8525-254a-f2d17c1f57e7.htm" />
+    <HelpKINode Title="about TypeConverterHelper class" Url="html/22c62849-df3a-8525-254a-f2d17c1f57e7.htm" />
+    <HelpKINode Title="methods" Url="html/6adfa0ab-a324-5563-eac6-b713321416b8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TypeConverterHelper.RegisterTypeConverter(Of T, U) method" Url="html/8dd195c0-7711-0f00-945a-a921ca2bad70.htm" />
+  <HelpKINode Title="TypeConverterHelper.RegisterTypeConverter&lt;T, U&gt; method" Url="html/8dd195c0-7711-0f00-945a-a921ca2bad70.htm" />
+  <HelpKINode Title="TypeExtensions class">
+    <HelpKINode Title="TypeExtensions Class" Url="html/54671278-3b7f-cfc3-da1e-60a022bd598a.htm" />
+    <HelpKINode Title="about TypeExtensions class" Url="html/54671278-3b7f-cfc3-da1e-60a022bd598a.htm" />
+    <HelpKINode Title="methods" Url="html/b03785cc-2e4a-a41f-c712-5d5069eb3fdf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TypeExtensions.GetKnownTypes method" Url="html/2754d560-70ca-fcc6-4eb2-200e64170e37.htm" />
+  <HelpKINode Title="TypeExtensions.GetQualifiedName method" Url="html/122f5a06-bd5c-e4b6-7a8b-e3292ddbded2.htm" />
+  <HelpKINode Title="TypeExtensions.GetSubclassesOf method" Url="html/685c527b-a17d-5cdb-079e-d183b401e08a.htm" />
+  <HelpKINode Title="TypeExtensions.IsNullableType method" Url="html/2fa9c6ac-79c6-48ea-14da-9328be229510.htm" />
+  <HelpKINode Title="TypeExtensions.IsSuperTypeOf method" Url="html/1079c80e-b614-0746-362a-b69e9b503ce6.htm" />
+  <HelpKINode Title="UserExists method" Url="html/f2cd72c2-93e0-9588-31ca-00c5ccecc004.htm" />
+  <HelpKINode Title="Validation class">
+    <HelpKINode Title="Validation Class" Url="html/6a0d77de-49f6-f413-a9b7-53001f4a5731.htm" />
+    <HelpKINode Title="about Validation class" Url="html/6a0d77de-49f6-f413-a9b7-53001f4a5731.htm" />
+    <HelpKINode Title="fields" Url="html/f6d29da1-66ce-72ae-8c3a-0022e0de13b6.htm" />
+    <HelpKINode Title="methods" Url="html/641975f7-5c18-a0ad-f173-0d0d920db903.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Validation.GetBirthDateFromRrn method" Url="html/bbc47702-8fca-9856-5fdb-ade71995a87c.htm" />
+  <HelpKINode Title="Validation.GetDigitStream method" Url="html/1760ab6c-0712-5ea5-2433-99fb263d128d.htm" />
+  <HelpKINode Title="Validation.LengthKbo field" Url="html/4da14450-a588-569a-314b-e24aad41f263.htm" />
+  <HelpKINode Title="Validation.LengthRrn field" Url="html/fdbd11b2-8a1c-b093-b4e5-f6f5c7541ba0.htm" />
+  <HelpKINode Title="Validation.LengthRsz field" Url="html/599d9b3e-ca4b-fd61-08b5-f2519fac95a1.htm" />
+  <HelpKINode Title="Validation.LengthVat field" Url="html/b2877e56-c99b-8e49-8297-57147c6169ed.htm" />
+  <HelpKINode Title="Validation.PadKbo method" Url="html/3ffa1aca-c8f7-d91a-44d5-a94cfc711988.htm" />
+  <HelpKINode Title="Validation.PadRrn method" Url="html/7f755722-fd0c-67c9-8997-ecc508fa84b1.htm" />
+  <HelpKINode Title="Validation.PadRsz method" Url="html/b430b9aa-d477-65f4-80f2-d180adecf447.htm" />
+  <HelpKINode Title="Validation.StrictValidKbo method" Url="html/07c71669-f6ba-0c58-12ae-04ef1e9d0828.htm" />
+  <HelpKINode Title="Validation.StrictValidRrn method" Url="html/ceae99af-919a-f4a1-1630-46f88f84e352.htm" />
+  <HelpKINode Title="Validation.StrictValidRsz method" Url="html/d97020d1-da0f-fcf9-6a1c-28924f5314cd.htm" />
+  <HelpKINode Title="Validation.StrictValidVat method" Url="html/6df4344a-c0ad-056d-8eaf-75095c4995e4.htm" />
+  <HelpKINode Title="Validation.ValidDmfaNumber method" Url="html/2fb4491d-6209-6e7d-d934-850a1c45a58b.htm" />
+  <HelpKINode Title="Validation.ValidKbo method" Url="html/79357a30-dc33-075e-3922-5056e8c77c4b.htm" />
+  <HelpKINode Title="Validation.ValidRrn method" Url="html/41699502-1a87-aac9-0c6e-d45164a8d2cc.htm" />
+  <HelpKINode Title="Validation.ValidRsz method" Url="html/aea8fbfd-013e-ae57-d4ed-a70135e15401.htm" />
+  <HelpKINode Title="Validation.ValidVat method" Url="html/e9634c9d-3ceb-d744-0365-668d98a72850.htm" />
+  <HelpKINode Title="ValidDmfaNumber method" Url="html/2fb4491d-6209-6e7d-d934-850a1c45a58b.htm" />
+  <HelpKINode Title="ValidKbo method" Url="html/79357a30-dc33-075e-3922-5056e8c77c4b.htm" />
+  <HelpKINode Title="ValidRrn method" Url="html/41699502-1a87-aac9-0c6e-d45164a8d2cc.htm" />
+  <HelpKINode Title="ValidRsz method" Url="html/aea8fbfd-013e-ae57-d4ed-a70135e15401.htm" />
+  <HelpKINode Title="ValidVat method" Url="html/e9634c9d-3ceb-d744-0365-668d98a72850.htm" />
+  <HelpKINode Title="ValueTypeSequences class">
+    <HelpKINode Title="ValueTypeSequences Class" Url="html/cb19acad-b1fd-4948-c1c6-020db268675f.htm" />
+    <HelpKINode Title="about ValueTypeSequences class" Url="html/cb19acad-b1fd-4948-c1c6-020db268675f.htm" />
+    <HelpKINode Title="constructor" Url="html/4fbd1d9e-79c6-3ae5-3e88-020dde3732e3.htm" />
+    <HelpKINode Title="methods" Url="html/351c39b5-b04d-7ff7-884a-26cb705acd94.htm" />
+    <HelpKINode Title="properties" Url="html/6c236af1-dce1-522d-192c-fc73da540787.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ValueTypeSequences.Dates property" Url="html/ce9d04fd-c034-b055-0bee-52bd95e39b53.htm" />
+  <HelpKINode Title="ValueTypeSequences.Decimals property" Url="html/e050d0ae-b213-0a0d-ffcc-179994d109dc.htm" />
+  <HelpKINode Title="ValueTypeSequences.Strings property" Url="html/967c4e18-c2e1-7662-bbb1-37996d2fa972.htm" />
+  <HelpKINode Title="ValueTypeSequences.ValueTypeSequences constructor" Url="html/4fbd1d9e-79c6-3ae5-3e88-020dde3732e3.htm" />
+  <HelpKINode Title="WriteEmbeddedResourceToTempFile method" Url="html/866262e3-e9b7-3f42-f568-d90bec70e7b0.htm" />
+  <HelpKINode Title="YearInterestFraction method" Url="html/c842ff11-207c-b2c4-1c85-7968cf23a4d4.htm" />
+</HelpKI>
