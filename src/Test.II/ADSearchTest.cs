@@ -23,7 +23,7 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
     /// <summary>
     ///     These tests are only available when running with a domain controller.
     /// </summary>
-    [TestFixture]
+    [TestFixture, Explicit]
     public class AdSearchTest
     {
         [Test]
