@@ -23,6 +23,13 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
     /// </summary>
     public static class ConfigHelper
     {
+        /// <summary>
+        /// Gets the value for the given key out of the configuration.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="key">The key.</param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static T GetAppSetting<T>(string key, T defaultValue = default(T))
             where T : IConvertible
         {
@@ -41,6 +48,14 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
             return result;
         }
 
+        /// <summary>
+        /// Gets the value for the given key out of the given configuration.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="key">The key.</param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public static T GetAppSetting<T>(Configuration configuration, string key, T defaultValue = default(T))
             where T : IConvertible
         {
@@ -59,6 +74,11 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
             return result;
         }
 
+        /// <summary>
+        /// Gets the connection string for the given key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns>The connection string.</returns>
         public static string GetConnectionString(string key)
         {
             ConnectionStringSettings connectionString = ConfigurationManager.ConnectionStrings[key];
