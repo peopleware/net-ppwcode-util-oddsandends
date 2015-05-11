@@ -42,6 +42,13 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         /// </summary>
         /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
         /// <returns>The domain of an user account.</returns>
+        /// <example>
+        /// <code language="cs">
+        /// var domainName = AdSearch.GetDomainFromUserAccount(@"PPWDEV\jjanssenss");  
+        /// Console.WriteLine(domainName);  
+        /// </code>
+        /// result: PPWDEV.
+        /// </example>
         public static string GetDomainFromUserAccount(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -64,6 +71,13 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         /// </summary>
         /// <param name="userAccount">A user account with the following format: DOMAIN\UserName.</param>
         /// <returns>The user name for the given <paramref name="userAccount">account</paramref>.</returns>
+        /// <example>
+        /// <code language="cs">
+        /// var userName = AdSearch.GetAccountNameFromUserAccount(@"PPWDEV\jjanssens");  
+        /// Console.WriteLine(userName); 
+        /// </code>
+        /// result: jjanssens.
+        /// </example>
         public static string GetAccountNameFromUserAccount(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
