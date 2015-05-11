@@ -18,6 +18,9 @@ using System.Reflection;
 
 namespace PPWCode.Util.OddsAndEnds.II.Streaming
 {
+    /// <summary>
+    /// Helper class for Resource stream.
+    /// </summary>
     public static class ResourceStreamHelper
     {
         public static string WriteEmbeddedResourceToTempFile(

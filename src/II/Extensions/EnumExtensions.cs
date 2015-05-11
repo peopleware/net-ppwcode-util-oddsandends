@@ -20,6 +20,9 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Class that provides extensions for Enumeration.
+    /// </summary>
     public static class EnumExtension
     {
         public static string GetLocalizedDescription(this Enum enumValue)

@@ -21,6 +21,9 @@ using PPWCode.Util.OddsAndEnds.II.Streaming;
 
 namespace PPWCode.Util.OddsAndEnds.II.Serialization
 {
+    /// <summary>
+    /// Helper class for Serialization.
+    /// </summary>
     public class SerializationHelper
     {
         public static string SerializeToXmlString(object obj)

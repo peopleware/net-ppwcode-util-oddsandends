@@ -19,6 +19,9 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Helper class for DateTime.
+    /// </summary>
     public static class DateTimeHelper
     {
         /// <summary>

@@ -20,6 +20,9 @@ using System.Text.RegularExpressions;
 
 namespace PPWCode.Util.OddsAndEnds.II.Identification
 {
+    /// <summary>
+    /// Helper class for validation.
+    /// </summary>
     public static class Validation
     {
         public const int LengthKbo = 10;

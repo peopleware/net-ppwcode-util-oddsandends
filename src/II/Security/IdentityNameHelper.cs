@@ -18,6 +18,9 @@ using System.Threading;
 
 namespace PPWCode.Util.OddsAndEnds.II.Security
 {
+    /// <summary>
+    /// Helper class for IdentityName.
+    /// </summary>
     public static class IdentityNameHelper
     {
         public static string GetServiceSecurityContextIdentityName()

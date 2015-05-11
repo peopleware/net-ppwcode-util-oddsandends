@@ -17,6 +17,9 @@ using System.IO.Compression;
 
 namespace PPWCode.Util.OddsAndEnds.II.Streaming
 {
+    /// <summary>
+    /// Helper class for Compression.
+    /// </summary>
     public class Compression
     {
         public static byte[] Compress(byte[] bytData)

@@ -16,6 +16,9 @@ using System.Runtime.Serialization;
 
 namespace PPWCode.Util.OddsAndEnds.II.Serialization
 {
+    /// <summary>
+    /// Class for generic serialization info.
+    /// </summary>
     public class GenericSerializationInfo
     {
         private readonly SerializationInfo m_SerializationInfo;

@@ -18,6 +18,9 @@ using System.Globalization;
 
 namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
 {
+    /// <summary>
+    /// Helper class for configuration.
+    /// </summary>
     public static class ConfigHelper
     {
         public static T GetAppSetting<T>(string key, T defaultValue = default(T))

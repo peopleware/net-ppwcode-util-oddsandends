@@ -19,6 +19,9 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Class that provides extensions for Math.
+    /// </summary>
     public static class MathExtensions
     {
         [Pure]

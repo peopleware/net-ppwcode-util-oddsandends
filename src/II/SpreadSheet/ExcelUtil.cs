@@ -20,6 +20,9 @@ using System.IO;
 
 namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
 {
+    /// <summary>
+    /// Class that provides utilities for excel.
+    /// </summary>
     public class ExcelUtil
     {
         public ExcelUtil(string fileName)

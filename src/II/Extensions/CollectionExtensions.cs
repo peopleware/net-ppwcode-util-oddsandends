@@ -19,6 +19,9 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Class that provides extensions for Collections.
+    /// </summary>
     public static class CollectionExtensions
     {
         [Pure]

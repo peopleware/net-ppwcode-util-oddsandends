@@ -20,6 +20,9 @@ using System.Reflection;
 
 namespace PPWCode.Util.OddsAndEnds.II.AssemblyHelpers
 {
+    /// <summary>
+    /// Helper class for Assembly.
+    /// </summary>
     public static class AssemblyHelper
     {
         private static readonly object s_LoadedAssembliesLock = new object();

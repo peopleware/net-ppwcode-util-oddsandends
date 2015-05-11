@@ -20,6 +20,9 @@ using PPWCode.Util.OddsAndEnds.II.Extensions;
 
 namespace PPWCode.Util.OddsAndEnds.II.EnumHelpers
 {
+    /// <summary>
+    /// Helper class for Enumeration.
+    /// </summary>
     public static class EnumHelpers
     {
         [Obsolete(@"Use EnumHelpers.AsEnumerable")]

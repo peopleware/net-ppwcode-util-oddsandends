@@ -20,6 +20,9 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Helper class that provides extensions for DateTime.
+    /// </summary>
     public static class DateTimeExtensions
     {
         [Pure]

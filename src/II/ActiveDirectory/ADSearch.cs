@@ -20,6 +20,9 @@ using System.Text;
 
 namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
 {
+    /// <summary>
+    /// Helper class for active directory.
+    /// </summary>
     public class AdSearch
     {
         private readonly string m_DomainName;
