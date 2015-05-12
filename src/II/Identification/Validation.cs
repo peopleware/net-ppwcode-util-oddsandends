@@ -30,6 +30,12 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         public const int LengthRrn = 11;
         public const int LengthRsz = 10;
 
+        /// <summary>
+        /// Converts string to valid DMFA number.
+        /// </summary>
+        /// <param name="dmfaLotNbr">The given string.</param>
+        /// <returns>Valid DMFA number as long.
+        /// Null if it is not a valid DMFA number.</returns>
         [Pure]
         public static long? ValidDmfaNumber(string dmfaLotNbr)
         {
@@ -51,6 +57,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return result;
         }
 
+        /// <summary>
+        /// Checks whether string is a valid 'RIJKSREGISTERNUMMER'.
+        /// </summary>
+        /// <param name="rrn">The 'RIJKSREGISTERNUMMER' as string.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool ValidRrn(string rrn)
         {
@@ -58,6 +69,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return StrictValidRrn(digitStream);
         }
 
+        /// <summary>
+        /// Checks whether string is a strict valid 'RIJKSREGISTERNUMMER'.
+        /// </summary>
+        /// <param name="rrn">The 'RIJKSREGISTERNUMMER' as string.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool StrictValidRrn(string rrn)
         {
@@ -73,6 +89,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return false;
         }
 
+        /// <summary>
+        /// Adds zero to left of string so that the length of string is the required length for 'RIJKSREGISTERNUMMER'.
+        /// </summary>
+        /// <param name="rrn">The given 'RIJKSREGISTERNUMMER' as string.</param>
+        /// <returns>A string padded with zeros.</returns>
         [Pure]
         public static string PadRrn(string rrn)
         {
@@ -142,6 +163,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             }
         }
 
+        /// <summary>
+        /// Gets the birthday out of given 'RIJKSREGISTERNUMMER'.
+        /// </summary>
+        /// <param name="rrn">The given 'RIJKSREGISTERNUMMER' as string.</param>
+        /// <returns>The birthday or null.</returns>
         [Pure]
         public static DateTime? GetBirthDateFromRrn(string rrn)
         {
@@ -151,6 +177,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return birthDate;
         }
 
+        /// <summary>
+        /// Gets only the digits of string.
+        /// </summary>
+        /// <param name="stream">The given string.</param>
+        /// <returns>The digits as string.</returns>
         [Pure]
         public static string GetDigitStream(string stream)
         {
@@ -168,6 +199,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Checks whether given string is a valid RSZ number.
+        /// </summary>
+        /// <param name="rsz">The given string.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool ValidRsz(string rsz)
         {
@@ -175,6 +211,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return StrictValidRsz(digitStream);
         }
 
+        /// <summary>
+        /// Checks whether string is a strict valid RSZ number.
+        /// </summary>
+        /// <param name="rsz">The given string.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool StrictValidRsz(string rsz)
         {
@@ -194,12 +235,22 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return result;
         }
 
+        /// <summary>
+        ///  Adds zeros to left of string so that the length of string is the required length for RSZ number.
+        /// </summary>
+        /// <param name="rsz">The given RSZ number as string.</param>
+        /// <returns>A string padded with zeros.</returns>
         [Pure]
         public static string PadRsz(string rsz)
         {
             return string.IsNullOrEmpty(rsz) ? rsz : rsz.PadLeft(LengthRsz, '0');
         }
 
+        /// <summary>
+        /// Checks whether given string is a valid KBO number.
+        /// </summary>
+        /// <param name="kbo">The given string.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool ValidKbo(string kbo)
         {
@@ -207,6 +258,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return StrictValidKbo(digitStream);
         }
 
+        /// <summary>
+        /// Checks whether given string is a strict valid KBO number.
+        /// </summary>
+        /// <param name="kbo">The given string.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool StrictValidKbo(string kbo)
         {
@@ -220,12 +276,22 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return result;
         }
 
+        /// <summary>
+        ///  Adds zeros to left of string so that the length of string is the required length for KBO number.
+        /// </summary>
+        /// <param name="kbo">The given string.</param>
+        /// <returns>A string padded with zeros.</returns>
         [Pure]
         public static string PadKbo(string kbo)
         {
             return string.IsNullOrEmpty(kbo) ? kbo : kbo.PadLeft(LengthKbo, '0');
         }
 
+        /// <summary>
+        /// Checks whether string is a valid VAT number.
+        /// </summary>
+        /// <param name="vat">The given string.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool ValidVat(string vat)
         {
@@ -238,6 +304,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             return StrictValidVat(digitStream);
         }
 
+        /// <summary>
+        /// Checks whether string is a strict valid VAT number.
+        /// </summary>
+        /// <param name="vat">The given string.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool StrictValidVat(string vat)
         {
