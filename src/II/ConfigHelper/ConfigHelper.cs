@@ -53,7 +53,7 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="configuration">The configuration.</param>
-        /// <param name="key">The key.</param>
+        /// <param name="key">The given key.</param>
         /// <param name="defaultValue"></param>
         /// <returns></returns>
         public static T GetAppSetting<T>(Configuration configuration, string key, T defaultValue = default(T))
@@ -77,7 +77,7 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
         /// <summary>
         /// Gets the connection string for the given key.
         /// </summary>
-        /// <param name="key">The key.</param>
+        /// <param name="key">The given key.</param>
         /// <returns>The connection string.</returns>
         public static string GetConnectionString(string key)
         {
