@@ -24,30 +24,59 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
     /// </summary>
     public static class CollectionExtensions
     {
+        /// <summary>
+        /// Converts IEnumerable of T to list of T.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="items">IEnumerable of T.</param>
+        /// <returns>List of T.</returns>
         [Pure]
         public static List<T> AsList<T>(this IEnumerable<T> items)
         {
             return items == null ? new List<T>() : items.ToList();
         }
 
+        /// <summary>
+        /// Converts IEnumerable of T to IList of T.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="items">IEnumerable of T.</param>
+        /// <returns>IList of T.</returns>
         [Pure]
         public static IList<T> AsIList<T>(this IEnumerable<T> items)
         {
             return items == null ? new List<T>() : items.ToList();
         }
 
+        /// <summary>
+        /// Calculates the sum of nullable decimals.
+        /// </summary>
+        /// <param name="items">Nullable decimals.</param>
+        /// <returns>Sum as nullable decimal.</returns>
         [Pure]
         public static decimal? NullableSum(this IEnumerable<decimal?> items)
         {
             return items.Aggregate((decimal?)0, (s, x) => s + x);
         }
 
+        /// <summary>
+        /// Calculates the sum of nullable integers.
+        /// </summary>
+        /// <param name="items">Nullable integers.</param>
+        /// <returns>Sum of as nullable integer.</returns>
         [Pure]
         public static int? NullableSum(this IEnumerable<int?> items)
         {
             return items.Aggregate((int?)0, (s, x) => s + x);
         }
 
+        /// <summary>
+        /// Checks whether 2 IEnumerable of T are equal.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="outerSequence">The first IEnumerable of T.</param>
+        /// <param name="innerSequence">The second IEnumerable of T.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool SetEqual<T>(this IEnumerable<T> outerSequence, IEnumerable<T> innerSequence)
         {
@@ -56,6 +85,14 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
                    && (innerSequence.Except(outerSequence).Count() == 0);
         }
 
+        /// <summary>
+        /// Checks whether 2 IEnumerable of T are equal given a comparer.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="outerSequence">The first IEnumerable of T.</param>
+        /// <param name="innerSequence">The second IEnumerable of T.</param>
+        /// <param name="comparer">The equality comparer.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool SetEqual<T>(this IEnumerable<T> outerSequence, IEnumerable<T> innerSequence, IEqualityComparer<T> comparer)
         {
@@ -78,6 +115,12 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             }
         }
 
+        /// <summary>
+        /// Checks whether all items are empty.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="items">IEnumerable of T.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool IsEmpty<T>(this IEnumerable<T> items)
         {
@@ -89,6 +132,12 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return IsEmptyOperator(items);
         }
 
+        /// <summary>
+        /// Checks whether all items if IEnumerable or null or empty.
+        /// </summary>
+        /// <typeparam name="T">The type.</typeparam>
+        /// <param name="items">IEnumerable of T.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> items)
         {

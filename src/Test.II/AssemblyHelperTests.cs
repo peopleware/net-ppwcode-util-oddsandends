@@ -24,7 +24,7 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
         public void CreateInstanceOfSequenceGeneratorIsNotNull()
         {
             var assembly = AssemblyHelper.LoadAssembly("PPWCode.Util.OddsAndEnds.II.dll");
-            var adSearch = AssemblyHelper.CreateInstanceOf(assembly, "PPWCode.Util.OddsAndEnds.II.UnitTestHelpers.SequenceGenerator");// "AdSearch");
+            var adSearch = AssemblyHelper.CreateInstanceOf(assembly, "PPWCode.Util.OddsAndEnds.II.UnitTestHelpers.SequenceGenerator");
             Assert.IsNotNull(adSearch);
         }
     }
