@@ -27,7 +27,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// <summary>
         /// Converts IEnumerable of T to list of T.
         /// </summary>
-        /// <typeparam name="T">The type.</typeparam>
+        /// <typeparam name="T">The type used.</typeparam>
         /// <param name="items">IEnumerable of T.</param>
         /// <returns>List of T.</returns>
         [Pure]
@@ -39,7 +39,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// <summary>
         /// Converts IEnumerable of T to IList of T.
         /// </summary>
-        /// <typeparam name="T">The type.</typeparam>
+        /// <typeparam name="T">The type used.</typeparam>
         /// <param name="items">IEnumerable of T.</param>
         /// <returns>IList of T.</returns>
         [Pure]
@@ -73,7 +73,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// <summary>
         /// Checks whether 2 IEnumerable of T are equal.
         /// </summary>
-        /// <typeparam name="T">The type.</typeparam>
+        /// <typeparam name="T">The type used.</typeparam>
         /// <param name="outerSequence">The first IEnumerable of T.</param>
         /// <param name="innerSequence">The second IEnumerable of T.</param>
         /// <returns>True or false.</returns>
@@ -88,7 +88,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// <summary>
         /// Checks whether 2 IEnumerable of T are equal given a comparer.
         /// </summary>
-        /// <typeparam name="T">The type.</typeparam>
+        /// <typeparam name="T">The type used.</typeparam>
         /// <param name="outerSequence">The first IEnumerable of T.</param>
         /// <param name="innerSequence">The second IEnumerable of T.</param>
         /// <param name="comparer">The equality comparer.</param>
@@ -118,7 +118,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// <summary>
         /// Checks whether all items are empty.
         /// </summary>
-        /// <typeparam name="T">The type.</typeparam>
+        /// <typeparam name="T">The type used.</typeparam>
         /// <param name="items">IEnumerable of T.</param>
         /// <returns>True or false.</returns>
         [Pure]
@@ -135,7 +135,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// <summary>
         /// Checks whether all items if IEnumerable or null or empty.
         /// </summary>
-        /// <typeparam name="T">The type.</typeparam>
+        /// <typeparam name="T">The type used.</typeparam>
         /// <param name="items">IEnumerable of T.</param>
         /// <returns>True or false.</returns>
         [Pure]
