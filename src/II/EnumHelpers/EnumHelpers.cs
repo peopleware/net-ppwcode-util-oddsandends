@@ -25,12 +25,22 @@ namespace PPWCode.Util.OddsAndEnds.II.EnumHelpers
     /// </summary>
     public static class EnumHelpers
     {
+        /// <summary>
+        /// Returns enumeration as IEnumerable of T.
+        /// </summary>
+        /// <typeparam name="T">The type of the enumeration.</typeparam>
+        /// <returns>IEnumerable of T.</returns>
         [Obsolete(@"Use EnumHelpers.AsEnumerable")]
         public static IEnumerable<T> EnumEnumerable<T>()
         {
             return AsEnumerable<T>();
         }
 
+        /// <summary>
+        /// Returns enumeration as IEnumerable of T.
+        /// </summary>
+        /// <typeparam name="T">The type of the enumeration.</typeparam>
+        /// <returns>IEnumerable of T.</returns>
         public static IEnumerable<T> AsEnumerable<T>()
         {
             if (!typeof(Enum).IsAssignableFrom(typeof(T)))
@@ -41,6 +51,11 @@ namespace PPWCode.Util.OddsAndEnds.II.EnumHelpers
             return Enum.GetValues(typeof(T)).Cast<T>();
         }
 
+        /// <summary>
+        /// Gets localized description of value of enumeration.
+        /// </summary>
+        /// <param name="enumValue">The type of the enumeration.</param>
+        /// <returns>The localized description.</returns>
         [Obsolete(@"Use EnumExtension.GetLocalizedDescription()")]
         public static string GetLocalizedDescription(this Enum enumValue)
         {
