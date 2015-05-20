@@ -258,6 +258,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ResourceStreamHelperTests.cs" />
+    <Compile Include="SequenceGeneratorFactory.cs" />
     <Compile Include="SequenceGeneratorTests.cs" />
     <Compile Include="SerializationTests.cs" />
     <Compile Include="SpreadSheetTest.cs" />
