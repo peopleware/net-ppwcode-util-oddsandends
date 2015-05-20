@@ -27,6 +27,10 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
     {
         private readonly string m_DomainName;
 
+        /// <summary>
+        /// The constructor.
+        /// </summary>
+        /// <param name="domainName">The name of domain.</param>
         public AdSearch(string domainName)
         {
             Contract.Requires(!string.IsNullOrEmpty(domainName));
@@ -35,6 +39,9 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
             m_DomainName = domainName;
         }
 
+        /// <summary>
+        /// The name of domain.
+        /// </summary>
         public string DomainName
         {
             get { return m_DomainName; }
