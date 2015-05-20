@@ -25,9 +25,24 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
     /// </summary>
     public static class Validation
     {
+        /// <summary>
+        /// The length of KBO.
+        /// </summary>
         public const int LengthKbo = 10;
+
+        /// <summary>
+        /// The length of VAT.
+        /// </summary>
         public const int LengthVat = 9;
+
+        /// <summary>
+        /// The length of RIJKSREGISTENUMMER.
+        /// </summary>
         public const int LengthRrn = 11;
+
+        /// <summary>
+        /// The length of RSZ.
+        /// </summary>
         public const int LengthRsz = 10;
 
         /// <summary>
