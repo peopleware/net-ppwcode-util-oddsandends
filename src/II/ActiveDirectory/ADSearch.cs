@@ -83,10 +83,10 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         /// <returns>The user name for the given <paramref name="userAccount">account</paramref>.</returns>
         /// <example>
         /// <code language="cs">
-        /// var userName = AdSearch.GetAccountNameFromUserAccount(@"PPWDEV\jjanssens");  
+        /// var userName = AdSearch.GetAccountNameFromUserAccount(@"PPWDEV\JJANSSENS");  
         /// Console.WriteLine(userName); 
         /// </code>
-        /// result: jjanssens.
+        /// result: JJANSSENS.
         /// </example>
         public static string GetAccountNameFromUserAccount(string userAccount)
         {
