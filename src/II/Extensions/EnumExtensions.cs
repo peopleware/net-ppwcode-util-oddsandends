@@ -25,6 +25,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
     /// </summary>
     public static class EnumExtension
     {
+        /// <summary>
+        /// Gets the localized description for given value.
+        /// </summary>
+        /// <param name="enumValue">The given value.</param>
+        /// <returns>The localized description.</returns>
         public static string GetLocalizedDescription(this Enum enumValue)
         {
             if (enumValue != null)
@@ -38,6 +43,12 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return string.Empty;
         }
 
+        /// <summary>
+        /// Gets the localized description for given value and specified CultureInfo.
+        /// </summary>
+        /// <param name="enumValue">The given value.</param>
+        /// <param name="ci">The CultureInfo.</param>
+        /// <returns>The localized value.</returns>
         public static string GetLocalizedDescription(this Enum enumValue, CultureInfo ci)
         {
             if (enumValue != null)
