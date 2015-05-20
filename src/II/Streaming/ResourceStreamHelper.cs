@@ -23,6 +23,13 @@ namespace PPWCode.Util.OddsAndEnds.II.Streaming
     /// </summary>
     public static class ResourceStreamHelper
     {
+        /// <summary>
+        /// Writes an embedded resource to temporary file.
+        /// </summary>
+        /// <param name="assembly">The assembly.</param>
+        /// <param name="nameSpacename">The name of the nameSpace.</param>
+        /// <param name="resourceName">The name of the resource.</param>
+        /// <returns>The name of the temporary file.</returns>
         public static string WriteEmbeddedResourceToTempFile(
             Assembly assembly,
             string nameSpacename,
@@ -51,6 +58,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Streaming
             return temporaryFileName;
         }
 
+        /// <summary>
+        /// Makes a copy of a stream.
+        /// </summary>
+        /// <param name="input">The input stream.</param>
+        /// <param name="output">The output stream.</param>
         public static void CopyStream(Stream input, Stream output)
         {
             byte[] buffer = new byte[64 * 1024];
