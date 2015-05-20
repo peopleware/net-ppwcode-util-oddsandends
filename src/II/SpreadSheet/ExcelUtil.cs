@@ -25,6 +25,10 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
     /// </summary>
     public class ExcelUtil
     {
+        /// <summary>
+        /// The constructor.
+        /// </summary>
+        /// <param name="fileName">The name of the file.</param>
         public ExcelUtil(string fileName)
         {
             if (!File.Exists(fileName))
@@ -65,6 +69,13 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
             return connectionString != string.Empty ? new OleDbConnection(connectionString) : null;
         }
 
+        /// <summary>
+        /// Reads an excel sheet into a list of given type.
+        /// </summary>
+        /// <typeparam name="T">The given type.</typeparam>
+        /// <param name="selectStatement">The text of the query.</param>
+        /// <param name="rowResolver">The DbDataReader and type.</param>
+        /// <returns>List of given type.</returns>
         public List<T> ReadSheet<T>(string selectStatement, Func<DbDataReader, T> rowResolver)
             where T : class
         {
