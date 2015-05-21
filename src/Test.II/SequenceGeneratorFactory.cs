@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 using NUnit.Framework;
 
@@ -20,7 +15,7 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                 yield return new TestCaseData(853, -1, 1);
                 yield return new TestCaseData(952, -1, 0);
                 yield return new TestCaseData(5, 0, 1);
-                yield return new TestCaseData(100, double.MaxValue -1, double.MaxValue);
+                yield return new TestCaseData(100, double.MaxValue - 1, double.MaxValue);
             }
         }
     }

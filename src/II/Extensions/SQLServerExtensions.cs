@@ -30,7 +30,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             "'(?<pattern>(UQ_.+?))'",
             "\"(?<pattern>(UQ_.+?))\"",
             "'(?<pattern>(CK_.+?))'",
-            "\"(?<pattern>(CK_.+?))\"",
+            "\"(?<pattern>(CK_.+?))\""
         };
 
         [Pure]

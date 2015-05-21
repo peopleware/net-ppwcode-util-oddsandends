@@ -200,12 +200,10 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
                     return Deserialize<T>(stream);
                 }
             }
-            else
+
+            using (Stream stream = new FileStream(fileName, FileMode.Open))
             {
-                using (Stream stream = new FileStream(fileName, FileMode.Open))
-                {
-                    return Deserialize<T>(stream);
-                }
+                return Deserialize<T>(stream);
             }
         }
 
@@ -272,12 +270,10 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
                     return Deserialize<T>(stream);
                 }
             }
-            else
+
+            using (resourceStream)
             {
-                using (resourceStream)
-                {
-                    return Deserialize<T>(resourceStream);
-                }
+                return Deserialize<T>(resourceStream);
             }
         }
     }

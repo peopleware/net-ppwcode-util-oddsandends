@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using NUnit.Framework;
 
@@ -17,7 +13,7 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
         public void CompressedByteArrayNotNull()
         {
             Random random = new Random();
-            Byte[] array = new byte[10];
+            byte[] array = new byte[10];
             random.NextBytes(array);
 
             var result = Compression.Compress(array);
@@ -28,7 +24,7 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
         public void CompressThenDecompressReturnsSameArray()
         {
             Random random = new Random();
-            Byte[] array = new byte[10];
+            byte[] array = new byte[10];
             random.NextBytes(array);
 
             var compressed = Compression.Compress(array);
