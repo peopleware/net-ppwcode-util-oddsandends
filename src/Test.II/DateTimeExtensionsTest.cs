@@ -23,6 +23,24 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
     [TestFixture]
     public class DateTimeExtensionsTest
     {
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "StripMilliseconds")]
+        public DateTime StripMillisecondsTest(DateTime dateTime)
+        {
+            return dateTime.StripMilliseconds();
+        }
+
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "StripSeconds")]
+        public DateTime StripSecondsTest(DateTime dateTime)
+        {
+            return dateTime.StripSeconds();
+        }
+
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "StripHours")]
+        public DateTime StripHours(DateTime dateTime)
+        {
+            return dateTime.StripHours();
+        }
+
         [Test, Description("DateTimeExtensions FirstDayOfCurrentQuarter")]
         public void TestFirstDayOfCurrentQuarter()
         {

@@ -236,6 +236,7 @@
     <Compile Include="CollectionExtensionsTest.cs" />
     <Compile Include="CompressionTests.cs" />
     <Compile Include="ConfigHelperTests.cs" />
+    <Compile Include="DateTimeExtensionsFactory.cs" />
     <Compile Include="DateTimeExtensionsTest.cs" />
     <Compile Include="DateTimeHelperTest.cs" />
     <Compile Include="EnumTests.cs" />
