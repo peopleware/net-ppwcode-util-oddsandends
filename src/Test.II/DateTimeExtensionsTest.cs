@@ -53,11 +53,11 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.IsLegalSqlDate();
         }
 
-        public DateTime AddQuartersTest()
-        {
-            // todo add tests
-           throw new NotImplementedException();
-        }
+         [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "AddQuarters")]
+        public DateTime AddQuartersTest(DateTime dateTime, int quarters)
+         {
+             return dateTime.AddQuarters(quarters);
+         }
 
         public DateTime? StripMillisecondsTest()
         {
