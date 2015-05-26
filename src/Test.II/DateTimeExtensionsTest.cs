@@ -41,6 +41,65 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.StripHours();
         }
 
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "IsLegalSqlDate")]
+        public bool IsLegalSqlDateTest(DateTime dateTime)
+        {
+            return dateTime.IsLegalSqlDate();
+        }
+
+        public void IsLegalSqlDateNullableDatetimeTest()
+        {
+            // todo add tests
+        }
+
+        public DateTime AddQuartersTest()
+        {
+            // todo add tests
+           throw new NotImplementedException();
+        }
+
+        public DateTime? StripMillisecondsTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime? StripSeconds()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime? StripHours()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime? AddMonthsTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime? AddQuartersForNullableDatetimeTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime ImmediateFirstOfQuarterTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public bool IsFirstDayOfQuarterTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
         [Test, Description("DateTimeExtensions FirstDayOfCurrentQuarter")]
         public void TestFirstDayOfCurrentQuarter()
         {
@@ -94,6 +153,96 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
         public void TestFirstDayOfPreviousQuarter()
         {
             Assert.AreEqual(new DateTime(2013, 10, 1), new DateTime(2014, 2, 28).FirstDayOfPreviousQuarter());
+        }
+
+        public DateTime LastDayOfCurrentQuarterTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime LastDayOfNextQuarterTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public bool IsFirstDayOfMonthTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public bool? IsFirstDayOfMonthForNullableDatetimeTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime ImmediateFirstOfMonthTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime FirstDayOfNextMonthTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public int DaysBetweenTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public int MonthBetweenTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public int QuartersBetweenTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime ImmediateFirstOfYearTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime FirstDayOfNextYearTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime FirstDayOfMonthTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public DateTime LastDayOfMonthTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public int NumberOfDaysInYearTest()
+        {
+            // todo add tests
+            throw new NotImplementedException();
+        }
+
+        public int AgeInYearsTest()
+        {
+                        // todo add tests
+            throw new NotImplementedException();
         }
     }
 }

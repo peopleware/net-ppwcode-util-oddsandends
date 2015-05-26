@@ -43,5 +43,16 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                yield return new TestCaseData(new DateTime(2015, 06, 01, 20, 1, 0)).Returns(new DateTime(2015, 06, 01));
            }
        }
+
+       public IEnumerable IsLegalSqlDate
+       {
+           get
+           {
+               yield return new TestCaseData(new DateTime(2015, 06, 01)).Returns(true);
+               yield return new TestCaseData(new DateTime(1753, 01, 01)).Returns(true);
+               yield return new TestCaseData(new DateTime(1752, 12, 31)).Returns(false);
+               yield return new TestCaseData(new DateTime(9999, 12, 31)).Returns(true);
+           }
+       }
     }
 }
