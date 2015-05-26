@@ -79,6 +79,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
 
         /// <summary>
         /// Adds quarters to a DateTime.
+        /// If the resulting day is not valid in the resulting month, the last valid day of the resulting month is used.
         /// </summary>
         /// <param name="dt">The DateTime you want to add quarters to.</param>
         /// <param name="quarters">The number of quarters you want to add.</param>
