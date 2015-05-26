@@ -53,40 +53,40 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.IsLegalSqlDate();
         }
 
-         [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "AddQuarters")]
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "AddQuarters")]
         public DateTime AddQuartersTest(DateTime dateTime, int quarters)
-         {
-             return dateTime.AddQuarters(quarters);
-         }
-
-        public DateTime? StripMillisecondsTest()
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.AddQuarters(quarters);
         }
 
-        public DateTime? StripSeconds()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "StripMillisecondsFromNullableDatetime")]
+        public DateTime? StripMillisecondsForNullableDatetimeTest(DateTime? dateTime)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.StripMilliseconds();
         }
 
-        public DateTime? StripHours()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "StripSecondsFromNullableDatetime")]
+        public DateTime? StripSecondsFromNullableDatetimeTest(DateTime? dateTime)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.StripSeconds();
         }
 
-        public DateTime? AddMonthsTest()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "StripHoursFromNullableDatetime")]
+        public DateTime? StripHoursFromNullableDatetimeTest(DateTime? dateTime)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.StripHours();
         }
 
-        public DateTime? AddQuartersForNullableDatetimeTest()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "AddMonthsForNullableDatetime")]
+        public DateTime? AddMonthsForNullableDatetimeTest(DateTime? dateTime, int numberOfMonths)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.AddMonths(numberOfMonths);
+        }
+
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "AddQuartersForNullableDatetime")]
+        public DateTime? AddQuartersForNullableDatetimeTest(DateTime? dateTime, int quarters)
+        {
+            return dateTime.AddQuarters(quarters);
         }
 
         public DateTime ImmediateFirstOfQuarterTest()
@@ -242,7 +242,7 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
 
         public int AgeInYearsTest()
         {
-                        // todo add tests
+            // todo add tests
             throw new NotImplementedException();
         }
     }

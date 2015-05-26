@@ -64,13 +64,50 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
        {
            get
            {
-               yield return new TestCaseData(new DateTime(2015, 05, 01), 1).Returns(new DateTime(2015, 08,01));
+               yield return new TestCaseData(new DateTime(2015, 05, 01), 1).Returns(new DateTime(2015, 08 ,01));
                yield return new TestCaseData(new DateTime(2015, 08, 01), -1).Returns(new DateTime(2015, 05, 01));
                yield return new TestCaseData(new DateTime(2015, 03, 31), 1).Returns(new DateTime(2015, 06, 30));
                yield return new TestCaseData(new DateTime(2015, 02, 28), 1).Returns(new DateTime(2015, 05, 28));
                yield return new TestCaseData(new DateTime(2014, 11, 30), 1).Returns(new DateTime(2015, 02, 28));
                yield return new TestCaseData(new DateTime(2014, 11, 29), 1).Returns(new DateTime(2015, 02, 28));
                yield return new TestCaseData(new DateTime(2014, 11, 28), 1).Returns(new DateTime(2015, 02, 28));
+           }
+       }
+
+       public IEnumerable StripMillisecondsFromNullableDatetime
+       {
+           get
+           {
+              yield return new TestCaseData((DateTime?)null).Returns(null);
+           }
+       }
+
+       public IEnumerable StripSecondsFromNullableDatetime
+       {
+           get { yield return new TestCaseData((DateTime?)null).Returns(null); }
+       }
+
+       public IEnumerable StripHoursFromNullableDatetime
+       {
+           get
+           {
+               yield return new TestCaseData((DateTime?)null).Returns(null);
+           }
+       }
+
+       public IEnumerable AddMonthsForNullableDatetime
+       {
+           get
+           {
+               yield return new TestCaseData((DateTime?)null, 5).Returns(null);
+           }
+       }
+
+       public IEnumerable AddQuartersForNullableDatetime
+       {
+           get
+           {
+               yield return new TestCaseData((DateTime?)null, 2).Returns(null);
            }
        }
     }
