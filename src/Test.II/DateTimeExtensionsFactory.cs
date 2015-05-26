@@ -54,5 +54,10 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                yield return new TestCaseData(new DateTime(9999, 12, 31)).Returns(true);
            }
        }
+
+       public IEnumerable IsLegalSqlDateNullableDatetime
+       {
+           get { yield return new TestCaseData((DateTime?)null).Returns(true); }
+       }
     }
 }

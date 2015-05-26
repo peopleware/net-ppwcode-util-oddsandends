@@ -47,9 +47,10 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.IsLegalSqlDate();
         }
 
-        public void IsLegalSqlDateNullableDatetimeTest()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "IsLegalSqlDateNullableDatetime")]
+        public bool IsLegalSqlDateNullableDatetimeTest(DateTime? dateTime)
         {
-            // todo add tests
+            return dateTime.IsLegalSqlDate();
         }
 
         public DateTime AddQuartersTest()
