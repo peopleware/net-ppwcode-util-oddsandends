@@ -168,82 +168,94 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.LastDayOfNextQuarter();
         }
 
-        public bool IsFirstDayOfMonthTest()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "IsFirstDayOfMonth")]
+        public bool IsFirstDayOfMonthTest(DateTime dateTime)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.IsFirstDayOfMonth();
         }
 
-        public bool? IsFirstDayOfMonthForNullableDatetimeTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "IsFirstDayOfMonthForNullableDatetime")]
+        //public bool? IsFirstDayOfMonthForNullableDatetimeTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public DateTime ImmediateFirstOfMonthTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "ImmediateFirstOfMonth")]
+        //public DateTime ImmediateFirstOfMonthTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public DateTime FirstDayOfNextMonthTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "FirstDayOfNextMonth")]
+        //public DateTime FirstDayOfNextMonthTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public int DaysBetweenTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "DaysBetween")]
+        //public int DaysBetweenTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public int MonthBetweenTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "MonthBetween")]
+        //public int MonthBetweenTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public int QuartersBetweenTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "QuartersBetween")]
+        //public int QuartersBetweenTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public DateTime ImmediateFirstOfYearTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "ImmediateFirstOfYear")]
+        //public DateTime ImmediateFirstOfYearTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public DateTime FirstDayOfNextYearTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "FirstDayOfNextYear")]
+        //public DateTime FirstDayOfNextYearTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public DateTime FirstDayOfMonthTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "FirstDayOfMonth")]
+        //public DateTime FirstDayOfMonthTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public DateTime LastDayOfMonthTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "LastDayOfMonth")]
+        //public DateTime LastDayOfMonthTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public int NumberOfDaysInYearTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "NumberOfDaysInYear")]
+        //public int NumberOfDaysInYearTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
 
-        public int AgeInYearsTest()
-        {
-            // todo add tests
-            throw new NotImplementedException();
-        }
+        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "AgeInYears")]
+        //public int AgeInYearsTest()
+        //{
+        //    // todo add tests
+        //    throw new NotImplementedException();
+        //}
     }
 }
