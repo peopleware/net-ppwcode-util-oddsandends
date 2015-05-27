@@ -197,5 +197,10 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                yield return new TestCaseData(new DateTime(2015, 12, 31)).Returns(false);
            }
        }
+
+       public IEnumerable IsFirstDayOfMonthForNullableDatetime
+       {
+           get { yield return new TestCaseData((DateTime?)null).Returns(null); }
+       }
     }
 }
