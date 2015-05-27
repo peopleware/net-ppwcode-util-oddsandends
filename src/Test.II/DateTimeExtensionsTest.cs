@@ -156,12 +156,13 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             Assert.AreEqual(new DateTime(2013, 10, 1), new DateTime(2014, 2, 28).FirstDayOfPreviousQuarter());
         }
 
-        public DateTime LastDayOfCurrentQuarterTest()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "LastDayOfCurrentQuarter")]
+        public DateTime LastDayOfCurrentQuarterTest(DateTime dateTime)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.LastDayOfCurrentQuarter();
         }
 
+       // [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "LastDayOfNextQuarter")]
         public DateTime LastDayOfNextQuarterTest()
         {
             // todo add tests
