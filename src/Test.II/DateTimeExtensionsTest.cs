@@ -89,16 +89,16 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.AddQuarters(quarters);
         }
 
-        public DateTime ImmediateFirstOfQuarterTest()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "ImmediateFirstOfQuarter")]
+        public DateTime ImmediateFirstOfQuarterTest(DateTime dateTime)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.ImmediateFirstOfQuarter();
         }
 
-        public bool IsFirstDayOfQuarterTest()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "IsFirstDayOfQuarter")]
+        public bool IsFirstDayOfQuarterTest(DateTime dateTime)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.IsFirstDayOfQuarter();
         }
 
         [Test, Description("DateTimeExtensions FirstDayOfCurrentQuarter")]

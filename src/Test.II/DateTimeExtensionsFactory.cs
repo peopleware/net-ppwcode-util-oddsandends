@@ -110,5 +110,32 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                yield return new TestCaseData((DateTime?)null, 2).Returns(null);
            }
        }
+
+       public IEnumerable ImmediateFirstOfQuarter
+       {
+           get { yield return new TestCaseData(new DateTime(2015, 01, 01)).Returns(new DateTime(2015, 01, 01)); }
+       }
+
+       public IEnumerable IsFirstDayOfQuarter
+       {
+           get
+           {
+               yield return new TestCaseData(new DateTime(2015, 01, 01)).Returns(true);
+               yield return new TestCaseData(new DateTime(2015, 04, 01)).Returns(true);
+               yield return new TestCaseData(new DateTime(2015, 07, 01)).Returns(true);
+               yield return new TestCaseData(new DateTime(2015, 10, 01)).Returns(true);
+               yield return new TestCaseData(new DateTime(2015, 02, 01)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 03, 01)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 05, 01)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 06, 01)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 08, 01)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 09, 01)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 11, 01)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 12, 01)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 01, 02)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 02, 02)).Returns(false);
+               yield return new TestCaseData(new DateTime(2015, 03, 30)).Returns(false);
+           }
+       }
     }
 }
