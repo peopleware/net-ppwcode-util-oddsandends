@@ -162,11 +162,10 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.LastDayOfCurrentQuarter();
         }
 
-       // [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "LastDayOfNextQuarter")]
-        public DateTime LastDayOfNextQuarterTest()
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "LastDayOfNextQuarter")]
+        public DateTime LastDayOfNextQuarterTest(DateTime dateTime)
         {
-            // todo add tests
-            throw new NotImplementedException();
+            return dateTime.LastDayOfNextQuarter();
         }
 
         public bool IsFirstDayOfMonthTest()

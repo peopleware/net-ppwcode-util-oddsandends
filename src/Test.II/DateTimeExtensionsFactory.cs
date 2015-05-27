@@ -150,5 +150,18 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                yield return new TestCaseData(new DateTime(2015, 05, 31)).Returns(new DateTime(2015, 06, 30));
            }
        }
+
+       public IEnumerable LastDayOfNextQuarter
+       {
+           get
+           {
+               yield return new TestCaseData(new DateTime(2015, 01, 01)).Returns(new DateTime(2015, 06, 30));
+               yield return new TestCaseData(new DateTime(2015, 02, 05)).Returns(new DateTime(2015, 06, 30));
+               yield return new TestCaseData(new DateTime(2015, 03, 15)).Returns(new DateTime(2015, 06, 30));
+               yield return new TestCaseData(new DateTime(2015, 06, 30)).Returns(new DateTime(2015, 09, 30));
+               yield return new TestCaseData(new DateTime(2015, 04, 01)).Returns(new DateTime(2015, 09, 30));
+               yield return new TestCaseData(new DateTime(2015, 05, 31)).Returns(new DateTime(2015, 09, 30)); 
+           }
+       }
     }
 }
