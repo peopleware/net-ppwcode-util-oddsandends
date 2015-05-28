@@ -186,12 +186,11 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.ImmediateFirstOfMonth();
         }
 
-        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "FirstDayOfNextMonth")]
-        //public DateTime FirstDayOfNextMonthTest()
-        //{
-        //    // todo add tests
-        //    throw new NotImplementedException();
-        //}
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "FirstDayOfNextMonth")]
+        public DateTime FirstDayOfNextMonthTest(DateTime dateTime)
+        {
+            return dateTime.FirstDayOfNextMonth();
+        }
 
         //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "DaysBetween")]
         //public int DaysBetweenTest()

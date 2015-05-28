@@ -224,5 +224,33 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                yield return new TestCaseData(new DateTime(2015, 12, 02)).Returns(new DateTime(2016, 1, 1));
            }
        }
+
+       public IEnumerable FirstDayOfNextMonth
+       {
+           get
+           {
+               yield return new TestCaseData(new DateTime(2015, 01, 01)).Returns(new DateTime(2015, 02, 01));
+               yield return new TestCaseData(new DateTime(2015, 02, 01)).Returns(new DateTime(2015, 03, 01));
+               yield return new TestCaseData(new DateTime(2015, 03, 01)).Returns(new DateTime(2015, 04, 01));
+               yield return new TestCaseData(new DateTime(2015, 04, 01)).Returns(new DateTime(2015, 05, 01));
+               yield return new TestCaseData(new DateTime(2015, 05, 01)).Returns(new DateTime(2015, 06, 01));
+               yield return new TestCaseData(new DateTime(2015, 06, 01)).Returns(new DateTime(2015, 07, 01));
+               yield return new TestCaseData(new DateTime(2015, 07, 01)).Returns(new DateTime(2015, 08, 01));
+               yield return new TestCaseData(new DateTime(2015, 08, 01)).Returns(new DateTime(2015, 09, 01));
+               yield return new TestCaseData(new DateTime(2015, 09, 01)).Returns(new DateTime(2015, 10, 01));
+               yield return new TestCaseData(new DateTime(2015, 10, 01)).Returns(new DateTime(2015, 11, 01));
+               yield return new TestCaseData(new DateTime(2015, 11, 01)).Returns(new DateTime(2015, 12, 01));
+               yield return new TestCaseData(new DateTime(2015, 12, 01)).Returns(new DateTime(2016, 1, 1));
+               yield return new TestCaseData(new DateTime(2015, 12, 02)).Returns(new DateTime(2016, 1, 1));
+               yield return new TestCaseData(new DateTime(2015, 02, 28)).Returns(new DateTime(2015, 03, 01));
+               yield return new TestCaseData(new DateTime(2015, 01, 5)).Returns(new DateTime(2015, 02, 01));
+               yield return new TestCaseData(new DateTime(2015, 02, 12)).Returns(new DateTime(2015, 03, 01));
+               yield return new TestCaseData(new DateTime(2015, 03, 20)).Returns(new DateTime(2015, 04, 01));
+               yield return new TestCaseData(new DateTime(2015, 04, 21)).Returns(new DateTime(2015, 05, 01));
+               yield return new TestCaseData(new DateTime(2015, 05, 30)).Returns(new DateTime(2015, 06, 01));
+               yield return new TestCaseData(new DateTime(2015, 06, 4)).Returns(new DateTime(2015, 07, 01));
+           }
+       }
+
     }
 }
