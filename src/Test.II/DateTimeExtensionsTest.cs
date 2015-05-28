@@ -180,12 +180,11 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return dateTime.IsFirstDayOfMonth();
         }
 
-        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "ImmediateFirstOfMonth")]
-        //public DateTime ImmediateFirstOfMonthTest()
-        //{
-        //    // todo add tests
-        //    throw new NotImplementedException();
-        //}
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "ImmediateFirstOfMonth")]
+        public DateTime ImmediateFirstOfMonthTest(DateTime dateTime)
+        {
+            return dateTime.ImmediateFirstOfMonth();
+        }
 
         //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "FirstDayOfNextMonth")]
         //public DateTime FirstDayOfNextMonthTest()
