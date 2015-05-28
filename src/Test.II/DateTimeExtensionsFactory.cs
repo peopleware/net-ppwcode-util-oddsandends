@@ -252,5 +252,15 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
            }
        }
 
+       public IEnumerable DaysBetween
+       {
+           get
+           {
+               yield return new TestCaseData(new DateTime(2015, 01, 01), new DateTime(2015, 01, 03)).Returns(2);
+               yield return new TestCaseData(new DateTime(2015, 01, 01), new DateTime(2014, 12, 31)).Returns(-1);
+               yield return new TestCaseData(new DateTime(2015, 01, 01), new DateTime(2015, 01, 06)).Returns(5);
+           }
+       }
+
     }
 }
