@@ -198,12 +198,11 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
             return startDate.DaysBetween(endDate);
         }
 
-        //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "MonthBetween")]
-        //public int MonthBetweenTest()
-        //{
-        //    // todo add tests
-        //    throw new NotImplementedException();
-        //}
+        [Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "MonthBetween")]
+        public int MonthBetweenTest(DateTime startDate, DateTime endDate)
+        {
+            return startDate.MonthsBetween(endDate);
+        }
 
         //[Test, TestCaseSource(typeof(DateTimeExtensionsFactory), "QuartersBetween")]
         //public int QuartersBetweenTest()

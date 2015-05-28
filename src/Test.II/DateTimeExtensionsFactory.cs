@@ -262,5 +262,16 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
            }
        }
 
+       public IEnumerable MonthBetween
+       {
+           get
+           {
+               yield return new TestCaseData(new DateTime(2015, 01, 01), new DateTime(2015, 03, 03)).Returns(2);
+               yield return new TestCaseData(new DateTime(2015, 01, 21), new DateTime(2015, 03, 03)).Returns(2);
+               yield return new TestCaseData(new DateTime(2015, 01, 21), new DateTime(2015, 01, 03)).Returns(0);
+               yield return new TestCaseData(new DateTime(2015, 03, 21), new DateTime(2015, 01, 03)).Returns(2);
+           }
+       }
+
     }
 }
