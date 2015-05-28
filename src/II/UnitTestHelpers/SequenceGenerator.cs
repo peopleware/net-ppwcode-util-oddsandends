@@ -32,6 +32,7 @@ namespace PPWCode.Util.OddsAndEnds.II.UnitTestHelpers
         /// <param name="end">The maximal possible value.</param>
         /// <param name="sum">The sum of the decimals.</param>
         /// <returns>An IEnumerable of decimals.</returns>
+        /// <exception cref="OverflowException">This exception is thrown when sum of generated numbers gets too large.</exception>
         public static IEnumerable<decimal> CreateRandomDecimalSequence(int nrItems, double start, double end, ref decimal sum)
         {
             Contract.Requires(nrItems >= 0);

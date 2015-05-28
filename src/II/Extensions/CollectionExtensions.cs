@@ -25,11 +25,13 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
     public static class CollectionExtensions
     {
         /// <summary>
-        /// Converts IEnumerable of T to list of T.
+        /// Converts <see cref="IEnumerable{T}"/> to <see cref="List{T}"/>.
         /// </summary>
         /// <typeparam name="T">The type used.</typeparam>
-        /// <param name="items">IEnumerable of T.</param>
-        /// <returns>List of T.</returns>
+        /// <param name="items">The given <see cref="IEnumerable{T}"/>.</param>
+        /// <returns>A <see cref="List{T}"/> with the same contents as <paramref name="items"/>.</returns>
+        /// <remarks>If the <paramref name="items"/> is <c>null</c>, then
+        /// an empty <see cref="List{T}"/> is returned as result.</remarks>
         [Pure]
         public static List<T> AsList<T>(this IEnumerable<T> items)
         {
@@ -37,15 +39,17 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Converts IEnumerable of T to IList of T.
+        /// Converts <see cref="IEnumerable{T}"/> to <see cref="IList{T}"/>.
         /// </summary>
         /// <typeparam name="T">The type used.</typeparam>
-        /// <param name="items">IEnumerable of T.</param>
-        /// <returns>IList of T.</returns>
+        /// <param name="items">The given <see cref="IEnumerable{T}"/>.</param>
+        /// <returns>A <see cref="IList{T}"/> with the same contents as <paramref name="items"/>.</returns>
+        /// <remarks>If the <paramref name="items"/> is <c>null</c>, then
+        /// an empty <see cref="IList{T}"/> is returned as result.</remarks>
         [Pure]
         public static IList<T> AsIList<T>(this IEnumerable<T> items)
         {
-            return items == null ? new List<T>() : items.ToList();
+            return items.AsList();
         }
 
         /// <summary>
@@ -53,6 +57,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// </summary>
         /// <param name="items">Nullable decimals.</param>
         /// <returns>Sum as nullable decimal.</returns>
+        /// <remarks>This method returns <c>0</c> if the given <paramref name="items"/> 
+        /// is empty.</remarks>
         [Pure]
         public static decimal? NullableSum(this IEnumerable<decimal?> items)
         {

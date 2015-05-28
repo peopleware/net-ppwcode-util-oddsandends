@@ -67,7 +67,7 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
        {
            get
            {
-               yield return new TestCaseData(new DateTime(2015, 05, 01), 1).Returns(new DateTime(2015, 08 ,01));
+               yield return new TestCaseData(new DateTime(2015, 05, 01), 1).Returns(new DateTime(2015, 08, 01));
                yield return new TestCaseData(new DateTime(2015, 08, 01), -1).Returns(new DateTime(2015, 05, 01));
                yield return new TestCaseData(new DateTime(2015, 03, 31), 1).Returns(new DateTime(2015, 06, 30));
                yield return new TestCaseData(new DateTime(2015, 02, 28), 1).Returns(new DateTime(2015, 05, 28));
@@ -272,6 +272,5 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                yield return new TestCaseData(new DateTime(2015, 03, 21), new DateTime(2015, 01, 03)).Returns(2);
            }
        }
-
     }
 }

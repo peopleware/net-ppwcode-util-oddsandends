@@ -27,7 +27,7 @@
     <HeaderText>PPWCode.Util.OddsAndEnds</HeaderText>
     <HelpTitle>PPWCode.Util.OddsAndEnds developer documentation</HelpTitle>
     <SyntaxFilters>C#</SyntaxFilters>
-    <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors, Namespace, TypeParameter, IncludeTargets, AutoDocumentDispose</MissingTags>
+    <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors, TypeParameter, IncludeTargets, AutoDocumentDispose</MissingTags>
     <VisibleItems>Attributes, InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected, SealedProtected</VisibleItems>
     <DocumentationSources>
       <DocumentationSource sourceFile="PPWCode.Util.OddsAndEnds.II.csproj" configuration="Debug" platform="AnyCPU" />

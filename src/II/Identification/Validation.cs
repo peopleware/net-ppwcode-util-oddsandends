@@ -77,6 +77,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         /// </summary>
         /// <param name="rrn">The 'RIJKSREGISTERNUMMER' as string.</param>
         /// <returns>True or false.</returns>
+        /// <remarks>Is less strict. All characters that are not numbers are removed before validation is done.</remarks>
         [Pure]
         public static bool ValidRrn(string rrn)
         {
@@ -89,6 +90,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         /// </summary>
         /// <param name="rrn">The 'RIJKSREGISTERNUMMER' as string.</param>
         /// <returns>True or false.</returns>
+        /// <remarks>The string cannot contain any characters that are not part of the 'RIJKSREGISTERNUMMER'.</remarks>
         [Pure]
         public static bool StrictValidRrn(string rrn)
         {

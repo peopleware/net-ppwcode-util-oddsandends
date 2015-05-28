@@ -38,8 +38,7 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                 yield return new TestCaseData("00 09 15 011 19  ").Returns(true);
                 yield return new TestCaseData("00091501119").Returns(true);
 
-                // todo Ruben: willen we dat "00Q09IsZot15 011 19  " een geldig nummer is ?
-                yield return new TestCaseData("00Q09IsZot15 011 19  ").Returns(false);
+                yield return new TestCaseData("00Q09IsZot15 011 19  ").Returns(true);
             }
         }
 
