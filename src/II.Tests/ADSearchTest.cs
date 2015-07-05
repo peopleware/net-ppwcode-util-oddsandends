@@ -18,7 +18,7 @@ using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.II.ActiveDirectory;
 
-namespace PPWCode.Util.OddsAndEnds.Test.II
+namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
     /// <summary>
     ///     These tests are only available when running with a domain controller.

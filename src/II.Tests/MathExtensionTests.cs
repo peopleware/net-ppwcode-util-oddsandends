@@ -18,7 +18,7 @@ using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.II.Extensions;
 
-namespace PPWCode.Util.OddsAndEnds.Test.II
+namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
     [TestFixture]
     public class MathExtensionTests

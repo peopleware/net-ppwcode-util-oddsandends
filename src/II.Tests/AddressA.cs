@@ -15,7 +15,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace PPWCode.Util.OddsAndEnds.Test.II
+namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
     [DataContract]
     public class AddressA

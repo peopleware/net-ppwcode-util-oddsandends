@@ -16,7 +16,7 @@ using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.II.Extensions;
 
-namespace PPWCode.Util.OddsAndEnds.Test.II
+namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
     /// <summary>
     ///     This is a test class for StringExtensionsTest and is intended
