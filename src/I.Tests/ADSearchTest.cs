@@ -12,22 +12,18 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-#region Using
-
 using System.Security.Principal;
 
 using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.ActiveDirectory;
 
-#endregion
-
 namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
     /// <summary>
     /// These tests are only available when running with a domain controller.
     /// </summary>
-    [TestFixture]
+    [TestFixture, Explicit]
     public class AdSearchTest
     {
         [Test]
