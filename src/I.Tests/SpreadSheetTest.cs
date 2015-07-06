@@ -39,7 +39,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
         };
 
         private readonly Assembly m_Assembly = typeof(SpreadSheetTest).Assembly;
-        private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.Test_I.";
+        private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.I.Tests.";
         private const string ResourceName = "FixGenerateStandardProposals.xlsx";
 
         [Test]
