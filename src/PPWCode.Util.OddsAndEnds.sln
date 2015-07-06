@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92BE80A7-9616-422A-A704-DD2C09F9E058}"
 	ProjectSection(SolutionItems) = preProject
 		Solution Items\SolutionInfo.cs = Solution Items\SolutionInfo.cs
@@ -11,10 +11,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPWCode.Util.OddsAndEnds.Test_I", "Test_I\PPWCode.Util.OddsAndEnds.Test_I.csproj", "{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		DebugNoInvariants|Any CPU = DebugNoInvariants|Any CPU
