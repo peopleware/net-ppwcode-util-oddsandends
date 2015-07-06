@@ -21,7 +21,7 @@ using NUnit.Framework;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
     [TestFixture]
     public class LinqBehaviourTests

@@ -22,7 +22,7 @@ using PPWCode.Util.OddsAndEnds.I.ActiveDirectory;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
     /// <summary>
     /// These tests are only available when running with a domain controller.

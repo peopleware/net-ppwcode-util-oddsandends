@@ -20,7 +20,7 @@ using PPWCode.Util.OddsAndEnds.I.Extensions;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
     /// <summary>
     /// This is a test class for StringExtensionsTest and is intended

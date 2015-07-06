@@ -24,7 +24,7 @@ using PPWCode.Util.OddsAndEnds.I.TypeConverter;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
     internal enum TestEnum
     {

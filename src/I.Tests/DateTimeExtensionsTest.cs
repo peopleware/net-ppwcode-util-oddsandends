@@ -18,7 +18,7 @@ using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
     [TestFixture]
     public class DateTimeExtensionsTest

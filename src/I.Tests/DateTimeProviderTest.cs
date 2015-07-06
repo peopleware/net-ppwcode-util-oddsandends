@@ -22,7 +22,7 @@ using PPWCode.Util.OddsAndEnds.I.DateTimeProvider;
 
 #endregion
 
-namespace PPWCode.Util.OddsAndEnds.Test_I
+namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
     [TestFixture]
     public class DateTimeProviderTest
@@ -30,14 +30,14 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         [TearDown]
         public void TearDown()
         {
-            DateTimeProvider.Reset();
+            DateTimeProvider.DateTimeProvider.Reset();
         }
 
         [Test, Description("Test normal time")]
         public void DateTimeProviderTest1()
         {
-            DateTime now = DateTimeProvider.Current.Now;
-            DateTime today = DateTimeProvider.Current.Today;
+            DateTime now = DateTimeProvider.DateTimeProvider.Current.Now;
+            DateTime today = DateTimeProvider.DateTimeProvider.Current.Today;
 
             Assert.IsTrue(new DateTime(2010, 1, 1) < now);
             Assert.IsTrue(new DateTime(2010, 1, 1) < today);
@@ -46,12 +46,12 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
         [Test, Description("Test fixed time")]
         public void DateTimeProviderTest2()
         {
-            DateTimeProvider fixedTime =
+            DateTimeProvider.DateTimeProvider fixedTime =
                 new LambdaDateTimeProvider(() => new DateTime(2000, 1, 1, 10, 15, 0));
-            DateTimeProvider.Current = fixedTime;
+            DateTimeProvider.DateTimeProvider.Current = fixedTime;
 
-            Assert.AreEqual(new DateTime(2000, 1, 1, 10, 15, 0), DateTimeProvider.Current.Now);
-            Assert.AreEqual(new DateTime(2000, 1, 1), DateTimeProvider.Current.Today);
+            Assert.AreEqual(new DateTime(2000, 1, 1, 10, 15, 0), DateTimeProvider.DateTimeProvider.Current.Now);
+            Assert.AreEqual(new DateTime(2000, 1, 1), DateTimeProvider.DateTimeProvider.Current.Today);
         }
 
         [Test, Description("Test incremental time")]
@@ -63,12 +63,12 @@ namespace PPWCode.Util.OddsAndEnds.Test_I
                 t = t + 1;
                 return (new DateTime(2000, 1, 1, 10, 0, 0)).AddHours(t);
             };
-            DateTimeProvider.Current = new LambdaDateTimeProvider(lambda);
+            DateTimeProvider.DateTimeProvider.Current = new LambdaDateTimeProvider(lambda);
 
-            Assert.AreEqual(new DateTime(2000, 1, 1, 11, 0, 0), DateTimeProvider.Current.Now);
-            Assert.AreEqual(new DateTime(2000, 1, 1, 12, 0, 0), DateTimeProvider.Current.Now);
-            Assert.AreEqual(new DateTime(2000, 1, 1, 13, 0, 0), DateTimeProvider.Current.Now);
-            Assert.AreEqual(new DateTime(2000, 1, 1, 14, 0, 0), DateTimeProvider.Current.Now);
+            Assert.AreEqual(new DateTime(2000, 1, 1, 11, 0, 0), DateTimeProvider.DateTimeProvider.Current.Now);
+            Assert.AreEqual(new DateTime(2000, 1, 1, 12, 0, 0), DateTimeProvider.DateTimeProvider.Current.Now);
+            Assert.AreEqual(new DateTime(2000, 1, 1, 13, 0, 0), DateTimeProvider.DateTimeProvider.Current.Now);
+            Assert.AreEqual(new DateTime(2000, 1, 1, 14, 0, 0), DateTimeProvider.DateTimeProvider.Current.Now);
         }
     }
 }
