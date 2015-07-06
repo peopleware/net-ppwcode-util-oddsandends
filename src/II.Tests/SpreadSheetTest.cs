@@ -34,7 +34,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Tests
             public long AffiliateSynergyId { get; set; }
         }
 
-        private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.Test.II.";
+        private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.II.Tests.";
         private const string ResourceName = "FixGenerateStandardProposals.xlsx";
 
         private readonly List<string> m_ColumnNames = new List<string>
