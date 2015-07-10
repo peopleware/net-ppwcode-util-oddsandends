@@ -19,6 +19,9 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Helper class for DateTime.
+    /// </summary>
     public static class DateTimeHelper
     {
         /// <summary>
@@ -119,12 +122,24 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
                        : default(DateTime?);
         }
 
+        /// <summary>
+        /// Gets the biggest DateTime out of 2 DateTimes.
+        /// </summary>
+        /// <param name="dt1">The first DateTime.</param>
+        /// <param name="dt2">The second DateTime.</param>
+        /// <returns>The biggest DateTime.</returns>
         [Pure]
         public static DateTime Max(DateTime dt1, DateTime dt2)
         {
             return dt1 > dt2 ? dt1 : dt2;
         }
 
+        /// <summary>
+        /// Gets the biggest DateTime out of 2 DateTimes of which the first DateTime is nullable.
+        /// </summary>
+        /// <param name="dt1">The first nullable DateTime.</param>
+        /// <param name="dt2">The second DateTime.</param>
+        /// <returns>The biggest DateTime.</returns>
         [Pure]
         public static DateTime Max(DateTime? dt1, DateTime dt2)
         {
@@ -133,12 +148,23 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
                        : dt2;
         }
 
+        /// <summary>
+        /// Gets the biggest DateTime out of 2 DateTimes of which the second DateTime is nullable.
+        /// </summary>
+        /// <param name="dt1">The first DateTime.</param>
+        /// <param name="dt2">The second nullable DateTime.</param>
+        /// <returns>The biggest DateTime.</returns>
         [Pure]
         public static DateTime Max(DateTime dt1, DateTime? dt2)
         {
             return Max(dt2, dt1);
         }
 
+        /// <summary>
+        /// Gets the biggest DateTime out of array of DateTimes.
+        /// </summary>
+        /// <param name="dt">Array of DateTimes.</param>
+        /// <returns>The biggest DateTime or null.</returns>
         [Pure]
         public static DateTime? Max(params DateTime[] dt)
         {

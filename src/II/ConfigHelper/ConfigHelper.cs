@@ -18,8 +18,18 @@ using System.Globalization;
 
 namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
 {
+    /// <summary>
+    /// Helper class for configuration.
+    /// </summary>
     public static class ConfigHelper
     {
+        /// <summary>
+        /// Gets the value for the given key out of the configuration.
+        /// </summary>
+        /// <typeparam name="T">The type used.</typeparam>
+        /// <param name="key">The key as string.</param>
+        /// <param name="defaultValue">The default of the type.</param>
+        /// <returns>The given type.</returns>
         public static T GetAppSetting<T>(string key, T defaultValue = default(T))
             where T : IConvertible
         {
@@ -38,6 +48,14 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
             return result;
         }
 
+        /// <summary>
+        /// Gets the value for the given key out of the given configuration.
+        /// </summary>
+        /// <typeparam name="T">The type used.</typeparam>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="key">The given key.</param>
+        /// <param name="defaultValue">The default value of T.</param>
+        /// <returns>The given type.</returns>
         public static T GetAppSetting<T>(Configuration configuration, string key, T defaultValue = default(T))
             where T : IConvertible
         {
@@ -56,6 +74,11 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
             return result;
         }
 
+        /// <summary>
+        /// Gets the connection string for the given key.
+        /// </summary>
+        /// <param name="key">The given key.</param>
+        /// <returns>The connection string.</returns>
         public static string GetConnectionString(string key)
         {
             ConnectionStringSettings connectionString = ConfigurationManager.ConnectionStrings[key];

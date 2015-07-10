@@ -20,8 +20,16 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Helper class that provides extensions for DateTime.
+    /// </summary>
     public static class DateTimeExtensions
     {
+        /// <summary>
+        /// Removes the milliseconds from the given DateTime.
+        /// </summary>
+        /// <param name="dt">The DateTime from which you want to remove the milliseconds.</param>
+        /// <returns>The DateTime without milliseconds.</returns>
         [Pure]
         public static DateTime StripMilliseconds(this DateTime dt)
         {
@@ -30,6 +38,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second);
         }
 
+        /// <summary>
+        /// Removes the seconds from the given DateTime.
+        /// </summary>
+        /// <param name="dt">The DateTime from which you want to remove the seconds.</param>
+        /// <returns>The DateTime without seconds.</returns>
         [Pure]
         public static DateTime StripSeconds(this DateTime dt)
         {
@@ -38,6 +51,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0);
         }
 
+        /// <summary>
+        /// Removes the hours from the given DateTime.
+        /// </summary>
+        /// <param name="dt">The DateTime from which you want to remove the hours.</param>
+        /// <returns>DateTime with hours removed.</returns>
         [Pure]
         public static DateTime StripHours(this DateTime dt)
         {
@@ -46,6 +64,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return new DateTime(dt.Year, dt.Month, dt.Day);
         }
 
+        /// <summary>
+        /// Checks whether the date is a legal SQL date.
+        /// </summary>
+        /// <param name="dt">The date to check.</param>
+        /// <returns>Whether the date is a legal SQL date.</returns>
         [Pure]
         public static bool IsLegalSqlDate(this DateTime dt)
         {
@@ -54,6 +77,13 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return SqlDateTime.MinValue.Value <= dt && dt <= SqlDateTime.MaxValue.Value;
         }
 
+        /// <summary>
+        /// Adds quarters to a DateTime.
+        /// If the resulting day is not valid in the resulting month, the last valid day of the resulting month is used.
+        /// </summary>
+        /// <param name="dt">The DateTime you want to add quarters to.</param>
+        /// <param name="quarters">The number of quarters you want to add.</param>
+        /// <returns>The DateTime with the quarters added.</returns>
         [Pure]
         public static DateTime AddQuarters(this DateTime dt, int quarters)
         {
@@ -62,6 +92,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return dt.AddMonths(3 * quarters);
         }
 
+        /// <summary>
+        /// Removes the milliseconds from the given nullable DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The DateTime without milliseconds.</returns>
         [Pure]
         public static DateTime? StripMilliseconds(this DateTime? dt)
         {
@@ -70,6 +105,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return !dt.HasValue ? dt : dt.Value.StripMilliseconds();
         }
 
+        /// <summary>
+        /// Removes the seconds from the given nullable DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The DateTime without seconds.</returns>
         [Pure]
         public static DateTime? StripSeconds(this DateTime? dt)
         {
@@ -78,6 +118,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return !dt.HasValue ? dt : dt.Value.StripSeconds();
         }
 
+        /// <summary>
+        /// Removes the hours from the given nullable DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>A nullable DateTime with hours removed.</returns>
         [Pure]
         public static DateTime? StripHours(this DateTime? dt)
         {
@@ -86,6 +131,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return !dt.HasValue ? dt : dt.Value.StripHours();
         }
 
+        /// <summary>
+        /// Checks whether the nullable date is a legal SQL date.
+        /// </summary>
+        /// <param name="dt">The DateTime to check.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool IsLegalSqlDate(this DateTime? dt)
         {
@@ -94,6 +144,12 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return dt.HasValue ? dt.Value.IsLegalSqlDate() : true;
         }
 
+        /// <summary>
+        /// Adds months to a given nullable DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <param name="months">The number of months you want to add.</param>
+        /// <returns>A nullable DateTime with months added.</returns>
         [Pure]
         public static DateTime? AddMonths(this DateTime? dt, int months)
         {
@@ -102,6 +158,12 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return !dt.HasValue ? dt : dt.Value.AddMonths(months);
         }
 
+        /// <summary>
+        /// Adds quarters to a given nullable DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <param name="quarters">The number of quarters you want to add.</param>
+        /// <returns>A nullable DateTime with quarters added.</returns>
         [Pure]
         public static DateTime? AddQuarters(this DateTime? dt, int quarters)
         {
@@ -110,6 +172,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return dt.AddMonths(3 * quarters);
         }
 
+        /// <summary>
+        /// Gets the first day of quarter of given year.
+        /// </summary>
+        /// <param name="yearQuarter">The year and quarter as a string.</param>
+        /// <returns>The first day of quarter of given year.</returns>
         [Pure]
         public static DateTime FirstDayOfQuarter(this string yearQuarter)
         {
@@ -121,6 +188,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Gets the first day of quarter of given year.
+        /// </summary>
+        /// <param name="yearQuarter">The year and quarter as an integer.</param>
+        /// <returns>The first day of quarter of given year.</returns>
         [Pure]
         public static DateTime FirstDayOfQuarter(this int yearQuarter)
         {
@@ -130,6 +202,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Gets the first day of quarter of the given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The first day of quarter.</returns>
         [Pure]
         public static DateTime FirstDayOfQuarter(this DateTime dt)
         {
@@ -138,6 +215,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Whether DateTime is first day of quarter.
+        /// </summary>
+        /// <param name="dt">The DateTime.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool IsFirstDayOfQuarter(this DateTime dt)
         {
@@ -155,42 +237,77 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return IsFirstDayOfQuarter(dt) ? dt : FirstDayOfNextQuarter(dt);
         }
 
+        /// <summary>
+        /// Gets the first day of next quarter for given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The first day of next quarter.</returns>
         [Pure]
         public static DateTime FirstDayOfNextQuarter(this DateTime dt)
         {
             return dt.FirstDayOfQuarter().AddQuarters(1);
         }
 
+        /// <summary>
+        /// Gets the first day of previous quarter for given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The first day of previous quarter.</returns>
         [Pure]
         public static DateTime FirstDayOfPreviousQuarter(this DateTime dt)
         {
             return dt.FirstDayOfQuarter().AddQuarters(-1);
         }
 
+        /// <summary>
+        /// Gets the first day of quarter after next quarter for the given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The first day of quarter after next quarter.</returns>
         [Pure]
         public static DateTime FirstDayOfNextNextQuarter(this DateTime dt)
         {
             return dt.FirstDayOfQuarter().AddQuarters(2);
         }
 
+        /// <summary>
+        /// Gets the last day of current quarter for the given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The last day of quarter.</returns>
         [Pure]
         public static DateTime LastDayOfCurrentQuarter(this DateTime dt)
         {
             return dt.FirstDayOfQuarter().AddQuarters(1).AddDays(-1);
         }
 
+        /// <summary>
+        /// Gets the last day of next quarter for the given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The last day of quarter.</returns>
         [Pure]
         public static DateTime LastDayOfNextQuarter(this DateTime dt)
         {
             return dt.FirstDayOfQuarter().AddQuarters(2).AddDays(-1);
         }
 
+        /// <summary>
+        /// Whether given DateTime is first day of month.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>True or false.</returns>
         [Pure]
         public static bool IsFirstDayOfMonth(this DateTime dt)
         {
             return dt.Day == 1;
         }
 
+        /// <summary>
+        /// Whether nullable DateTime is first day of month.
+        /// </summary>
+        /// <param name="dt">The given nullable DateTime.</param>
+        /// <returns>True, false or null.</returns>
         [Pure]
         public static bool? IsFirstDayOfMonth(this DateTime? dt)
         {
@@ -208,6 +325,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return IsFirstDayOfMonth(dt) ? dt : new DateTime(dt.Year, dt.Month, 1).AddMonths(1);
         }
 
+        /// <summary>
+        /// Gets the first day of next month for given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The first day of next month.</returns>
         [Pure]
         public static DateTime FirstDayOfNextMonth(this DateTime dt)
         {
@@ -280,18 +402,33 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return dt.DayOfYear == 1 ? dt : new DateTime(dt.Year + 1, 1, 1);
         }
 
+        /// <summary>
+        /// Gets the first day of next year for given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>First day of next year.</returns>
         [Pure]
         public static DateTime FirstDayOfNextYear(this DateTime dt)
         {
             return new DateTime(dt.Year + 1, 1, 1);
         }
 
+        /// <summary>
+        /// Gets the first day of month for the given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The first day of month.</returns>
         [Pure]
         public static DateTime FirstDayOfMonth(this DateTime dt)
         {
             return new DateTime(dt.Year, dt.Month, 1);
         }
 
+        /// <summary>
+        /// Gets the last day of month for the given DateTime.
+        /// </summary>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The last day of month.</returns>
         [Pure]
         public static DateTime LastDayOfMonth(this DateTime dt)
         {
@@ -312,6 +449,12 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             return lastDayOfYear.DayOfYear;
         }
 
+        /// <summary>
+        /// Gets the age in years for given birthday and given DateTime.
+        /// </summary>
+        /// <param name="birth">The birthday.</param>
+        /// <param name="dt">The given DateTime.</param>
+        /// <returns>The age in years as integer.</returns>
         [Pure]
         public static int AgeInYears(this DateTime birth, DateTime dt)
         {

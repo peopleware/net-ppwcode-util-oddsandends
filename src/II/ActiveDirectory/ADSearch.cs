@@ -20,10 +20,17 @@ using System.Text;
 
 namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
 {
+    /// <summary>
+    /// Helper class for active directory.
+    /// </summary>
     public class AdSearch
     {
         private readonly string m_DomainName;
 
+        /// <summary>
+        /// The constructor.
+        /// </summary>
+        /// <param name="domainName">The name of domain.</param>
         public AdSearch(string domainName)
         {
             Contract.Requires(!string.IsNullOrEmpty(domainName));
@@ -32,6 +39,9 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
             m_DomainName = domainName;
         }
 
+        /// <summary>
+        /// The name of domain.
+        /// </summary>
         public string DomainName
         {
             get { return m_DomainName; }
@@ -42,6 +52,13 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         /// </summary>
         /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
         /// <returns>The domain of an user account.</returns>
+        /// <example>
+        /// <code language="cs">
+        /// var domainName = AdSearch.GetDomainFromUserAccount(@"PPWDEV\jjanssenss");  
+        /// Console.WriteLine(domainName);  
+        /// </code>
+        /// result: PPWDEV.
+        /// </example>
         public static string GetDomainFromUserAccount(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -64,6 +81,13 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         /// </summary>
         /// <param name="userAccount">A user account with the following format: DOMAIN\UserName.</param>
         /// <returns>The user name for the given <paramref name="userAccount">account</paramref>.</returns>
+        /// <example>
+        /// <code language="cs">
+        /// var userName = AdSearch.GetAccountNameFromUserAccount(@"PPWDEV\JJANSSENS");  
+        /// Console.WriteLine(userName); 
+        /// </code>
+        /// result: JJANSSENS.
+        /// </example>
         public static string GetAccountNameFromUserAccount(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));

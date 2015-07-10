@@ -18,7 +18,10 @@ using System.Text.RegularExpressions;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
-    public static class SQLServerExtensions
+    /// <summary>
+    /// Helper class that provides extensions for SQLServer.
+    /// </summary>
+     public static class SQLServerExtensions
     {
         private static readonly string[] s_ConstraintCriterias =
         {
@@ -27,7 +30,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             "'(?<pattern>(UQ_.+?))'",
             "\"(?<pattern>(UQ_.+?))\"",
             "'(?<pattern>(CK_.+?))'",
-            "\"(?<pattern>(CK_.+?))\"",
+            "\"(?<pattern>(CK_.+?))\""
         };
 
         [Pure]

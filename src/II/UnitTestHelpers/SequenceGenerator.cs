@@ -19,8 +19,20 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.UnitTestHelpers
 {
+    /// <summary>
+    /// Helper class to generate sequences.
+    /// </summary>
     public class SequenceGenerator
     {
+        /// <summary>
+        /// Creates a random IEnumerable of decimals.
+        /// </summary>
+        /// <param name="nrItems">The number of decimals to create.</param>
+        /// <param name="start">The minimal possible value.</param>
+        /// <param name="end">The maximal possible value.</param>
+        /// <param name="sum">The sum of the decimals.</param>
+        /// <returns>An IEnumerable of decimals.</returns>
+        /// <exception cref="OverflowException">This exception is thrown when sum of generated numbers gets too large.</exception>
         public static IEnumerable<decimal> CreateRandomDecimalSequence(int nrItems, double start, double end, ref decimal sum)
         {
             Contract.Requires(nrItems >= 0);

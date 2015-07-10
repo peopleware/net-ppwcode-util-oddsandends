@@ -21,6 +21,15 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
 {
     public class GenerateUtil
     {
+        /// <summary>
+        /// Reads an excel sheet into a IList of given type.
+        /// </summary>
+        /// <typeparam name="T">The given type.</typeparam>
+        /// <param name="xlsFile">The excel file.</param>
+        /// <param name="sheet">The sheet to read.</param>
+        /// <param name="columns">The columns.</param>
+        /// <param name="spreadSheetRowResolver">The DbDataReader and type.</param>
+        /// <returns>An IList of given type.</returns>
         public static IList<T> ReadSheet<T>(string xlsFile, string sheet, List<string> columns, Func<DbDataReader, T> spreadSheetRowResolver)
             where T : class
         {

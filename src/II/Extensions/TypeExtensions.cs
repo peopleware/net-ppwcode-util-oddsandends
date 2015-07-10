@@ -22,6 +22,9 @@ using System.Threading;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Class that provides extensions for Type.
+    /// </summary>
     public static class TypeExtensions
     {
         /// <summary>

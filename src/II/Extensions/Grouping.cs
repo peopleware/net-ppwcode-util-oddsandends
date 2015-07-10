@@ -20,6 +20,11 @@ using System.Linq;
 
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
+    /// <summary>
+    /// Helper class for grouping.
+    /// </summary>
+    /// <typeparam name="TKey">The type of the key.</typeparam>
+    /// <typeparam name="TElement">The type of the values.</typeparam>
     public class Grouping<TKey, TElement> :
         IGrouping<TKey, TElement>,
         IList<TElement>
