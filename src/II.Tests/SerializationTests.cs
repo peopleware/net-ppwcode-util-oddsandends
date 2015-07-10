@@ -19,7 +19,7 @@ using NUnit.Framework;
 using PPWCode.Util.OddsAndEnds.II.Serialization;
 using PPWCode.Util.OddsAndEnds.II.Streaming;
 
-namespace PPWCode.Util.OddsAndEnds.Test.II
+namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
     // ReSharper disable InconsistentNaming
     [TestFixture]

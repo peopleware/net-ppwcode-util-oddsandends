@@ -17,7 +17,7 @@ using System.Linq;
 
 using NUnit.Framework;
 
-namespace PPWCode.Util.OddsAndEnds.Test.II
+namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
     [TestFixture]
     public class LinqBehaviourTests

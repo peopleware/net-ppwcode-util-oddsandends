@@ -15,34 +15,40 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace PPWCode.Util.OddsAndEnds.Test.II
+namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
     [DataContract]
-    public class PersonA
-        : IPerson,
-          IEquatable<PersonA>
+    public class AddressA
+        : IAddress,
+          IEquatable<AddressA>
     {
-        public static bool operator ==(PersonA left, PersonA right)
+        public static bool operator ==(AddressA left, AddressA right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(PersonA left, PersonA right)
+        public static bool operator !=(AddressA left, AddressA right)
         {
             return !Equals(left, right);
         }
-        
-        public PersonA(string firstName, string lastName, IAddress address)
+
+        public AddressA(string streetAndNr, string postalCode, string city)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Address = address;
+            StreetAndNr = streetAndNr;
+            PostalCode = postalCode;
+            City = city;
         }
 
         [DataMember]
-        public IAddress Address { get; set; }
+        public string StreetAndNr { get; set; }
 
-        public bool Equals(PersonA other)
+        [DataMember]
+        public string PostalCode { get; set; }
+
+        [DataMember]
+        public string City { get; set; }
+
+        public bool Equals(AddressA other)
         {
             if (ReferenceEquals(null, other))
             {
@@ -54,14 +60,8 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                 return true;
             }
 
-            return Equals(other.FirstName, FirstName) && Equals(other.LastName, LastName) && Equals(other.Address, Address);
+            return Equals(other.StreetAndNr, StreetAndNr) && Equals(other.PostalCode, PostalCode) && Equals(other.City, City);
         }
-
-        [DataMember]
-        public string FirstName { get; set; }
-
-        [DataMember]
-        public string LastName { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -75,21 +75,21 @@ namespace PPWCode.Util.OddsAndEnds.Test.II
                 return true;
             }
 
-            if (obj.GetType() != typeof(PersonA))
+            if (obj.GetType() != typeof(AddressA))
             {
                 return false;
             }
 
-            return Equals((PersonA)obj);
+            return Equals((AddressA)obj);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int result = (FirstName != null) ? FirstName.GetHashCode() : 0;
-                result = (result * 397) ^ (LastName != null ? LastName.GetHashCode() : 0);
-                result = (result * 397) ^ (Address != null ? Address.GetHashCode() : 0);
+                int result = (StreetAndNr != null) ? StreetAndNr.GetHashCode() : 0;
+                result = (result * 397) ^ (PostalCode != null ? PostalCode.GetHashCode() : 0);
+                result = (result * 397) ^ (City != null ? City.GetHashCode() : 0);
                 return result;
             }
         }

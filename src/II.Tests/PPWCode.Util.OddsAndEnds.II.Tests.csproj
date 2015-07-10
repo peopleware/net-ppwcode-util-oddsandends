@@ -8,8 +8,8 @@
     <ProjectGuid>{F0A3B7A1-1089-41BC-BB7A-8662B7495CF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PPWCode.Util.OddsAndEnds.Test.II</RootNamespace>
-    <AssemblyName>PPWCode.Util.OddsAndEnds.Test.II</AssemblyName>
+    <RootNamespace>PPWCode.Util.OddsAndEnds.II.Tests</RootNamespace>
+    <AssemblyName>PPWCode.Util.OddsAndEnds.II.Tests</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
