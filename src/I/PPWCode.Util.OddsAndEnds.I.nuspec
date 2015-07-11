@@ -1,19 +1,29 @@
 <?xml version="1.0"?>
 <package >
-  <metadata>
+  <metadata minClientVersion="2.8">
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+
+    <!-- Authors and owners fixed on PeopleWare NV -->
+    <authors>PeopleWare NV</authors>
+    <owners>PeopleWare NV</owners>
+
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
-    <projectUrl>http://www.ppwcode.org/</projectUrl>
-    <iconUrl>http://www.ppwcode.org/img/logo.jpg</iconUrl>
+    <projectUrl>https://github.com/peopleware/net-ppwcode-util-oddsandends</projectUrl>
+    <iconUrl>http://peopleware.github.io/net-ppwcode-util-oddsandends/ppwcode_logo.jpg</iconUrl>
+
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
     <description>$description$</description>
-    <releaseNotes>NuGet packaging.</releaseNotes>
-    <copyright>Copyright 2013</copyright>
-    <tags>PPWCode</tags>
+
+    <releaseNotes>
+2.4.0 First release PPWCode.Util.OddsAndEnds.I on nuget.org.
+    </releaseNotes>
+
+    <copyright>Copyright 2010-2015 by PeopleWare NV</copyright>
+
+    <tags>PPWCode PPWCode.Util PPWCode.Util.OddsAndEnds</tags>
     
     <dependencies>
       <dependency id="Microsoft.Contracts" version="[1,2)" />
@@ -28,13 +38,17 @@
 
   <!-- explicit file inclusion -->
   <files>
+    <!-- assemblies -->
     <file src="$OutputPath$$MSBuildProjectName$.dll" target="lib\net35" />
     <file src="$OutputPath$$MSBuildProjectName$.pdb" target="lib\net35" />
     <file src="$OutputPath$$MSBuildProjectName$.xml" target="lib\net35" />
     <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.dll" target="lib\net35\CodeContracts" />
     <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.pdb" target="lib\net35\CodeContracts" />
-    <file src="..\..\LICENSE" target="doc\LICENSE" />
-    <file src="..\..\NOTICE" target="doc\NOTICE" />
+
+    <!-- license information -->
+    <file src="..\..\LICENSE" target="LICENSE" />
+    <file src="..\..\NOTICE" target="NOTICE" />
+    <file src="..\..\README.md" target="README.md" />
   </files>
   
 </package>
