@@ -12,15 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#region Using
-
 using System;
 
 using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.DateTimeProvider;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.Tests
 {

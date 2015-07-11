@@ -30,6 +30,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
         public class ExcelRow
         {
             public long PaymentDossierID { get; set; }
+
             public long AffiliateSynergyId { get; set; }
         }
 
@@ -43,8 +44,12 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
                            AffiliateSynergyId = (long)dr.GetDouble(1)
                        };
             }
+
             return null;
         }
+
+        private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.I.Tests.";
+        private const string ResourceName = "FixGenerateStandardProposals.xlsx";
 
         private readonly List<string> m_ColumnNames = new List<string>
                                                       {
@@ -53,11 +58,9 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
                                                       };
 
         private readonly Assembly m_Assembly = typeof(SpreadSheetTest).Assembly;
-        private const string MNameSpaceName = "PPWCode.Util.OddsAndEnds.I.Tests.";
-        private const string ResourceName = "FixGenerateStandardProposals.xlsx";
 
-        [Test]
         // TODO: improve test, code depends on installed libraries and 64-bit/32-bit dlls
+        [Test]
         public void TestMethod1()
         {
             try
@@ -71,6 +74,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
                     Console.WriteLine(PaymentDossierId + excelRow.PaymentDossierID);
                     Console.WriteLine(AffiliateSynergyID + excelRow.AffiliateSynergyId);
                 }
+
                 Assert.IsNotNull(list);
             }
             catch (Exception exc)

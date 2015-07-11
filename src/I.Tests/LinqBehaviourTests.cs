@@ -12,14 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#region Using
-
 using System.Collections.Generic;
 using System.Linq;
 
 using NUnit.Framework;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.Tests
 {

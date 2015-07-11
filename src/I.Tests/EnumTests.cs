@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#region Using
-
 using System.Globalization;
 using System.Threading;
 
@@ -21,8 +19,6 @@ using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
 using PPWCode.Util.OddsAndEnds.I.TypeConverter;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
@@ -61,11 +57,12 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             TypeConverterHelper.RegisterTypeConverter<TestEnum, LocalizedEnumConverter>();
             Thread.CurrentThread.CurrentCulture = new CultureInfo(@"en-US");
             Assert.AreEqual(@"ONE", E.GetLocalizedDescription());
-            //MUDO testen fixen op Jenkins
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(@"nl-BE");
-            //Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(@"nl-NL");
-            //Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
+
+            // MUDO testen fixen op Jenkins
+            // Thread.CurrentThread.CurrentCulture = new CultureInfo(@"nl-BE");
+            // Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
+            // Thread.CurrentThread.CurrentCulture = new CultureInfo(@"nl-NL");
+            // Assert.AreEqual(@"Eén", E.GetLocalizedDescription());
         }
 
         [Test]
@@ -74,9 +71,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             const TestEnum E = TestEnum.ONE;
             TypeConverterHelper.RegisterTypeConverter<TestEnum, LocalizedEnumConverter>();
             Assert.AreEqual(@"ONE", E.GetLocalizedDescription(new CultureInfo(@"en-US")));
-            //MUDO testen fixen op Jenkins
-            //Assert.AreEqual(@"Eén", E.GetLocalizedDescription(new CultureInfo(@"nl-BE")));
-            //Assert.AreEqual(@"Eén", E.GetLocalizedDescription(new CultureInfo(@"nl-NL")));
+            
+            // MUDO testen fixen op Jenkins
+            // Assert.AreEqual(@"Eén", E.GetLocalizedDescription(new CultureInfo(@"nl-BE")));
+            // Assert.AreEqual(@"Eén", E.GetLocalizedDescription(new CultureInfo(@"nl-NL")));
         }
     }
 }

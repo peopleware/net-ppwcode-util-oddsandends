@@ -274,54 +274,5 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
 
             Assert.AreEqual(personA, deserializedPersonA);
         }
-
-        //[Test, Description("Serialize/Deserialize an instance of class PersonA, using interfaces, with a stream as intermediare value")]
-        //public void Stream_SerializePersonAUsingAnInterface()
-        //{
-        //    IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
-        //    IPerson person = new PersonA(@"Bob", @"Bones", address);
-        //    using (Stream stream = new MemoryStream())
-        //    {
-        //        SerializationHelper.Serialize(stream, person);
-        //        Assert.IsTrue(stream.Length > 0);
-        //        stream.Position = 0;
-        //        PersonA deserializedPerson = SerializationHelper.Deserialize<PersonA>(stream);
-        //        Assert.AreEqual(person, deserializedPerson);
-        //        Assert.IsInstanceOfType(person, typeof(PersonA));
-        //    }
-        //}
-
-        //[Test, Description("Serialize/Deserialize an instance of class PersonB, with a ByteArray as intermediare value")]
-        //public void Stream_SerializePersonB()
-        //{
-        //    AddressA addressA = new AddressA(@"CornerStreet", @"00501", @"New york");
-        //    PersonA partner = new PersonA(@"Kate", @"Moss", addressA);
-        //    PersonA personB = new PersonB(@"Bob", @"Bones", addressA, partner);
-        //    using (Stream stream = new MemoryStream())
-        //    {
-        //        SerializationHelper.Serialize(stream, personB);
-        //        Assert.IsTrue(stream.Length > 0);
-        //        stream.Position = 0;
-        //        PersonA deserializedPersonB = SerializationHelper.Deserialize<PersonA>(stream);
-        //        Assert.AreEqual(personB, deserializedPersonB);
-        //    }
-        //}
-
-        //[Test, Description("Serialize/Deserialize an instance of class PersonB, using interfaces, with a ByteArray as intermediare value")]
-        //public void Stream_SerializePersonBUsingAnInterface()
-        //{
-        //    IAddress address = new AddressA(@"CornerStreet", @"00501", @"New york");
-        //    IPerson partner = new PersonA(@"Kate", @"Moss", address);
-        //    IPerson person = new PersonB(@"Bob", @"Bones", address, partner);
-        //    using (Stream stream = new MemoryStream())
-        //    {
-        //        SerializationHelper.Serialize(stream, person);
-        //        Assert.IsTrue(stream.Length > 0);
-        //        stream.Position = 0;
-        //        IPerson deserializedPerson = SerializationHelper.Deserialize<IPerson>(stream);
-        //        Assert.AreEqual(person, deserializedPerson);
-        //        Assert.IsInstanceOfType(person, typeof(PersonA));
-        //    }
-        //}
     }
 }

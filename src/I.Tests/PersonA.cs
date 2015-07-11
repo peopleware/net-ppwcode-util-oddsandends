@@ -29,6 +29,16 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             Address = address;
         }
 
+        public static bool operator ==(PersonA left, PersonA right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(PersonA left, PersonA right)
+        {
+            return !Equals(left, right);
+        }
+
         [DataMember]
         public IAddress Address { get; set; }
 
@@ -82,16 +92,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
                 result = (result * 397) ^ (Address != null ? Address.GetHashCode() : 0);
                 return result;
             }
-        }
-
-        public static bool operator ==(PersonA left, PersonA right)
-        {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(PersonA left, PersonA right)
-        {
-            return !Equals(left, right);
         }
     }
 }

@@ -12,25 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#region Using
-
 using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
     /// <summary>
     ///     This is a test class for StringExtensionsTest and is intended
-    ///     to contain all StringExtensionsTest Unit Tests
+    ///     to contain all StringExtensionsTest Unit Tests.
     /// </summary>
     [TestFixture]
     public class StringExtensionsTest
     {
-        #region IsCaptialized
-
         [Test, Description("IsCapitalized OneLowercase")]
         public void IsCapitalizedTestOneLowercaseChar()
         {
@@ -60,7 +54,5 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
         {
             Assert.IsTrue("The dissolved pandies recorded their latest album in 2001".StartWithACapital());
         }
-
-        #endregion
     }
 }

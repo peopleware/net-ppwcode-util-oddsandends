@@ -27,10 +27,18 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             Country = country;
         }
 
+        public static bool operator ==(AdressB left, AdressB right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(AdressB left, AdressB right)
+        {
+            return !Equals(left, right);
+        }
+
         [DataMember]
         public string Country { get; set; }
-
-        #region IEquatable<AdressB> Members
 
         public bool Equals(AdressB other)
         {
@@ -38,14 +46,14 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             {
                 return false;
             }
+
             if (ReferenceEquals(this, other))
             {
                 return true;
             }
+
             return base.Equals(other) && Equals(other.Country, Country);
         }
-
-        #endregion
 
         public override bool Equals(object obj)
         {
@@ -53,10 +61,12 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
+
             return Equals(obj as AdressB);
         }
 
@@ -66,16 +76,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             {
                 return (base.GetHashCode() * 397) ^ (Country != null ? Country.GetHashCode() : 0);
             }
-        }
-
-        public static bool operator ==(AdressB left, AdressB right)
-        {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(AdressB left, AdressB right)
-        {
-            return !Equals(left, right);
         }
     }
 }

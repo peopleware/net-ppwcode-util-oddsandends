@@ -29,7 +29,15 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             City = city;
         }
 
-        #region IAddress Members
+        public static bool operator ==(AddressA left, AddressA right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(AddressA left, AddressA right)
+        {
+            return !Equals(left, right);
+        }
 
         [DataMember]
         public string StreetAndNr { get; set; }
@@ -39,10 +47,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
 
         [DataMember]
         public string City { get; set; }
-
-        #endregion
-
-        #region IEquatable<AddressA> Members
 
         public bool Equals(AddressA other)
         {
@@ -58,8 +62,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
 
             return Equals(other.StreetAndNr, StreetAndNr) && Equals(other.PostalCode, PostalCode) && Equals(other.City, City);
         }
-
-        #endregion
 
         public override bool Equals(object obj)
         {
@@ -90,16 +92,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
                 result = (result * 397) ^ (City != null ? City.GetHashCode() : 0);
                 return result;
             }
-        }
-
-        public static bool operator ==(AddressA left, AddressA right)
-        {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(AddressA left, AddressA right)
-        {
-            return !Equals(left, right);
         }
     }
 }

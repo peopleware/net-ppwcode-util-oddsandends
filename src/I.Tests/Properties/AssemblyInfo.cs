@@ -14,6 +14,7 @@
 
 using System.Reflection;
 using System.Runtime.InteropServices;
+
 [assembly: AssemblyTitle("PPWCode.Util.OddsAndEnds.I.Tests")]
 [assembly: AssemblyDescription("Unit tests for PPWCode.Util.OddsAndEnds.I")]
 [assembly: AssemblyConfiguration("")]

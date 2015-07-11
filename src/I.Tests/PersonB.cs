@@ -28,10 +28,18 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             Partner = partner;
         }
 
+        public static bool operator ==(PersonB left, PersonB right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(PersonB left, PersonB right)
+        {
+            return !Equals(left, right);
+        }
+
         [DataMember]
         public IPerson Partner { get; set; }
-
-        #region IEquatable<PersonB> Members
 
         public bool Equals(PersonB other)
         {
@@ -39,14 +47,14 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             {
                 return false;
             }
+
             if (ReferenceEquals(this, other))
             {
                 return true;
             }
+
             return base.Equals(other) && Equals(other.Partner, Partner);
         }
-
-        #endregion
 
         public override bool Equals(object obj)
         {
@@ -54,10 +62,12 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             {
                 return false;
             }
+
             if (ReferenceEquals(this, obj))
             {
                 return true;
             }
+
             return Equals(obj as PersonB);
         }
 
@@ -67,16 +77,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
             {
                 return (base.GetHashCode() * 397) ^ (Partner != null ? Partner.GetHashCode() : 0);
             }
-        }
-
-        public static bool operator ==(PersonB left, PersonB right)
-        {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(PersonB left, PersonB right)
-        {
-            return !Equals(left, right);
         }
     }
 }

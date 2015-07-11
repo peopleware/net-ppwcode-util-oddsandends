@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#region Using
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +19,6 @@ using System.Linq;
 using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.I.Extensions;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.Tests
 {
@@ -32,6 +28,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
         private class DateInterval
         {
             public DateTime? StartDate { get; set; }
+
             public DateTime? EndDate { get; set; }
         }
 
