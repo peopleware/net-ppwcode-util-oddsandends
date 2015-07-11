@@ -1,18 +1,16 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
-#region Using
+﻿// Copyright 2010-2015 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 using System;
 using System.Collections;
@@ -23,40 +21,38 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 
-#endregion
-
 namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
 {
     /// <summary>
-    /// Converts enums depending on the current language
+    ///     Translates a <see cref="Enum"/> to a description using the current language.
     /// </summary>
     public class LocalizedEnumConverter :
         EnumConverter
     {
         /// <summary>
-        /// Indicates wether the values of the enum are flags
+        ///     Indicates whether the values of the <see cref="Enum"/> are flags.
         /// </summary>
         private readonly bool m_IsFlagEnum;
 
         /// <summary>
-        /// Contains the values of the enum in case that it is a flag enum
+        ///     Contains the values of the <see cref="Enum"/> in case that it is a flag <see cref="Enum"/>.
         /// </summary>
         private readonly Array m_FlagValues;
 
         /// <summary>
-        /// Lookup table which allows converting the localized text back to the enum values
+        ///     Lookup table which allows converting the localized text back to the <see cref="Enum"/> values.
         /// </summary>
         private readonly Dictionary<string, object> m_LookupTable;
 
         /// <summary>
-        /// Resource manager depending on the converted enum type
+        ///     Resource manager depending on the converted <see cref="Enum"/> type.
         /// </summary>
         private readonly ResourceManager m_ResourceManager;
 
         /// <summary>
-        /// Create a new instance of the converter using translations from the given resource manager
+        ///     Create a new instance of the converter using translations from the given resource manager.
         /// </summary>
-        /// <param name="enumType"></param>
+        /// <param name="enumType">The given type.</param>
         public LocalizedEnumConverter(Type enumType)
             : base(enumType)
         {
@@ -79,39 +75,21 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
                     }
                 }
             }
+
             if (enumType.GetCustomAttributes(typeof(FlagsAttribute), true).Length <= 0)
             {
                 return;
             }
+
             m_IsFlagEnum = true;
             m_FlagValues = Enum.GetValues(enumType);
         }
 
         /// <summary>
-        /// Return the Enum value for a flagged enum
+        ///     Return true if the given value is can be represented using a single bit.
         /// </summary>
-        /// <param name="text">The text to convert (can also be a comma separated list of multiple flags)</param>
-        /// <returns>The enum value</returns>
-        private object GetFlagValueFromLocalizedString(string text)
-        {
-            ulong result = 0;
-            foreach (string textValue in text.Split(','))
-            {
-                object value;
-                if (!m_LookupTable.TryGetValue(textValue.Trim(), out value))
-                {
-                    return null;
-                }
-                result |= Convert.ToUInt32(value, CultureInfo.InvariantCulture);
-            }
-            return Enum.ToObject(EnumType, result);
-        }
-
-        /// <summary>
-        /// Return true if the given value is can be represented using a single bit
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">The given value.</param>
+        /// <returns>A <see cref="bool"/> indicating whether the value can be represented as a single bit.</returns>
         private static bool IsSingleBitValue(ulong value)
         {
             switch (value)
@@ -126,16 +104,38 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
         }
 
         /// <summary>
-        /// Return the text to display for a flag value in the given culture
+        ///     Return the <see cref="Enum"/> value for a flagged <see cref="Enum"/>.
         /// </summary>
-        /// <param name="value">The flag enum value to get the text for</param>
-        /// <returns>The localized text</returns>
+        /// <param name="text">The text to convert (can also be a comma separated list of multiple flags).</param>
+        /// <returns>The <see cref="Enum"/> value.</returns>
+        private object GetFlagValueFromLocalizedString(string text)
+        {
+            ulong result = 0;
+            foreach (string textValue in text.Split(','))
+            {
+                object value;
+                if (!m_LookupTable.TryGetValue(textValue.Trim(), out value))
+                {
+                    return null;
+                }
+
+                result |= Convert.ToUInt32(value, CultureInfo.InvariantCulture);
+            }
+
+            return Enum.ToObject(EnumType, result);
+        }
+
+        /// <summary>
+        ///     Return the text to display for a flag value in the given culture.
+        /// </summary>
+        /// <param name="value">The flag <see cref="Enum"/> value to get the text for.</param>
+        /// <param name="ci">The given culture.</param>
+        /// <returns>The localized text.</returns>
         private string GetFlagValueText(object value, CultureInfo ci)
         {
             if (value != null)
             {
                 // if there is a standard value then use it
-                //
                 if (Enum.IsDefined(value.GetType(), value))
                 {
                     return GetLocalizedValueText(value, ci);
@@ -143,7 +143,6 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
 
                 // otherwise find the combination of flag bit values
                 // that makes up the value
-                //
                 ulong numericValue = Convert.ToUInt32(value, CultureInfo.InvariantCulture);
                 string result = null;
                 foreach (object flagValue in m_FlagValues)
@@ -158,16 +157,18 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
                                      : string.Format(CultureInfo.InvariantCulture, "{0}, {1}", result, valueText);
                     }
                 }
+
                 return result;
             }
+
             return string.Empty;
         }
 
         /// <summary>
-        /// Return the Enum value for a simple (non-flagged enum)
+        ///     Return the <see cref="Enum"/> value for a simple (non-flagged <see cref="Enum"/>).
         /// </summary>
-        /// <param name="text">The text to convert</param>
-        /// <returns>The enum value</returns>
+        /// <param name="text">The text to convert.</param>
+        /// <returns>The <see cref="Enum"/> value.</returns>
         private object GetValueFromLocalizedString(string text)
         {
             object result;
@@ -181,10 +182,11 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
         }
 
         /// <summary>
-        /// Return the text to display for a simple value in the given culture
+        ///     Return the text to display for a simple value in the given culture.
         /// </summary>
-        /// <param name="value">The enum value to get the text for</param>
-        /// <returns>The localized text</returns>
+        /// <param name="value">The <see cref="Enum"/> value to get the text for.</param>
+        /// <param name="ci">The given culture.</param>
+        /// <returns>The localized text.</returns>
         private string GetLocalizedValueText(object value, CultureInfo ci)
         {
             if (value != null)
@@ -195,18 +197,20 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
                     string resourceName = string.Format(CultureInfo.InvariantCulture, "{0}_{1}", type.Name, value);
                     return m_ResourceManager.GetString(resourceName, ci) ?? value.ToString();
                 }
+
                 return value.ToString();
             }
+
             return string.Empty;
         }
 
         /// <summary>
-        /// Convert string values to enum values
+        ///     Convert string values to <see cref="Enum"/> values.
         /// </summary>
-        /// <param name="context"></param>
-        /// <param name="culture"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="context">The given context.</param>
+        /// <param name="culture">The given culture.</param>
+        /// <param name="value">The given value.</param>
+        /// <returns>A object that could be constructed from the string.</returns>
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
             string valueAsString = value as string;
@@ -217,17 +221,18 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
                              ? GetFlagValueFromLocalizedString(valueAsString)
                              : GetValueFromLocalizedString(valueAsString);
             }
+
             return result ?? base.ConvertFrom(context, culture, value);
         }
 
         /// <summary>
-        /// Convert the enum value to a string
+        ///     Convert the given value to another type.
         /// </summary>
-        /// <param name="context"></param>
-        /// <param name="culture"></param>
-        /// <param name="value"></param>
-        /// <param name="destinationType"></param>
-        /// <returns></returns>
+        /// <param name="context">The given context.</param>
+        /// <param name="ci">The given culture.</param>
+        /// <param name="value">The given value.</param>
+        /// <param name="destinationType">The given destination type.</param>
+        /// <returns>An object of the given type that could be constructed from the given value.</returns>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo ci, object value, Type destinationType)
         {
             if (destinationType.Equals(typeof(string)))
@@ -236,6 +241,7 @@ namespace PPWCode.Util.OddsAndEnds.I.TypeConverter
                            ? GetFlagValueText(value, ci)
                            : GetLocalizedValueText(value, ci);
             }
+
             return base.ConvertTo(context, ci, value, destinationType);
         }
     }

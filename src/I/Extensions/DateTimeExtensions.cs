@@ -1,26 +1,22 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
-#region Using
+﻿// Copyright 2010-2015 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Diagnostics.Contracts;
 using System.Linq;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.Extensions
 {
@@ -138,7 +134,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         public static DateTime FirstDayOfQuarter(this DateTime dt)
         {
             int months = (((dt.Month - 1) / 3) * 3) + 1;
-            DateTime result = new DateTime(dt.Year + (months / 12), (months % 12), 1);
+            DateTime result = new DateTime(dt.Year + (months / 12), months % 12, 1);
             return result;
         }
 
@@ -149,10 +145,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// ImmediateFirstOfQuarter returns given date if the given date is first of quarter or else first of next quarter
+        ///     ImmediateFirstOfQuarter returns given date if the given date is first of quarter or else first of next quarter.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <returns></returns>
+        /// <param name="dt">The given date.</param>
+        /// <returns>This method returns a date.</returns>
         [Pure]
         public static DateTime ImmediateFirstOfQuarter(this DateTime dt)
         {
@@ -202,10 +198,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// ImmediateFirstOfMonth returns given date if the given date is first of month or else first of next month
+        ///     ImmediateFirstOfMonth returns given date if the given date is first of month or else first of next month.
         /// </summary>
-        /// <param name="dt"></param>
-        /// <returns></returns>
+        /// <param name="dt">The given date.</param>
+        /// <returns>This method returns a date.</returns>
         [Pure]
         public static DateTime ImmediateFirstOfMonth(this DateTime dt)
         {
@@ -220,8 +216,12 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// Returns 0 when start and end date is on the same day.
+        ///     Returns the amount of days between the given dates.
         /// </summary>
+        /// <remarks>Returns 0 when start and end date is on the same day.</remarks>
+        /// <param name="startDate">The given start date.</param>
+        /// <param name="endDate">The given end date.</param>
+        /// <returns>An Integer representing the number of days.</returns>
         [Pure]
         public static int DaysBetween(this DateTime startDate, DateTime endDate)
         {
@@ -243,8 +243,11 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// Returns 0 when start and end date is in the same month.
+        ///     Returns 0 when start and end date is in the same month.
         /// </summary>
+        /// <param name="startDate">The start date.</param>
+        /// <param name="endDate">The end date.</param>
+        /// <returns>The difference in months between the given dates.</returns>
         [Pure]
         public static int MonthsBetween(this DateTime startDate, DateTime endDate)
         {
@@ -253,8 +256,11 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// Returns 0 when start and end date is in the same quarter.
+        ///     Returns 0 when start and end date is in the same quarter.
         /// </summary>
+        /// <param name="startDate">The start date.</param>
+        /// <param name="endDate">The end date.</param>
+        /// <returns>The difference in quarters between the given dates.</returns>
         [Pure]
         public static int QuartersBetween(this DateTime startDate, DateTime endDate)
         {
@@ -262,8 +268,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// ImmediateFirstOfYear returns given date if the given date is first of year or else first of next year
+        ///     ImmediateFirstOfYear returns given date if the given date is first of year or else first of next year.
         /// </summary>
+        /// <param name="dt">The given date.</param>
+        /// <returns>This method returns a date.</returns>
         [Pure]
         public static DateTime ImmediateFirstOfYear(this DateTime dt)
         {
@@ -291,8 +299,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// Aantal dagen in een jaar, rekening houdend met schrikkeljaren.
+        ///     This method returns the number of days in the year of the given date.
         /// </summary>
+        /// <param name="when">The given date.</param>
+        /// <returns>A number of days.</returns>
         [Pure]
         public static int NumberOfDaysInYear(this DateTime when)
         {
@@ -305,11 +315,11 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         {
             Contract.Ensures(Contract.Result<int>() ==
                              dt.Year - birth.Year - (dt.Month < birth.Month || (dt.Month == birth.Month && dt.Day < birth.Day) ? 1 : 0));
+
             // in a previous version, we used DayOfYear to see whether
             // the person already had his birthday in the year of dt or not;
             // that doesn't work however in leap years;
             // we need to test months and days of months separately
-
             int result = dt.Year - birth.Year;
             if (dt.Month < birth.Month
                 || (dt.Month == birth.Month
@@ -317,6 +327,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
             {
                 result--;
             }
+
             return result;
         }
 
@@ -337,10 +348,10 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
 
             var sortedList = lst
                 .Select(o => new
-                {
-                    StartDate = extractDateBegin(o) ?? DateTime.MinValue,
-                    EndDate = extractDateEnd(o) ?? DateTime.MaxValue
-                })
+                             {
+                                 StartDate = extractDateBegin(o) ?? DateTime.MinValue,
+                                 EndDate = extractDateEnd(o) ?? DateTime.MaxValue
+                             })
                 .OrderBy(o => o.StartDate)
                 .ToList();
 
@@ -358,6 +369,7 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
                 {
                     return false;
                 }
+
                 previousItem = item;
             }
 

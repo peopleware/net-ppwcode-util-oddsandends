@@ -1,35 +1,35 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
-#region Using
+﻿// Copyright 2010-2015 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 
-#endregion
-
 namespace PPWCode.Util.OddsAndEnds.I.Extensions
 {
     public static class DateTimeHelper
     {
         /// <summary>
-        /// The earliest of 2 date-times.
+        ///     The earliest of 2 date-times.
         /// </summary>
-        /// <returns>The earliest of <paramref name="dt1"/> and
-        /// <paramref name="dt2"/>.</returns>
+        /// <param name="dt1">The first date.</param>
+        /// <param name="dt2">The second date.</param>
+        /// <returns>
+        ///     The earliest of <paramref name="dt1" /> and
+        ///     <paramref name="dt2" />.
+        /// </returns>
         [Pure]
         public static DateTime Min(DateTime dt1, DateTime dt2)
         {
@@ -41,12 +41,16 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// The earliest of 2 date-times. When <paramref name="dt2"/>
-        /// is <c>null</c>, we return <paramref name="dt2"/>.
+        ///     The earliest of 2 date-times. When <paramref name="dt2" />
+        ///     is <c>null</c>, we return <paramref name="dt2" />.
         /// </summary>
-        /// <returns>The earliest of <paramref name="dt1"/> and
-        /// <paramref name="dt2"/>. <paramref name="dt2"/> when
-        /// <paramref name="dt1"/> is <c>null</c>.</returns>
+        /// <param name="dt1">The first date.</param>
+        /// <param name="dt2">The second date.</param>
+        /// <returns>
+        ///     The earliest of <paramref name="dt1" /> and
+        ///     <paramref name="dt2" />. <paramref name="dt2" /> when
+        ///     <paramref name="dt1" /> is <c>null</c>.
+        /// </returns>
         [Pure]
         public static DateTime Min(DateTime? dt1, DateTime dt2)
         {
@@ -61,12 +65,16 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// The earliest of 2 date-times. When <paramref name="dt2"/>
-        /// is <c>null</c>, we return <paramref name="dt1"/>.
+        ///     The earliest of 2 date-times. When <paramref name="dt2" />
+        ///     is <c>null</c>, we return <paramref name="dt1" />.
         /// </summary>
-        /// <returns>The earliest of <paramref name="dt1"/> and
-        /// <paramref name="dt2"/>. <paramref name="dt1"/> when
-        /// <paramref name="dt2"/> is <c>null</c>.</returns>
+        /// <param name="dt1">The first date.</param>
+        /// <param name="dt2">The second date.</param>
+        /// <returns>
+        ///     The earliest of <paramref name="dt1" /> and
+        ///     <paramref name="dt2" />. <paramref name="dt1" /> when
+        ///     <paramref name="dt2" /> is <c>null</c>.
+        /// </returns>
         [Pure]
         public static DateTime Min(DateTime dt1, DateTime? dt2)
         {
@@ -79,10 +87,13 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// The earliest of a number of date-times.
+        ///     The earliest of a number of date-times.
         /// </summary>
-        /// <returns>With zero inputs, <see cref="DateTime.MinValue"/>
-        /// is returned.</returns>
+        /// <param name="dt">The given array of date-times.</param>
+        /// <returns>
+        ///     With zero inputs, <see cref="DateTime.MinValue" />
+        ///     is returned.
+        /// </returns>
         [Pure]
         public static DateTime? Min(params DateTime[] dt)
         {
@@ -97,11 +108,14 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// The earliest of a number of date-times.
+        ///     The earliest of a number of date-times.
         /// </summary>
-        /// <returns><c>null</c> values are skipped.
-        /// With zero inputs, or all <c>null</c> inputs,<c>null</c>
-        /// is returned.</returns>
+        /// <param name="dt">The given array of date-times.</param>
+        /// <returns>
+        ///     <c>null</c> values are skipped.
+        ///     With zero inputs, or all <c>null</c> inputs,<c>null</c>
+        ///     is returned.
+        /// </returns>
         [Pure]
         public static DateTime? Min(params DateTime?[] dt)
         {
@@ -147,11 +161,14 @@ namespace PPWCode.Util.OddsAndEnds.I.Extensions
         }
 
         /// <summary>
-        /// The latest of a number of date-times.
+        ///     The latest of a number of date-times.
         /// </summary>
-        /// <returns><c>null</c> values are skipped.
-        /// With zero inputs, or all <c>null</c> inputs,<c>null</c>
-        /// is returned.</returns>
+        /// <param name="dt">The given array of date-times.</param>
+        /// <returns>
+        ///     <c>null</c> values are skipped.
+        ///     With zero inputs, or all <c>null</c> inputs,<c>null</c>
+        ///     is returned.
+        /// </returns>
         [Pure]
         public static DateTime? Max(params DateTime?[] dt)
         {

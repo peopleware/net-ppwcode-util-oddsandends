@@ -1,4 +1,18 @@
-﻿using System;
+﻿// Copyright 2010-2015 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Text;
@@ -7,16 +21,17 @@ namespace PPWCode.Util.OddsAndEnds.I.SpreadSheet
 {
     public class GenerateUtil
     {
-        public static IList<T> ReadSheet<T>(string xlsFile, string sheet, List<string> columns, Func<DbDataReader, T>spreadSheetRowResolver)
-             where T : class 
+        public static IList<T> ReadSheet<T>(string xlsFile, string sheet, List<string> columns, Func<DbDataReader, T> spreadSheetRowResolver)
+            where T : class
         {
             ExcelUtil excelUtil = new ExcelUtil(xlsFile);
             StringBuilder selectStatement = new StringBuilder();
-            selectStatement.Append(@"select");           
+            selectStatement.Append(@"select");
             foreach (string item in columns)
             {
                 selectStatement.Append("[" + item + "],");
             }
+
             selectStatement.Remove(selectStatement.Length - 1, 1);
             selectStatement.Append(string.Format(@"from [{0}$]", sheet));
 

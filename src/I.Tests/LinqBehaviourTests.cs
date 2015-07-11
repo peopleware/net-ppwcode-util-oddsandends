@@ -1,16 +1,16 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
+﻿// Copyright 2010-2015 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 #region Using
 
@@ -30,9 +30,9 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
         public void SumTests1()
         {
             IEnumerable<int?> items = new int?[]
-            {
-                1, 2, 3
-            };
+                                      {
+                                          1, 2, 3
+                                      };
             int? result = items.Sum();
             Assert.IsTrue(result.HasValue);
             Assert.AreEqual(6, result);
@@ -42,9 +42,9 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
         public void SumTests2()
         {
             IEnumerable<int?> items = new int?[]
-            {
-                1, null, 3
-            };
+                                      {
+                                          1, null, 3
+                                      };
             int? result = items.Sum();
             Assert.IsTrue(result.HasValue);
             Assert.AreEqual(4, result);
@@ -54,9 +54,9 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
         public void SumTests3()
         {
             IEnumerable<int?> items = new int?[]
-            {
-                null, null, null
-            };
+                                      {
+                                          null, null, null
+                                      };
             int? result = items.Sum();
             Assert.IsTrue(result.HasValue);
             Assert.AreEqual(0, result);

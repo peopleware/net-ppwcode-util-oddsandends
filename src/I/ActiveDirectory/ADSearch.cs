@@ -1,26 +1,22 @@
-﻿//Copyright 2004 - $Date: 2008-11-15 23:58:07 +0100 (za, 15 nov 2008) $ by PeopleWare n.v..
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
-#region Using
+﻿// Copyright 2010-2015 by PeopleWare n.v..
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+// http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.DirectoryServices;
 using System.Linq;
 using System.Text;
-
-#endregion
 
 namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
 {
@@ -30,10 +26,7 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
 
         public string DomainName
         {
-            get
-            {
-                return m_DomainName;
-            }
+            get { return m_DomainName; }
         }
 
         public AdSearch(string domainName)
@@ -45,10 +38,10 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         }
 
         /// <summary>
-        /// This function parses the domain out of an user-account.
+        ///     This function parses the domain out of an user-account.
         /// </summary>
-        /// <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
-        /// <returns>The domain of an user-account</returns>
+        /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
+        /// <returns>The domain of an user-account.</returns>
         public static string GetDomainFromUserAccount(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -62,14 +55,15 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
             {
                 sb.Append(userAccount[i++]);
             }
+
             return sb.ToString();
         }
 
         /// <summary>
-        /// This function parses the UserName out of an user-account.
+        ///     This function parses the UserName out of an user-account.
         /// </summary>
-        /// <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
-        /// <returns></returns>
+        /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
+        /// <returns>The account name.</returns>
         public static string GetAccountNameFromUserAccount(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -83,18 +77,18 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         private DirectoryEntry GetDirectoryEntry()
         {
             DirectoryEntry de = new DirectoryEntry
-            {
-                Path = string.Format(@"LDAP://DC={0},DC=local", m_DomainName),
-                AuthenticationType = AuthenticationTypes.Secure,
-            };
+                                {
+                                    Path = string.Format(@"LDAP://DC={0},DC=local", m_DomainName),
+                                    AuthenticationType = AuthenticationTypes.Secure,
+                                };
             return de;
         }
 
         /// <summary>
-        /// List all available properties of an SAM Account.
+        ///     List all available properties of an SAM Account.
         /// </summary>
-        /// <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
-        /// <returns></returns>
+        /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
+        /// <returns>An <see cref="IEnumerable{T}" /> of all the available properties.</returns>
         public IEnumerable<string> AvailableProperties(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -118,12 +112,14 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         }
 
         /// <summary>
-        /// Get the value for a specified property name of a SAM account
+        ///     Get the value for a specified property name of a SAM account.
         /// </summary>
-        /// <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
-        /// <param name="propertyName">A valid property name, the list of valid properties
-        /// can be found using <see cref="AvailableProperties"/></param>
-        /// <returns></returns>
+        /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
+        /// <param name="propertyName">
+        ///     A valid property name, the list of valid properties
+        ///     can be found using <see cref="AvailableProperties" />.
+        /// </param>
+        /// <returns>The value of the given property.</returns>
         public ResultPropertyValueCollection GetProperty(string userAccount, string propertyName)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -147,10 +143,10 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         }
 
         /// <summary>
-        /// Checks if a certain user exists
+        ///     Checks if a certain user exists.
         /// </summary>
-        /// <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
-        /// <returns></returns>
+        /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
+        /// <returns>A <see cref="bool" /> indicating whether the given <paramref name="userAccount" /> exists.</returns>
         public bool UserExists(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -171,10 +167,10 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         }
 
         /// <summary>
-        /// Get the displayname property of a SAM-account
+        ///     Get the display name property of a SAM-account.
         /// </summary>
-        /// <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
-        /// <returns></returns>
+        /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
+        /// <returns>The display name.</returns>
         public string FindName(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -189,10 +185,10 @@ namespace PPWCode.Util.OddsAndEnds.I.ActiveDirectory
         }
 
         /// <summary>
-        /// Get the email of a SAM-account
+        ///     Gets the email address of a SAM-account.
         /// </summary>
-        /// <param name="userAccount">A useraccount has following format: DOMAIN\UserName</param>
-        /// <returns></returns>
+        /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
+        /// <returns>The email address.</returns>
         public string FindEmail(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
