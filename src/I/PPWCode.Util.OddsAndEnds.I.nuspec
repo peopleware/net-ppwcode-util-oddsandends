@@ -21,6 +21,7 @@
 2.4.0 First release PPWCode.Util.OddsAndEnds.I on nuget.org.
 2.4.1 Fixed the dependency on NUnit.
 2.4.2 StyleCop.MSBuild.PPWCode is a development dependency.
+3.0.0 Upgrade to .Net 4.5.0.
     </releaseNotes>
 
     <copyright>Copyright 2010-2015 by PeopleWare NV</copyright>
@@ -28,7 +29,6 @@
     <tags>PPWCode PPWCode.Util PPWCode.Util.OddsAndEnds</tags>
     
     <dependencies>
-      <dependency id="Microsoft.Contracts" version="[1,2)" />
       <dependency id="Spring.Core" version="[1.3,1.4)" />
     </dependencies>
 
@@ -41,11 +41,11 @@
   <!-- explicit file inclusion -->
   <files>
     <!-- assemblies -->
-    <file src="$OutputPath$$MSBuildProjectName$.dll" target="lib\net35" />
-    <file src="$OutputPath$$MSBuildProjectName$.pdb" target="lib\net35" />
-    <file src="$OutputPath$$MSBuildProjectName$.xml" target="lib\net35" />
-    <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.dll" target="lib\net35\CodeContracts" />
-    <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.pdb" target="lib\net35\CodeContracts" />
+    <file src="$OutputPath$$MSBuildProjectName$.dll" target="lib\net45" />
+    <file src="$OutputPath$$MSBuildProjectName$.pdb" target="lib\net45" />
+    <file src="$OutputPath$$MSBuildProjectName$.xml" target="lib\net45" />
+    <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.dll" target="lib\net45\CodeContracts" />
+    <file src="$OutputPath$CodeContracts\$MSBuildProjectName$.Contracts.pdb" target="lib\net45\CodeContracts" />
 
     <!-- license information -->
     <file src="..\..\LICENSE" target="LICENSE" />
