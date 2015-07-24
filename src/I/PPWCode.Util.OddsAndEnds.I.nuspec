@@ -22,6 +22,7 @@
 2.4.1 Fixed the dependency on NUnit.
 2.4.2 StyleCop.MSBuild.PPWCode is a development dependency.
 3.0.0 Upgrade to .Net 4.5.0.
+3.0.1 Put back code in SerializationHelper that was accidentally removed.
     </releaseNotes>
 
     <copyright>Copyright 2010-2015 by PeopleWare NV</copyright>
