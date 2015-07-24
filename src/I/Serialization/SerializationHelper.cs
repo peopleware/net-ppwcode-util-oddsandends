@@ -122,6 +122,55 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
                        : SerializeToBytes(obj);
         }
 
+
+        public static T DeserializeFromFile<T>(string fileName)
+            where T : class
+        {
+            return DeserializeFromFile<T>(fileName, false);
+        }
+
+        public static T DeserializeFromFile<T>(string fileName, bool requiredUnCompress)
+            where T : class
+        {
+            if (requiredUnCompress)
+            {
+                using (Stream stream = Compression.DecompressingStream(new FileStream(fileName, FileMode.Open)))
+                {
+                    return Deserialize<T>(stream);
+                }
+            }
+            else
+            {
+                using (Stream stream = new FileStream(fileName, FileMode.Open))
+                {
+                    return Deserialize<T>(stream);
+                }
+            }
+        }
+
+        public static void SerializeToFile(string fileName, object obj)
+        {
+            SerializeToFile(fileName, obj, false);
+        }
+
+        public static void SerializeToFile(string fileName, object obj, bool requiredCompress)
+        {
+            if (requiredCompress)
+            {
+                using (Stream str = Compression.CompressingStream(new FileStream(fileName, FileMode.Create)))
+                {
+                    Serialize(str, obj);
+                }
+            }
+            else
+            {
+                using (Stream str = new FileStream(fileName, FileMode.Create))
+                {
+                    Serialize(str, obj);
+                }
+            }
+        }
+
         public static T DeserializeFromManifestResourceStream<T>(
             Assembly assembly,
             string nameSpacename,
