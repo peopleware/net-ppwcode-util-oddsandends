@@ -328,7 +328,7 @@ Task Test -description 'Run the unit tests using NUnit console test runner.' -de
             # execute runner
             $testrunnerargs = @(
                 "/work:scratch\nunit\$($testdll.BaseName)"
-                '/framework:net-3.5'
+                '/framework:net-4.5'
                 '/result:nunit-test-results.xml'
                 '/out:nunit-stdout.txt'
                 '/err:nunit-stderr.txt'
