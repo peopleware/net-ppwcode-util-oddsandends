@@ -23,6 +23,7 @@
 2.4.2 StyleCop.MSBuild.PPWCode is a development dependency.
 3.0.0 Upgrade to .Net 4.5.0.
 3.0.1 Put back code in SerializationHelper that was accidentally removed.
+3.0.2 Some small fixes (unit test, nuget dependencies). Fix AssemblyVersion back to 3.0.0.0.
     </releaseNotes>
 
     <copyright>Copyright 2010-2015 by PeopleWare NV</copyright>
