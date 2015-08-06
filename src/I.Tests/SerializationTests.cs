@@ -255,12 +255,15 @@ namespace PPWCode.Util.OddsAndEnds.I.Tests
 
             using (MemoryStream stream = new MemoryStream())
             {
+                // compressing stream only forced to flush when the stream is closed
                 using (Stream compressed = Compression.CompressingStream(stream))
                 {
                     SerializationHelper.Serialize(compressed, personA);
                     Assert.IsTrue(stream.Length > 0);
-                    memory = stream.GetBuffer();
                 }
+
+                // copy only after the compressing stream has been closed
+                memory = stream.GetBuffer();
             }
 
             PersonA deserializedPersonA;
