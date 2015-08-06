@@ -122,7 +122,6 @@ namespace PPWCode.Util.OddsAndEnds.I.Serialization
                        : SerializeToBytes(obj);
         }
 
-
         public static T DeserializeFromFile<T>(string fileName)
             where T : class
         {
