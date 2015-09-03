@@ -49,24 +49,56 @@ namespace PPWCode.Util.OddsAndEnds.II.Tests
             Assert.AreEqual(15, l.NullableSum());
         }
 
-        [Test, Description("CollectionExtensions SetEqual")]
-        public void TestSetEqual()
+        private IEnumerable<IEnumerable<int>> SetEqualEqualCases
         {
-            List<int> l1 = new List<int>
-                           {
-                               1,
-                               2,
-                               3,
-                               4
-                           };
-            List<int> l2 = new List<int>
-                           {
-                               4,
-                               3,
-                               2,
-                               1
-                           };
-            Assert.IsTrue(l1.SetEqual(l2));
+            get
+            {
+                yield return new[] { 1, 2, 3, 4 };
+                yield return new[] { 1, 2, 4, 3 };
+                yield return new[] { 1, 4, 2, 3 };
+                yield return new[] { 4, 1, 2, 3 };
+                yield return new[] { 4, 4, 1, 2, 3 };
+                yield return new[] { 4, 4, 1, 1, 2, 3 };
+                yield return new[] { 4, 4, 1, 1, 2, 2, 3 };
+            }
+        }
+
+        private IEnumerable<IEnumerable<int>> SetEqualUnEqualCases1
+        {
+            get
+            {
+                yield return new int[0];
+                yield return new[] { 1 };
+                yield return new[] { 1, 2, 4 };
+                yield return new[] { 4, 2, 3 };
+            }
+        }
+
+        private IEnumerable<IEnumerable<int>> SetEqualUnEqualCases2
+        {
+            get
+            {
+                yield return new[] { 4, 1, };
+                yield return new[] { 4, 4, 1, 2, 3 };
+                yield return new[] { 4, 4, 1, 1 };
+            }
+        }
+
+        [Test, Description("CollectionExtensions SetEqual true")]
+        public void TestSetEqualEquals(
+            [ValueSource("SetEqualEqualCases")] IEnumerable<int> bag,
+            [ValueSource("SetEqualEqualCases")] IEnumerable<int> otherBag)
+        {
+            Assert.IsTrue(bag.SetEqual(otherBag));
+        }
+
+        [Test, Description("CollectionExtensions SetEqual false")]
+        public void TestSetEqualUnEquals(
+            [ValueSource("SetEqualUnEqualCases1")] IEnumerable<int> bag,
+            [ValueSource("SetEqualUnEqualCases2")] IEnumerable<int> otherBag)
+        {
+            Assert.IsFalse(bag.SetEqual(otherBag));
+        }
 
         private IEnumerable<IEnumerable<int>> BagEqualEqualCases
         {

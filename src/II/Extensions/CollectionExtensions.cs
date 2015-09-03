@@ -122,9 +122,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static bool SetEqual<T>(this IEnumerable<T> outerSequence, IEnumerable<T> innerSequence)
         {
-            return (outerSequence.Count() == innerSequence.Count())
-                   && (outerSequence.Except(innerSequence).Count() == 0)
-                   && (innerSequence.Except(outerSequence).Count() == 0);
+            return SetEqual(outerSequence, innerSequence, EqualityComparer<T>.Default);
         }
 
         /// <summary>
@@ -141,9 +139,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static bool SetEqual<T>(this IEnumerable<T> outerSequence, IEnumerable<T> innerSequence, IEqualityComparer<T> comparer)
         {
-            return (outerSequence.Count() == innerSequence.Count())
-                   && (outerSequence.Except(innerSequence, comparer).Count() == 0)
-                   && (innerSequence.Except(outerSequence, comparer).Count() == 0);
+            return new HashSet<T>(outerSequence, comparer).SetEquals(innerSequence);
         }
 
         private static bool IsEmptyOperator<T>(this IEnumerable<T> items)
