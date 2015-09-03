@@ -2,7 +2,7 @@
 
 using PPWCode.Util.OddsAndEnds.II.AssemblyHelpers;
 
-namespace PPWCode.Util.OddsAndEnds.Test.II
+namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
     [TestFixture]
     public class AssemblyHelperTests
