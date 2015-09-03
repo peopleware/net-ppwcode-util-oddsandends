@@ -67,6 +67,55 @@ namespace PPWCode.Util.OddsAndEnds.II.Tests
                                1
                            };
             Assert.IsTrue(l1.SetEqual(l2));
+
+        private IEnumerable<IEnumerable<int>> BagEqualEqualCases
+        {
+            get
+            {
+                yield return new[] { 1, 2, 3, 4 };
+                yield return new[] { 1, 2, 4, 3 };
+                yield return new[] { 1, 4, 2, 3 };
+                yield return new[] { 4, 1, 2, 3 };
+            }
+        }
+
+        private IEnumerable<IEnumerable<int>> BagEqualUnEqualCases1
+        {
+            get
+            {
+                yield return new int[0];
+                yield return new[] { 1 };
+                yield return new[] { 1, 2, 4 };
+                yield return new[] { 4, 2, 3 };
+            }
+        }
+
+        private IEnumerable<IEnumerable<int>> BagEqualUnEqualCases2
+        {
+            get
+            {
+                yield return new[] { 4, 1, };
+                yield return new[] { 4, 1, 2, 3 };
+                yield return new[] { 4, 1, 1 };
+                yield return new[] { 1, 1 };
+                yield return new[] { 1, 2, 2, 4 };
+            }
+        }
+
+        [Test, Description("CollectionExtensions BagEqual true")]
+        public void TestBagEqualEquals(
+            [ValueSource("BagEqualEqualCases")] IEnumerable<int> bag,
+            [ValueSource("BagEqualEqualCases")] IEnumerable<int> otherBag)
+        {
+            Assert.IsTrue(bag.BagEqual(otherBag));
+        }
+
+        [Test, Description("CollectionExtensions BagEqual false")]
+        public void TestBagEqualUnEquals(
+            [ValueSource("BagEqualUnEqualCases1")] IEnumerable<int> bag,
+            [ValueSource("BagEqualUnEqualCases2")] IEnumerable<int> otherBag)
+        {
+            Assert.IsFalse(bag.BagEqual(otherBag));
         }
 
         [Test, Description("CollectionExtensions IsNullOrEmpty #1")]

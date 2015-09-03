@@ -1,4 +1,4 @@
-﻿// Copyright 2014 by PeopleWare n.v..
+﻿// Copyright 2015 by PeopleWare n.v..
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -85,6 +85,36 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// <summary>
         ///     Checks whether 2 IEnumerable of T are equal.
         /// </summary>
+        /// <typeparam name="T">The type used.</typeparam>
+        /// <param name="outerSequence">The first IEnumerable of T.</param>
+        /// <param name="innerSequence">The second IEnumerable of T.</param>
+        /// <returns>True or false.</returns>
+        [Pure]
+        public static bool BagEqual<T>(this IEnumerable<T> outerSequence, IEnumerable<T> innerSequence)
+        {
+            return BagEqual(outerSequence, innerSequence, Comparer<T>.Default);
+        }
+
+        /// <summary>
+        ///     Checks whether 2 IEnumerable of T are equal given a comparer.
+        /// </summary>
+        /// <typeparam name="T">The type used.</typeparam>
+        /// <param name="outerSequence">The first IEnumerable of T.</param>
+        /// <param name="innerSequence">The second IEnumerable of T.</param>
+        /// <param name="comparer">The equality comparer.</param>
+        /// <returns>True or false.</returns>
+        [Pure]
+        public static bool BagEqual<T>(this IEnumerable<T> outerSequence, IEnumerable<T> innerSequence, IComparer<T> comparer)
+        {
+            return outerSequence.OrderBy(x => x, comparer).SequenceEqual(innerSequence.OrderBy(x => x, comparer));
+        }
+
+        /// <summary>
+        ///     Checks whether 2 IEnumerable of T are equal.
+        /// </summary>
+        /// <remarks>
+        ///     Doubles are ignored.
+        /// </remarks>
         /// <typeparam name="T">The type used.</typeparam>
         /// <param name="outerSequence">The first IEnumerable of T.</param>
         /// <param name="innerSequence">The second IEnumerable of T.</param>
