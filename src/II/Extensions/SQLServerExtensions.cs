@@ -19,9 +19,9 @@ using System.Text.RegularExpressions;
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     /// <summary>
-    /// Helper class that provides extensions for SQLServer.
+    ///     Helper class that provides extensions for SQLServer.
     /// </summary>
-     public static class SQLServerExtensions
+    public static class SQLServerExtensions
     {
         private static readonly string[] s_ConstraintCriterias =
         {

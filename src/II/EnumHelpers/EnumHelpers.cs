@@ -21,12 +21,12 @@ using PPWCode.Util.OddsAndEnds.II.Extensions;
 namespace PPWCode.Util.OddsAndEnds.II.EnumHelpers
 {
     /// <summary>
-    /// Helper class for Enumeration.
+    ///     Helper class for Enumeration.
     /// </summary>
     public static class EnumHelpers
     {
         /// <summary>
-        /// Returns enumeration as IEnumerable of T.
+        ///     Returns enumeration as IEnumerable of T.
         /// </summary>
         /// <typeparam name="T">The type of the enumeration.</typeparam>
         /// <returns>IEnumerable of T.</returns>
@@ -37,7 +37,7 @@ namespace PPWCode.Util.OddsAndEnds.II.EnumHelpers
         }
 
         /// <summary>
-        /// Returns enumeration as IEnumerable of T.
+        ///     Returns enumeration as IEnumerable of T.
         /// </summary>
         /// <typeparam name="T">The type of the enumeration.</typeparam>
         /// <returns>IEnumerable of T.</returns>
@@ -52,7 +52,7 @@ namespace PPWCode.Util.OddsAndEnds.II.EnumHelpers
         }
 
         /// <summary>
-        /// Gets localized description of value of enumeration.
+        ///     Gets localized description of value of enumeration.
         /// </summary>
         /// <param name="enumValue">The type of the enumeration.</param>
         /// <returns>The localized description.</returns>

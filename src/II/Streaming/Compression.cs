@@ -18,12 +18,12 @@ using System.IO.Compression;
 namespace PPWCode.Util.OddsAndEnds.II.Streaming
 {
     /// <summary>
-    /// Helper class for Compression.
+    ///     Helper class for Compression.
     /// </summary>
     public class Compression
     {
         /// <summary>
-        /// Compresses a byte array.
+        ///     Compresses a byte array.
         /// </summary>
         /// <param name="bytData">The byte array to compress.</param>
         /// <returns>Compressed byte array.</returns>
@@ -41,7 +41,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Streaming
         }
 
         /// <summary>
-        /// Decompresses a byte array.
+        ///     Decompresses a byte array.
         /// </summary>
         /// <param name="data">The given byte array.</param>
         /// <returns>A byte array.</returns>
@@ -65,7 +65,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Streaming
         }
 
         /// <summary>
-        /// Initializes a new instance of the GZipStream class to compress data by using the given stream.
+        ///     Initializes a new instance of the GZipStream class to compress data by using the given stream.
         /// </summary>
         /// <param name="stream">The given stream.</param>
         /// <returns>The stream the compressed data is written to.</returns>
@@ -75,7 +75,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Streaming
         }
 
         /// <summary>
-        /// Initializes a new instance of the GZipStream class to decompress data by using the given stream.
+        ///     Initializes a new instance of the GZipStream class to decompress data by using the given stream.
         /// </summary>
         /// <param name="stream">The given stream.</param>
         /// <returns>The stream the decompressed data is written to.</returns>

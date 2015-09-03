@@ -21,12 +21,12 @@ using System.Linq;
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     /// <summary>
-    /// Helper class that provides extensions for DateTime.
+    ///     Helper class that provides extensions for DateTime.
     /// </summary>
     public static class DateTimeExtensions
     {
         /// <summary>
-        /// Removes the milliseconds from the given DateTime.
+        ///     Removes the milliseconds from the given DateTime.
         /// </summary>
         /// <param name="dt">The DateTime from which you want to remove the milliseconds.</param>
         /// <returns>The DateTime without milliseconds.</returns>
@@ -39,7 +39,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Removes the seconds from the given DateTime.
+        ///     Removes the seconds from the given DateTime.
         /// </summary>
         /// <param name="dt">The DateTime from which you want to remove the seconds.</param>
         /// <returns>The DateTime without seconds.</returns>
@@ -52,7 +52,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Removes the hours from the given DateTime.
+        ///     Removes the hours from the given DateTime.
         /// </summary>
         /// <param name="dt">The DateTime from which you want to remove the hours.</param>
         /// <returns>DateTime with hours removed.</returns>
@@ -65,7 +65,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Checks whether the date is a legal SQL date.
+        ///     Checks whether the date is a legal SQL date.
         /// </summary>
         /// <param name="dt">The date to check.</param>
         /// <returns>Whether the date is a legal SQL date.</returns>
@@ -78,8 +78,8 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Adds quarters to a DateTime.
-        /// If the resulting day is not valid in the resulting month, the last valid day of the resulting month is used.
+        ///     Adds quarters to a DateTime.
+        ///     If the resulting day is not valid in the resulting month, the last valid day of the resulting month is used.
         /// </summary>
         /// <param name="dt">The DateTime you want to add quarters to.</param>
         /// <param name="quarters">The number of quarters you want to add.</param>
@@ -93,7 +93,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Removes the milliseconds from the given nullable DateTime.
+        ///     Removes the milliseconds from the given nullable DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The DateTime without milliseconds.</returns>
@@ -106,7 +106,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Removes the seconds from the given nullable DateTime.
+        ///     Removes the seconds from the given nullable DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The DateTime without seconds.</returns>
@@ -119,7 +119,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Removes the hours from the given nullable DateTime.
+        ///     Removes the hours from the given nullable DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>A nullable DateTime with hours removed.</returns>
@@ -132,7 +132,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Checks whether the nullable date is a legal SQL date.
+        ///     Checks whether the nullable date is a legal SQL date.
         /// </summary>
         /// <param name="dt">The DateTime to check.</param>
         /// <returns>True or false.</returns>
@@ -145,7 +145,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Adds months to a given nullable DateTime.
+        ///     Adds months to a given nullable DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <param name="months">The number of months you want to add.</param>
@@ -159,7 +159,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Adds quarters to a given nullable DateTime.
+        ///     Adds quarters to a given nullable DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <param name="quarters">The number of quarters you want to add.</param>
@@ -173,7 +173,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of quarter of given year.
+        ///     Gets the first day of quarter of given year.
         /// </summary>
         /// <param name="yearQuarter">The year and quarter as a string.</param>
         /// <returns>The first day of quarter of given year.</returns>
@@ -189,7 +189,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of quarter of given year.
+        ///     Gets the first day of quarter of given year.
         /// </summary>
         /// <param name="yearQuarter">The year and quarter as an integer.</param>
         /// <returns>The first day of quarter of given year.</returns>
@@ -203,7 +203,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of quarter of the given DateTime.
+        ///     Gets the first day of quarter of the given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The first day of quarter.</returns>
@@ -216,7 +216,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Whether DateTime is first day of quarter.
+        ///     Whether DateTime is first day of quarter.
         /// </summary>
         /// <param name="dt">The DateTime.</param>
         /// <returns>True or false.</returns>
@@ -238,7 +238,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of next quarter for given DateTime.
+        ///     Gets the first day of next quarter for given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The first day of next quarter.</returns>
@@ -249,7 +249,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of previous quarter for given DateTime.
+        ///     Gets the first day of previous quarter for given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The first day of previous quarter.</returns>
@@ -260,7 +260,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of quarter after next quarter for the given DateTime.
+        ///     Gets the first day of quarter after next quarter for the given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The first day of quarter after next quarter.</returns>
@@ -271,7 +271,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the last day of current quarter for the given DateTime.
+        ///     Gets the last day of current quarter for the given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The last day of quarter.</returns>
@@ -282,7 +282,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the last day of next quarter for the given DateTime.
+        ///     Gets the last day of next quarter for the given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The last day of quarter.</returns>
@@ -293,7 +293,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Whether given DateTime is first day of month.
+        ///     Whether given DateTime is first day of month.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>True or false.</returns>
@@ -304,7 +304,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Whether nullable DateTime is first day of month.
+        ///     Whether nullable DateTime is first day of month.
         /// </summary>
         /// <param name="dt">The given nullable DateTime.</param>
         /// <returns>True, false or null.</returns>
@@ -326,7 +326,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of next month for given DateTime.
+        ///     Gets the first day of next month for given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The first day of next month.</returns>
@@ -338,12 +338,15 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Computes the number of days between the given dates.    
+        ///     Computes the number of days between the given dates.
         /// </summary>
         /// <remarks>Returns 0 when start and end date is on the same day.</remarks>
         /// <param name="startDate">The start date.</param>
         /// <param name="endDate">The end date.</param>
-        /// <returns>A number representing the number of days between the given <paramref name="startDate"/> and <paramref name="endDate"/>.</returns>
+        /// <returns>
+        ///     A number representing the number of days between the given <paramref name="startDate" /> and
+        ///     <paramref name="endDate" />.
+        /// </returns>
         [Pure]
         public static int DaysBetween(this DateTime startDate, DateTime endDate)
         {
@@ -365,12 +368,15 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Computes the number of months between the given dates.    
+        ///     Computes the number of months between the given dates.
         /// </summary>
         /// <remarks>Returns 0 when start and end date is in the same month.</remarks>
         /// <param name="startDate">The start date.</param>
         /// <param name="endDate">The end date.</param>
-        /// <returns>A number representing the number of months between the given <paramref name="startDate"/> and <paramref name="endDate"/>.</returns>
+        /// <returns>
+        ///     A number representing the number of months between the given <paramref name="startDate" /> and
+        ///     <paramref name="endDate" />.
+        /// </returns>
         [Pure]
         public static int MonthsBetween(this DateTime startDate, DateTime endDate)
         {
@@ -379,12 +385,15 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Computes the number of quarters between the given dates.    
+        ///     Computes the number of quarters between the given dates.
         /// </summary>
         /// <remarks>Returns 0 when start and end date is in the same quarter.</remarks>
         /// <param name="startDate">The start date.</param>
         /// <param name="endDate">The end date.</param>
-        /// <returns>A number representing the number of quarters between the given <paramref name="startDate"/> and <paramref name="endDate"/>.</returns>
+        /// <returns>
+        ///     A number representing the number of quarters between the given <paramref name="startDate" /> and
+        ///     <paramref name="endDate" />.
+        /// </returns>
         [Pure]
         public static int QuartersBetween(this DateTime startDate, DateTime endDate)
         {
@@ -403,7 +412,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of next year for given DateTime.
+        ///     Gets the first day of next year for given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>First day of next year.</returns>
@@ -414,7 +423,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the first day of month for the given DateTime.
+        ///     Gets the first day of month for the given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The first day of month.</returns>
@@ -425,7 +434,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the last day of month for the given DateTime.
+        ///     Gets the last day of month for the given DateTime.
         /// </summary>
         /// <param name="dt">The given DateTime.</param>
         /// <returns>The last day of month.</returns>
@@ -441,7 +450,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         ///     Computes the number of days in a year, taking into account leap years.
         /// </summary>
         /// <param name="date">The given date.</param>
-        /// <returns>A number representing the number of days in the year of the given <paramref name="date"/>.</returns>
+        /// <returns>A number representing the number of days in the year of the given <paramref name="date" />.</returns>
         [Pure]
         public static int NumberOfDaysInYear(this DateTime date)
         {
@@ -450,7 +459,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the age in years for given birthday and given DateTime.
+        ///     Gets the age in years for given birthday and given DateTime.
         /// </summary>
         /// <param name="birth">The birthday.</param>
         /// <param name="dt">The given DateTime.</param>

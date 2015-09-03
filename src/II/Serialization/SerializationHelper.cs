@@ -22,12 +22,12 @@ using PPWCode.Util.OddsAndEnds.II.Streaming;
 namespace PPWCode.Util.OddsAndEnds.II.Serialization
 {
     /// <summary>
-    /// Helper class for Serialization.
+    ///     Helper class for Serialization.
     /// </summary>
     public class SerializationHelper
     {
         /// <summary>
-        /// Serializes an object to xml string.
+        ///     Serializes an object to xml string.
         /// </summary>
         /// <param name="obj">The object to serialize.</param>
         /// <returns>An xml string.</returns>
@@ -52,7 +52,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Deserializes an object to object of given type.
+        ///     Deserializes an object to object of given type.
         /// </summary>
         /// <typeparam name="T">The type to deserialize to.</typeparam>
         /// <param name="obj">The xml string to deserialize.</param>
@@ -79,7 +79,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Deserializes a stream into an object of T.
+        ///     Deserializes a stream into an object of T.
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="stream">The stream that contains the XML to deserialize.</param>
@@ -92,7 +92,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Serializes the specified object graph using the specified writer.
+        ///     Serializes the specified object graph using the specified writer.
         /// </summary>
         /// <param name="stream">The stream to serialize with.</param>
         /// <param name="obj">The object to serialize.</param>
@@ -103,7 +103,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Deserializes a byte array into an object of T.
+        ///     Deserializes a byte array into an object of T.
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="data">The byte array to deserialize.</param>
@@ -123,7 +123,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Deserializes a byte array into an object of T.
+        ///     Deserializes a byte array into an object of T.
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="data">The byte array to deserialize.</param>
@@ -138,7 +138,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Serializes an object to a byte array.
+        ///     Serializes an object to a byte array.
         /// </summary>
         /// <param name="obj">The object to serialize.</param>
         /// <returns>A byte array.</returns>
@@ -159,7 +159,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Serializes an object to a byte array.
+        ///     Serializes an object to a byte array.
         /// </summary>
         /// <param name="obj">The object to serialize.</param>
         /// <param name="requiredCompress">Whether result has to be compressed.</param>
@@ -172,7 +172,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Deserializes a file to an object of type T.
+        ///     Deserializes a file to an object of type T.
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="fileName">The name of the file.</param>
@@ -184,7 +184,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Deserializes a file to an object of type T.
+        ///     Deserializes a file to an object of type T.
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="fileName">The name of the file.</param>
@@ -208,7 +208,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Serializes an object to a file.
+        ///     Serializes an object to a file.
         /// </summary>
         /// <param name="fileName">The name of the file.</param>
         /// <param name="obj">The object to serialize.</param>
@@ -218,7 +218,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Serializes an object to a file.
+        ///     Serializes an object to a file.
         /// </summary>
         /// <param name="fileName">The name of the file.</param>
         /// <param name="obj">The object to serialize.</param>
@@ -242,7 +242,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Deserializes the specified manifest resource from this assembly.
+        ///     Deserializes the specified manifest resource from this assembly.
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="assembly">The assembly.</param>

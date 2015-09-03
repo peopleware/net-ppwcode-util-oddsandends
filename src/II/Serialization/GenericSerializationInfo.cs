@@ -17,14 +17,14 @@ using System.Runtime.Serialization;
 namespace PPWCode.Util.OddsAndEnds.II.Serialization
 {
     /// <summary>
-    /// Class for generic serialization info.
+    ///     Class for generic serialization info.
     /// </summary>
     public class GenericSerializationInfo
     {
         private readonly SerializationInfo m_SerializationInfo;
 
         /// <summary>
-        /// The constructor.
+        ///     The constructor.
         /// </summary>
         /// <param name="info">The SerializationInfo.</param>
         public GenericSerializationInfo(SerializationInfo info)
@@ -33,7 +33,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Adds a value into the SerializationInfo store.
+        ///     Adds a value into the SerializationInfo store.
         /// </summary>
         /// <typeparam name="T">The type declaration.</typeparam>
         /// <param name="name">The name to associate with the value.</param>
@@ -44,7 +44,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Serialization
         }
 
         /// <summary>
-        /// Retrieves a value from the SerializationInfo store.
+        ///     Retrieves a value from the SerializationInfo store.
         /// </summary>
         /// <typeparam name="T">The type declaration.</typeparam>
         /// <param name="name">The name associated with the value to retrieve.</param>

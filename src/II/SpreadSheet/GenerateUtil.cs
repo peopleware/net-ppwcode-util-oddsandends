@@ -22,7 +22,7 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
     public class GenerateUtil
     {
         /// <summary>
-        /// Reads an excel sheet into a IList of given type.
+        ///     Reads an excel sheet into a IList of given type.
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="xlsFile">The excel file.</param>

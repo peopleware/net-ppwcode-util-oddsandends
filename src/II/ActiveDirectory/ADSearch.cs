@@ -21,14 +21,14 @@ using System.Text;
 namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
 {
     /// <summary>
-    /// Helper class for active directory.
+    ///     Helper class for active directory.
     /// </summary>
     public class AdSearch
     {
         private readonly string m_DomainName;
 
         /// <summary>
-        /// The constructor.
+        ///     The constructor.
         /// </summary>
         /// <param name="domainName">The name of domain.</param>
         public AdSearch(string domainName)
@@ -40,7 +40,7 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         }
 
         /// <summary>
-        /// The name of domain.
+        ///     The name of domain.
         /// </summary>
         public string DomainName
         {
@@ -53,11 +53,11 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         /// <param name="userAccount">A user account has following format: DOMAIN\UserName.</param>
         /// <returns>The domain of an user account.</returns>
         /// <example>
-        /// <code language="cs">
+        ///     <code language="cs">
         /// var domainName = AdSearch.GetDomainFromUserAccount(@"PPWDEV\jjanssenss");  
         /// Console.WriteLine(domainName);  
         /// </code>
-        /// result: PPWDEV.
+        ///     result: PPWDEV.
         /// </example>
         public static string GetDomainFromUserAccount(string userAccount)
         {
@@ -82,11 +82,11 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         /// <param name="userAccount">A user account with the following format: DOMAIN\UserName.</param>
         /// <returns>The user name for the given <paramref name="userAccount">account</paramref>.</returns>
         /// <example>
-        /// <code language="cs">
+        ///     <code language="cs">
         /// var userName = AdSearch.GetAccountNameFromUserAccount(@"PPWDEV\JJANSSENS");  
         /// Console.WriteLine(userName); 
         /// </code>
-        /// result: JJANSSENS.
+        ///     result: JJANSSENS.
         /// </example>
         public static string GetAccountNameFromUserAccount(string userAccount)
         {
@@ -143,7 +143,10 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         ///     A valid property name. The list of valid properties
         ///     can be found using <see cref="AvailableProperties" />.
         /// </param>
-        /// <returns>The value for the given <paramref name="propertyName"/> belonging to the given <paramref name="userAccount"/>.</returns>
+        /// <returns>
+        ///     The value for the given <paramref name="propertyName" /> belonging to the given
+        ///     <paramref name="userAccount" />.
+        /// </returns>
         public ResultPropertyValueCollection GetProperty(string userAccount, string propertyName)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -170,7 +173,7 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         ///     Checks whether a given user exists.
         /// </summary>
         /// <param name="userAccount">A user account with the following format: DOMAIN\UserName.</param>
-        /// <returns>A boolean indication whether the given <paramref name="userAccount"/> exists.</returns>
+        /// <returns>A boolean indication whether the given <paramref name="userAccount" /> exists.</returns>
         public bool UserExists(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -194,7 +197,7 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         ///     Gets the display name property of a SAM-account.
         /// </summary>
         /// <param name="userAccount">A user account with the following format: DOMAIN\UserName.</param>
-        /// <returns>The display name for the given <paramref name="userAccount"/>.</returns>
+        /// <returns>The display name for the given <paramref name="userAccount" />.</returns>
         public string FindName(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));
@@ -212,7 +215,7 @@ namespace PPWCode.Util.OddsAndEnds.II.ActiveDirectory
         ///     Gets the email address of a SAM-account.
         /// </summary>
         /// <param name="userAccount">A user account with the following format: DOMAIN\UserName.</param>
-        /// <returns>The email address for the given <paramref name="userAccount"/>.</returns>
+        /// <returns>The email address for the given <paramref name="userAccount" />.</returns>
         public string FindEmail(string userAccount)
         {
             Contract.Requires(!string.IsNullOrEmpty(userAccount));

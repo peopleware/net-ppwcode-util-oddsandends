@@ -23,7 +23,7 @@ using System.Threading;
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     /// <summary>
-    /// Class that provides extensions for Type.
+    ///     Class that provides extensions for Type.
     /// </summary>
     public static class TypeExtensions
     {
@@ -31,7 +31,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         ///     Gets the fully qualified name for a given type.
         /// </summary>
         /// <param name="value">The given type.</param>
-        /// <returns>The fully qualified name for the given type <paramref name="value"/>.</returns>
+        /// <returns>The fully qualified name for the given type <paramref name="value" />.</returns>
         [Pure]
         public static string GetQualifiedName(this Type value)
         {
@@ -53,7 +53,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
                         .Where(t => t.IsClass
                                     && t.IsPublic
                                     && (t.GetCustomAttributes(false).OfType<DataContractAttribute>().Any()
-                                       || t.GetCustomAttributes(false).OfType<CollectionDataContractAttribute>().Any()));
+                                        || t.GetCustomAttributes(false).OfType<CollectionDataContractAttribute>().Any()));
 
                 IEnumerable<Type> genericBoundedTypes =
                     foundTypes
@@ -70,7 +70,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         ///     Check whether a type is a nullable type.
         /// </summary>
         /// <param name="type">The given type.</param>
-        /// <returns>A boolean indicating whether the given <paramref name="type"/> is nullable.</returns>
+        /// <returns>A boolean indicating whether the given <paramref name="type" /> is nullable.</returns>
         public static bool IsNullableType(Type type)
         {
             Contract.Requires(type != null);
@@ -87,8 +87,10 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// </summary>
         /// <param name="type">The given type.</param>
         /// <param name="excludeSystemTypes">Parameter indicating whether system types should be excluded from the result.</param>
-        /// <returns>An enumeration of the sub classes of the given <paramref name="type"/>, including or
-        /// excluding the system types, depending on the given parameter <paramref name="excludeSystemTypes"/>.</returns>
+        /// <returns>
+        ///     An enumeration of the sub classes of the given <paramref name="type" />, including or
+        ///     excluding the system types, depending on the given parameter <paramref name="excludeSystemTypes" />.
+        /// </returns>
         public static IEnumerable<Type> GetSubclassesOf(this Type type, bool excludeSystemTypes)
         {
             if (type == null)

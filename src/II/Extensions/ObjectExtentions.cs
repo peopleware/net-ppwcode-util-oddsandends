@@ -21,7 +21,7 @@ using System.Text;
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     /// <summary>
-    /// Helper class that provides extensions for Object.
+    ///     Helper class that provides extensions for Object.
     /// </summary>
     public static class ObjectExtentions
     {

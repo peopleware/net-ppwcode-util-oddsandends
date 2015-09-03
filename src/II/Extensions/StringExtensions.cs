@@ -26,7 +26,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         ///     Checks if the first character of a string is a capital.
         /// </summary>
         /// <param name="value">The given string.</param>
-        /// <returns>A boolean indicating whether the first character of <paramref name="value"/> is a capital.</returns>
+        /// <returns>A boolean indicating whether the first character of <paramref name="value" /> is a capital.</returns>
         [Pure]
         public static bool StartWithACapital(this string value)
         {
@@ -41,7 +41,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <remarks>The function returns NULL if the conversion fails.</remarks>
-        /// <returns>A number for which the given <paramref name="value"/> is the string representation.</returns>
+        /// <returns>A number for which the given <paramref name="value" /> is the string representation.</returns>
         [Pure]
         public static long? ToLong(this string value)
         {
@@ -60,7 +60,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <remarks>The function returns NULL if the conversion fails.</remarks>
-        /// <returns>A number for which the given <paramref name="value"/> is the string representation.</returns>
+        /// <returns>A number for which the given <paramref name="value" /> is the string representation.</returns>
         [Pure]
         public static int? ToInt(this string value)
         {
@@ -79,7 +79,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <remarks>The function returns NULL if the conversion fails.</remarks>
-        /// <returns>A number for which the given <paramref name="value"/> is the string representation.</returns>
+        /// <returns>A number for which the given <paramref name="value" /> is the string representation.</returns>
         [Pure]
         public static decimal? ToDecimal(this string value)
         {
@@ -98,7 +98,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <remarks>The function returns NULL if the conversion fails.</remarks>
-        /// <returns>A <c>DateTime</c> for which the given <paramref name="value"/> is the string representation.</returns>
+        /// <returns>A <c>DateTime</c> for which the given <paramref name="value" /> is the string representation.</returns>
         [Pure]
         public static DateTime? ToDateTime(this string value)
         {

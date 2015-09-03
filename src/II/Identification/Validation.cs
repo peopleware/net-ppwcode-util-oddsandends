@@ -21,36 +21,38 @@ using System.Text.RegularExpressions;
 namespace PPWCode.Util.OddsAndEnds.II.Identification
 {
     /// <summary>
-    /// Helper class for validation.
+    ///     Helper class for validation.
     /// </summary>
     public static class Validation
     {
         /// <summary>
-        /// The length of KBO.
+        ///     The length of KBO.
         /// </summary>
         public const int LengthKbo = 10;
 
         /// <summary>
-        /// The length of VAT.
+        ///     The length of VAT.
         /// </summary>
         public const int LengthVat = 9;
 
         /// <summary>
-        /// The length of RIJKSREGISTENUMMER.
+        ///     The length of RIJKSREGISTENUMMER.
         /// </summary>
         public const int LengthRrn = 11;
 
         /// <summary>
-        /// The length of RSZ.
+        ///     The length of RSZ.
         /// </summary>
         public const int LengthRsz = 10;
 
         /// <summary>
-        /// Converts string to valid DMFA number.
+        ///     Converts string to valid DMFA number.
         /// </summary>
         /// <param name="dmfaLotNbr">The given string.</param>
-        /// <returns>Valid DMFA number as long.
-        /// Null if it is not a valid DMFA number.</returns>
+        /// <returns>
+        ///     Valid DMFA number as long.
+        ///     Null if it is not a valid DMFA number.
+        /// </returns>
         [Pure]
         public static long? ValidDmfaNumber(string dmfaLotNbr)
         {
@@ -73,7 +75,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Checks whether string is a valid 'RIJKSREGISTERNUMMER'.
+        ///     Checks whether string is a valid 'RIJKSREGISTERNUMMER'.
         /// </summary>
         /// <param name="rrn">The 'RIJKSREGISTERNUMMER' as string.</param>
         /// <returns>True or false.</returns>
@@ -86,7 +88,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Checks whether string is a strict valid 'RIJKSREGISTERNUMMER'.
+        ///     Checks whether string is a strict valid 'RIJKSREGISTERNUMMER'.
         /// </summary>
         /// <param name="rrn">The 'RIJKSREGISTERNUMMER' as string.</param>
         /// <returns>True or false.</returns>
@@ -107,7 +109,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Adds zero to left of string so that the length of string is the required length for 'RIJKSREGISTERNUMMER'.
+        ///     Adds zero to left of string so that the length of string is the required length for 'RIJKSREGISTERNUMMER'.
         /// </summary>
         /// <param name="rrn">The given 'RIJKSREGISTERNUMMER' as string.</param>
         /// <returns>A string padded with zeros.</returns>
@@ -181,7 +183,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Gets the birthday out of given 'RIJKSREGISTERNUMMER'.
+        ///     Gets the birthday out of given 'RIJKSREGISTERNUMMER'.
         /// </summary>
         /// <param name="rrn">The given 'RIJKSREGISTERNUMMER' as string.</param>
         /// <returns>The birthday or null.</returns>
@@ -195,7 +197,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Gets only the digits of string.
+        ///     Gets only the digits of string.
         /// </summary>
         /// <param name="stream">The given string.</param>
         /// <returns>The digits as string.</returns>
@@ -217,7 +219,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Checks whether given string is a valid RSZ number.
+        ///     Checks whether given string is a valid RSZ number.
         /// </summary>
         /// <param name="rsz">The given string.</param>
         /// <returns>True or false.</returns>
@@ -229,7 +231,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Checks whether string is a strict valid RSZ number.
+        ///     Checks whether string is a strict valid RSZ number.
         /// </summary>
         /// <param name="rsz">The given string.</param>
         /// <returns>True or false.</returns>
@@ -253,7 +255,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        ///  Adds zeros to left of string so that the length of string is the required length for RSZ number.
+        ///     Adds zeros to left of string so that the length of string is the required length for RSZ number.
         /// </summary>
         /// <param name="rsz">The given RSZ number as string.</param>
         /// <returns>A string padded with zeros.</returns>
@@ -264,7 +266,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Checks whether given string is a valid KBO number.
+        ///     Checks whether given string is a valid KBO number.
         /// </summary>
         /// <param name="kbo">The given string.</param>
         /// <returns>True or false.</returns>
@@ -276,7 +278,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Checks whether given string is a strict valid KBO number.
+        ///     Checks whether given string is a strict valid KBO number.
         /// </summary>
         /// <param name="kbo">The given string.</param>
         /// <returns>True or false.</returns>
@@ -294,7 +296,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        ///  Adds zeros to left of string so that the length of string is the required length for KBO number.
+        ///     Adds zeros to left of string so that the length of string is the required length for KBO number.
         /// </summary>
         /// <param name="kbo">The given string.</param>
         /// <returns>A string padded with zeros.</returns>
@@ -305,7 +307,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Checks whether string is a valid VAT number.
+        ///     Checks whether string is a valid VAT number.
         /// </summary>
         /// <param name="vat">The given string.</param>
         /// <returns>True or false.</returns>
@@ -322,7 +324,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
         }
 
         /// <summary>
-        /// Checks whether string is a strict valid VAT number.
+        ///     Checks whether string is a strict valid VAT number.
         /// </summary>
         /// <param name="vat">The given string.</param>
         /// <returns>True or false.</returns>

@@ -20,7 +20,7 @@ using System.Linq;
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     /// <summary>
-    /// Helper class for DateTime.
+    ///     Helper class for DateTime.
     /// </summary>
     public static class DateTimeHelper
     {
@@ -57,7 +57,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         public static DateTime Min(DateTime? dt1, DateTime dt2)
         {
             Contract.Ensures(Contract.Result<DateTime>() ==
-                (dt1.HasValue ? (dt1.Value < dt2 ? dt1.Value : dt2) : dt2));
+                             (dt1.HasValue ? (dt1.Value < dt2 ? dt1.Value : dt2) : dt2));
 
             return dt1.HasValue
                        ? dt1.Value < dt2 ? dt1.Value : dt2
@@ -79,7 +79,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         public static DateTime Min(DateTime dt1, DateTime? dt2)
         {
             Contract.Ensures(Contract.Result<DateTime>() ==
-                (dt2.HasValue ? (dt1 < dt2.Value ? dt1 : dt2.Value) : dt1));
+                             (dt2.HasValue ? (dt1 < dt2.Value ? dt1 : dt2.Value) : dt1));
 
             return Min(dt2, dt1);
         }
@@ -123,7 +123,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the biggest DateTime out of 2 DateTimes.
+        ///     Gets the biggest DateTime out of 2 DateTimes.
         /// </summary>
         /// <param name="dt1">The first DateTime.</param>
         /// <param name="dt2">The second DateTime.</param>
@@ -135,7 +135,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the biggest DateTime out of 2 DateTimes of which the first DateTime is nullable.
+        ///     Gets the biggest DateTime out of 2 DateTimes of which the first DateTime is nullable.
         /// </summary>
         /// <param name="dt1">The first nullable DateTime.</param>
         /// <param name="dt2">The second DateTime.</param>
@@ -149,7 +149,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the biggest DateTime out of 2 DateTimes of which the second DateTime is nullable.
+        ///     Gets the biggest DateTime out of 2 DateTimes of which the second DateTime is nullable.
         /// </summary>
         /// <param name="dt1">The first DateTime.</param>
         /// <param name="dt2">The second nullable DateTime.</param>
@@ -161,7 +161,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the biggest DateTime out of array of DateTimes.
+        ///     Gets the biggest DateTime out of array of DateTimes.
         /// </summary>
         /// <param name="dt">Array of DateTimes.</param>
         /// <returns>The biggest DateTime or null.</returns>

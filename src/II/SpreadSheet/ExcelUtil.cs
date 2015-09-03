@@ -21,12 +21,12 @@ using System.IO;
 namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
 {
     /// <summary>
-    /// Class that provides utilities for excel.
+    ///     Class that provides utilities for excel.
     /// </summary>
     public class ExcelUtil
     {
         /// <summary>
-        /// The constructor.
+        ///     The constructor.
         /// </summary>
         /// <param name="fileName">The name of the file.</param>
         public ExcelUtil(string fileName)
@@ -70,7 +70,7 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
         }
 
         /// <summary>
-        /// Reads an excel sheet into a list of given type.
+        ///     Reads an excel sheet into a list of given type.
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="selectStatement">The text of the query.</param>

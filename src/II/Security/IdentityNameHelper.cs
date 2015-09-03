@@ -19,12 +19,12 @@ using System.Threading;
 namespace PPWCode.Util.OddsAndEnds.II.Security
 {
     /// <summary>
-    /// Helper class for IdentityName.
+    ///     Helper class for IdentityName.
     /// </summary>
     public static class IdentityNameHelper
     {
         /// <summary>
-        /// Gets the identity name of the security context of a remote party.
+        ///     Gets the identity name of the security context of a remote party.
         /// </summary>
         /// <returns>The identity name.</returns>
         public static string GetServiceSecurityContextIdentityName()
@@ -36,7 +36,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Security
         }
 
         /// <summary>
-        /// Gets the identity name of the current principal.
+        ///     Gets the identity name of the current principal.
         /// </summary>
         /// <returns>The identity name.</returns>
         public static string GetThreadCurrentPrincipalIdentityName()
@@ -48,7 +48,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Security
         }
 
         /// <summary>
-        /// Gets the name of the current windows user.
+        ///     Gets the name of the current windows user.
         /// </summary>
         /// <returns>The name of the current windows user.</returns>
         public static string GetWindowsIdentityIdentityName()
@@ -64,7 +64,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Security
         }
 
         /// <summary>
-        /// Gets the identity name.
+        ///     Gets the identity name.
         /// </summary>
         /// <returns>The identity name.</returns>
         public static string GetIdentityName()

@@ -21,7 +21,7 @@ using System.Reflection;
 namespace PPWCode.Util.OddsAndEnds.II.AssemblyHelpers
 {
     /// <summary>
-    /// Helper class for Assembly.
+    ///     Helper class for Assembly.
     /// </summary>
     public static class AssemblyHelper
     {
@@ -32,7 +32,7 @@ namespace PPWCode.Util.OddsAndEnds.II.AssemblyHelpers
         private static readonly Dictionary<Assembly, Dictionary<string, Type>> s_ClassNames = new Dictionary<Assembly, Dictionary<string, Type>>();
 
         /// <summary>
-        /// Loads the assembly.
+        ///     Loads the assembly.
         /// </summary>
         /// <param name="assemblyName">The name of the assembly.</param>
         /// <returns>The assembly.</returns>
@@ -59,7 +59,7 @@ namespace PPWCode.Util.OddsAndEnds.II.AssemblyHelpers
         }
 
         /// <summary>
-        /// Creates an instance of the Type of the class using the default constructor.
+        ///     Creates an instance of the Type of the class using the default constructor.
         /// </summary>
         /// <param name="assembly">The assembly.</param>
         /// <param name="className">The class name.</param>

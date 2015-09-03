@@ -17,7 +17,7 @@ using System.ComponentModel;
 namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
 {
     /// <summary>
-    /// Helper class for TypeConverter.
+    ///     Helper class for TypeConverter.
     /// </summary>
     public static class TypeConverterHelper
     {

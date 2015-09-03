@@ -19,12 +19,12 @@ using System.Globalization;
 namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
 {
     /// <summary>
-    /// Helper class for configuration.
+    ///     Helper class for configuration.
     /// </summary>
     public static class ConfigHelper
     {
         /// <summary>
-        /// Gets the value for the given key out of the configuration.
+        ///     Gets the value for the given key out of the configuration.
         /// </summary>
         /// <typeparam name="T">The type used.</typeparam>
         /// <param name="key">The key as string.</param>
@@ -49,7 +49,7 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
         }
 
         /// <summary>
-        /// Gets the value for the given key out of the given configuration.
+        ///     Gets the value for the given key out of the given configuration.
         /// </summary>
         /// <typeparam name="T">The type used.</typeparam>
         /// <param name="configuration">The configuration.</param>
@@ -75,7 +75,7 @@ namespace PPWCode.Util.OddsAndEnds.II.ConfigHelper
         }
 
         /// <summary>
-        /// Gets the connection string for the given key.
+        ///     Gets the connection string for the given key.
         /// </summary>
         /// <param name="key">The given key.</param>
         /// <returns>The connection string.</returns>

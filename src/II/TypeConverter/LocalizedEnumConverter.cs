@@ -89,7 +89,7 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
         ///     Returns true if the given value can be represented using a single bit, and otherwise returns false.
         /// </summary>
         /// <param name="value">The given value.</param>
-        /// <returns>A boolean indicating whether the given <paramref name="value"/> can be represented using a single bit.</returns>
+        /// <returns>A boolean indicating whether the given <paramref name="value" /> can be represented using a single bit.</returns>
         private static bool IsSingleBitValue(ulong value)
         {
             switch (value)
@@ -210,7 +210,7 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
         /// <param name="context">The given context.</param>
         /// <param name="culture">The given culture.</param>
         /// <param name="value">The given value.</param>
-        /// <returns>The <c>enum</c> value corresponding to <paramref name="value"/>.</returns>
+        /// <returns>The <c>enum</c> value corresponding to <paramref name="value" />.</returns>
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
             string valueAsString = value as string;
@@ -232,7 +232,7 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
         /// <param name="ci">The given culture.</param>
         /// <param name="value">The given <c>enum</c> value.</param>
         /// <param name="destinationType">The given destination <c>enum</c> type.</param>
-        /// <returns>A string corresponding to the given <paramref name="value"/>.</returns>
+        /// <returns>A string corresponding to the given <paramref name="value" />.</returns>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo ci, object value, Type destinationType)
         {
             if (destinationType.Equals(typeof(string)))

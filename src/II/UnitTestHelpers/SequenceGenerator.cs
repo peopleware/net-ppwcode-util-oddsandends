@@ -20,12 +20,12 @@ using System.Linq;
 namespace PPWCode.Util.OddsAndEnds.II.UnitTestHelpers
 {
     /// <summary>
-    /// Helper class to generate sequences.
+    ///     Helper class to generate sequences.
     /// </summary>
     public class SequenceGenerator
     {
         /// <summary>
-        /// Creates a random IEnumerable of decimals.
+        ///     Creates a random IEnumerable of decimals.
         /// </summary>
         /// <param name="nrItems">The number of decimals to create.</param>
         /// <param name="start">The minimal possible value.</param>

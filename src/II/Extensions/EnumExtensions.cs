@@ -21,12 +21,12 @@ using System.Linq;
 namespace PPWCode.Util.OddsAndEnds.II.Extensions
 {
     /// <summary>
-    /// Class that provides extensions for Enumeration.
+    ///     Class that provides extensions for Enumeration.
     /// </summary>
     public static class EnumExtension
     {
         /// <summary>
-        /// Gets the localized description for given value.
+        ///     Gets the localized description for given value.
         /// </summary>
         /// <param name="enumValue">The given value.</param>
         /// <returns>The localized description.</returns>
@@ -44,7 +44,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         }
 
         /// <summary>
-        /// Gets the localized description for given value and specified CultureInfo.
+        ///     Gets the localized description for given value and specified CultureInfo.
         /// </summary>
         /// <param name="enumValue">The given value.</param>
         /// <param name="ci">The CultureInfo.</param>
