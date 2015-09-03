@@ -100,6 +100,9 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         /// <summary>
         ///     Checks whether 2 IEnumerable of T are equal given a comparer.
         /// </summary>
+        /// <remarks>
+        ///     Doubles are ignored.
+        /// </remarks>
         /// <typeparam name="T">The type used.</typeparam>
         /// <param name="outerSequence">The first IEnumerable of T.</param>
         /// <param name="innerSequence">The second IEnumerable of T.</param>
@@ -166,10 +169,11 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
             Grouping<int, T>[] groups = new Grouping<int, T>[segments];
             for (int i = 0; i < segments; i++)
             {
-                Grouping<int, T> g = new Grouping<int, T>(perSegment)
-                                     {
-                                         Key = i + 1
-                                     };
+                Grouping<int, T> g =
+                    new Grouping<int, T>(perSegment)
+                    {
+                        Key = i + 1
+                    };
 
                 groups[i] = g;
             }

@@ -1,4 +1,4 @@
-﻿// Copyright 2014 by PeopleWare n.v..
+﻿// Copyright 2015 by PeopleWare n.v..
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -28,14 +28,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Tests
         [Test, Description("CollectionExtensions Difference behaviour Aggregate and Sum")]
         public void TestSumAggregate()
         {
-            List<int?> l = new List<int?>
-                           {
-                               0,
-                               3,
-                               null,
-                               4,
-                               5
-                           };
+            List<int?> l = new List<int?> { 0, 3, null, 4, 5 };
             int? sum = l.Sum();
             int? agg = l.Aggregate((int?)0, (s, x) => s + x);
             Assert.IsFalse(sum == null);
@@ -45,28 +38,14 @@ namespace PPWCode.Util.OddsAndEnds.II.Tests
         [Test, Description("CollectionExtensions NullableSum 1")]
         public void TestNullableSum1()
         {
-            List<int?> l = new List<int?>
-                           {
-                               0,
-                               3,
-                               null,
-                               4,
-                               5
-                           };
+            List<int?> l = new List<int?> { 0, 3, null, 4, 5 };
             Assert.AreEqual(null, l.NullableSum());
         }
 
         [Test, Description("CollectionExtensions NullableSum 2")]
         public void TestNullableSum2()
         {
-            List<int?> l = new List<int?>
-                           {
-                               0,
-                               3,
-                               3,
-                               4,
-                               5
-                           };
+            List<int?> l = new List<int?> { 0, 3, 3, 4, 5 };
             Assert.AreEqual(15, l.NullableSum());
         }
 
@@ -93,13 +72,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Tests
         [Test, Description("CollectionExtensions IsNullOrEmpty #1")]
         public void TestIsNullOrEmpty1()
         {
-            List<int> l1 = new List<int>
-                           {
-                               1,
-                               2,
-                               3,
-                               4
-                           };
+            List<int> l1 = new List<int> { 1, 2, 3, 4 };
             Assert.IsFalse(l1.IsNullOrEmpty());
         }
 
@@ -120,13 +93,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Tests
         [Test, Description("CollectionExtensions IsEmpty #1")]
         public void TestIsEmpty1()
         {
-            List<int> l1 = new List<int>
-                           {
-                               1,
-                               2,
-                               3,
-                               4
-                           };
+            List<int> l1 = new List<int> { 1, 2, 3, 4 };
             Assert.IsFalse(l1.IsEmpty());
         }
 
