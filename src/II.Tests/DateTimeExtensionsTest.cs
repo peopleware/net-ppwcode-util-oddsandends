@@ -17,6 +17,7 @@ using System;
 using NUnit.Framework;
 
 using PPWCode.Util.OddsAndEnds.II.Extensions;
+using PPWCode.Util.OddsAndEnds.Test.II;
 
 namespace PPWCode.Util.OddsAndEnds.II.Tests
 {
