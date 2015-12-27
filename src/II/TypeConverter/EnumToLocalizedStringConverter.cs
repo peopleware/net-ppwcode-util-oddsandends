@@ -104,7 +104,7 @@ namespace PPWCode.Util.OddsAndEnds.II.TypeConverter
         ///     object using the specified context.
         /// </summary>
         /// <returns>
-        ///     true if this converter can perform the conversion; otherwise, false.
+        ///     True if this converter can perform the conversion; otherwise, false.
         /// </returns>
         /// <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that provides a format context. </param>
         /// <param name="sourceType">A <see cref="T:System.Type" /> that represents the type you wish to convert from. </param>
