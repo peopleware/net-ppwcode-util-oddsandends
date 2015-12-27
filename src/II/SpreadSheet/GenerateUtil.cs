@@ -28,7 +28,7 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
         /// <param name="xlsFile">The excel file.</param>
         /// <param name="sheet">The sheet to read.</param>
         /// <param name="columns">The columns.</param>
-        /// <param name="spreadSheetRowResolver">The DbDataReader and type.</param>
+        /// <param name="spreadSheetRowResolver">The <see cref="DbDataReader"/> and type.</param>
         /// <returns>An IList of given type.</returns>
         public static IList<T> ReadSheet<T>(string xlsFile, string sheet, List<string> columns, Func<DbDataReader, T> spreadSheetRowResolver)
             where T : class

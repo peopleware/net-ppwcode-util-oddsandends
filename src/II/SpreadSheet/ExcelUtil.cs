@@ -74,7 +74,7 @@ namespace PPWCode.Util.OddsAndEnds.II.SpreadSheet
         /// </summary>
         /// <typeparam name="T">The given type.</typeparam>
         /// <param name="selectStatement">The text of the query.</param>
-        /// <param name="rowResolver">The DbDataReader and type.</param>
+        /// <param name="rowResolver">The <see cref="DbDataReader"/> and type.</param>
         /// <returns>List of given type.</returns>
         public List<T> ReadSheet<T>(string selectStatement, Func<DbDataReader, T> rowResolver)
             where T : class
