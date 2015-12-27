@@ -16,9 +16,9 @@ using System.Reflection;
 
 [assembly: AssemblyCompany("Peopleware n.v.")]
 [assembly: AssemblyProduct("PPWCode Util OddsAndEnds")]
-[assembly: AssemblyCopyright("Copyright © PeopleWare n.v. 2014")]
+[assembly: AssemblyCopyright("Copyright © PeopleWare n.v. 2014-2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyVersion("1.0.0")]
-[assembly: AssemblyFileVersion("1.2.0")]
-[assembly: AssemblyInformationalVersion("1.2.0")]
+[assembly: AssemblyFileVersion("1.3.0")]
+[assembly: AssemblyInformationalVersion("1.3.0")]
