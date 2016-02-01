@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
@@ -336,6 +337,217 @@ namespace PPWCode.Util.OddsAndEnds.II.Identification
             {
                 long rest = 97 - (long.Parse(vat.Substring(0, 7)) % 97);
                 result = rest == long.Parse(vat.Substring(7, 2));
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        ///     Checks whether string is a valid IBAN.
+        /// </summary>
+        /// <param name="iban">The given string.</param>
+        /// <returns>True or false.</returns>
+        [Pure]
+        public static bool StrictValidIban(string iban)
+        {
+            // Step 1. Size should be at least 2
+            if (string.IsNullOrEmpty(iban) || iban.Length < 2)
+            {
+                return false;
+            }
+
+            // Step 2. Check country code
+            string countryCode = iban.Substring(0, 2).ToUpper();
+            IbanCountry ibanCountry;
+            if (!s_IBANCountries.TryGetValue(countryCode, out ibanCountry))
+            {
+                return false;
+            }
+
+            // Fase 3. delete all non-alphanumeric characters
+            StringBuilder sb = new StringBuilder(50);
+            IEnumerable<char> letterAndDigits = iban
+                .Select(t => char.ToUpper(t))
+                .Where(ch => char.IsLetterOrDigit(ch));
+            foreach (char ch in letterAndDigits)
+            {
+                sb.Append(ch);
+            }
+
+            // Fase 4: Check the length of the IBAN nr according the country code
+            if (ibanCountry.IBANLength != sb.Length)
+            {
+                return false;
+            }
+
+            // Fase 4b: Check regular expression if known
+            if (ibanCountry.Pattern != string.Empty)
+            {
+                Regex regex = new Regex(string.Concat(countryCode, ibanCountry.Pattern));
+                if (!regex.IsMatch(sb.ToString()))
+                {
+                    return false;
+                }
+            }
+
+            // Fase 5: Move the first four characters of the IBAN to the right of the number.
+            sb.Append(sb.ToString().Substring(0, 4));
+            sb.Remove(0, 4);
+
+            // Fase 6: Convert the letters into numerics in accordance with the conversion table.
+            StringBuilder sb2 = new StringBuilder(50);
+            for (int i = 0; i < sb.ToString().Length; i++)
+            {
+                char ch = sb.ToString()[i];
+                if (char.IsLetter(ch))
+                {
+                    int num;
+                    if (s_IBANConversions.TryGetValue(ch, out num))
+                    {
+                        sb2.Append(num.ToString());
+                    }
+                }
+                else
+                {
+                    sb2.Append(ch);
+                }
+            }
+
+            // Fase 7: Check MOD 97-10 (see ISO 7064).  
+            // For the check digits to be correct, 
+            // the remainder after calculating the modulus 97 must be 1.
+            // We will use integers instead of floating point numnbers for precision.
+            // BUT if the number is too long for the software implementation of
+            // integers (a signed 32/64 bits represents 9/18 digits), then the 
+            // calculation can be split up into consecutive remainder calculations
+            // on integers with a maximum of 9 or 18 digits.
+            // I wil choose 32 bit integers.
+            int mod97 = 0, n = 9;
+            string s9 = sb2.ToString().Substring(0, n);
+            while (s9.Length > 0)
+            {
+                sb2.Remove(0, n);
+                mod97 = int.Parse(s9) % 97;
+                if (sb2.Length > 0)
+                {
+                    n = (mod97 < 10) ? 8 : 7;
+                    n = sb2.Length < n ? sb2.Length : n;
+                    s9 = string.Concat(mod97.ToString(), sb2.ToString().Substring(0, n));
+                }
+                else
+                {
+                    s9 = string.Empty;
+                }
+            }
+
+            return mod97 == 1;
+        }
+
+        private static readonly IDictionary<string, IbanCountry> s_IBANCountries = new Dictionary<string, IbanCountry>
+        {
+            { "AD", new IbanCountry(24, "[0-9]{10}[0-9A-Z]{12}") }, // 1. Andorra
+            { "AT", new IbanCountry(20, "[0-9]{18}") }, // 2. Austria
+            { "BE", new IbanCountry(16, "[0-9]{14}") }, // 3. Belgium 
+            { "BA", new IbanCountry(20, "[0-9]{18}") }, // 4. Bosnia and Herzegovina
+            { "BG", new IbanCountry(22, "[0-9]{2}[A-Z]{4}[0-9]{6}[0-9A-Z]{8}") }, // 5. Bulgaria
+            { "HR", new IbanCountry(21, "[0-9]{19}") }, // 6. Croatia
+            { "CY", new IbanCountry(28, "[0-9]{10}[0-9A-Z]{16}") }, // 7. Cyprus
+            { "CZ", new IbanCountry(24, "[0-9]{22}") }, // 8. Czech Republic
+            { "DK", new IbanCountry(18, "[0-9]{16}") }, // 9. Denmark
+            { "EE", new IbanCountry(20, "[0-9]{18}") }, // 10. Estonia
+            { "FI", new IbanCountry(18, "[0-9]{16}") }, // 11. Finland
+            { "FR", new IbanCountry(27, "[0-9]{12}[0-9A-Z]{11}[0-9]{2}") }, // 12. France
+            { "DE", new IbanCountry(22, "[0-9]{20}") }, // 13. Germany
+            { "GI", new IbanCountry(23, "[0-9]{2}[A-Z]{4}[0-9A-Z]{15}") }, // 14. Gibraltar
+            { "GR", new IbanCountry(27, "[0-9]{9}[0-9A-Z]{16}") }, // 15. Greece
+            { "HU", new IbanCountry(28, "[0-9]{26}") }, // 16. Hungary
+            { "IS", new IbanCountry(26, "[0-9]{24}") }, // 17. Iceland
+            { "IE", new IbanCountry(22, "[0-9]{2}[A-Z]{4}[0-9]{14}") }, // 18. Ireland
+            { "IL", new IbanCountry(23, "[0-9]{21}") }, // 19. Israel
+            { "IT", new IbanCountry(27, "[0-9]{2}[A-Z][0-9]{10}[0-9A-Z]{12}") }, // 20. Italy
+            { "LV", new IbanCountry(21, "[0-9]{2}[A-Z]{4}[0-9A-Z]{13}") }, // 21. Latvia
+            { "LI", new IbanCountry(21, "[0-9]{7}[0-9A-Z]{12}") }, // 22. Principality of Liechtenstein
+            { "LT", new IbanCountry(20, "[0-9]{18}") }, // 23. Lithuania
+            { "LU", new IbanCountry(20, "[0-9]{5}[0-9A-Z]{13}") }, // 24. Luxembourg
+            { "MK", new IbanCountry(19, "[0-9]{5}[0-9A-Z]{10}[0-9]{2}") }, // 25. Macedonia, former Yugoslav Republic of
+            { "MT", new IbanCountry(31, "[0-9]{2}[A-Z]{4}[0-9]{5}[0-9A-Z]{18}") }, // 26. Malta
+            { "MU", new IbanCountry(30, "[0-9]{2}[A-Z]{4}[0-9]{19}[A-Z]{3}") }, // 27. Mauritius
+            { "MC", new IbanCountry(27, "[0-9]{12}[0-9A-Z]{11}[0-9]{2}") }, // 28. Monaco
+            { "ME", new IbanCountry(22, "[0-9]{20}") }, // 29. Montenegro
+            { "NL", new IbanCountry(18, "[0-9]{2}[A-Z]{4}[0-9]{10}") }, // 30. The Netherlands
+            { "NO", new IbanCountry(15, "[0-9]{13}") }, // 31. Norway
+            { "PL", new IbanCountry(28, "[0-9]{26}") }, // 32. Poland
+            { "PT", new IbanCountry(25, "[0-9]{23}") }, // 33. Portugal
+            { "RO", new IbanCountry(24, "[0-9]{2}[A-Z]{4}[0-9A-Z]{16}") }, // 34. Romania
+            { "SM", new IbanCountry(27, "[0-9]{2}[A-Z][0-9]{10}[0-9A-Z]{12}") }, // 35. San Marino
+            { "RS", new IbanCountry(22, "[0-9]{20}") }, // 36. Serbia
+            { "SK", new IbanCountry(24, "[0-9]{22}") }, // 37. Slovak Republic
+            { "SI", new IbanCountry(19, "[0-9]{17}") }, // 38. Slovenia
+            { "ES", new IbanCountry(24, "[0-9]{22}") }, // 39. Spain
+            { "SE", new IbanCountry(24, "[0-9]{22}") }, // 40. Sweden
+            { "CH", new IbanCountry(21, "[0-9]{7}[0-9A-Z]{12}") }, // 41. Switzerland
+            { "TN", new IbanCountry(24, "59[0-9]{20}") }, // 42. Tunisia
+            { "TR", new IbanCountry(26, "[0-9]{7}[0-9A-Z]{17}") }, // 43. Turkey
+            { "GB", new IbanCountry(22, "[0-9]{2}[A-Z]{4}[0-9]{14}") } // 44. United Kingdom
+        };
+
+        private static readonly IDictionary<char, int> s_IBANConversions = new Dictionary<char, int>
+        {
+            { 'A', 10 },
+            { 'B', 11 },
+            { 'C', 12 },
+            { 'D', 13 },
+            { 'E', 14 },
+            { 'F', 15 },
+            { 'G', 16 },
+            { 'H', 17 },
+            { 'I', 18 },
+            { 'J', 19 },
+            { 'K', 20 },
+            { 'L', 21 },
+            { 'M', 22 },
+            { 'N', 23 },
+            { 'O', 24 },
+            { 'P', 25 },
+            { 'Q', 26 },
+            { 'R', 27 },
+            { 'S', 28 },
+            { 'T', 29 },
+            { 'U', 30 },
+            { 'V', 31 },
+            { 'W', 32 },
+            { 'X', 33 },
+            { 'Y', 34 },
+            { 'Z', 35 }
+        };
+
+        private struct IbanCountry
+        {
+            public int IBANLength { get; private set; }
+
+            public string Pattern { get; private set; }
+
+            public IbanCountry(int ibanLength, string pattern)
+                : this()
+            {
+                IBANLength = ibanLength;
+                Pattern = pattern;
+            }
+        }
+
+        /// <summary>
+        ///     Checks whether string is a valid BIC.
+        /// </summary>
+        /// <param name="bic">The given string.</param>
+        /// <returns>True or false.</returns>
+        [Pure]
+        public static bool StrictValidBic(string bic)
+        {
+            bool result = false;
+            if (!string.IsNullOrEmpty(bic))
+            {
+                Regex regex = new Regex(@"^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$");
+                result = regex.IsMatch(bic);
             }
 
             return result;
