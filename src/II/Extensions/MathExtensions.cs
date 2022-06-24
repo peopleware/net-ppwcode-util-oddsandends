@@ -77,9 +77,6 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static double YearInterestFraction(this double yearlyInterestRateAsPercentage)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0d);
-            Contract.Ensures(Contract.Result<double>() >= 0d);
-
             double result = yearlyInterestRateAsPercentage / 100d;
             return result;
         }
@@ -87,18 +84,12 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static double YearInterestFraction(this double yearlyInterestRateAsPercentage, int nrYears)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0d);
-            Contract.Ensures(Contract.Result<double>() >= 0d);
-
             return InterestRate(yearlyInterestRateAsPercentage, nrYears, 1d);
         }
 
         [Pure]
         public static decimal YearInterestFraction(this decimal yearlyInterestRateAsPercentage)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0m);
-            Contract.Ensures(Contract.Result<decimal>() >= 0m);
-
             decimal result = yearlyInterestRateAsPercentage / 100m;
             return result;
         }
@@ -106,9 +97,6 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static decimal YearInterestFraction(this decimal yearlyInterestRateAsPercentage, int nrYears)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0m);
-            Contract.Ensures(Contract.Result<decimal>() >= 0m);
-
             return Convert.ToDecimal(Convert.ToDouble(yearlyInterestRateAsPercentage).YearInterestFraction(nrYears));
         }
 
@@ -123,9 +111,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static double DayInterestFraction(this double yearlyInterestRateAsPercentage, DateTime when, int nrDays)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0d);
             Contract.Requires(nrDays >= 1 && nrDays <= when.NumberOfDaysInYear());
-            Contract.Ensures(Contract.Result<double>() >= 0d);
 
             int daysInYear = when.NumberOfDaysInYear();
             return InterestRate(yearlyInterestRateAsPercentage, nrDays, daysInYear);
@@ -134,9 +120,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static decimal DayInterestFraction(this decimal yearlyInterestRateAsPercentage, DateTime when, int nrDays)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0m);
             Contract.Requires(nrDays >= 1 && nrDays <= when.NumberOfDaysInYear());
-            Contract.Ensures(Contract.Result<decimal>() >= 0m);
 
             return Convert.ToDecimal(Convert.ToDouble(yearlyInterestRateAsPercentage).DayInterestFraction(when, nrDays));
         }
@@ -144,9 +128,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static double MonthInterestFraction(this double yearlyInterestRateAsPercentage, int nrMonths)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0d);
             Contract.Requires(nrMonths >= 1 && nrMonths <= 12);
-            Contract.Ensures(Contract.Result<double>() >= 0d);
 
             return InterestRate(yearlyInterestRateAsPercentage, nrMonths, 12d);
         }
@@ -154,9 +136,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static decimal MonthInterestFraction(this decimal yearlyInterestRateAsPercentage, int nrMonths)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0m);
             Contract.Requires(nrMonths >= 1 && nrMonths <= 12);
-            Contract.Ensures(Contract.Result<decimal>() >= 0m);
 
             return Convert.ToDecimal(Convert.ToDouble(yearlyInterestRateAsPercentage).MonthInterestFraction(nrMonths));
         }
@@ -164,9 +144,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static double QuarterInterestFraction(this double yearlyInterestRateAsPercentage, int nrQuarters)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0d);
             Contract.Requires(nrQuarters >= 1 && nrQuarters <= 4);
-            Contract.Ensures(Contract.Result<double>() >= 0d);
 
             return InterestRate(yearlyInterestRateAsPercentage, nrQuarters, 4d);
         }
@@ -174,9 +152,7 @@ namespace PPWCode.Util.OddsAndEnds.II.Extensions
         [Pure]
         public static decimal QuarterInterestFraction(this decimal yearlyInterestRateAsPercentage, int nrQuarters)
         {
-            Contract.Requires(yearlyInterestRateAsPercentage >= 0m);
             Contract.Requires(nrQuarters >= 1 && nrQuarters <= 4);
-            Contract.Ensures(Contract.Result<decimal>() >= 0m);
 
             return Convert.ToDecimal(Convert.ToDouble(yearlyInterestRateAsPercentage).QuarterInterestFraction(nrQuarters));
         }
